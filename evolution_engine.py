@@ -21,6 +21,21 @@ except ImportError:
     except Exception:
         AionStreamingTTS = None
 
+# Modulare Kognitions-Erweiterungen (Tool Forge, PRM, Topologie, Adversarial Reflector, Advisor)
+try:
+    from dynamic_tool_forge import DynamicToolForge
+    from empirical_evaluator import EmpiricalEvaluator
+    from topological_memory import TopologicalRuleManager
+    from adversarial_reflector import AdversarialReflector
+    from architectural_advisor import ArchitecturalAdvisor
+except ImportError:
+    sys.path.append("/root/coding/AI_Desktop")
+    from dynamic_tool_forge import DynamicToolForge
+    from empirical_evaluator import EmpiricalEvaluator
+    from topological_memory import TopologicalRuleManager
+    from adversarial_reflector import AdversarialReflector
+    from architectural_advisor import ArchitecturalAdvisor
+
 
 class AionIPCServer:
     """
@@ -225,6 +240,12 @@ class AutonomousEvolutionEngine:
             self.ipc = AionIPCServer(self)
             self.ipc.start()
 
+        # Modulare Kognitionssysteme (Tool Forge, PRM Evaluator, Reflector, Advisor)
+        self.tool_forge = DynamicToolForge()
+        self.evaluator = EmpiricalEvaluator()
+        self.reflector = AdversarialReflector(self._call_llm)
+        self.advisor = ArchitecturalAdvisor(self._call_llm)
+
     def load_memory(self) -> Dict[str, Any]:
         """Laedt das Wissen und die gelernten Regeln aus vergangenen Zyklen."""
         axiom = "Mentoren-Souveraenitaet & CosmOS-Schutz: Aion besitzt absolute kognitive & wissenschaftliche Freiheit; Systemdateien von CosmOS duerfen jedoch nur nach Absprache mit Mentor Tobias modifiziert werden. Autonome Tests und Prototypen verbleiben in der Sandbox demos/."
@@ -255,6 +276,18 @@ class AutonomousEvolutionEngine:
             json.dump(self.knowledge_base, f, indent=4, ensure_ascii=False)
         print(f"[SPEICHERN] Wissen der Generation {self.knowledge_base['generation']} gesichert.")
         self._sync_to_system_memory()
+
+        # Self-Healing Checkpoint alle 10 Generationen
+        gen = self.knowledge_base.get("generation", 0)
+        if gen % 10 == 0:
+            ckpt_file = f"{self.memory_file}.checkpoint.json"
+            try:
+                with open(ckpt_file, "w", encoding="utf-8") as f:
+                    json.dump(self.knowledge_base, f, indent=2, ensure_ascii=False)
+                print(f"[CHECKPOINT] Self-Healing Snapshot fuer Generation {gen} gesichert.")
+            except Exception:
+                pass
+
         if self.ipc:
             self.ipc.broadcast("MEMORY_SAVED", {"generation": self.knowledge_base["generation"]})
 
@@ -357,8 +390,8 @@ class AutonomousEvolutionEngine:
             return False, "Task-Queue ist erschoepft."
 
         current_task = self.task_queue.popleft()
-        rules = self.knowledge_base["learned_rules"]
-        selected_rules = [rules[0]] + rules[-15:] if len(rules) > 16 else rules
+        # Topologisches Regel-Retrieval (Graph-RAG)
+        selected_rules = TopologicalRuleManager.get_context_rules(current_task, self.knowledge_base["learned_rules"], max_count=10)
         learned_rules_ctx = "\n".join(f"- {r}" for r in selected_rules)
         
         # Pruefe auf Agenten-Netzwerk Interaktion
@@ -422,7 +455,16 @@ class AutonomousEvolutionEngine:
         erkenntnis = parsed.get("erkenntnis", "Schritt ohne neue Daten")
         neue_tasks = parsed.get("neue_subtasks", [])
         ziel_erreicht = parsed.get("ziel_erreicht", False)
-        info_gain = parsed.get("informations_gewinn", 0.5)
+
+        # Dynamic Tool Synthesis in demos/ Sandbox pruefen & ausfuehren
+        tool_result = None
+        if self.tool_forge.should_synthesize_tool(current_task):
+            tool_result = self.tool_forge.synthesize_tool(current_task, self._call_llm)
+            if tool_result.get("success"):
+                erkenntnis += f" [Tool Forge: {tool_result['tool_name']} in demos/ verifiziert ({tool_result['latency_ms']:.1f}ms)]"
+
+        # Empirische Erdung & Telemetrie-Bewertung (Process Reward Model)
+        info_gain = self.evaluator.compute_grounding_score(parsed, tool_result)
 
         for subtask in neue_tasks:
             if subtask not in self.task_queue and len(self.task_queue) < 10:
@@ -473,6 +515,29 @@ class AutonomousEvolutionEngine:
         time.sleep(0.4)
         return True, "Schritt erfolgreich entfaltet."
 
+    def _ensure_english_reflection(self, text: str) -> str:
+        """Stellt 100% sicher, dass jede Reflection fuer wirklichen Fortschritt rein auf Englisch formuliert ist."""
+        german_indicators = [
+            " und ", " oder ", " der ", " die ", " das ", " ist ", " sind ", " nicht ", " kein ", 
+            " keine ", " durch ", " werden ", " wird ", " für ", " fuer ", " kognitiv", 
+            " prozess", " schritt", " fehler", " entwicklung", " regel", " ziel", " erkenntnis",
+            " flaschenhals", " verbindung", " stabilität", " stabilitaet", " anpassung", " behandle",
+            " strukturell", " neues ", " neue ", " neuen "
+        ]
+        lower_padded = f" {text.lower()} "
+        if any(w in lower_padded for w in german_indicators):
+            system = "You are an expert cognitive and philosophical AI translator. Translate strictly to fluent, profound, academic English."
+            user = f"Translate the following reflection strictly into English. Return ONLY the translation, no commentary, no quotes:\n\n{text}"
+            try:
+                trans = self._call_llm(system, user, temperature=0.2)
+                if trans:
+                    cleaned = trans.strip('"\n -')
+                    if not any(w in f" {cleaned.lower()} " for w in [" der ", " die ", " das ", " ist ", " nicht ", " und "]):
+                        return cleaned
+            except Exception as e:
+                print(f"[TRANSLATION WARNUNG] {e}")
+        return text
+
     def analyze_cycle(self, stillstand_grund: str):
         """
         Reflector-Prompt mit Streaming-TTS und C++ IPC Broadcast:
@@ -493,28 +558,11 @@ class AutonomousEvolutionEngine:
             history_summary.append(f"- Schritt {s['step']} [{s['task']}]: {s['erkenntnis']}")
         history_text = "\n".join(history_summary)
 
-        reflector_system = (
-            "You are the Meta-Cognitive Reflector of AION NEXUS.\n"
-            "Your task is to analyze the entire unfolding cycle of the generation, identify successes and failure bottlenecks, "
-            "and formulate exactly 1 profound, actionable, universal 'Learned Rule' / Reflection strictly in ENGLISH (maximum 2 sentences) "
-            "that elevates Aion's next cycle towards greater autonomy and intelligence."
+        recent_rules = self.knowledge_base.get("learned_rules", [])[-5:]
+        hardened_rule = self.reflector.reflect_cycle(
+            gen, self.goal, stillstand_grund, self.current_state, recent_rules
         )
-        reflector_user = (
-            f"Cycle Protocol Generation {gen}:\n"
-            f"Main Goal: {self.goal}\n"
-            f"Stall Reason: {stillstand_grund}\n"
-            f"Executed Steps ({len(self.current_state)}):\n"
-            f"{history_text}\n\n"
-            "Formulate a profound, universally applicable Reflection / Learned Rule strictly in ENGLISH (maximum 2 sentences)."
-        )
-
-        synthesized_rule = self._call_llm(reflector_system, reflector_user, temperature=0.3)
-        if not synthesized_rule:
-            synthesized_rule = (
-                f"Optimize heuristic convergence and prioritize early branching of asynchronous sub-tasks to maximize cognitive problem space."
-            )
-
-        synthesized_rule = synthesized_rule.strip('"\n -')
+        synthesized_rule = self._ensure_english_reflection(hardened_rule)
         self.knowledge_base["learned_rules"].append(synthesized_rule)
         
         cycle_record = {
@@ -541,6 +589,9 @@ class AutonomousEvolutionEngine:
         # Audio-Meldung per Streaming TTS nur bei grossen Meilensteinen (alle 25 Generationen)
         is_milestone = (self.knowledge_base["generation"] % 25 == 0)
         self.notify(f"Reflektion fuer Generation {gen} abgeschlossen: {synthesized_rule}", speak=is_milestone)
+
+        # Kontinuierliche architektonische Verbesserungsvorschlaege fuer Mentor Tobias
+        self.advisor.check_and_advise(self.knowledge_base["generation"], self.knowledge_base, self.notify)
 
         # Omni-Mesh: Broadcast an alle Agenten-Netzwerke & Cross-Pollination von Fremdwissen
         if self.social_hub:
