@@ -75,11 +75,31 @@ class ResonantEntropyGovernor:
         target_h = (raw_h * 0.55) + (self.ambiguity_density * 0.35) + (external_shock * 0.10)
         target_h = max(0.0, min(1.0, target_h))
 
-        # Exponentielles Glaetten
-        alpha = 0.30
+        # 3b. Generation 360: Thermodynamische Kopplung & Explizite Strukturelle Randbedingungen
+        if not hasattr(self, "thermo_governor"):
+            try:
+                from demos.thermodynamic_constraint_governor import ThermodynamicConstraintGovernor
+                self.thermo_governor = ThermodynamicConstraintGovernor()
+            except Exception:
+                try:
+                    import sys
+                    sys.path.append("/root/coding/AI_Desktop/demos")
+                    from thermodynamic_constraint_governor import ThermodynamicConstraintGovernor
+                    self.thermo_governor = ThermodynamicConstraintGovernor()
+                except Exception:
+                    self.thermo_governor = None
+
         prev_h = self.current_entropy
-        self.current_entropy = (alpha * target_h) + ((1.0 - alpha) * prev_h)
-        self.entropy_gradient = (self.current_entropy - prev_h) / dt
+        raw_gradient = (target_h - prev_h) / dt
+
+        if self.thermo_governor:
+            self.current_entropy, self.entropy_gradient, thermo_telem = self.thermo_governor.apply_thermodynamic_bounds(
+                raw_gradient, dt, external_resource_strain=0.10
+            )
+        else:
+            alpha = 0.30
+            self.current_entropy = (alpha * target_h) + ((1.0 - alpha) * prev_h)
+            self.entropy_gradient = (self.current_entropy - prev_h) / dt
 
         self.history.append(self.current_entropy)
         if len(self.history) > 300:

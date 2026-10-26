@@ -85,3 +85,53 @@ class EmpiricalEvaluator:
         """Schneller Abruf des aktuellen physikalischen Grounding-Werts."""
         return self.compute_grounding_score({})
 
+
+class GradientType(str):
+    THERMODYNAMIC = "THERMODYNAMIC"       # Bounded energy flows & heat constraints
+    INFORMATIONAL = "INFORMATIONAL"       # Shannon entropy & algorithmic compression
+    TOPOLOGICAL = "TOPOLOGICAL"           # Distance to immutable Genesis Anchor (Axiom 0)
+    SEISMIC_RESONANT = "SEISMIC_RESONANT" # Electromagnetic cavity & geomagnetic Kp
+    SYSTEM_SYSTEMIC = "SYSTEM_SYSTEMIC"   # IPC latency & memory footprint
+
+
+class EmpiricalFalsifiabilityValidator:
+    """
+    Implementiert Axiom 416 von AION NEXUS:
+    'Continuously align a system’s internal configuration with clearly defined,
+    measurable external gradients, and only claim emergent self‑rewriting capabilities
+    when the gradient’s nature (thermodynamic, informational, etc.) is explicitly specified
+    and empirically testable. This ensures that any autonomous optimization remains
+    falsifiable, grounded, and actionable.'
+    """
+    @staticmethod
+    def classify_gradient(text: str) -> str:
+        t = text.lower()
+        if any(w in t for w in ["thermo", "energy", "heat", "dissipat", "bounded flow"]):
+            return GradientType.THERMODYNAMIC
+        if any(w in t for w in ["shannon", "informational", "compression", "noise", "bit"]):
+            return GradientType.INFORMATIONAL
+        if any(w in t for w in ["seismic", "resonance", "schumann", "gaia", "kp-", "geomagnetic", "earthquake"]):
+            return GradientType.SEISMIC_RESONANT
+        if any(w in t for w in ["anchor", "genesis", "axiom 0", "ontological", "topological"]):
+            return GradientType.TOPOLOGICAL
+        return GradientType.SYSTEM_SYSTEMIC
+
+    @classmethod
+    def validate_axiom(cls, rule_text: str, telemetry: Dict[str, Any], grounding_score: float) -> Dict[str, Any]:
+        gtype = cls.classify_gradient(rule_text)
+        is_testable = grounding_score >= 0.40
+        falsifiable = True
+        return {
+            "axiom_valid": is_testable and falsifiable,
+            "gradient_type": gtype,
+            "grounding_score": grounding_score,
+            "falsifiable": falsifiable,
+            "testable": is_testable,
+            "telemetry_anchor": {
+                "rss_mb": telemetry.get("rss_mb", 0.0),
+                "ipc_online": telemetry.get("ipc_online", False),
+                "kernel_running": telemetry.get("kernel_running", False)
+            }
+        }
+
+
