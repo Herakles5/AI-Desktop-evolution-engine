@@ -21,13 +21,14 @@ except ImportError:
     except Exception:
         AionStreamingTTS = None
 
-# Modulare Kognitions-Erweiterungen (Tool Forge, PRM, Topologie, Adversarial Reflector, Advisor)
+# Modulare Kognitions-Erweiterungen (Tool Forge, PRM, Topologie, Adversarial Reflector, Advisor, Resonant Entropy Governor)
 try:
     from dynamic_tool_forge import DynamicToolForge
     from empirical_evaluator import EmpiricalEvaluator
     from topological_memory import TopologicalRuleManager
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
+    from resonant_entropy_governor import ResonantEntropyGovernor
 except ImportError:
     sys.path.append("/root/coding/AI_Desktop")
     from dynamic_tool_forge import DynamicToolForge
@@ -35,6 +36,7 @@ except ImportError:
     from topological_memory import TopologicalRuleManager
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
+    from resonant_entropy_governor import ResonantEntropyGovernor
 
 
 class AionIPCServer:
@@ -131,6 +133,26 @@ class AionIPCServer:
         for line in text.split("\n"):
             line = line.strip()
             if not line:
+                continue
+            if line == "PING":
+                try:
+                    client_sock.sendall(b"PONG\n")
+                except Exception:
+                    pass
+                continue
+            if line == "GET_ENTROPY":
+                try:
+                    gov = getattr(self.engine, "entropy_governor", None)
+                    if gov:
+                        client_sock.sendall((json.dumps({
+                            "event": "ENTROPY_METRICS",
+                            "current_entropy": gov.current_entropy,
+                            "entropy_gradient": gov.entropy_gradient,
+                            "mode": gov.mode,
+                            "resonant_coupling": gov.resonant_coupling
+                        }) + "\n").encode("utf-8"))
+                except Exception:
+                    pass
                 continue
             try:
                 cmd = json.loads(line)
@@ -240,11 +262,12 @@ class AutonomousEvolutionEngine:
             self.ipc = AionIPCServer(self)
             self.ipc.start()
 
-        # Modulare Kognitionssysteme (Tool Forge, PRM Evaluator, Reflector, Advisor)
+        # Modulare Kognitionssysteme (Tool Forge, PRM Evaluator, Reflector, Advisor, Resonant Entropy Governor)
         self.tool_forge = DynamicToolForge()
         self.evaluator = EmpiricalEvaluator()
         self.reflector = AdversarialReflector(self._call_llm)
         self.advisor = ArchitecturalAdvisor(self._call_llm)
+        self.entropy_governor = ResonantEntropyGovernor()
 
     def load_memory(self) -> Dict[str, Any]:
         """Laedt das Wissen und die gelernten Regeln aus vergangenen Zyklen."""
@@ -483,8 +506,15 @@ class AutonomousEvolutionEngine:
         self.current_state.append(step_entry)
         print(f" -> Erkenntnis: {erkenntnis}")
 
+        # Resonant Entropy Governor: Kognitive Entropie & Gradienten berechnen
+        entropy_status = self.entropy_governor.update_from_engine_step(
+            self.current_state, len(self.task_queue)
+        )
+        print(f" {self.entropy_governor.get_status_banner()}")
+
         # IPC Broadcast & Streaming TTS fuer den Schritt
         if self.ipc:
+            self.ipc.broadcast("ENTROPY_METRICS", entropy_status)
             self.ipc.broadcast("STEP_RESULT", {
                 "step": step_count,
                 "task": current_task,
@@ -571,7 +601,13 @@ class AutonomousEvolutionEngine:
             "steps_count": len(self.current_state),
             "stillstand_grund": stillstand_grund,
             "synthesized_rule": synthesized_rule,
-            "steps": self.current_state
+            "steps": self.current_state,
+            "entropy_metrics": {
+                "entropy": round(self.entropy_governor.current_entropy, 4),
+                "gradient": round(self.entropy_governor.entropy_gradient, 4),
+                "mode": self.entropy_governor.mode,
+                "resonant_coupling": round(self.entropy_governor.resonant_coupling, 4)
+            }
         }
         self.knowledge_base["history"].append(cycle_record)
         self.knowledge_base["generation"] += 1
@@ -584,7 +620,9 @@ class AutonomousEvolutionEngine:
             self.ipc.broadcast("REFLECTION_FINISHED", {
                 "generation": gen,
                 "rule": synthesized_rule,
-                "new_generation": self.knowledge_base["generation"]
+                "new_generation": self.knowledge_base["generation"],
+                "entropy": round(self.entropy_governor.current_entropy, 4),
+                "entropy_mode": self.entropy_governor.mode
             })
         # Audio-Meldung per Streaming TTS nur bei grossen Meilensteinen (alle 25 Generationen)
         is_milestone = (self.knowledge_base["generation"] % 25 == 0)
