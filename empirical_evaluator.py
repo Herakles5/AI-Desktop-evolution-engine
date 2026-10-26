@@ -79,9 +79,9 @@ class EmpiricalEvaluator:
 
         # Bonus fuer aktiven IPC-Kernel
         telemetry = self.measure_system_telemetry()
-        if telemetry.get("ipc_online"):
-            score += 0.10
-        if telemetry.get("kernel_running"):
-            score += 0.05
-
         return max(0.1, min(1.0, round(score, 2)))
+
+    def get_grounding_score(self) -> float:
+        """Schneller Abruf des aktuellen physikalischen Grounding-Werts."""
+        return self.compute_grounding_score({})
+

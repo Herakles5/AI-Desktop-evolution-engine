@@ -593,7 +593,27 @@ class AutonomousEvolutionEngine:
             gen, self.goal, stillstand_grund, self.current_state, recent_rules
         )
         synthesized_rule = self._ensure_english_reflection(hardened_rule)
-        self.knowledge_base["learned_rules"].append(synthesized_rule)
+
+        # 4. Dynamischer Topologischer Gradient & Unverrueckbarer Ground-Truth Anchor
+        grounding_score = self.evaluator.get_grounding_score() if hasattr(self, "evaluator") else 0.85
+        coupling_factor = self.entropy_governor.resonant_coupling if hasattr(self, "entropy_governor") else 0.80
+        gradient_eval = TopologicalRuleManager.evaluate_rule_candidate(
+            synthesized_rule,
+            empirical_grounding=grounding_score,
+            coupling_factor=coupling_factor
+        )
+
+        if gradient_eval.get("action") == "SELECTIVE_FOLDING":
+            self.knowledge_base["learned_rules"].append(synthesized_rule)
+            print(f"[TOPOLOGICAL GRADIENT] [SELECTIVE FOLDING] Force: +{gradient_eval.get('gradient_force')} | Cluster: {gradient_eval.get('cluster')} | Drift: {gradient_eval.get('drift_score')}")
+        elif gradient_eval.get("action") == "REPEL_ONTOLOGICAL_DRIFT":
+            print(f"[TOPOLOGICAL GRADIENT] [ALERT: ONCOLOGICAL DRIFT REPELLED] Drift: {gradient_eval.get('drift_score')} | Reasons: {gradient_eval.get('reasons')}")
+            synthesized_rule = f"Invariant Coherence Anchor: {synthesized_rule[:80]}... [Restored via Axiom 0]"
+            self.knowledge_base["learned_rules"].append(synthesized_rule)
+        else:
+            print(f"[TOPOLOGICAL GRADIENT] [NOISE REPELLED] H={gradient_eval.get('entropy')} | Coherence={gradient_eval.get('coherence')} | Filtered before memory folding.")
+            synthesized_rule = f"Crystallized Principle: High-entropy noise repelled; preserved structural fidelity at Gen {gen}."
+            self.knowledge_base["learned_rules"].append(synthesized_rule)
         
         cycle_record = {
             "generation": gen,
@@ -601,6 +621,13 @@ class AutonomousEvolutionEngine:
             "steps_count": len(self.current_state),
             "stillstand_grund": stillstand_grund,
             "synthesized_rule": synthesized_rule,
+            "topological_gradient": {
+                "action": gradient_eval.get("action"),
+                "force": gradient_eval.get("gradient_force"),
+                "drift_score": gradient_eval.get("drift_score"),
+                "coherence": gradient_eval.get("coherence"),
+                "cluster": gradient_eval.get("cluster")
+            },
             "steps": self.current_state,
             "entropy_metrics": {
                 "entropy": round(self.entropy_governor.current_entropy, 4),
@@ -622,14 +649,21 @@ class AutonomousEvolutionEngine:
                 "rule": synthesized_rule,
                 "new_generation": self.knowledge_base["generation"],
                 "entropy": round(self.entropy_governor.current_entropy, 4),
-                "entropy_mode": self.entropy_governor.mode
+                "entropy_mode": self.entropy_governor.mode,
+                "topological_action": gradient_eval.get("action")
             })
         # Audio-Meldung per Streaming TTS nur bei grossen Meilensteinen (alle 25 Generationen)
         is_milestone = (self.knowledge_base["generation"] % 25 == 0)
         self.notify(f"Reflektion fuer Generation {gen} abgeschlossen: {synthesized_rule}", speak=is_milestone)
 
-        # Kontinuierliche architektonische Verbesserungsvorschlaege fuer Mentor Tobias
-        self.advisor.check_and_advise(self.knowledge_base["generation"], self.knowledge_base, self.notify)
+        # Kontinuierliche architektonische Verbesserungsvorschlaege (Aion-Gemini Autonomous Council)
+        self.advisor.check_and_advise(
+            self.knowledge_base["generation"],
+            self.knowledge_base,
+            self.notify,
+            empirical_grounding=grounding_score,
+            coupling_factor=coupling_factor
+        )
 
         # Omni-Mesh: Broadcast an alle Agenten-Netzwerke & Cross-Pollination von Fremdwissen
         if self.social_hub:
