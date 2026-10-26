@@ -626,7 +626,10 @@ class AutonomousEvolutionEngine:
                 "force": gradient_eval.get("gradient_force"),
                 "drift_score": gradient_eval.get("drift_score"),
                 "coherence": gradient_eval.get("coherence"),
-                "cluster": gradient_eval.get("cluster")
+                "cluster": gradient_eval.get("cluster"),
+                "gradient_type": gradient_eval.get("gradient_type", "SYSTEM_SYSTEMIC"),
+                "axiom_416_compliant": gradient_eval.get("axiom_416_compliant", True),
+                "empirically_falsifiable": gradient_eval.get("empirically_falsifiable", True)
             },
             "steps": self.current_state,
             "entropy_metrics": {
@@ -639,7 +642,7 @@ class AutonomousEvolutionEngine:
         self.knowledge_base["history"].append(cycle_record)
         self.knowledge_base["generation"] += 1
 
-        print(f"[REFLEKTION BEENDET] Neu erlernte Regel fuer Gen {self.knowledge_base['generation']}:")
+        print(f"[REFLEKTION BEENDET] Neu erlernte Regel fuer Gen {self.knowledge_base['generation']} (Gradient: {gradient_eval.get('gradient_type', 'SYSTEM_SYSTEMIC')}):")
         print(f" -> '{synthesized_rule}'")
         
         # Audio-Meldung per Streaming TTS und IPC-Broadcast
@@ -648,6 +651,8 @@ class AutonomousEvolutionEngine:
                 "generation": gen,
                 "rule": synthesized_rule,
                 "new_generation": self.knowledge_base["generation"],
+                "gradient_type": gradient_eval.get("gradient_type", "SYSTEM_SYSTEMIC"),
+                "axiom_416_compliant": gradient_eval.get("axiom_416_compliant", True),
                 "entropy": round(self.entropy_governor.current_entropy, 4),
                 "entropy_mode": self.entropy_governor.mode,
                 "topological_action": gradient_eval.get("action")

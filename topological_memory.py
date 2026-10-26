@@ -227,6 +227,26 @@ class DynamicTopologicalGradient:
                 "folded": False
             }
 
+        # Axiom 416 & Council Decision 425: Explizite Gradienten-Typisierung & Falsifizierbarkeit
+        from empirical_evaluator import EmpiricalFalsifiabilityValidator
+        val_res = EmpiricalFalsifiabilityValidator.validate_axiom(signal_text, {}, empirical_grounding)
+        gradient_type = val_res.get("gradient_type", "SYSTEM_SYSTEMIC")
+        is_testable = val_res.get("testable", True)
+
+        if not is_testable:
+            gradient_force = -1.0 * (1.0 - empirical_grounding)
+            return {
+                "action": "REPEL_ONTOLOGICAL_DRIFT",
+                "gradient_force": round(gradient_force, 4),
+                "entropy": round(signal_h, 4),
+                "coherence": round(coherence, 4),
+                "drift_score": round(drift, 4),
+                "cluster": cluster,
+                "gradient_type": gradient_type,
+                "reasons": ["Violates Axiom 416: Self-rewriting requires empirical testability and explicit gradient coupling."],
+                "folded": False
+            }
+
         # 3. Selektives Einfalten (Selective Folding)
         gradient_force = coupling_factor * (1.0 - drift) * (0.5 + coherence * 0.5)
         return {
@@ -236,6 +256,9 @@ class DynamicTopologicalGradient:
             "coherence": round(coherence, 4),
             "drift_score": round(drift, 4),
             "cluster": cluster,
+            "gradient_type": gradient_type,
+            "axiom_416_compliant": True,
+            "empirically_falsifiable": True,
             "reasons": ["Signal exhibits structural coherence and respects immutable ground-truth anchor."],
             "folded": True
         }

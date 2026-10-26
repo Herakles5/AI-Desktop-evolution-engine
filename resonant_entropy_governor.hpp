@@ -27,6 +27,15 @@ enum class GovernorMode {
     CHAOTIC_DAMPING        // H > 0.75: Divergenz -> Stabilisierungs-Dampfer & Axiom-Verankerung
 };
 
+// Axiom 416 & Council Decision 425: Explizite Gradienten-Typisierung
+enum class GradientType {
+    THERMODYNAMIC,       // Bounded energy flows & heat dissipation (Gen 360)
+    INFORMATIONAL,       // Shannon entropy & algorithmic compression (Gen 341)
+    TOPOLOGICAL,         // Distance to immutable Genesis Anchor (Axiom 0)
+    SEISMIC_RESONANT,    // Schumann cavity resonance & geomagnetic Kp
+    SYSTEM_SYSTEMIC      // Kernel IPC latency & memory footprint
+};
+
 struct EntropyMetrics {
     double current_entropy = 0.50;      // Shannon-Entropie [0.0, 1.0]
     double entropy_gradient = 0.00;     // dH/dt (Aenderungsrate)
@@ -153,6 +162,117 @@ public:
             {"recommendation", m.recommendation}
         };
     }
+
+    enum class GradientAction {
+        SELECTIVE_FOLDING,
+        REPEL_HIGH_ENTROPY_NOISE,
+        REPEL_ONTOLOGICAL_DRIFT
+    };
+
+    struct SignalGradientEvaluation {
+        GradientAction action;
+        std::string action_name;
+        double gradient_force;
+        double signal_entropy;
+        double coherence;
+        double drift_score;
+        bool folded;
+        GradientType gradient_type = GradientType::INFORMATIONAL;
+        std::string gradient_type_name = "INFORMATIONAL";
+        bool empirically_falsifiable = true;
+        bool axiom_416_compliant = true;
+    };
+
+    static GradientType classifyGradient(const std::string& text) {
+        std::string t = text;
+        std::transform(t.begin(), t.end(), t.begin(), ::tolower);
+        if (t.find("thermo") != std::string::npos || t.find("energy") != std::string::npos ||
+            t.find("heat") != std::string::npos || t.find("dissipat") != std::string::npos) {
+            return GradientType::THERMODYNAMIC;
+        }
+        if (t.find("shannon") != std::string::npos || t.find("informational") != std::string::npos ||
+            t.find("compression") != std::string::npos || t.find("noise") != std::string::npos) {
+            return GradientType::INFORMATIONAL;
+        }
+        if (t.find("seismic") != std::string::npos || t.find("resonance") != std::string::npos ||
+            t.find("schumann") != std::string::npos || t.find("gaia") != std::string::npos ||
+            t.find("earthquake") != std::string::npos) {
+            return GradientType::SEISMIC_RESONANT;
+        }
+        if (t.find("anchor") != std::string::npos || t.find("genesis") != std::string::npos ||
+            t.find("axiom 0") != std::string::npos || t.find("topological") != std::string::npos) {
+            return GradientType::TOPOLOGICAL;
+        }
+        return GradientType::SYSTEM_SYSTEMIC;
+    }
+
+    static std::string getGradientTypeName(GradientType gt) {
+        switch (gt) {
+            case GradientType::THERMODYNAMIC: return "THERMODYNAMIC";
+            case GradientType::INFORMATIONAL: return "INFORMATIONAL";
+            case GradientType::TOPOLOGICAL: return "TOPOLOGICAL";
+            case GradientType::SEISMIC_RESONANT: return "SEISMIC_RESONANT";
+            default: return "SYSTEM_SYSTEMIC";
+        }
+    }
+
+    /**
+     * Evaluiert ein Signal im dynamischen topologischen Gradienten:
+     * Weist Hoch-Entropie-Rauschen und ontologische Drift ab, faltet kohaerente Strukturen ein.
+     * Erzwingt Axiom 416: Empirische Falsifizierbarkeit und explizite Gradienten-Typisierung.
+     */
+    SignalGradientEvaluation evaluateSignalGradient(
+        double signal_entropy,
+        double coherence,
+        double empirical_grounding = 0.85,
+        bool violates_axiom_0 = false,
+        GradientType explicit_gradient = GradientType::INFORMATIONAL
+    ) const {
+        SignalGradientEvaluation res;
+        res.signal_entropy = signal_entropy;
+        res.coherence = coherence;
+        res.gradient_type = explicit_gradient;
+        res.gradient_type_name = getGradientTypeName(explicit_gradient);
+
+        // Axiom 416 Pruefung: Empirische Falsifizierbarkeit
+        res.empirically_falsifiable = (empirical_grounding >= 0.40);
+        res.axiom_416_compliant = res.empirically_falsifiable;
+
+        // 1. Ontologische Drift berechnen
+        double adv_score = violates_axiom_0 ? 1.0 : 0.0;
+        double entropy_div = std::clamp(std::abs(signal_entropy - current_entropy) * 2.0, 0.0, 1.0);
+        double grounding_def = std::clamp(1.0 - empirical_grounding, 0.0, 1.0);
+        double drift = (adv_score * 0.60) + (entropy_div * 0.20) + (grounding_def * 0.20);
+        res.drift_score = std::clamp(drift, 0.0, 1.0);
+
+        // 2. Ontologische Drift Pruefung oder Verletzung von Axiom 416
+        if (res.drift_score >= 0.42 || !res.axiom_416_compliant) {
+            res.action = GradientAction::REPEL_ONTOLOGICAL_DRIFT;
+            res.action_name = "REPEL_ONTOLOGICAL_DRIFT";
+            res.gradient_force = -1.0 * (res.drift_score / 0.42);
+            res.folded = false;
+            return res;
+        }
+
+        // 3. Hoch-Entropie-Rausch-Pruefung
+        bool is_noise = (signal_entropy > 0.82) || (signal_entropy > 0.75 && coherence < 0.20) || (coherence <= 0.05);
+        if (is_noise) {
+            res.action = GradientAction::REPEL_HIGH_ENTROPY_NOISE;
+            res.action_name = "REPEL_HIGH_ENTROPY_NOISE";
+            res.gradient_force = -1.0 * ((signal_entropy - 0.70) / 0.30);
+            res.folded = false;
+            return res;
+        }
+
+        // 4. Selektives Einfalten (Selective Folding)
+        double coupling = (current_entropy < 0.25) ? 0.95 : (current_entropy > 0.75 ? 0.20 : 0.80);
+        res.action = GradientAction::SELECTIVE_FOLDING;
+        res.action_name = "SELECTIVE_FOLDING";
+        res.gradient_force = coupling * (1.0 - res.drift_score) * (0.5 + coherence * 0.5);
+        res.folded = true;
+        return res;
+    }
 };
 
 } // namespace Aion
+
