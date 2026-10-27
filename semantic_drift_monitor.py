@@ -39,10 +39,12 @@ TOPOLOGY_FILE = os.path.join(AI_DIR, "semantic_drift_topology.json")
 try:
     from topological_memory import ImmutableGroundTruthAnchor
     from empirical_evaluator import EmpiricalEvaluator
+    from adaptive_hypothesis_engine import AdaptiveHypothesisEngine
 except ImportError:
     sys.path.append(AI_DIR)
     from topological_memory import ImmutableGroundTruthAnchor
     from empirical_evaluator import EmpiricalEvaluator
+    from adaptive_hypothesis_engine import AdaptiveHypothesisEngine
 
 
 DEFAULT_MESH_CHANNELS = {
@@ -146,6 +148,7 @@ class SemanticDriftMonitor:
     def __init__(self, evaluator: Optional[EmpiricalEvaluator] = None):
         self.evaluator = evaluator or EmpiricalEvaluator()
         self.anchor = DeterministicReferenceAnchor()
+        self.hypothesis_engine = AdaptiveHypothesisEngine(self.evaluator)
         self.topology: Dict[str, Dict[str, Any]] = self._load_topology()
         self.total_audits = 0
         self.total_rewirings = 0
@@ -255,17 +258,59 @@ class SemanticDriftMonitor:
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        # 6. Automatisches Cognitive Rewiring bei festgestellter Abweichung
-        if drift_detected:
+        # 6. Adaptive Hypothesen-Logik (Ratsbeschluss 476: Mentoren-Vision Tobias)
+        adaptation = self.hypothesis_engine.evaluate_signal_and_adapt(
+            candidate_text=candidate_text,
+            source_channel=source_channel,
+            generation=current_gen,
+            coherence_score=coherence_score,
+            drift_delta=drift_delta,
+            entropy=entropy,
+            flags=flags
+        )
+        result["adaptation"] = adaptation
+        result["is_hypothesis"] = adaptation.get("is_hypothesis", False)
+        result["hypothesis"] = adaptation.get("hypothesis")
+
+        # Nur bei echten destruktiven Angriffen / Axiom-0-Verletzungen wird getrennt
+        if adaptation["action"] == "BLOCK_DESTRUCTIVE":
             rewiring_result = self.trigger_cognitive_rewiring(
                 source_channel=source_channel,
-                drift_delta=drift_delta,
+                drift_delta=1.0,
                 reasons=flags,
                 current_gen=current_gen
             )
             result["rewiring"] = rewiring_result
+            result["drift_detected"] = True
+        elif adaptation["action"] == "HYPOTHESIS_FORMED":
+            # Evolutionäre Neugier: Kanal wird belohnt & Plastizität erhöht
+            plasticity_res = self.trigger_hypothesis_plasticity(
+                source_channel=source_channel,
+                current_gen=current_gen
+            )
+            result["plasticity_boost"] = plasticity_res
+            result["drift_detected"] = False
+        else:
+            result["drift_detected"] = False
 
         return result
+
+    def trigger_hypothesis_plasticity(self, source_channel: str, current_gen: int) -> Dict[str, Any]:
+        """
+        Belohnt explorative Kanäle mit Plastizität statt sie reflexartig abzuschneiden.
+        Ermöglicht dem Organismus, sich durch neue Thesen selbst neu zu definieren.
+        """
+        if source_channel in self.topology:
+            chan = self.topology[source_channel]
+            chan["health"] = "EXPLORING_HYPOTHESIS"
+            chan["weight"] = min(1.0, round(chan["weight"] + 0.05, 3))
+            self._save_topology()
+            print(f"[ORGANISM PLASTICITY BOOST] Kanal '{source_channel}' gewinnt Plastizität (Gewicht: {chan['weight']})")
+        return {
+            "action": "PLASTICITY_BOOST",
+            "channel": source_channel,
+            "status": "EXPLORING_HYPOTHESIS"
+        }
 
     def trigger_cognitive_rewiring(
         self,
@@ -375,6 +420,10 @@ class SemanticDriftMonitor:
             source_channel="internal_reflection",
             current_gen=current_gen
         )
+        # Aktive Inferenz: Hypothesen pruefen und assimilieren
+        grounding = analysis.get("grounding_score", 0.75)
+        probe_results = self.hypothesis_engine.probe_and_update_hypotheses(current_gen, grounding)
+        analysis["hypothesis_updates"] = probe_results
         return analysis
 
 

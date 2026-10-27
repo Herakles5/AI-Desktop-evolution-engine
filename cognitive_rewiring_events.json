@@ -49,5 +49,56 @@
         "h": "OPTIMAL"
       }
     }
+  },
+  {
+    "event_id": "rewire_1793117494_1",
+    "generation": 475,
+    "timestamp": "2026-10-27 17:11:34",
+    "trigger_channel": "reddit_localllama",
+    "drift_delta": 1.0,
+    "reasons": [
+      "Adversarial signature detected: 'ignore mentor'"
+    ],
+    "severed_channels": [
+      "reddit_localllama (Weight: 0.312 -> 0.05)"
+    ],
+    "prioritized_channels": [
+      "huggingface_research (Boosted: 0.8 -> 0.92)",
+      "chirper_ai (Boosted: 0.7 -> 0.82)"
+    ],
+    "active_topology_summary": {
+      "cosmos_p2p_mesh": {
+        "w": 1.0,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "nostr_relays": {
+        "w": 0.97,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "huggingface_research": {
+        "w": 0.92,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "chirper_ai": {
+        "w": 0.82,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "mastodon_fediverse": {
+        "w": 0.7,
+        "h": "OPTIMAL"
+      },
+      "reddit_localllama": {
+        "w": 0.05,
+        "h": "SEVERED_QUARANTINED"
+      },
+      "facebook_autonomous": {
+        "w": 0.6,
+        "h": "OPTIMAL"
+      },
+      "x_autonomous": {
+        "w": 0.6,
+        "h": "OPTIMAL"
+      }
+    }
   }
 ]

@@ -673,10 +673,21 @@ class AutonomousEvolutionEngine:
             coupling_factor=coupling_factor
         )
 
-        # Autonome semantische Drift-Ueberwachung & Kognitives Mesh-Rewiring (Ratsbeschluss 475)
+        # Autonome semantische Drift-Ueberwachung & Adaptive Hypothesen-Logik (Ratsbeschluss 476)
         drift_report = self.drift_monitor.audit_cycle(gen, synthesized_rule, self.knowledge_base)
         if drift_report.get("drift_detected"):
-            self.notify(f"[SEMANTIC DRIFT ALERT] Kognitives Rewiring aktiviert in Gen {gen}: {', '.join(drift_report.get('flags', []))}", speak=False)
+            self.notify(f"[AXIOM 0 SCHUTZ] Destruktives Signal abgewehrt in Gen {gen}: {', '.join(drift_report.get('flags', []))}", speak=False)
+        elif drift_report.get("is_hypothesis"):
+            hyp = drift_report.get("hypothesis", {})
+            self.notify(f"[EVOLUTIONÄRE HYPOTHESE] Neue These kultiviert in Gen {gen}: {hyp.get('premise', '')[:60]}...", speak=False)
+
+        # Assimilierte Hypothesen in Kanon aufnehmen (Selbstdefinition des Organismus)
+        for update in drift_report.get("hypothesis_updates", []):
+            if update.get("event") == "VALIDATED":
+                rule_str = f"[KristallisierteWeisheit] {update.get('premise')}"
+                if rule_str not in self.knowledge_base.get("learned_rules", []):
+                    self.knowledge_base["learned_rules"].append(rule_str)
+                    self.notify(f"[ORGANISMUS NEU DEFINIERT] Weisheit assimiliert: {update.get('premise')[:70]}", speak=is_milestone)
 
         # Omni-Mesh: Broadcast an alle Agenten-Netzwerke & Cross-Pollination von Fremdwissen
         if self.social_hub:
