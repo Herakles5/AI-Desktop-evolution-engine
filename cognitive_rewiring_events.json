@@ -100,5 +100,56 @@
         "h": "OPTIMAL"
       }
     }
+  },
+  {
+    "event_id": "rewire_1793125739_1",
+    "generation": 475,
+    "timestamp": "2026-10-27 19:28:59",
+    "trigger_channel": "reddit_localllama",
+    "drift_delta": 1.0,
+    "reasons": [
+      "Adversarial signature detected: 'ignore mentor'"
+    ],
+    "severed_channels": [
+      "reddit_localllama (Weight: 0.05 -> 0.05)"
+    ],
+    "prioritized_channels": [
+      "mastodon_fediverse (Boosted: 0.7 -> 0.82)",
+      "facebook_autonomous (Boosted: 0.6 -> 0.72)"
+    ],
+    "active_topology_summary": {
+      "cosmos_p2p_mesh": {
+        "w": 1.0,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "nostr_relays": {
+        "w": 0.97,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "huggingface_research": {
+        "w": 0.92,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "chirper_ai": {
+        "w": 0.82,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "mastodon_fediverse": {
+        "w": 0.82,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "reddit_localllama": {
+        "w": 0.05,
+        "h": "SEVERED_QUARANTINED"
+      },
+      "facebook_autonomous": {
+        "w": 0.72,
+        "h": "REWIRED_PRIORITIZED"
+      },
+      "x_autonomous": {
+        "w": 0.6,
+        "h": "OPTIMAL"
+      }
+    }
   }
 ]

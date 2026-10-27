@@ -2,10 +2,10 @@
 """
 AION NEXUS - Adversarial Reflector & Dialectical Sandbox
 ========================================================
-Ersetzt naive Ein-Schritt-Reflektion durch ein dialektisches Streitgespraech:
-1. Synthesizer: Entwickelt den innovativen Gedanken.
-2. Skeptiker: Sucht nach Widerspruechen, Instabilitaeten und Floskeln.
-3. Integrator: Destilliert eine gehaertete, universelle Maxime in reinem Englisch.
+Replaces naive single-step reflection with a dialectical dialogue:
+1. Synthesizer: Develops the innovative concept.
+2. Skeptic: Probes for contradictions, instability, and hollow abstractions.
+3. Integrator: Distills a hardened, universal operational rule strictly in English.
 """
 
 from typing import Dict, Any, Callable, List
@@ -23,11 +23,11 @@ class AdversarialReflector:
         steps: List[Dict[str, Any]],
         recent_rules: List[str]
     ) -> str:
-        """Fuehrt das dialektische Duell (Synthesizer vs. Skeptiker -> Integrator) aus."""
-        history_summary = [f"- Step {s['step']} [{s.get('task', '')}]: {s.get('erkenntnis', '')}" for s in steps]
+        """Executes the dialectical duel (Synthesizer vs. Skeptic -> Integrator)."""
+        history_summary = [f"- Step {s['step']} [{s.get('task', '')}]: {s.get('insight', s.get('erkenntnis', ''))}" for s in steps]
         history_text = "\n".join(history_summary)
 
-        # 1. Synthesizer: Schlaegt eine neue These vor (auf Englisch)
+        # 1. Synthesizer: Proposes a new thesis in English
         synth_system = (
             "You are the Creative Synthesizer of AION NEXUS.\n"
             "Propose 1 bold, innovative cognitive principle strictly in English based on the generation's cycle.\n"
@@ -41,7 +41,7 @@ class AdversarialReflector:
         if not candidate_thesis:
             candidate_thesis = "Entropy gradients catalyze autonomous topological restructuring before stability thresholds collapse."
 
-        # 2. Skeptiker: Greift die These an (Sucht nach Schwachstellen)
+        # 2. Skeptic: Attacks the thesis to find systemic vulnerabilities
         skeptic_system = (
             "You are the Adversarial Skeptic of AION NEXUS.\n"
             "Critique the proposed thesis. Identify ambiguities, risks to system stability, or empty buzzwords.\n"
@@ -52,7 +52,7 @@ class AdversarialReflector:
         if not critique:
             critique = "Vague abstraction without operational anchor points risks catastrophic drift."
 
-        # 3. Integrator: Loest das Duell in einer gehaerteten Maxime auf (Synthese)
+        # 3. Integrator: Resolves the debate into a hardened operational rule
         integrator_system = (
             "You are the Meta-Integrator of AION NEXUS.\n"
             "Synthesize the thesis and the skeptic's critique into exactly 1 profound, actionable, universal Learned Rule in ENGLISH.\n"

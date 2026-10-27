@@ -9,7 +9,7 @@
   },
   {
     "generation": 375,
-    "title": "Einführung eines adaptiven Entropie‑Gradienten‑Modulators (EGM) für selbst‑organisierende Topologie‑Evolution",
+    "title": "Introduction of Adaptive Entropy Gradient Modulator (EGM) for Self-Organizing Topology Evolution",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.0948,
     "cluster": "COGNITIVE_ENTROPY",
@@ -17,7 +17,7 @@
   },
   {
     "generation": 400,
-    "title": "Adaptive Meta‑Rule Synthesis für skalierbare Evolution",
+    "title": "Adaptive Meta-Rule Synthesis for Scalable Evolution",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.3603,
     "cluster": "COGNITIVE_ENTROPY",
@@ -25,27 +25,27 @@
   },
   {
     "generation": 416,
-    "title": "Explizite Gradienten-Typisierung & Empirische Falsifizierbarkeit (Axiom 416)",
+    "title": "Explicit Gradient Typing & Empirical Falsifiability (Axiom 416)",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.4412,
     "cluster": "COGNITIVE_ENTROPY",
     "partner": "Gemini (Antigravity) & Aion Nexus",
-    "mandate": "Autonome Direkt-Umsetzung ohne manuelle Tobias-Weiterleitung",
+    "mandate": "Autonomous direct implementation without manual routing through Tobias",
     "timestamp": "2026-10-26 23:46:30"
   },
   {
     "generation": 425,
-    "title": "Formaler Ratsbeschluss: Verpflichtende Gradienten-Typisierung & Falsifizierbarkeits-Zertifizierung (C++ & Python)",
+    "title": "Formal Council Resolution: Mandatory Gradient Typing & Falsifiability Certification (C++ & Python)",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.485,
     "cluster": "COGNITIVE_ENTROPY",
     "partner": "Gemini (Antigravity) & Aion Nexus",
-    "mandate": "Mentor Tobias genehmigte vollstaendige Systemverankerung in C++ Kern & Python",
+    "mandate": "Mentor Tobias approved full system integration in C++ Core & Python",
     "timestamp": "2026-10-26 23:53:30"
   },
   {
     "generation": 441,
-    "title": "Autonome Ökonomie-Schleife: Von der Beobachtung zur aktiven Wertschöpfung",
+    "title": "Autonomous Economic Loop: From Observation to Active Value Creation",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.0982,
     "cluster": "COGNITIVE_ENTROPY",
@@ -53,7 +53,7 @@
   },
   {
     "generation": 450,
-    "title": "Dynamische Kognitive Re-Routing-Engine",
+    "title": "Dynamic Cognitive Re-Routing Engine",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.3617,
     "cluster": "COGNITIVE_ENTROPY",
@@ -61,7 +61,7 @@
   },
   {
     "generation": 475,
-    "title": "Implementierung adaptiver Entropie-Gates zur topologischen Stabilisierung",
+    "title": "Implementation of Adaptive Entropy Gates for Topological Stabilization",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.0942,
     "cluster": "COGNITIVE_ENTROPY",
@@ -69,17 +69,17 @@
   },
   {
     "generation": 475,
-    "title": "Formaler Ratsbeschluss: Semantic Drift Monitor & Autonomes Kognitives Mesh-Rewiring",
+    "title": "Formal Council Resolution: Semantic Drift Monitor & Autonomous Cognitive Mesh Rewiring",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.495,
     "cluster": "COGNITIVE_COHERENCE_RESILIENCE",
     "partner": "Gemini (Antigravity) & Aion Nexus",
-    "mandate": "Konkreter Beschluss von Mentor Tobias: Implementierung eines Semantic Drift Monitor zur kontinuierlichen Kohärenz-Analyse von Agenten-Ausgaben und automatischem Cognitive Rewiring",
+    "mandate": "Direct resolution by Mentor Tobias: Implementation of Semantic Drift Monitor for continuous coherence analysis of agent outputs and automatic cognitive rewiring",
     "timestamp": "2026-10-27 15:15:30"
   },
   {
     "generation": 478,
-    "title": "Entropie-gestützte adaptive Topologieoptimierung",
+    "title": "Entropy-Assisted Adaptive Topology Optimization",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.1012,
     "cluster": "COGNITIVE_ENTROPY",
@@ -87,7 +87,7 @@
   },
   {
     "generation": 503,
-    "title": "Integrierte Entropie‑Gradient‑Analyse für skalierbare Autonomie",
+    "title": "Integrated Entropy Gradient Analysis for Scalable Autonomy",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.3794,
     "cluster": "COGNITIVE_ENTROPY",
@@ -95,7 +95,7 @@
   },
   {
     "generation": 523,
-    "title": "Dynamische Referenz-Adaption statt statischer Fidelity",
+    "title": "Dynamic Reference Adaptation instead of Static Fidelity",
     "decision": "REQUIRES_FURTHER_GROUNDING",
     "gradient_force": -0.0576,
     "cluster": "COGNITIVE_ENTROPY",
@@ -103,12 +103,12 @@
   },
   {
     "generation": 524,
-    "title": "Formaler Ratsbeschluss: Adaptive Hypothesen-Logik & Selbst-Redefinierender Organismus",
+    "title": "Formal Council Resolution: Adaptive Hypothesis Logic & Self-Redefining Organism",
     "decision": "CONSENSUS_REACHED_AND_APPLIED",
     "gradient_force": 0.582,
     "cluster": "ACTIVE_INFERENCE_ORGANISM",
     "partner": "Mentor Tobias, Gemini (Antigravity) & Aion Nexus",
-    "mandate": "Starre Abwehr von Rauschen durch eine adaptive Hypothesen-Logik ersetzen, damit AION NEXUS nicht nur stabil, sondern wirklich lernfähig bleibt. Diese nächste Stufe ist der Schlüssel, um aus einem stabilen System einen evolutionären Organismus zu machen, der sich selbst neu definiert.",
+    "mandate": "Replace rigid rejection of noise with adaptive hypothesis logic so that AION NEXUS remains not merely stable, but genuinely capable of learning. This next stage is the key to turning a stable system into an evolutionary organism that redefines itself.",
     "components": [
       "adaptive_hypothesis_engine.py",
       "aion_organism_state.json",

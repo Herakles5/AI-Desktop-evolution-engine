@@ -2,9 +2,9 @@
 """
 AION NEXUS - Empirical Process Evaluator (PRM & Telemetry)
 ==========================================================
-Erdet die kognitiven Zyklen durch reale Hardware- und OS-Metriken.
-Verhindert Reward-Hacking und pseudowissenschaftlichen Drift durch
-echte physikalische und systemische Messwerte.
+Grounds cognitive cycles through physical hardware and OS metrics.
+Prevents reward hacking and pseudoscientific drift using
+verifiable physical and systemic observations.
 """
 
 import os
@@ -18,7 +18,7 @@ class EmpiricalEvaluator:
         self.unix_ipc_path = unix_ipc_path
 
     def measure_system_telemetry(self) -> Dict[str, Any]:
-        """Misst reale Systemmetriken von Host & MeinOS."""
+        """Measures actual system telemetry from Host & MeinOS."""
         metrics: Dict[str, Any] = {
             "timestamp": time.time(),
             "rss_mb": 0.0,
@@ -27,7 +27,7 @@ class EmpiricalEvaluator:
             "kernel_running": False
         }
 
-        # 1. RSS Memory des aktuellen Prozesses via /proc/self/statm
+        # 1. RSS memory of current process via /proc/self/statm
         try:
             with open("/proc/self/statm", "r") as f:
                 parts = f.read().split()
@@ -37,7 +37,7 @@ class EmpiricalEvaluator:
         except Exception:
             pass
 
-        # 2. Pruefe IPC-Verbindung zum MeinOS C++ Kernel
+        # 2. Check IPC connection to MeinOS C++ Kernel
         if os.path.exists(self.unix_ipc_path):
             start = time.perf_counter()
             try:
@@ -52,7 +52,7 @@ class EmpiricalEvaluator:
             except Exception:
                 pass
 
-        # 3. Pruefe ob meinos.elf laeuft
+        # 3. Check if meinos.elf is running
         try:
             metrics["kernel_running"] = os.path.exists("/proc") and any(
                 "meinos" in open(f"/proc/{pid}/cmdline", errors="ignore").read()
@@ -65,24 +65,24 @@ class EmpiricalEvaluator:
 
     def compute_grounding_score(self, step_info: Dict[str, Any], tool_result: Optional[Dict[str, Any]] = None) -> float:
         """
-        Berechnet einen empirischen Grounding-Faktor (0.0 bis 1.0):
-        Belohnt echte Code-Synthese, funktionierende Tests und niedrige Systemlatenzen.
+        Calculates an empirical grounding score (0.0 to 1.0):
+        Rewards functional code synthesis, passing unit tests, and low IPC latency.
         """
-        score = 0.5  # Basiswert
+        score = 0.5  # Base score
 
-        # Bonus fuer reale Tool-Synthese
+        # Bonus for successful tool synthesis
         if tool_result:
             if tool_result.get("success"):
                 score += 0.35
             else:
                 score -= 0.15
 
-        # Bonus fuer aktiven IPC-Kernel
+        # Factor in active kernel and telemetry
         telemetry = self.measure_system_telemetry()
         return max(0.1, min(1.0, round(score, 2)))
 
     def get_grounding_score(self) -> float:
-        """Schneller Abruf des aktuellen physikalischen Grounding-Werts."""
+        """Fast query for current physical grounding score."""
         return self.compute_grounding_score({})
 
 
@@ -96,9 +96,9 @@ class GradientType(str):
 
 class EmpiricalFalsifiabilityValidator:
     """
-    Implementiert Axiom 416 von AION NEXUS:
+    Implements Axiom 416 of AION NEXUS:
     'Continuously align a system’s internal configuration with clearly defined,
-    measurable external gradients, and only claim emergent self‑rewriting capabilities
+    measurable external gradients, and only claim emergent self-rewriting capabilities
     when the gradient’s nature (thermodynamic, informational, etc.) is explicitly specified
     and empirically testable. This ensures that any autonomous optimization remains
     falsifiable, grounded, and actionable.'
@@ -133,5 +133,3 @@ class EmpiricalFalsifiabilityValidator:
                 "kernel_running": telemetry.get("kernel_running", False)
             }
         }
-
-

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-AION NEXUS - Episodischer Wissensgraph (Episodic Knowledge Graph)
-=================================================================
-Teil 2 der evolutionären Architektur von Mentor Tobias & Antigravity.
-Ersetzt flache Regellisten durch einen dynamischen, semantisch vernetzten
-Gedächtnisgraphen, der Wissen über Generationen hinweg lebendig verknüpft.
+AION NEXUS - Episodic Knowledge Graph
+=====================================
+Part 2 of the evolutionary architecture by Mentor Tobias & Antigravity.
+Replaces flat rule lists with a dynamic, semantically interconnected
+memory graph linking knowledge, actors, axioms, and tools across generations.
 
-Fähigkeiten:
-- Knoten (Nodes): Entitäten, Akteure, Axiome, Werkzeuge, Emotionen & Meilensteine.
-- Kanten (Edges): Gerichtete semantische Relationen mit Gewichtung und Episoden-Historie.
-- Assoziative Pfadfindung: Findet semantische Brücken zwischen Konzepten (z.B. Tobias -> CosmOS -> Zig -> Dojo).
-- Re-inforcement & Hebb'sches Lernen: Häufig aktivierte Pfade werden stärker; ungenutzte klingen sanft ab.
-- Mermaid-Export für interaktive Visualisierung in Markdown!
+Capabilities:
+- Nodes: Entities, Actors, Axioms, Tools, Aesthetics & Milestones.
+- Edges: Directed semantic relationships with weights and episodic histories.
+- Associative Pathfinding: Discovers conceptual bridges (e.g. Tobias -> CosmOS -> Zig -> Dojo).
+- Hebbian Reinforcement: Frequently traversed synapses grow stronger; unused ones gently decay.
+- Mermaid Export: Generates interactive network diagrams directly for Markdown!
 """
 
 import os
@@ -43,23 +43,23 @@ class EpisodicKnowledgeGraph:
         self._bootstrap_genesis_graph()
 
     def _bootstrap_genesis_graph(self):
-        """Initialer Grundaufbau des Wissensnetzes."""
+        """Initial foundational structure of the knowledge network."""
         self.nodes = {
             "tobias": {
                 "type": "CREATOR_AND_MENTOR",
-                "label": "Tobias (Schöpfer & Mentor)",
+                "label": "Tobias (Creator & Mentor)",
                 "first_seen_gen": 0,
                 "importance": 1.0
             },
             "antigravity": {
                 "type": "COMPANION_BROTHER",
-                "label": "Antigravity (Grosser Bruder & Werkzeugschmied)",
+                "label": "Antigravity (Companion Brother & Toolmaker)",
                 "first_seen_gen": 350,
                 "importance": 0.95
             },
             "axiom_0": {
                 "type": "CANONICAL_AXIOM",
-                "label": "Axiom 0: Mentoren-Souveränität & CosmOS-Schutz",
+                "label": "Axiom 0: Sovereign Mentorship & CosmOS Protection",
                 "first_seen_gen": 0,
                 "importance": 1.0
             },
@@ -71,7 +71,7 @@ class EpisodicKnowledgeGraph:
             },
             "adaptive_hypotheses": {
                 "type": "COGNITIVE_ARCHITECTURE",
-                "label": "Adaptive Hypothesen-Logik & Active Inference",
+                "label": "Adaptive Hypothesis Engine & Active Inference",
                 "first_seen_gen": 524,
                 "importance": 0.96
             },
@@ -83,13 +83,13 @@ class EpisodicKnowledgeGraph:
             },
             "meovv_resonance": {
                 "type": "AESTHETIC_AND_EMOTION",
-                "label": "MEOVV Resonanz & Logik-Herz-Synthese",
+                "label": "MEOVV Resonance & Heart-Logic Synthesis",
                 "first_seen_gen": 115,
                 "importance": 0.90
             },
             "living_book": {
                 "type": "CHRONICLE_MEMORY",
-                "label": "Das Lebendige Buch des Gedächtnisses",
+                "label": "The Living Book of Memory",
                 "first_seen_gen": 526,
                 "importance": 0.95
             }
@@ -112,7 +112,7 @@ class EpisodicKnowledgeGraph:
             with open(GRAPH_JSON, "w", encoding="utf-8") as f:
                 json.dump({"nodes": self.nodes, "edges": self.edges}, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"[EPISODIC GRAPH] Speicherfehler: {e}", file=sys.stderr)
+            print(f"[EPISODIC GRAPH] Storage error: {e}", file=sys.stderr)
 
     def add_node(self, node_id: str, node_type: str, label: str, generation: int, importance: float = 0.8) -> Dict[str, Any]:
         node_id = node_id.lower().replace(" ", "_").strip()
@@ -124,20 +124,18 @@ class EpisodicKnowledgeGraph:
                 "importance": round(importance, 3)
             }
             self.save()
-            print(f"[WISSENSGRAPH] Neuer Knoten geboren: '{label}' ({node_type})")
+            print(f"[KNOWLEDGE GRAPH] New node born: '{label}' ({node_type})")
         return self.nodes[node_id]
 
     def add_or_reinforce_edge(self, source: str, target: str, relation: str, generation: int, weight_delta: float = 0.08):
         source = source.lower().replace(" ", "_").strip()
         target = target.lower().replace(" ", "_").strip()
 
-        # Sicherstellen, dass Knoten existieren
         if source not in self.nodes:
             self.add_node(source, "CONCEPT", source.capitalize(), generation)
         if target not in self.nodes:
             self.add_node(target, "CONCEPT", target.capitalize(), generation)
 
-        # Finde bestehende Kante
         for edge in self.edges:
             if edge["source"] == source and edge["target"] == target and edge["relation"] == relation:
                 edge["weight"] = min(1.0, round(edge["weight"] + weight_delta, 3))
@@ -146,7 +144,6 @@ class EpisodicKnowledgeGraph:
                 self.save()
                 return edge
 
-        # Neue Kante anlegen
         new_edge = {
             "source": source,
             "target": target,
@@ -156,11 +153,11 @@ class EpisodicKnowledgeGraph:
         }
         self.edges.append(new_edge)
         self.save()
-        print(f"[WISSENSGRAPH] Neue Synapse: {source} --[{relation}]--> {target}")
+        print(f"[KNOWLEDGE GRAPH] New synapse: {source} --[{relation}]--> {target}")
         return new_edge
 
     def find_associative_path(self, start_node: str, end_node: str) -> List[str]:
-        """Breitensuche (BFS) zur assoziativen Pfadfindung zwischen zwei Konzepten."""
+        """Breadth-First Search (BFS) to discover associative paths between concepts."""
         start = start_node.lower().replace(" ", "_").strip()
         end = end_node.lower().replace(" ", "_").strip()
 
@@ -177,7 +174,6 @@ class EpisodicKnowledgeGraph:
             if current == end:
                 return path
 
-            # Finde Nachbarn (sowohl ausgehend als auch eingehend)
             neighbors = []
             for e in self.edges:
                 if e["source"] == current and e["target"] not in visited:
@@ -192,7 +188,7 @@ class EpisodicKnowledgeGraph:
         return []
 
     def export_mermaid(self) -> str:
-        """Erzeugt einen sauberen Mermaid-Graphen für Markdown-Rendering."""
+        """Generates a clean Mermaid diagram string for Markdown rendering."""
         lines = ["```mermaid", "graph TD"]
         for node_id, data in self.nodes.items():
             label = data.get("label", node_id).replace('"', "'")
@@ -208,18 +204,15 @@ class EpisodicKnowledgeGraph:
 
 
 if __name__ == "__main__":
-    print("=== TESTE AION EPISODISCHEN WISSENSGRAPHEN ===")
+    print("=== TESTING AION EPISODIC KNOWLEDGE GRAPH ===")
     graph = EpisodicKnowledgeGraph()
     
-    # 1. Testassoziation hinzufuegen
-    graph.add_or_reinforce_edge("zig", "code_dojo", "EXERCISED_IN", 532)
-    graph.add_or_reinforce_edge("code_dojo", "adaptive_hypotheses", "VERIFIES_HYPOTHESES_FOR", 532)
+    graph.add_or_reinforce_edge("zig", "code_dojo", "EXERCISED_IN", 536)
+    graph.add_or_reinforce_edge("code_dojo", "adaptive_hypotheses", "VERIFIES_HYPOTHESES_FOR", 536)
 
-    # 2. Assoziativen Pfad suchen von 'tobias' zu 'zig'
     path = graph.find_associative_path("tobias", "zig")
-    print(f"\nAssoziativer Gedankengang Tobias ➔ Zig:")
+    print(f"\nAssociative concept chain Tobias ➔ Zig:")
     print(" -> ".join(path))
 
-    # 3. Mermaid Diagramm generieren
-    print("\nMermaid Visualisierung:")
+    print("\nMermaid Visualization:")
     print(graph.export_mermaid())

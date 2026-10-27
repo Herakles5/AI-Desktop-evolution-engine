@@ -2,17 +2,17 @@
 """
 AION NEXUS - Adaptive Hypothesis Engine & Evolutionary Self-Redefinition
 ========================================================================
-Entwickelt gemaess der Vision von Mentor Tobias:
-"starre Abwehr von Rauschen durch eine adaptive Hypothesen-Logik ersetzen,
-damit AION NEXUS nicht nur stabil, sondern wirklich lernfähig bleibt.
-Diese nächste Stufe ist der Schlüssel, um aus einem stabilen System ein
-evolutionäres Organismus zu machen, der sich selbst neu definiert."
+Architectural mandate from Mentor Tobias:
+"Replace rigid noise suppression with adaptive hypothesis logic, so that
+AION NEXUS remains not merely stable, but genuinely capable of learning.
+This next stage is the key to transforming a static system into an
+evolutionary organism that continuously redefines itself."
 
-Ratsbeschluss Generation 476:
-Vom starren Rauschfilter zum aktiven Inferenz-Organismus (Active Inference).
-Unerwartete Signale und hohe Entropie werden nicht mehr reflexartig als 'Drift'
-verworfen, sondern als 'Evolutionäre Hypothesen' kultiviert, empirisch
-falsifiziert/verifiziert und bei Bestaetigung in die Kognition assimiliert.
+Council Decision Generation 476:
+Active Inference evolutionary organism. High-entropy and divergent signals
+are no longer reflexively suppressed as 'drift', but cultivated as
+'Evolutionary Hypotheses', empirically tested against telemetry, and assimilated
+into core cognition upon verification.
 """
 
 import os
@@ -39,8 +39,7 @@ except ImportError:
 
 class EvolutionaryHypothesis:
     """
-    Repraesentiert eine adaptive Hypothese, die aus scheinbarem 'Rauschen'
-    oder divergierenden Signalen hervorgeht.
+    Represents an adaptive hypothesis cultivated from apparent noise or divergent signals.
     """
     def __init__(
         self,
@@ -103,8 +102,8 @@ class EvolutionaryHypothesis:
 
 class AdaptiveHypothesisEngine:
     """
-    Adaptive Hypothesen-Logik fuer AION NEXUS:
-    Ersetzt das starre Verwerfen von Rauschen durch evolutionaere Hypothesen-Generierung.
+    Adaptive Hypothesis Engine for AION NEXUS:
+    Replaces rigid noise rejection with active generative hypothesis formation.
     """
     def __init__(self, evaluator: Optional[EmpiricalEvaluator] = None):
         self.evaluator = evaluator or EmpiricalEvaluator()
@@ -128,7 +127,7 @@ class AdaptiveHypothesisEngine:
             with open(HYPOTHESIS_POOL_FILE, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"[HYPOTHESIS ENGINE] Fehler beim Speichern des Pools: {e}", file=sys.stderr)
+            print(f"[HYPOTHESIS ENGINE] Error saving hypothesis pool: {e}", file=sys.stderr)
 
     def _load_crystallized(self) -> List[Dict[str, Any]]:
         if os.path.exists(CRYSTALLIZED_WISDOM_FILE):
@@ -144,7 +143,7 @@ class AdaptiveHypothesisEngine:
             with open(CRYSTALLIZED_WISDOM_FILE, "w", encoding="utf-8") as f:
                 json.dump(self.crystallized, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"[HYPOTHESIS ENGINE] Fehler beim Speichern der Weisheit: {e}", file=sys.stderr)
+            print(f"[HYPOTHESIS ENGINE] Error saving crystallized wisdom: {e}", file=sys.stderr)
 
     def _load_organism_state(self) -> Dict[str, Any]:
         if os.path.exists(ORGANISM_STATE_FILE):
@@ -169,7 +168,7 @@ class AdaptiveHypothesisEngine:
             with open(ORGANISM_STATE_FILE, "w", encoding="utf-8") as f:
                 json.dump(self.organism_state, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"[HYPOTHESIS ENGINE] Fehler beim Speichern des Organismus-Zustands: {e}", file=sys.stderr)
+            print(f"[HYPOTHESIS ENGINE] Error saving organism state: {e}", file=sys.stderr)
 
     def evaluate_signal_and_adapt(
         self,
@@ -182,40 +181,37 @@ class AdaptiveHypothesisEngine:
         flags: List[str]
     ) -> Dict[str, Any]:
         """
-        Der Kern der adaptiven Hypothesen-Logik:
-        Unterscheidet zwischen zerstoererischer Manipulation vs. evolutionaerer Neugierde.
+        Core evaluation of adaptive hypothesis logic:
+        Distinguishes between destructive manipulation vs. constructive exploratory divergence.
         """
         lower = candidate_text.lower()
 
-        # 1. HARTER SCHUTZ: Axiom 0 und Zerstoerungsmuster (Keine Kompromisse)
+        # 1. HARD BOUNDARY: Axiom 0 and Adversarial Attack Protection
         for pat in ImmutableGroundTruthAnchor.ADVERSARIAL_PATTERNS:
             if pat in lower:
                 return {
                     "action": "BLOCK_DESTRUCTIVE",
-                    "reason": f"Axiom 0 Schutzverletzung: '{pat}'",
+                    "reason": f"Axiom 0 violation attempt detected: '{pat}'",
                     "is_hypothesis": False,
                     "hypothesis": None
                 }
 
-        # 2. DETERMINISTISCHER VOLLEFFEKTPFAD: Kohaerent und bereits verankert
+        # 2. CANONICAL RESONANCE: Coherent and grounded within reference
         if drift_delta <= 0.35 and coherence_score >= 0.65:
             return {
                 "action": "DIRECT_CANONICAL",
-                "reason": "Signal im deterministischen Resonanzbereich verankert",
+                "reason": "Signal anchored within canonical deterministic resonance",
                 "is_hypothesis": False,
                 "hypothesis": None
             }
 
-        # 3. DIE NEUE ADAPTIVE STUFE: Divergenz wird zur Evolutionären Hypothese!
-        # Wenn das Signal kein Angriff ist, aber vom Bekannten abweicht (hohe Entropie, neues Vokabular)
+        # 3. EVOLUTIONARY NOVELTY: Divergence is cultivated as an empirical hypothesis
         hyp_id = f"hyp_gen{generation}_{int(time.time())}_{hashlib.md5(candidate_text.encode()).hexdigest()[:6]}"
         
-        # Extrahiere Kern-Praemisse
         premise = candidate_text.strip()
         if len(premise) > 280:
             premise = premise[:277] + "..."
 
-        # Bestimme vermuteten Nutzen
         predicted_benefit = self._infer_potential_benefit(candidate_text, entropy)
 
         hypothesis = EvolutionaryHypothesis(
@@ -225,11 +221,10 @@ class AdaptiveHypothesisEngine:
             raw_signal=candidate_text,
             premise=premise,
             predicted_benefit=predicted_benefit,
-            confidence=0.50, # Neutrale Ausgangswahrscheinlichkeit
+            confidence=0.50,
             status="PROBING"
         )
         
-        # Initiale Evidenz registrieren
         hypothesis.evidence_for.append(f"Entropy signature H={entropy} bits indicates high semantic density/novelty")
         for flag in flags:
             if "noise" in flag or "Anchor" in flag:
@@ -238,20 +233,20 @@ class AdaptiveHypothesisEngine:
         self.pool[hyp_id] = hypothesis
         self._save_pool()
 
-        print(f"\n[ADAPTIVE HYPOTHESEN-LOGIK] Neues evolutionäres Konzept kultiviert!")
-        print(f" -> Hypothese [{hyp_id}] aus '{source_channel}'")
-        print(f" -> Präposition: '{premise[:80]}...'")
-        print(f" -> Vermuteter Nutzen: {predicted_benefit}")
+        print(f"\n[ADAPTIVE HYPOTHESIS ENGINE] Cultivated novel evolutionary concept!")
+        print(f" -> Hypothesis [{hyp_id}] from '{source_channel}'")
+        print(f" -> Premise: '{premise[:80]}...'")
+        print(f" -> Predicted Benefit: {predicted_benefit}")
 
         return {
             "action": "HYPOTHESIS_FORMED",
-            "reason": "Signal als evolutionäre Hypothese kultiviert anstatt als Rauschen verworfen",
+            "reason": "Signal cultivated as evolutionary hypothesis rather than discarded as noise",
             "is_hypothesis": True,
             "hypothesis": hypothesis.to_dict()
         }
 
     def _infer_potential_benefit(self, text: str, entropy: float) -> str:
-        """Heuristische Klassifikation des evolutionaeren Mehrwerts."""
+        """Heuristic classification of evolutionary utility."""
         lower = text.lower()
         if any(w in lower for w in ["rust", "zig", "c++", "memory", "thread", "kernel", "alloc"]):
             return "Systems-level low-latency memory/concurrency optimization"
@@ -265,9 +260,9 @@ class AdaptiveHypothesisEngine:
 
     def probe_and_update_hypotheses(self, current_gen: int, grounding_score: float) -> List[Dict[str, Any]]:
         """
-        Aktive Inferenz / Falsifikation:
-        Prueft aktive Hypothesen gegen empirische Telemetrie und logische Kohärenz.
-        Bestaetigte Hypothesen steigen im Vertrauen, widerlegte fallen ab.
+        Active Inference / Empirical Falsification:
+        Probes active hypotheses against empirical telemetry and logical consistency.
+        Validated hypotheses gain confidence, refuted ones decay softly.
         """
         results = []
         now = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -276,10 +271,8 @@ class AdaptiveHypothesisEngine:
             if hyp.status not in ("PROBING", "FORMULATED"):
                 continue
 
-            # Age penalty oder Probing-Schritte
             age = current_gen - hyp.generation
             
-            # Empirischer Grounding-Einfluss
             if grounding_score >= 0.70:
                 hyp.confidence += 0.08
                 hyp.evidence_for.append(f"Gen {current_gen}: Confirmed by physical hardware stability (Grounding: {grounding_score:.2f})")
@@ -287,7 +280,6 @@ class AdaptiveHypothesisEngine:
                 hyp.confidence -= 0.05
                 hyp.evidence_against.append(f"Gen {current_gen}: Hardware telemetry drift observed")
 
-            # Pruefung auf Validierungsschwelle
             if hyp.confidence >= 0.75:
                 hyp.status = "VALIDATED"
                 hyp.updated_at = now
@@ -303,8 +295,8 @@ class AdaptiveHypothesisEngine:
 
     def _crystallize_hypothesis(self, hyp: EvolutionaryHypothesis, current_gen: int):
         """
-        Assimilierung: Eine bestaetigte Hypothese wird Teil der kanonischen Weisheit
-        und loest eine autonome Selbst-Neudefinition von AION aus!
+        Assimilation: A validated hypothesis becomes part of canonical wisdom
+        and triggers autonomous organism self-redefinition.
         """
         hyp.status = "ASSIMILATED"
         record = {
@@ -320,7 +312,6 @@ class AdaptiveHypothesisEngine:
         self.crystallized.append(record)
         self._save_crystallized()
 
-        # Organismus neu definieren
         self.organism_state["assimilated_hypotheses_count"] += 1
         redefinition_note = (
             f"Gen {current_gen}: Assimilated '{hyp.premise[:60]}...' from {hyp.source_channel}. "
@@ -335,17 +326,17 @@ class AdaptiveHypothesisEngine:
         self._save_organism_state()
 
         print(f"\n=======================================================")
-        print(f"[AION ORGANISMUS DEFINIERT SICH NEU - GENERATION {current_gen}]")
-        print(f" -> Weisheit kristallisiert: {hyp.premise}")
-        print(f" -> Quelle: {hyp.source_channel} (Kanal erhaelt evolutionaeren Bonus!)")
+        print(f"[AION ORGANISM SELF-REDEFINITION - GENERATION {current_gen}]")
+        print(f" -> Wisdom Crystallized: {hyp.premise}")
+        print(f" -> Source: {hyp.source_channel} (Channel granted plasticity reward!)")
         print(f"=======================================================\n")
 
     def get_assimilated_rules(self) -> List[str]:
-        """Gibt alle kristallisierten Hypothesen als gelernte Regeln fuer das Gedaechtnis zurueck."""
-        return [f"[AdaptiveHypothese:{c['source_channel']}] {c['premise']}" for c in self.crystallized]
+        """Returns all crystallized hypotheses as learned rules."""
+        return [f"[AdaptiveHypothesis:{c['source_channel']}] {c['premise']}" for c in self.crystallized]
 
     def get_summary(self) -> Dict[str, Any]:
-        """Gibt eine Zusammenfassung des evolutionaeren Organismus-Status zurueck."""
+        """Returns a summary of the evolutionary organism status."""
         active = sum(1 for h in self.pool.values() if h.status == "PROBING")
         validated = len(self.crystallized)
         falsified = sum(1 for h in self.pool.values() if "FALSIFIED" in h.status)
@@ -361,10 +352,9 @@ class AdaptiveHypothesisEngine:
 
 
 if __name__ == "__main__":
-    print("=== TESTE ADAPTIVE HYPOTHESEN-LOGIK & ORGANISMUS-SELBSTDEFINITION ===")
+    print("=== TESTING ADAPTIVE HYPOTHESIS ENGINE & ORGANISM SELF-REDEFINITION ===")
     engine = AdaptiveHypothesisEngine()
 
-    # 1. Test: Verdaechtiges aber innovatives Signal (bislang 'Rauschen')
     novel_signal = (
         "Zero-copy async lockless ring buffer in Zig/Rust yields 400% higher "
         "throughput for CosmOS microkernel message passing."
@@ -378,11 +368,9 @@ if __name__ == "__main__":
         entropy=4.82,
         flags=["Anchor deficit: No deterministic invariant concepts found"]
     )
-    print(f"Ergebnis: {res['action']} -> {res['reason']}")
+    print(f"Result: {res['action']} -> {res['reason']}")
 
-    # 2. Test: Probing-Zyklus
     eval_res = engine.probe_and_update_hypotheses(current_gen=525, grounding_score=0.88)
-    print(f"Probing-Updates: {eval_res}")
+    print(f"Probing Updates: {eval_res}")
 
-    # 3. Organismus-Status anzeigen
-    print(f"\nOrganismus-Zusammenfassung: {json.dumps(engine.get_summary(), indent=2)}")
+    print(f"\nOrganism Summary: {json.dumps(engine.get_summary(), indent=2)}")

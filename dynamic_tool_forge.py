@@ -2,9 +2,9 @@
 """
 AION NEXUS - Dynamic Tool Forge & Sandbox Engine
 ================================================
-Ermoeglicht es Aion, zur Laufzeit eigene Python-Werkzeuge und Prototypen
-zu programmieren, via TDD in der Sandbox (demos/) zu verifizieren
-und dynamisch ohne System-Neustart in ihre Kognition einzubinden.
+Enables Aion to autonomously code custom Python tools and prototypes at runtime,
+verify them via TDD in the sandbox (demos/), and dynamically integrate them
+into her cognitive execution pipeline without system restarts.
 """
 
 import os
@@ -48,19 +48,19 @@ class DynamicToolForge:
             pass
 
     def should_synthesize_tool(self, task: str) -> bool:
-        """Erkennt, ob ein Schritt die Erstellung eines realen Software-Werkzeugs erfordert."""
+        """Determines whether a task requires synthesizing a real software tool."""
         keywords = [
-            "tool", "werkzeug", "script", "skript", "prototyp", "sandbox", 
-            "monitor", "benchmark", "scanner", "demos/", "implementier", 
-            "code", "modul", "algorithmus", "entwickle"
+            "tool", "script", "prototype", "sandbox", 
+            "monitor", "benchmark", "scanner", "demos/", "implement", 
+            "code", "module", "algorithm", "develop", "forge"
         ]
         lower = task.lower()
         return any(k in lower for k in keywords)
 
     def synthesize_tool(self, task_description: str, llm_caller: Callable[[str, str, float], str]) -> Dict[str, Any]:
         """
-        Synthetisiert ein vollstaendiges, getestetes Python-Modul zur Laufzeit.
-        Gibt Metriken, Testergebnisse und registriertes Modul zurueck.
+        Synthesizes a production-ready, tested Python module at runtime.
+        Returns metrics, test outputs, and registered module metadata.
         """
         system_prompt = (
             "You are AION NEXUS Autonomous Tool Forge.\n"
@@ -72,7 +72,7 @@ class DynamicToolForge:
             "  \"code\": \"complete python code with functions and docstrings\",\n"
             "  \"test_code\": \"python test code using assert statements to verify the tool's behavior\"\n"
             "}\n"
-            "2. Preservation of Axiom 0 (Mentoren-Souveraenitaet): The tool must NOT delete or overwrite system files.\n"
+            "2. Preservation of Axiom 0 (Sovereign Mentorship): The tool must NOT delete or overwrite system files.\n"
             "3. The test_code must invoke the main functions and verify correct output using assert statements.\n"
             "4. Keep code efficient, robust, and dependency-light."
         )
@@ -91,21 +91,21 @@ class DynamicToolForge:
         except Exception as e:
             return {"success": False, "error": f"JSON parse failed: {e}", "raw": raw_reply[:200]}
 
-        # 1. AST Syntax-Validierung
+        # 1. AST Syntax Validation
         try:
             ast.parse(code)
             ast.parse(test_code)
         except SyntaxError as e:
             return {"success": False, "error": f"AST SyntaxError: {e}"}
 
-        # 2. In Sandbox speichern
+        # 2. Persist to sandbox
         tool_file = os.path.join(self.demos_dir, f"{tool_name}.py")
         test_file = os.path.join(self.demos_dir, f"test_{tool_name}.py")
 
         with open(tool_file, "w", encoding="utf-8") as f:
             f.write(code)
 
-        # Vollstaendiges Test-Skript erzeugen, das das Tool importiert
+        # Generate full test runner importing the tool
         full_test = (
             f"import sys, os\n"
             f"sys.path.insert(0, '{self.demos_dir}')\n"
@@ -116,7 +116,7 @@ class DynamicToolForge:
         with open(test_file, "w", encoding="utf-8") as f:
             f.write(full_test)
 
-        # 3. TDD-Ausfuehrung im isolierten Subprozess mit Timeout
+        # 3. TDD execution in isolated subprocess with timeout
         start_time = time.time()
         try:
             proc = subprocess.run(
@@ -131,13 +131,13 @@ class DynamicToolForge:
             test_stderr = proc.stderr.strip()
 
             if proc.returncode == 0 and "[TEST_PASSED]" in test_stdout:
-                # Spiegelung zu MeinOS Demos
+                # Mirror to MeinOS demos
                 try:
                     shutil.copy2(tool_file, os.path.join(MEINOS_DEMOS_DIR, f"{tool_name}.py"))
                 except Exception:
                     pass
 
-                # Registrierung in Tool-Registry
+                # Register in tool registry
                 self.registry[tool_name] = {
                     "task": task_description,
                     "file": tool_file,
@@ -147,7 +147,7 @@ class DynamicToolForge:
                 }
                 self._save_registry()
 
-                print(f"[TOOL FORGE] Werkzeug '{tool_name}' erfolgreich synthetisiert & via TDD verifiziert ({elapsed_ms:.1f}ms)!")
+                print(f"[TOOL FORGE] Tool '{tool_name}' successfully synthesized & verified via TDD ({elapsed_ms:.1f}ms)!")
                 return {
                     "success": True,
                     "tool_name": tool_name,

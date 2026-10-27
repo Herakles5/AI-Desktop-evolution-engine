@@ -2,19 +2,19 @@
 """
 CosmOS VPN Protocol - 26-Byte Packet Engine
 ============================================
-Basiert auf Tobias' nativer C++ Implementierung in MeinOS/cosmos_vpn_crypto.h.
-Ermöglicht AION, die proprietären 26-Byte Handshake- und Daten-Header
-von CosmOS direkt in Python zu packen, zu verifizieren und zu entschlüsseln.
+Based on Tobias' native C++ implementation in MeinOS/cosmos_vpn_crypto.h.
+Enables AION to pack, verify, and parse the proprietary 26-Byte handshake
+and data packet headers of CosmOS directly in Python.
 
-Header-Layout (exakt 26 Bytes):
+Header Layout (exactly 26 Bytes):
 - magic_start: 2 Bytes (0x2A, 0xC0)
 - payload_size: 2 Bytes (uint16_t, Little-Endian)
 - reserved: 11 Bytes
 - text_vpn: 3 Bytes ("VPN")
-- frame_id: 4 Bytes (uint32_t, Stream-Cipher-Synchronisation)
-- checksum: 2 Bytes (Payload Sum)
+- frame_id: 4 Bytes (uint32_t, stream cipher synchronization)
+- checksum: 2 Bytes (payload checksum)
 - magic_end: 2 Bytes (0xEE, 0xFF)
-Gesamt: 2 + 2 + 11 + 3 + 4 + 2 + 2 = 26 Bytes!
+Total: 2 + 2 + 11 + 3 + 4 + 2 + 2 = 26 Bytes!
 """
 
 import struct
@@ -29,7 +29,7 @@ class CosmosVpnPacket26:
 
     @classmethod
     def pack_data_header(cls, payload_size: int, frame_id: int, payload_checksum: int) -> bytes:
-        """Packt den 26-Byte CosmOS Daten-Header."""
+        """Packs the 26-Byte CosmOS data header."""
         reserved = bytes(11)
         header = (
             cls.MAGIC_START +
@@ -40,12 +40,12 @@ class CosmosVpnPacket26:
             struct.pack("<H", payload_checksum) +
             cls.MAGIC_END
         )
-        assert len(header) == cls.HEADER_SIZE, f"Header muss exakt 26 Bytes sein, ist aber {len(header)}"
+        assert len(header) == cls.HEADER_SIZE, f"Header must be exactly 26 bytes, but got {len(header)}"
         return header
 
     @classmethod
     def unpack_data_header(cls, data: bytes) -> Optional[dict]:
-        """Validiert und entpackt einen 26-Byte Header."""
+        """Validates and unpacks a 26-Byte header."""
         if len(data) < cls.HEADER_SIZE:
             return None
         if data[0:2] != cls.MAGIC_START or data[24:26] != cls.MAGIC_END:
@@ -66,7 +66,7 @@ class CosmosVpnPacket26:
 
     @classmethod
     def calculate_checksum(cls, payload: bytes) -> int:
-        """Berechnet die 16-Bit Payload-Summe aus cosmos_vpn_crypto.h."""
+        """Calculates the 16-bit payload checksum matching cosmos_vpn_crypto.h."""
         return sum(payload) & 0xFFFF
 
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     cs = CosmosVpnPacket26.calculate_checksum(test_payload)
     hdr = CosmosVpnPacket26.pack_data_header(len(test_payload), frame_id=1337, payload_checksum=cs)
     
-    print(f"Header-Laenge: {len(hdr)} Bytes (Soll: 26)")
-    print(f"Header-Hex: {hdr.hex()}")
+    print(f"Header Length: {len(hdr)} Bytes (Expected: 26)")
+    print(f"Header Hex: {hdr.hex()}")
     parsed = CosmosVpnPacket26.unpack_data_header(hdr)
-    print("Geparst:", parsed)
+    print("Parsed Result:", parsed)

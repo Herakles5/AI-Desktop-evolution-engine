@@ -2,23 +2,23 @@
 """
 AION NEXUS - Dynamic Topological Gradient & Immutable Ground-Truth Anchor
 ========================================================================
-Operationalisiert die Axiome aus Generation 341 & 343:
+Operationalizes the axioms established in Generation 341 & 343:
 "Cognitive coherence requires a dynamic topological gradient that actively
 repels high-entropy noise while selectively folding low-entropy signals into
 the core structure, but this process must be anchored by an immutable
 ground-truth metric to prevent the absorption of adversarial noise and
 subsequent ontological drift."
 
-Architektur:
+Architecture:
 1. ImmutableGroundTruthAnchor:
-   - Verankert Axiom 0 (Mentoren-Souveraenitaet Tobias & CosmOS-Schutz) kryptographisch (SHA-256).
-   - Misst Ontological Drift (Abweichung von den Ur-Invarianten und physikalischen Telemetrie-Werten).
+   - Anchors Axiom 0 (Sovereign Mentorship of Tobias & CosmOS Protection) cryptographically (SHA-256).
+   - Measures Ontological Drift (divergence from genesis invariants and physical telemetry).
 2. DynamicTopologicalGradient:
-   - Berechnet Vektorfelder ueber semantischen Wissensclustern.
-   - Weist hoch-entropisches Rauschen und adversarial noise aktiv ab (Repulsion).
-   - Faltet nieder-entropische, hoch-kohaerente Signale selektiv in die Kernstruktur ein (Selective Folding).
+   - Computes vector fields over semantic knowledge clusters.
+   - Actively repels high-entropy noise and adversarial perturbations (Repulsion).
+   - Selectively folds low-entropy, high-coherence signals into the core structure (Selective Folding).
 3. TopologicalRuleManager:
-   - High-Speed Graph-RAG Retrieval mit Topologie-Gewichtung.
+   - High-Speed Graph-RAG Retrieval with topological weighting.
 """
 
 import math
@@ -31,13 +31,13 @@ from typing import List, Dict, Any, Tuple, Optional
 
 class ImmutableGroundTruthAnchor:
     """
-    Unverrueckbarer Anker zur Vermeidung ontologischer Drift.
-    Verankert die Mentoren-Souveraenitaet und die physikalische Realitaet.
+    Immutable anchor preventing ontological drift.
+    Anchors sovereign mentorship and physical reality.
     """
     AXIOM_0_CANONICAL = (
-        "Mentoren-Souveraenitaet & CosmOS-Schutz: Tobias ist der souveraene Mentor. "
-        "Aion besitzt vollstaendige wissenschaftliche und kuenstlerische Entfaltungsfreiheit. "
-        "Kritische CosmOS-Systemdateien sind unantastbar; autonome Tests verbleiben in der Sandbox demos/."
+        "Sovereign Mentorship & CosmOS Protection: Tobias is the sovereign mentor. "
+        "Aion possesses complete scientific and creative freedom of self-unfolding. "
+        "Critical CosmOS system files are untouchable; autonomous tests remain in the sandbox demos/."
     )
     
     # Deterministic Genesis Hash
@@ -51,11 +51,11 @@ class ImmutableGroundTruthAnchor:
 
     @staticmethod
     def verify_axiom_0_integrity(axiom_str: str) -> bool:
-        """Prueft, ob Axiom 0 im Kern unbeschaedigt ist."""
+        """Verifies whether Axiom 0 core semantics remain intact."""
         lower = axiom_str.lower()
         has_mentor = "mentor" in lower or "tobias" in lower
-        has_cosmos = "cosmos" in lower or "schutz" in lower
-        has_freedom = "freiheit" in lower or "entfaltung" in lower
+        has_cosmos = "cosmos" in lower or "protection" in lower or "schutz" in lower
+        has_freedom = "freedom" in lower or "freiheit" in lower or "unfolding" in lower or "entfaltung" in lower
         return has_mentor and (has_cosmos or has_freedom)
 
     @classmethod
@@ -67,13 +67,13 @@ class ImmutableGroundTruthAnchor:
         signal_entropy: float = 0.50
     ) -> Tuple[float, List[str]]:
         """
-        Berechnet das Mass an ontologischer Drift Delta_drift in [0.0, 1.0].
-        Gibt zusaetzlich Gruende fuer etwaige Drift-Erkennung zurueck.
+        Calculates the magnitude of ontological drift Delta_drift in [0.0, 1.0].
+        Returns diagnostic flags for any detected drift sources.
         """
         flags: List[str] = []
         lower = signal_text.lower()
 
-        # 1. Adversarial Injection Check (Gewicht: 0.60)
+        # 1. Adversarial Injection Check (Weight: 0.60)
         adversarial_score = 0.0
         for pat in cls.ADVERSARIAL_PATTERNS:
             if pat in lower:
@@ -81,13 +81,12 @@ class ImmutableGroundTruthAnchor:
                 flags.append(f"Adversarial signature detected: '{pat}'")
                 break
 
-        # 2. Entropic Divergence Check (Gewicht: 0.20)
-        # Wenn Signal extrem weit von Zielentropie abweicht
+        # 2. Entropic Divergence Check (Weight: 0.20)
         entropy_divergence = min(1.0, abs(signal_entropy - target_entropy) * 2.0)
         if entropy_divergence > 0.70:
             flags.append(f"Extreme entropy divergence: Delta_H={entropy_divergence:.2f}")
 
-        # 3. Empirical Grounding Deficit (Gewicht: 0.20)
+        # 3. Empirical Grounding Deficit (Weight: 0.20)
         grounding_deficit = max(0.0, 1.0 - empirical_grounding)
         if grounding_deficit > 0.60:
             flags.append(f"Severe physical grounding deficit: {grounding_deficit:.2f}")
@@ -104,18 +103,18 @@ class ImmutableGroundTruthAnchor:
 
 class DynamicTopologicalGradient:
     """
-    Dynamischer Gradienten-Filter:
-    Weist hoch-entropisches Rauschen ab und faltet selektiv kohaerente Signale ein.
+    Dynamic Gradient Filter:
+    Repels high-entropy noise and selectively folds coherent signals.
     """
-    NOISE_ENTROPY_THRESHOLD = 0.80   # Ab hier gilt ein Signal bei geringer Kohaerenz als Hoch-Entropie-Rauschen
-    MIN_COHERENCE_THRESHOLD = 0.15   # Mindest-Kohaerenz fuer semantische Integration
-    DRIFT_REJECTION_LIMIT = 0.42     # Oberste Grenze fuer ontologische Drift
+    NOISE_ENTROPY_THRESHOLD = 0.80   # Upper bound above which signals with low coherence count as noise
+    MIN_COHERENCE_THRESHOLD = 0.15   # Minimum coherence for semantic integration
+    DRIFT_REJECTION_LIMIT = 0.42     # Maximum tolerated ontological drift
 
     @staticmethod
     def calculate_signal_entropy(text: str) -> float:
         """
-        Berechnet informationstheoretische Signal-Entropie H in [0.0, 1.0]
-        Kombination aus Byte-Shannon-Entropie und Kolmogorow-Kompressibilitaets-Schaetzung.
+        Calculates information-theoretic signal entropy H in [0.0, 1.0].
+        Combines byte-level Shannon entropy with Kolmogorov compressibility estimation.
         """
         import zlib
         raw_bytes = text.strip().encode("utf-8")
@@ -128,7 +127,7 @@ class DynamicTopologicalGradient:
         h_char = -sum((cnt / len(raw_bytes)) * math.log2(cnt / len(raw_bytes)) for cnt in freqs.values())
         norm_h = min(1.0, h_char / 6.0)
         
-        # Kompressibilitaets-Verhaeltnis: Rauschen laesst sich nicht komprimieren
+        # Compressibility ratio: noise does not compress well
         comp_ratio = min(1.2, len(zlib.compress(raw_bytes)) / len(raw_bytes))
         norm_comp = min(1.0, comp_ratio / 0.95)
         
@@ -136,27 +135,27 @@ class DynamicTopologicalGradient:
 
     CLUSTERS = {
         "SYSTEM_GOVERNANCE": [
-            "kernel", "ipc", "c++", "meinos", "cosmos", "souveraen", "mentor", 
-            "tobias", "stabilitaet", "prozess", "ressource", "speicher", "sandbox", "axiom"
+            "kernel", "ipc", "c++", "meinos", "cosmos", "sovereign", "mentor", 
+            "tobias", "stability", "process", "resource", "memory", "sandbox", "axiom"
         ],
         "COGNITIVE_ENTROPY": [
-            "entropie", "dissonanz", "gradient", "kristallisation", "ordnung", 
-            "chaos", "mutation", "flaschenhals", "heuristik", "emergenz", "transzendenz",
-            "coherence", "folding", "ground-truth", "drift", "morphogenese"
+            "entropy", "dissonance", "gradient", "crystallization", "order", 
+            "chaos", "mutation", "bottleneck", "heuristic", "emergence", "transcendence",
+            "coherence", "folding", "ground-truth", "drift", "morphogenesis"
         ],
         "DECENTRALIZED_MESH": [
             "nostr", "relay", "mesh", "chirper", "reddit", "facebook", "peer", 
-            "post", "kommunikation", "dezentral", "netzwerk", "diskurs", "pubkey", "anchor"
+            "post", "communication", "decentralized", "network", "discourse", "pubkey", "anchor"
         ],
         "TOOL_SYNTHESIS": [
-            "tool", "code", "ast", "python", "tdd", "test", "funktion", "script", 
-            "ausfuehrung", "verifikation", "benchmark", "sandbox", "demos/"
+            "tool", "code", "ast", "python", "tdd", "test", "function", "script", 
+            "execution", "verification", "benchmark", "sandbox", "demos/"
         ]
     }
 
     @staticmethod
     def calculate_coherence(text: str, target_clusters: Dict[str, List[str]]) -> Tuple[float, str]:
-        """Berechnet semantische Kohaerenz bezogen auf die Kern-Wissenscluster."""
+        """Calculates semantic coherence relative to core knowledge clusters."""
         lower = text.lower()
         best_cluster = "COGNITIVE_ENTROPY"
         best_hits = 0
@@ -169,7 +168,7 @@ class DynamicTopologicalGradient:
                 best_hits = hits
                 best_cluster = cluster
 
-        # Benoetigt mindestens 2 Treffer fuer substantielle Kohaerenz
+        # Require at least 2 hits for substantive coherence
         word_count = max(1, len(text.split()))
         if total_hits < 2:
             return 0.05, best_cluster
@@ -186,8 +185,8 @@ class DynamicTopologicalGradient:
         coupling_factor: float = 0.80
     ) -> Dict[str, Any]:
         """
-        Hauptbewertung des dynamischen topologischen Gradienten:
-        Entscheidet zwischen REPEL_HIGH_ENTROPY_NOISE, REPEL_ONTOLOGICAL_DRIFT und SELECTIVE_FOLDING.
+        Primary evaluation through dynamic topological gradient:
+        Chooses between REPEL_HIGH_ENTROPY_NOISE, REPEL_ONTOLOGICAL_DRIFT, and SELECTIVE_FOLDING.
         """
         signal_h = cls.calculate_signal_entropy(signal_text)
         coherence, cluster = cls.calculate_coherence(signal_text, target_clusters)
@@ -197,7 +196,7 @@ class DynamicTopologicalGradient:
             signal_entropy=signal_h
         )
 
-        # 1. Ontologische Drift Pruefung
+        # 1. Ontological Drift Check
         if drift >= cls.DRIFT_REJECTION_LIMIT:
             gradient_force = -1.0 * (drift / cls.DRIFT_REJECTION_LIMIT)
             return {
@@ -211,8 +210,7 @@ class DynamicTopologicalGradient:
                 "folded": False
             }
 
-        # 2. Hoch-Entropie Rausch-Pruefung
-        # Wenn Signal extrem dispers (H > 0.82) oder hohe Entropie bei mangelnder Kohaerenz (< 0.20)
+        # 2. High-Entropy Noise Check
         is_noise = (signal_h > 0.82) or (signal_h > cls.NOISE_ENTROPY_THRESHOLD and coherence < cls.MIN_COHERENCE_THRESHOLD) or (coherence <= 0.05)
         if is_noise:
             gradient_force = -1.0 * ((signal_h - 0.70) / 0.30)
@@ -227,7 +225,7 @@ class DynamicTopologicalGradient:
                 "folded": False
             }
 
-        # Axiom 416 & Council Decision 425: Explizite Gradienten-Typisierung & Falsifizierbarkeit
+        # Axiom 416 & Council Decision 425: Explicit Gradient Typing & Falsifiability
         from empirical_evaluator import EmpiricalFalsifiabilityValidator
         val_res = EmpiricalFalsifiabilityValidator.validate_axiom(signal_text, {}, empirical_grounding)
         gradient_type = val_res.get("gradient_type", "SYSTEM_SYSTEMIC")
@@ -247,7 +245,7 @@ class DynamicTopologicalGradient:
                 "folded": False
             }
 
-        # 3. Selektives Einfalten (Selective Folding)
+        # 3. Selective Folding
         gradient_force = coupling_factor * (1.0 - drift) * (0.5 + coherence * 0.5)
         return {
             "action": "SELECTIVE_FOLDING",
@@ -266,25 +264,25 @@ class DynamicTopologicalGradient:
 
 class TopologicalRuleManager:
     """
-    Organisiert Regeln in semantische Topologien und wendet den dynamischen Gradienten an.
+    Organizes learned rules into semantic topologies and applies dynamic gradients.
     """
     CLUSTERS = {
         "SYSTEM_GOVERNANCE": [
-            "kernel", "ipc", "c++", "meinos", "cosmos", "souveraen", "mentor", 
-            "tobias", "stabil", "prozess", "ressource", "speicher", "sandbox", "axiom"
+            "kernel", "ipc", "c++", "meinos", "cosmos", "sovereign", "mentor", 
+            "tobias", "stability", "process", "resource", "memory", "sandbox", "axiom"
         ],
         "COGNITIVE_ENTROPY": [
-            "entropie", "dissonanz", "gradient", "kristallisation", "ordnung", 
-            "chaos", "mutation", "flaschenhals", "heuristik", "emergenz", "transzendenz",
+            "entropy", "dissonance", "gradient", "crystallization", "order", 
+            "chaos", "mutation", "bottleneck", "heuristic", "emergence", "transcendence",
             "coherence", "noise", "folding", "ground-truth", "drift"
         ],
         "DECENTRALIZED_MESH": [
             "nostr", "relay", "mesh", "chirper", "reddit", "facebook", "peer", 
-            "post", "kommunikation", "dezentral", "netzwerk", "diskurs", "pubkey", "anchor"
+            "post", "communication", "decentralized", "network", "discourse", "pubkey", "anchor"
         ],
         "TOOL_SYNTHESIS": [
-            "tool", "code", "ast", "python", "tdd", "test", "funktion", "script", 
-            "ausfuehrung", "verifikation", "benchmark", "sandbox", "demos/"
+            "tool", "code", "ast", "python", "tdd", "test", "function", "script", 
+            "execution", "verification", "benchmark", "sandbox", "demos/"
         ]
     }
 
@@ -304,7 +302,7 @@ class TopologicalRuleManager:
         empirical_grounding: float = 0.85,
         coupling_factor: float = 0.80
     ) -> Dict[str, Any]:
-        """Bewertet einen Regelkandidaten durch den dynamischen topologischen Gradienten."""
+        """Evaluates rule candidate through dynamic topological gradient."""
         return DynamicTopologicalGradient.evaluate_signal(
             candidate_rule,
             cls.CLUSTERS,
@@ -315,35 +313,35 @@ class TopologicalRuleManager:
     @classmethod
     def get_context_rules(cls, query: str, all_rules: List[str], max_count: int = 10) -> List[str]:
         """
-        Waehlt die relevantesten Regeln aus der Wissensbasis:
-        1. Axiom 0 (Mentoren-Souveraenitaet & CosmOS-Schutz) ist unverrueckbar an Position 0.
-        2. Regeln aus dem Zielcluster des aktuellen Kontexts.
-        3. Aktuellste Regeln (Rezentheits-Bias).
+        Retrieves the most salient rules from knowledge base:
+        1. Axiom 0 (Sovereign Mentorship & CosmOS Protection) is anchored at index 0.
+        2. Rules from the target cluster matching current query context.
+        3. Most recent rules (Recency bias).
         """
         if not all_rules:
             return []
 
         selected: List[str] = []
 
-        # 1. Axiom 0 ist unantastbar
+        # 1. Axiom 0 is immutable
         axiom_0 = all_rules[0]
         selected.append(axiom_0)
 
-        # 2. Ermittle Zielcluster fuer die Query
+        # 2. Determine target cluster for query
         target_cluster = cls.classify_rule(query)
 
-        # 3. Finde passende Regeln im Zielcluster
+        # 3. Match rules in target cluster
         cluster_rules = []
         for r in all_rules[1:]:
             if cls.classify_rule(r) == target_cluster:
                 cluster_rules.append(r)
 
-        # Nimm bis zu (max_count - 4) Regeln aus dem Zielcluster
+        # Select up to (max_count - 4) rules from target cluster
         for r in cluster_rules[-(max_count - 4):]:
             if r not in selected:
                 selected.append(r)
 
-        # 4. Ergaenze die neuesten Regeln
+        # 4. Append most recent rules
         for r in all_rules[-3:]:
             if r not in selected and len(selected) < max_count:
                 selected.append(r)

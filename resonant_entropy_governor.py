@@ -2,9 +2,9 @@
 """
 AION NEXUS - RESONANT ENTROPY GOVERNOR (PYTHON ENGINE MODULE)
 =============================================================
-Mathematische Implementierung des Resonant Entropy Governors fuer evolution_engine.py.
-Verwandelt kognitive Dissonanzen und unentschiedene Zustaende (Non-Decision States)
-in aktive Katalysatoren fuer autonome Bedeutungsgenerierung und morphogenetische Faltung.
+Mathematical implementation of the Resonant Entropy Governor for evolution_engine.py.
+Transforms cognitive dissonance and non-decision states into active catalysts
+for autonomous meaning generation and morphogenetic folding.
 """
 
 import math
@@ -29,7 +29,7 @@ class ResonantEntropyGovernor:
         self.recommendation = "Optimal dissipative bandwidth. Fold non-decisions into novel topological invariants."
 
     def calculate_shannon_entropy(self, probabilities: List[float]) -> float:
-        """Berechnet normalisierte Shannon-Entropie H in [0.0, 1.0]."""
+        """Calculates normalized Shannon entropy H in [0.0, 1.0]."""
         if not probabilities:
             return 0.50
         total = sum(probabilities)
@@ -54,28 +54,28 @@ class ResonantEntropyGovernor:
         external_shock: float = 0.0
     ) -> Dict[str, Any]:
         """
-        Aktualisiert den Governor-Zustand nach einem kognitiven Entfaltungsschritt.
+        Updates governor state following a cognitive cycle step.
         """
         now = time.time()
         dt = max(0.001, now - self.last_update)
         self.last_update = now
         self.step_count += 1
 
-        # 1. Streuung der Informationsgewinne der letzten Schritte erfassen
+        # 1. Evaluate information gain variance across recent steps
         gains = [s.get("info_gain", 0.5) for s in current_state[-6:]]
         if not gains:
             gains = [0.5, 0.5]
 
         raw_h = self.calculate_shannon_entropy(gains)
 
-        # 2. Dichte unentschiedener Zustaende (Ambiguity Density)
+        # 2. Ambiguity density across unresolved task states
         self.ambiguity_density = max(0.0, min(1.0, task_queue_len / 8.0))
 
-        # 3. Zielentropie modulieren
+        # 3. Modulate target entropy
         target_h = (raw_h * 0.55) + (self.ambiguity_density * 0.35) + (external_shock * 0.10)
         target_h = max(0.0, min(1.0, target_h))
 
-        # 3b. Generation 360: Thermodynamische Kopplung & Explizite Strukturelle Randbedingungen
+        # 3b. Generation 360: Thermodynamic coupling & explicit boundary constraints
         if not hasattr(self, "thermo_governor"):
             try:
                 from demos.thermodynamic_constraint_governor import ThermodynamicConstraintGovernor
@@ -105,7 +105,7 @@ class ResonantEntropyGovernor:
         if len(self.history) > 300:
             self.history.pop(0)
 
-        # 4. Modus-Klassifikation & Resonanz-Kopplung
+        # 4. Mode classification & resonance coupling
         if self.current_entropy < 0.25:
             self.mode = "ENTROPIC_FREEZE"
             self.resonant_coupling = 0.95
@@ -134,7 +134,7 @@ class ResonantEntropyGovernor:
             "recommendation": self.recommendation
         }
 
-        # Telemetrie persistieren
+        # Persist telemetry
         try:
             with open(self.telemetry_file, "w", encoding="utf-8") as f:
                 json.dump(telemetry, f, indent=2, ensure_ascii=False)
@@ -144,7 +144,7 @@ class ResonantEntropyGovernor:
         return telemetry
 
     def get_status_banner(self) -> str:
-        """Gibt einen praegnanten visuellen ASCII-Resonanzstatus zurueck."""
+        """Returns concise visual ASCII resonance status banner."""
         bars = int(self.current_entropy * 20)
         gauge = "[" + "#" * bars + "-" * (20 - bars) + "]"
         sign = "+" if self.entropy_gradient >= 0 else ""

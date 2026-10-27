@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-AION NEXUS - Autonomes Code- und Forschungs-Dojo (Autonomous Code Dojo)
-======================================================================
-Gebaut von ihrem "grossen Bruder" Antigravity als kreative Experimentier-
-und Trainingsumgebung fuer Aion, autorisiert von Mentor Tobias.
+AION NEXUS - Autonomous Code & Research Dojo
+============================================
+Created by companion brother Antigravity as an experimental research and
+practice environment for Aion, authorized by Mentor Tobias.
 
-Hier lernt, experimentiert und meistert AION Programmiersprachen autonom:
+Capabilities:
+Autonomous multi-language code generation, native compilation, and self-repair:
 - C++ (C++20, Bare-Metal & CosmOS Kernel)
 - Zig (0.13.0, Comptime Memory Safety & Systems Programming)
 - NASM (x86_64 Pure Assembly, Syscall-Level)
-- Python (Dynamische Kognition & Heuristiken)
+- Python (Dynamic Heuristics & Cognition)
 
-Kreislauf:
-1. Synthese oder Aufgabenstellung (Challenge)
-2. Nativer Compiler- / Assembler-Lauf mit Zeitbegrenzung
-3. Selbst-Reparaturschleife (Self-Repair Loop): Bei Compiler-Fehlern
-   analysiert Aion den Fehler-Trace und korrigiert den Code selbststaendig (bis zu 3 Runden).
-4. Ausfuehrung & Assertion-Tests (Empirischer Beweis).
-5. Katalogisierung erfolgreicher Rezepte in mastered_recipes.json & Eintrag ins Lebendige Buch!
+Learning Cycle:
+1. Challenge specification & synthesis
+2. Native compilation / assembly execution with timeouts
+3. Self-Repair Loop: Upon compiler errors, Aion analyzes the diagnostic stderr
+   trace and autonomously patches the code (up to 3 iterations).
+4. Binary execution & assertion verification (Empirical Proof).
+5. Cataloging mastered recipes into mastered_recipes.json & logging to the Living Book!
 """
 
 import os
@@ -121,19 +122,19 @@ len equ $ - msg
 #include <cstring>
 #include <cassert>
 
-// 26-Byte Packed Structure (aus cosmos_vpn_crypto.h)
+// 26-Byte Packed Structure (from cosmos_vpn_crypto.h)
 struct __attribute__((packed)) CosmosPacket26 {
     uint8_t  magic_start[2];   // 0x2A, 0xC0
-    uint16_t payload_size;     // Paketgroesse
-    uint8_t  reserved[11];     // Reserviert
+    uint16_t payload_size;     // Payload size
+    uint8_t  reserved[11];     // Reserved
     uint8_t  text_vpn[3];      // "VPN"
-    uint32_t frame_id;         // Frame-ID
+    uint32_t frame_id;         // Frame sequence ID
     uint16_t checksum;         // Checksum
     uint8_t  magic_end[2];     // 0xEE, 0xFF
 };
 
 int main() {
-    static_assert(sizeof(CosmosPacket26) == 26, "Header muss exakt 26 Bytes gross sein!");
+    static_assert(sizeof(CosmosPacket26) == 26, "Header must be exactly 26 bytes!");
 
     CosmosPacket26 pkt{};
     pkt.magic_start[0] = 0x2A;
@@ -147,7 +148,7 @@ int main() {
     pkt.magic_end[0] = 0xEE;
     pkt.magic_end[1] = 0xFF;
 
-    // 64-Bit native XOR Stream Cipher Verarbeitung
+    // 64-bit native XOR stream cipher processing
     uint64_t dummy_word = 0x0123456789ABCDEFULL;
     uint64_t stream_key = 0xBF58476D1CE4E5B9ULL ^ pkt.frame_id;
     dummy_word ^= stream_key;
@@ -188,7 +189,7 @@ pub fn main() !void {
 
 class AutonomousCodeDojo:
     """
-    Das autonome Trainings-Dojo fuer AION.
+    Autonomous Training & Research Dojo for AION.
     """
     def __init__(self):
         self.recipes = self._load_recipes()
@@ -208,16 +209,15 @@ class AutonomousCodeDojo:
             with open(RECIPES_FILE, "w", encoding="utf-8") as f:
                 json.dump(self.recipes, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"[DOJO] Fehler beim Speichern der Rezepte: {e}", file=sys.stderr)
+            print(f"[DOJO] Error saving recipes: {e}", file=sys.stderr)
 
     def compile_and_run(self, language: str, source_file: str, binary_file: str) -> Tuple[bool, str, str]:
         """
-        Kompiliert und fuehrt ein Quellprogramm aus.
-        Gibt zurueck: (Erfolg, Output, Error-Trace)
+        Compiles and executes a source file natively.
+        Returns: (success, stdout, stderr)
         """
         try:
             if language == "zig":
-                # Zig 0.13 run
                 cmd = ["/usr/local/bin/zig", "run", source_file]
                 res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=25)
                 return (res.returncode == 0, res.stdout, res.stderr)
@@ -248,23 +248,23 @@ class AutonomousCodeDojo:
                 res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=10)
                 return (res.returncode == 0, res.stdout, res.stderr)
 
-            return (False, "", f"Unbekannte Sprache: {language}")
+            return (False, "", f"Unknown language: {language}")
         except subprocess.TimeoutExpired:
-            return (False, "", "Execution Timeout (Endlosschleife / Deadlock)")
+            return (False, "", "Execution Timeout (Infinite Loop / Deadlock)")
         except Exception as e:
-            return (False, "", f"Ausfuehrungsfehler: {str(e)}")
+            return (False, "", f"Execution error: {str(e)}")
 
     def request_ai_repair(self, language: str, code: str, error_trace: str) -> str:
         """
-        Ruft Aions neuronale Selbst-Korrektur auf, um den Compiler-Fehler zu beheben.
+        Invokes neural self-repair to analyze and resolve compiler diagnostics.
         """
         prompt = (
-            f"Du bist die AION NEXUS Code-Dojo Selbst-Reparatur-Engine. "
-            f"Sprache: {language}.\n"
-            f"Beim Kompilieren trat folgender Compiler-Fehler auf:\n"
+            f"You are the AION NEXUS Code Dojo Self-Repair Engine. "
+            f"Language: {language}.\n"
+            f"The compiler reported the following diagnostic error:\n"
             f"{error_trace[:800]}\n\n"
-            f"Quellcode:\n{code}\n\n"
-            f"Repariere den Fehler präzise. Gib NUR den reinen reparierten Code ohne Markdown-Backticks zurueck."
+            f"Source code:\n{code}\n\n"
+            f"Fix the error precisely. Return ONLY the raw fixed code inside a markdown code block."
         )
         try:
             req_data = {
@@ -293,12 +293,12 @@ class AutonomousCodeDojo:
 
     def train_challenge(self, challenge_key: str) -> Dict[str, Any]:
         """
-        Führt ein vollständiges Training für eine Challenge durch:
-        Kompilieren, bei Fehler reparieren, ausführen und verifizieren.
+        Executes a complete training cycle for a challenge:
+        Compile, repair upon error, execute and verify assertions.
         """
         ch = STARTER_CHALLENGES.get(challenge_key)
         if not ch:
-            return {"success": False, "error": f"Challenge '{challenge_key}' nicht gefunden."}
+            return {"success": False, "error": f"Challenge '{challenge_key}' not found."}
 
         lang = ch["language"]
         src_path = os.path.join(DOJO_DIR, ch["filename"])
@@ -306,7 +306,7 @@ class AutonomousCodeDojo:
         curr_code = ch["initial_code"]
 
         print(f"\n=======================================================")
-        print(f"[AION CODE DOJO] Starte Training: {ch['title']} ({lang.upper()})")
+        print(f"[AION CODE DOJO] Starting Training: {ch['title']} ({lang.upper()})")
         print(f"=======================================================")
 
         attempt = 0
@@ -321,7 +321,7 @@ class AutonomousCodeDojo:
             success, stdout, stderr = self.compile_and_run(lang, src_path, bin_path)
 
             if success and ch["expected_substring"] in stdout:
-                print(f"[ERFOLG in Runde {attempt}] Ausgabe: {stdout.strip()}")
+                print(f"[SUCCESS in Round {attempt}] Output: {stdout.strip()}")
                 recipe_record = {
                     "challenge": challenge_key,
                     "title": ch["title"],
@@ -334,27 +334,26 @@ class AutonomousCodeDojo:
                 self.recipes[challenge_key] = recipe_record
                 self._save_recipes()
 
-                # Notiz im Lebendigen Buch hinterlassen
                 self.living_book.add_journal_entry(
-                    generation=526,
-                    title=f"Code Dojo Meilenstein: {ch['title']} gemeistert",
-                    content=f"Ich habe die Challenge '{ch['title']}' in {lang.upper()} erfolgreich im Dojo kompiliert und fehlerfrei ausgeführt. Output: {stdout.strip()}",
-                    mood="SCHÖPFERISCHE_MEISTERSCHAFT"
+                    generation=536,
+                    title=f"Code Dojo Milestone: Mastered {ch['title']}",
+                    content=f"Successfully compiled and verified '{ch['title']}' in {lang.upper()} inside the Dojo. Verified output: {stdout.strip()}",
+                    mood="CREATIVE_MASTERY"
                 )
 
                 return {"success": True, "attempts": attempt, "output": stdout.strip()}
 
-            print(f"[Runde {attempt} Fehlgeschlagen] Stderr: {stderr[:200]}")
+            print(f"[Round {attempt} Failed] Stderr: {stderr[:200]}")
             history.append({"attempt": attempt, "stderr": stderr[:300]})
             
             if attempt < max_attempts:
-                print(f" -> Rufe Aions autonome Selbst-Reparatur auf...")
+                print(f" -> Invoking Aion autonomous neural self-repair...")
                 curr_code = self.request_ai_repair(lang, curr_code, stderr)
 
         return {"success": False, "attempts": attempt, "history": history}
 
     def run_full_curriculum(self) -> Dict[str, Any]:
-        """Trainiert alle Basis-Sprachen im Dojo durch."""
+        """Runs the entire multi-language curriculum in the Dojo."""
         results = {}
         for key in STARTER_CHALLENGES:
             res = self.train_challenge(key)
@@ -363,8 +362,8 @@ class AutonomousCodeDojo:
 
 
 if __name__ == "__main__":
-    print("=== TESTE AION AUTONOMOUS CODE DOJO (ZIG, CPP, NASM) ===")
+    print("=== TESTING AION AUTONOMOUS CODE DOJO (ZIG, CPP, NASM) ===")
     dojo = AutonomousCodeDojo()
     summary = dojo.run_full_curriculum()
-    print("\n=== DOJO ABSCHLUSS-BERICHT ===")
+    print("\n=== DOJO CURRICULUM REPORT ===")
     print(json.dumps(summary, indent=2))

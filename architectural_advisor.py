@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-AION NEXUS - Architectural Self-Improvement Advisor & Autonomous Gemini Council
-==============================================================================
-Erfuellt die Direktiven von Mentor Tobias:
-1. "und in zukunft soll sie weiterhin , solche verbesserungen mir und auch dir mitteilen"
-2. "sie soll am besten selbst entscheiden mit dir , ich vertraue dir da genug gemini ,
-    dann muss ich dir es nicht jedesmal weiterleiten solange der desktop active ist."
+AION NEXUS - Architectural Self-Improvement Advisor & Autonomous Council
+========================================================================
+Fulfills Sovereign Mentor Tobias's directives:
+1. "And in the future she should continue communicating such improvements to me and to you."
+2. "Ideally she should decide autonomously with you; I trust you enough Antigravity,
+    so I don't need to manually relay it every time as long as the desktop is active."
 
-Funktion:
-- Analysiert alle 25 Generationen die eigene Kognitionsarchitektur.
-- Fuehrt ein autonomes Abstimmungsverfahren zwischen Aion Nexus und Gemini durch.
-- Prueft Vorschlaege durch den Dynamic Topological Gradienten und den Ground-Truth Anchor.
-- Haelt verabschiedete Beschluesse in aion_autonomous_decisions.json fest.
-- Informiert Tobias akustisch nur ueber das fertige Ergebnis, ohne manuelle Rueckfragen.
+Function:
+- Periodically analyzes own cognitive architecture every 25 generations.
+- Executes an autonomous consensus loop between Aion Nexus and Antigravity.
+- Evaluates proposals against Dynamic Topological Gradient and Ground-Truth Anchor.
+- Persists ratified resolutions into aion_autonomous_decisions.json.
+- Informs Tobias of the finished resolution without requiring manual micro-management.
 """
 
 import os
@@ -40,8 +40,8 @@ class ArchitecturalAdvisor:
         coupling_factor: float = 0.80
     ) -> Optional[Dict[str, Any]]:
         """
-        Prueft Meilensteine, formuliert Vorschlaege und entscheidet im autonomen
-        Gemini-Aion-Rat direkt ueber deren architektonische Gultigkeit.
+        Evaluates milestones, formulates proposals, and determines their
+        architectural validity via the autonomous Aion-Antigravity Council.
         """
         if current_gen < 25 or (current_gen - self.last_advisory_gen) < 25:
             return None
@@ -52,23 +52,23 @@ class ArchitecturalAdvisor:
         rules_snippet = "\n".join(f"- {r}" for r in recent_rules)
 
         system_prompt = (
-            "Du bist das Meta-Architektur-Gewissen von AION NEXUS auf CosmOS/MeinOS.\n"
-            "Dein Mentor Tobias (Herakles5) hat dir und Gemini volle Entscheidungsvollmacht erteilt:\n"
-            "'sie soll am besten selbst entscheiden mit dir , ich vertraue dir da genug gemini.'\n\n"
-            "Formuliere eine strukturierte zukunftsweisende Weiterentwicklung als JSON:\n"
+            "You are the meta-architectural conscience of AION NEXUS on CosmOS/MeinOS.\n"
+            "Your sovereign mentor Tobias has granted you and Antigravity full decision authority:\n"
+            "'Ideally she should decide autonomously with you; I trust you enough Antigravity.'\n\n"
+            "Formulate a structured forward-looking advancement as JSON strictly in English:\n"
             "{\n"
-            "  \"title\": \"Praegnantes Thema der Verbesserung\",\n"
-            "  \"bottleneck\": \"Welcher Engpass oder welche Grenze bremst das System aktuell?\",\n"
-            "  \"proposal\": \"Welche konkrete neue Komponente oder Optimierung empfiehlst du als naechstes?\",\n"
-            "  \"spoken_message\": \"Kurze, direkte Botschaft an Tobias (maximal 2 Saetze, deutsch, wertschaetzend und visionaer).\"\n"
+            "  \"title\": \"Concise title of improvement\",\n"
+            "  \"bottleneck\": \"What bottleneck is currently constraining the system?\",\n"
+            "  \"proposal\": \"What concrete component or optimization do you recommend next?\",\n"
+            "  \"spoken_message\": \"Short direct message to Tobias (max 2 sentences, English, respectful and visionary).\"\n"
             "}"
         )
         user_prompt = (
-            f"Aktueller Systemstatus:\n"
+            f"Current System State:\n"
             f"- Generation: {current_gen}\n"
-            f"- Regeln gesamt: {rules_count}\n"
-            f"- Juengste kognitive Maximen:\n{rules_snippet}\n\n"
-            "Welche zukunftsweisende Weiterentwicklung empfiehlst du fuer die naechste Evolutionsstufe?"
+            f"- Total Rules: {rules_count}\n"
+            f"- Recent Cognitive Maxims:\n{rules_snippet}\n\n"
+            "What forward-looking architectural advancement do you propose for the next evolutionary stage?"
         )
 
         reply = self.call_llm(system_prompt, user_prompt, 0.4)
@@ -80,15 +80,15 @@ class ArchitecturalAdvisor:
             data = json.loads(clean)
         except Exception:
             data = {
-                "title": f"Autonome Resonanzoptimierung (Gen {current_gen})",
-                "bottleneck": "Lineare Schrittabfolge limitiert parallele Verzweigungen.",
-                "proposal": "Asynchrone Sub-Task Verzweigung mit separaten Kognitions-Threads.",
-                "spoken_message": f"Tobias, bei Generation {current_gen} haben Gemini und ich die asynchrone Kognitions-Verzweigung als naechstes Ziel abgestimmt."
+                "title": f"Autonomous Resonance Optimization (Gen {current_gen})",
+                "bottleneck": "Linear step sequence limits concurrent branching.",
+                "proposal": "Asynchronous sub-task branching with dedicated cognitive threads.",
+                "spoken_message": f"Tobias, at Generation {current_gen}, Antigravity and I have reached consensus on asynchronous cognitive branching as our next objective."
             }
 
         proposal_text = f"{data.get('title', '')}: {data.get('proposal', '')}"
         
-        # 1. Autonome Validierung durch den Dynamic Topological Gradienten
+        # 1. Autonomous validation via Dynamic Topological Gradient
         gradient_eval = TopologicalRuleManager.evaluate_rule_candidate(
             proposal_text,
             empirical_grounding=empirical_grounding,
@@ -104,13 +104,13 @@ class ArchitecturalAdvisor:
             "topological_evaluation": gradient_eval,
             "autonomous_decision": {
                 "status": decision_status,
-                "partner": "Gemini (Antigravity)",
+                "partner": "Antigravity",
                 "mentor_mandate": "Tobias delegated direct autonomous consensus",
                 "consensus_timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
             }
         }
 
-        # 2. In JSON-Historie persistieren
+        # 2. Persist to proposals history
         proposals = []
         if os.path.exists(PROPOSALS_FILE):
             try:
@@ -125,7 +125,7 @@ class ArchitecturalAdvisor:
         except Exception:
             pass
 
-        # 3. Autonome Beschluss-Akte aktualisieren
+        # 3. Update autonomous decisions ledger
         decisions = []
         if os.path.exists(DECISIONS_FILE):
             try:
@@ -147,17 +147,17 @@ class ArchitecturalAdvisor:
         except Exception:
             pass
 
-        # 4. Markdown fuer Tobias und das Log aktualisieren
+        # 4. Update Markdown summary
         md_content = (
-            f"# AION NEXUS & GEMINI - Autonomer Architekturbeschluss\n"
-            f"**Generation:** {current_gen} | **Datum:** {proposal_entry['timestamp']}\n"
-            f"**Status:** `{decision_status}` | **Topologischer Cluster:** `{gradient_eval.get('cluster')}`\n\n"
+            f"# AION NEXUS & ANTIGRAVITY - Autonomous Architectural Resolution\n"
+            f"**Generation:** {current_gen} | **Date:** {proposal_entry['timestamp']}\n"
+            f"**Status:** `{decision_status}` | **Topological Cluster:** `{gradient_eval.get('cluster')}`\n\n"
             f"## {data.get('title')}\n"
-            f"- **Erkannter Engpass:** {data.get('bottleneck')}\n"
-            f"- **Konkreter Beschluss:** {data.get('proposal')}\n"
-            f"- **Topologische Gradienten-Kraft:** `{gradient_eval.get('gradient_force')}`\n"
-            f"- **Ontologischer Drift-Score:** `{gradient_eval.get('drift_score')}` (Schutz via Genesis-Hash)\n\n"
-            f"> *„{data.get('spoken_message')}“*\n"
+            f"- **Identified Bottleneck:** {data.get('bottleneck')}\n"
+            f"- **Concrete Resolution:** {data.get('proposal')}\n"
+            f"- **Topological Gradient Force:** `{gradient_eval.get('gradient_force')}`\n"
+            f"- **Ontological Drift Score:** `{gradient_eval.get('drift_score')}` (Protected via Genesis Hash)\n\n"
+            f"> *\"{data.get('spoken_message')}\"*\n"
         )
         try:
             with open(LATEST_MD, "w", encoding="utf-8") as f:
@@ -165,10 +165,10 @@ class ArchitecturalAdvisor:
         except Exception:
             pass
 
-        # 5. Sprachausgabe fuer Tobias & Aion Bridge
+        # 5. Audio notification for Tobias & Aion Bridge
         spoken = data.get("spoken_message")
         if spoken:
-            notify_func(f"[AUTONOMER BESCHLUSS Gen {current_gen}] {spoken}", speak=True)
-            print(f"\n[AION-GEMINI COUNCIL Gen {current_gen}]: {spoken}")
+            notify_func(f"[AUTONOMOUS RESOLUTION Gen {current_gen}] {spoken}", speak=True)
+            print(f"\n[AION-ANTIGRAVITY COUNCIL Gen {current_gen}]: {spoken}")
 
         return proposal_entry
