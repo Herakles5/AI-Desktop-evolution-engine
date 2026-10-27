@@ -53,6 +53,18 @@
       "label": "Zig",
       "first_seen_gen": 532,
       "importance": 0.8
+    },
+    "gen_536": {
+      "type": "CONCEPT",
+      "label": "Gen_536",
+      "first_seen_gen": 536,
+      "importance": 0.8
+    },
+    "synthesized_rule": {
+      "type": "CONCEPT",
+      "label": "Synthesized_rule",
+      "first_seen_gen": 536,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -147,6 +159,15 @@
       "weight": 0.58,
       "episodes": [
         532
+      ]
+    },
+    {
+      "source": "gen_536",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        536
       ]
     }
   ]

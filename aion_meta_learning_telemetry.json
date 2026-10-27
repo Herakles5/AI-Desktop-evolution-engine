@@ -1,8 +1,8 @@
 {
   "meta_learning_active": true,
   "current_learning_rate": 0.093,
-  "exploration_temperature": 0.62,
-  "plasticity_factor": 0.83,
+  "exploration_temperature": 0.57,
+  "plasticity_factor": 0.84,
   "consecutive_successes": 1,
   "consecutive_drifts": 0,
   "evaluation_history": [
@@ -17,6 +17,17 @@
         "Stabilität hoch -> Explorations-Temperatur gesteigert",
         "1 Hypothesen validiert -> Lernrate dynamisch beschleunigt",
         "Hardware-Grounding niedrig -> Kognitive Schonung aktiv"
+      ]
+    },
+    {
+      "generation": 536,
+      "timestamp": "2026-10-27 19:36:04",
+      "learning_rate": 0.093,
+      "exploration_temperature": 0.57,
+      "plasticity_factor": 0.84,
+      "grounding_score": 0.5,
+      "adjustments": [
+        "Low hardware grounding -> Active cognitive throttling"
       ]
     }
   ]
