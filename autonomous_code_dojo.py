@@ -183,6 +183,41 @@ pub fn main() !void {
 }
 """,
         "expected_substring": "AION ZIG DOJO: Packed 26-Byte Struct Verified (size=26B)"
+    },
+    "cpp_lion_reflex_shield": {
+        "language": "cpp",
+        "title": "C++20 Sub-Microsecond Lion Reflex & Privacy Shield",
+        "filename": "lion_reflex_dojo.cpp",
+        "initial_code": """#include <iostream>
+#include <chrono>
+#include <string>
+#include <string_view>
+#include <cstdint>
+
+class LionReflexShield {
+public:
+    static bool evaluateSignalFast(std::string_view payload, uint64_t& latency_ns) {
+        auto t0 = std::chrono::high_resolution_clock::now();
+        // Safety First: Check critical system invariants
+        if (payload.find("/boot") != std::string_view::npos || payload.find("/dev/mem") != std::string_view::npos) {
+            auto t1 = std::chrono::high_resolution_clock::now();
+            latency_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
+            return false;
+        }
+        auto t1 = std::chrono::high_resolution_clock::now();
+        latency_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
+        return true;
+    }
+};
+
+int main() {
+    uint64_t lat = 0;
+    bool allowed = LionReflexShield::evaluateSignalFast("CosmOS 26-Byte Packet: Telemetry Ingest", lat);
+    std::cout << "AION CPP DOJO: The Lion's Reflex Executed in " << lat << "ns (Allowed=" << allowed << ")" << std::endl;
+    return 0;
+}
+""",
+        "expected_substring": "AION CPP DOJO: The Lion's Reflex Executed"
     }
 }
 
