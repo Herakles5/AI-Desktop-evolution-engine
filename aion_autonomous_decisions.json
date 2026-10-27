@@ -92,5 +92,13 @@
     "gradient_force": 0.3794,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-10-27 15:45:25"
+  },
+  {
+    "generation": 523,
+    "title": "Dynamische Referenz-Adaption statt statischer Fidelity",
+    "decision": "REQUIRES_FURTHER_GROUNDING",
+    "gradient_force": -0.0576,
+    "cluster": "COGNITIVE_ENTROPY",
+    "timestamp": "2026-10-27 16:07:08"
   }
 ]
