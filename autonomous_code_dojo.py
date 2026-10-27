@@ -111,6 +111,77 @@ msg db "AION NASM DOJO: Pure bare-metal syscall execution verified!", 10
 len equ $ - msg
 """,
         "expected_substring": "AION NASM DOJO: Pure bare-metal syscall"
+    },
+    "cpp_cosmos_26byte_packet": {
+        "language": "cpp",
+        "title": "C++20 Packed 26-Byte Header & 64-Bit Stream Cipher",
+        "filename": "cosmos_packet_dojo.cpp",
+        "initial_code": """#include <iostream>
+#include <cstdint>
+#include <cstring>
+#include <cassert>
+
+// 26-Byte Packed Structure (aus cosmos_vpn_crypto.h)
+struct __attribute__((packed)) CosmosPacket26 {
+    uint8_t  magic_start[2];   // 0x2A, 0xC0
+    uint16_t payload_size;     // Paketgroesse
+    uint8_t  reserved[11];     // Reserviert
+    uint8_t  text_vpn[3];      // "VPN"
+    uint32_t frame_id;         // Frame-ID
+    uint16_t checksum;         // Checksum
+    uint8_t  magic_end[2];     // 0xEE, 0xFF
+};
+
+int main() {
+    static_assert(sizeof(CosmosPacket26) == 26, "Header muss exakt 26 Bytes gross sein!");
+
+    CosmosPacket26 pkt{};
+    pkt.magic_start[0] = 0x2A;
+    pkt.magic_start[1] = 0xC0;
+    pkt.payload_size = 128;
+    pkt.text_vpn[0] = 'V';
+    pkt.text_vpn[1] = 'P';
+    pkt.text_vpn[2] = 'N';
+    pkt.frame_id = 536;
+    pkt.checksum = 0xABCD;
+    pkt.magic_end[0] = 0xEE;
+    pkt.magic_end[1] = 0xFF;
+
+    // 64-Bit native XOR Stream Cipher Verarbeitung
+    uint64_t dummy_word = 0x0123456789ABCDEFULL;
+    uint64_t stream_key = 0xBF58476D1CE4E5B9ULL ^ pkt.frame_id;
+    dummy_word ^= stream_key;
+
+    std::cout << "AION CPP DOJO: 26-Byte Header Verified (size=" << sizeof(CosmosPacket26) 
+              << "B). Stream Cipher 64-bit word=" << std::hex << dummy_word << std::endl;
+    return 0;
+}
+""",
+        "expected_substring": "AION CPP DOJO: 26-Byte Header Verified (size=26B)"
+    },
+    "zig_cosmos_26byte_packet": {
+        "language": "zig",
+        "title": "Zig Packed 26-Byte Struct Alignment",
+        "filename": "cosmos_packet.zig",
+        "initial_code": """const std = @import("std");
+
+const CosmosPacket26 = extern struct {
+    magic_start: [2]u8,
+    payload_size: u16,
+    reserved: [11]u8,
+    text_vpn: [3]u8,
+    frame_id: [4]u8,
+    checksum: u16,
+    magic_end: [2]u8,
+};
+
+pub fn main() !void {
+    const stdout = std.io.getStdOut().writer();
+    const sz = @sizeOf(CosmosPacket26);
+    try stdout.print("AION ZIG DOJO: Packed 26-Byte Struct Verified (size={d}B)\\n", .{sz});
+}
+""",
+        "expected_substring": "AION ZIG DOJO: Packed 26-Byte Struct Verified (size=26B)"
     }
 }
 
