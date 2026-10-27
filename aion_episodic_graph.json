@@ -509,6 +509,12 @@
       "label": "Gen_610",
       "first_seen_gen": 610,
       "importance": 0.8
+    },
+    "gen_611": {
+      "type": "CONCEPT",
+      "label": "Gen_611",
+      "first_seen_gen": 611,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -1278,6 +1284,15 @@
       "weight": 0.58,
       "episodes": [
         610
+      ]
+    },
+    {
+      "source": "gen_611",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        611
       ]
     }
   ]
