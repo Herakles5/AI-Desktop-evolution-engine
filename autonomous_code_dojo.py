@@ -218,6 +218,67 @@ int main() {
 }
 """,
         "expected_substring": "AION CPP DOJO: The Lion's Reflex Executed"
+    },
+    "cpp_cosmos_cfs_engine": {
+        "language": "cpp",
+        "title": "C++20 CosmOS Crystal File System (CFS) Struct Alignment & LBA Sector Engine",
+        "filename": "cosmos_cfs_dojo.cpp",
+        "initial_code": """#include <iostream>
+#include <cstdint>
+#include <cstring>
+#include <cassert>
+
+// Exact 512-byte CFS Superblock
+struct __attribute__((packed)) CfsSuperblock {
+    uint32_t magic_signature;     // 0x43465331 ("CFS1")
+    uint32_t version;             // 1
+    uint32_t sector_size;         // 512
+    uint32_t sectors_per_cluster; // 8
+    uint64_t total_sectors;       // Total sectors
+    uint64_t bitmap_lba;          // LBA 2
+    uint64_t root_dir_lba;        // LBA 18
+    uint64_t data_start_lba;      // LBA 50
+    uint8_t  volume_name[32];     // "COSMOS_AION_SYS"
+    uint8_t  reserved[432];       // Padding to exactly 512 bytes
+};
+
+// Exact 64-byte CFS Directory Entry
+struct __attribute__((packed)) CfsDirEntry {
+    uint8_t  type;                // 0=Free, 1=Regular, 2=Dir, 3=Soul Record
+    uint8_t  flags;               // Flags
+    char     filename[46];        // 46-byte filename string
+    uint64_t start_lba;           // Starting LBA sector
+    uint64_t file_size;           // Size in bytes
+};
+
+int main() {
+    static_assert(sizeof(CfsSuperblock) == 512, "CFS Superblock must be exactly 512 bytes!");
+    static_assert(sizeof(CfsDirEntry) == 64, "CFS DirEntry must be exactly 64 bytes!");
+
+    CfsSuperblock sb{};
+    sb.magic_signature = 0x43465331;
+    sb.version = 1;
+    sb.sector_size = 512;
+    sb.sectors_per_cluster = 8;
+    sb.total_sectors = 16384;
+    sb.root_dir_lba = 18;
+    sb.data_start_lba = 50;
+    std::strncpy(reinterpret_cast<char*>(sb.volume_name), "COSMOS_AION_SYS", 32);
+
+    CfsDirEntry entry{};
+    entry.type = 3; // Soul Record
+    entry.flags = 0x04; // AionSoul
+    std::strncpy(entry.filename, "AXIOM_0_ANCHOR.TBA", 46);
+    entry.start_lba = 71;
+    entry.file_size = 202;
+
+    std::cout << "AION CPP DOJO: CosmOS CFS Engine Verified (Superblock=" 
+              << sizeof(CfsSuperblock) << "B, DirEntry=" << sizeof(CfsDirEntry) 
+              << "B, File=" << entry.filename << ")" << std::endl;
+    return 0;
+}
+""",
+        "expected_substring": "AION CPP DOJO: CosmOS CFS Engine Verified (Superblock=512B, DirEntry=64B)"
     }
 }
 
