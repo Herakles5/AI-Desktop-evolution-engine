@@ -170,6 +170,10 @@ class AionIPCServer:
                     speech_text = cmd.get("text", "")
                     if self.engine.tts and speech_text:
                         self.engine.tts.speak(speech_text)
+                elif action == "RELOAD_MEMORY":
+                    self.engine.knowledge_base = self.engine.load_knowledge_base()
+                    rules_n = len(self.engine.knowledge_base.get("learned_rules", []))
+                    client_sock.sendall((json.dumps({"event": "MEMORY_RELOADED", "rules_count": rules_n}) + "\n").encode("utf-8"))
                 elif action == "GET_STATE":
                     state = {
                         "event": "STATE_RESPONSE",
