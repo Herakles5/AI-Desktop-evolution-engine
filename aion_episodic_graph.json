@@ -1097,6 +1097,12 @@
       "label": "Gen_708",
       "first_seen_gen": 708,
       "importance": 0.8
+    },
+    "gen_709": {
+      "type": "CONCEPT",
+      "label": "Gen_709",
+      "first_seen_gen": 709,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -2748,6 +2754,15 @@
       "weight": 0.58,
       "episodes": [
         708
+      ]
+    },
+    {
+      "source": "gen_709",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        709
       ]
     }
   ]
