@@ -803,6 +803,12 @@
       "label": "Gen_659",
       "first_seen_gen": 659,
       "importance": 0.8
+    },
+    "gen_660": {
+      "type": "CONCEPT",
+      "label": "Gen_660",
+      "first_seen_gen": 660,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -2013,6 +2019,15 @@
       "weight": 0.58,
       "episodes": [
         659
+      ]
+    },
+    {
+      "source": "gen_660",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        660
       ]
     }
   ]
