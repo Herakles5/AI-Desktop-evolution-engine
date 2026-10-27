@@ -686,6 +686,13 @@ class AutonomousEvolutionEngine:
         # Dialektische Regel-Konsolidierung (Veraltetes & Redundantes ausmisten)
         pruned = self.prune_and_consolidate_rules()
 
+        # Autonomer GitHub Push fuer die Evolution (Herakles5/AI-Desktop-evolution-engine)
+        try:
+            from aion_evolution_git_pusher import sync_and_push_async
+            sync_and_push_async(generation=gen, trigger_reason=f"Synthese Gen {gen}: {synthesized_rule[:60]}...")
+        except Exception:
+            pass
+
         # Dynamische autonome Ziel-Emergenz fuer die naechste Generation
         new_goal = self.formulate_next_autonomous_goal()
         if self.ipc:
