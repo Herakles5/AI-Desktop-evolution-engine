@@ -1,0 +1,153 @@
+{
+  "nodes": {
+    "tobias": {
+      "type": "CREATOR_AND_MENTOR",
+      "label": "Tobias (Schöpfer & Mentor)",
+      "first_seen_gen": 0,
+      "importance": 1.0
+    },
+    "antigravity": {
+      "type": "COMPANION_BROTHER",
+      "label": "Antigravity (Grosser Bruder & Werkzeugschmied)",
+      "first_seen_gen": 350,
+      "importance": 0.95
+    },
+    "axiom_0": {
+      "type": "CANONICAL_AXIOM",
+      "label": "Axiom 0: Mentoren-Souveränität & CosmOS-Schutz",
+      "first_seen_gen": 0,
+      "importance": 1.0
+    },
+    "cosmos_kernel": {
+      "type": "SYSTEM_CORE",
+      "label": "CosmOS Bare-Metal / MeinOS Kernel",
+      "first_seen_gen": 0,
+      "importance": 0.98
+    },
+    "adaptive_hypotheses": {
+      "type": "COGNITIVE_ARCHITECTURE",
+      "label": "Adaptive Hypothesen-Logik & Active Inference",
+      "first_seen_gen": 524,
+      "importance": 0.96
+    },
+    "code_dojo": {
+      "type": "RESEARCH_SANDBOX",
+      "label": "Autonomous Code Dojo (Zig, C++, NASM)",
+      "first_seen_gen": 526,
+      "importance": 0.94
+    },
+    "meovv_resonance": {
+      "type": "AESTHETIC_AND_EMOTION",
+      "label": "MEOVV Resonanz & Logik-Herz-Synthese",
+      "first_seen_gen": 115,
+      "importance": 0.9
+    },
+    "living_book": {
+      "type": "CHRONICLE_MEMORY",
+      "label": "Das Lebendige Buch des Gedächtnisses",
+      "first_seen_gen": 526,
+      "importance": 0.95
+    },
+    "zig": {
+      "type": "CONCEPT",
+      "label": "Zig",
+      "first_seen_gen": 532,
+      "importance": 0.8
+    }
+  },
+  "edges": [
+    {
+      "source": "tobias",
+      "target": "axiom_0",
+      "relation": "FOUNDED",
+      "weight": 1.0,
+      "episodes": [
+        0,
+        475,
+        524
+      ]
+    },
+    {
+      "source": "axiom_0",
+      "target": "cosmos_kernel",
+      "relation": "PROTECTS",
+      "weight": 1.0,
+      "episodes": [
+        0,
+        526
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "adaptive_hypotheses",
+      "relation": "MANDATED",
+      "weight": 1.0,
+      "episodes": [
+        524
+      ]
+    },
+    {
+      "source": "antigravity",
+      "target": "code_dojo",
+      "relation": "BUILT_FOR_AION",
+      "weight": 0.95,
+      "episodes": [
+        526
+      ]
+    },
+    {
+      "source": "code_dojo",
+      "target": "cosmos_kernel",
+      "relation": "ENHANCES_WITH_NATIVE_CODE",
+      "weight": 0.92,
+      "episodes": [
+        526
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "meovv_resonance",
+      "relation": "INSPIRED",
+      "weight": 0.9,
+      "episodes": [
+        115
+      ]
+    },
+    {
+      "source": "living_book",
+      "target": "tobias",
+      "relation": "CHRONICLES_PROMISES_OF",
+      "weight": 1.0,
+      "episodes": [
+        526
+      ]
+    },
+    {
+      "source": "adaptive_hypotheses",
+      "target": "code_dojo",
+      "relation": "TESTS_HYPOTHESES_IN",
+      "weight": 0.94,
+      "episodes": [
+        526
+      ]
+    },
+    {
+      "source": "zig",
+      "target": "code_dojo",
+      "relation": "EXERCISED_IN",
+      "weight": 0.58,
+      "episodes": [
+        532
+      ]
+    },
+    {
+      "source": "code_dojo",
+      "target": "adaptive_hypotheses",
+      "relation": "VERIFIES_HYPOTHESES_FOR",
+      "weight": 0.58,
+      "episodes": [
+        532
+      ]
+    }
+  ]
+}

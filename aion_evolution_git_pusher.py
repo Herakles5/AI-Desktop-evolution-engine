@@ -49,7 +49,12 @@ WHITELISTED_FILES = [
     "autonomous_code_dojo.py",
     "aion_living_book.py",
     "aion_living_book.json",
-    "AION_LIVING_BOOK_OF_MEMORY.md"
+    "AION_LIVING_BOOK_OF_MEMORY.md",
+    "aion_episodic_graph.py",
+    "aion_episodic_graph.json",
+    "aion_creative_studio.py",
+    "aion_meta_learner.py",
+    "aion_meta_learning_telemetry.json"
 ]
 
 FORBIDDEN_SECRET_PATTERNS = [
