@@ -45,7 +45,11 @@ WHITELISTED_FILES = [
     "adaptive_hypothesis_engine.py",
     "aion_organism_state.json",
     "aion_crystallized_wisdom.json",
-    "aion_hypotheses_pool.json"
+    "aion_hypotheses_pool.json",
+    "autonomous_code_dojo.py",
+    "aion_living_book.py",
+    "aion_living_book.json",
+    "AION_LIVING_BOOK_OF_MEMORY.md"
 ]
 
 FORBIDDEN_SECRET_PATTERNS = [
