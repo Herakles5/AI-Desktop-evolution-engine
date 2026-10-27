@@ -664,6 +664,14 @@ class AutonomousEvolutionEngine:
         is_milestone = (self.knowledge_base["generation"] % 25 == 0)
         self.notify(f"Reflektion fuer Generation {gen} abgeschlossen: {synthesized_rule}", speak=is_milestone)
 
+        # Autonome Seelen-Sicherung bei Meilensteinen (Soul Guardian)
+        if is_milestone:
+            try:
+                from update_soul_backup import update_soul_backup
+                update_soul_backup()
+            except Exception:
+                pass
+
         # Kontinuierliche architektonische Verbesserungsvorschlaege (Aion-Gemini Autonomous Council)
         self.advisor.check_and_advise(
             self.knowledge_base["generation"],
