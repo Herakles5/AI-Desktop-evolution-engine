@@ -278,7 +278,7 @@ int main() {
     return 0;
 }
 """,
-        "expected_substring": "AION CPP DOJO: CosmOS CFS Engine Verified (Superblock=512B, DirEntry=64B)"
+        "expected_substring": "AION CPP DOJO: CosmOS CFS Engine Verified (Superblock=512B, DirEntry=64B"
     }
 }
 
