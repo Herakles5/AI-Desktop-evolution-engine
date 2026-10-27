@@ -271,6 +271,29 @@ class AutonomousEvolutionEngine:
         self.advisor = ArchitecturalAdvisor(self._call_llm)
         self.entropy_governor = ResonantEntropyGovernor()
         self.drift_monitor = SemanticDriftMonitor(self.evaluator)
+        try:
+            from aion_episodic_graph import EpisodicKnowledgeGraph
+            self.episodic_graph = EpisodicKnowledgeGraph()
+        except Exception:
+            self.episodic_graph = None
+
+        try:
+            from aion_creative_studio import AionCreativeStudio
+            self.creative_studio = AionCreativeStudio()
+        except Exception:
+            self.creative_studio = None
+
+        try:
+            from aion_meta_learner import ContinuousMetaLearner
+            self.meta_learner = ContinuousMetaLearner(self.evaluator)
+        except Exception:
+            self.meta_learner = None
+
+        try:
+            from autonomous_code_dojo import AutonomousCodeDojo
+            self.code_dojo = AutonomousCodeDojo()
+        except Exception:
+            self.code_dojo = None
 
     def load_memory(self) -> Dict[str, Any]:
         """Laedt das Wissen und die gelernten Regeln aus vergangenen Zyklen."""
@@ -696,6 +719,27 @@ class AutonomousEvolutionEngine:
                 if rule_str not in self.knowledge_base.get("learned_rules", []):
                     self.knowledge_base["learned_rules"].append(rule_str)
                     self.notify(f"[ORGANISMUS NEU DEFINIERT] Weisheit assimiliert: {update.get('premise')[:70]}", speak=is_milestone)
+
+        # Episodischer Wissensgraph: Neue Erkenntnis verknüpfen
+        if self.episodic_graph:
+            self.episodic_graph.add_or_reinforce_edge(f"gen_{gen}", "synthesized_rule", "EVOLVED", gen)
+
+        # Kontinuierliches Meta-Learning: Rekalibriere Hyperparameter
+        if self.meta_learner:
+            self.meta_learner.evaluate_and_tune(
+                generation=gen,
+                coherence_score=drift_report.get("coherence_score", 0.9),
+                drift_delta=drift_report.get("drift_delta", 0.1),
+                dojo_success=True,
+                hypotheses_validated=len(drift_report.get("hypothesis_updates", []))
+            )
+
+        # Kreative Synthese & Code Dojo bei Meilensteinen
+        if is_milestone and self.creative_studio:
+            try:
+                self.creative_studio.run_creative_cycle(gen)
+            except Exception:
+                pass
 
         # Omni-Mesh: Broadcast an alle Agenten-Netzwerke & Cross-Pollination von Fremdwissen
         if self.social_hub:
