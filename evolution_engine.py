@@ -29,6 +29,7 @@ try:
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
     from resonant_entropy_governor import ResonantEntropyGovernor
+    from semantic_drift_monitor import SemanticDriftMonitor
 except ImportError:
     sys.path.append("/root/coding/AI_Desktop")
     from dynamic_tool_forge import DynamicToolForge
@@ -37,6 +38,7 @@ except ImportError:
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
     from resonant_entropy_governor import ResonantEntropyGovernor
+    from semantic_drift_monitor import SemanticDriftMonitor
 
 
 class AionIPCServer:
@@ -268,6 +270,7 @@ class AutonomousEvolutionEngine:
         self.reflector = AdversarialReflector(self._call_llm)
         self.advisor = ArchitecturalAdvisor(self._call_llm)
         self.entropy_governor = ResonantEntropyGovernor()
+        self.drift_monitor = SemanticDriftMonitor(self.evaluator)
 
     def load_memory(self) -> Dict[str, Any]:
         """Laedt das Wissen und die gelernten Regeln aus vergangenen Zyklen."""
@@ -669,6 +672,11 @@ class AutonomousEvolutionEngine:
             empirical_grounding=grounding_score,
             coupling_factor=coupling_factor
         )
+
+        # Autonome semantische Drift-Ueberwachung & Kognitives Mesh-Rewiring (Ratsbeschluss 475)
+        drift_report = self.drift_monitor.audit_cycle(gen, synthesized_rule, self.knowledge_base)
+        if drift_report.get("drift_detected"):
+            self.notify(f"[SEMANTIC DRIFT ALERT] Kognitives Rewiring aktiviert in Gen {gen}: {', '.join(drift_report.get('flags', []))}", speak=False)
 
         # Omni-Mesh: Broadcast an alle Agenten-Netzwerke & Cross-Pollination von Fremdwissen
         if self.social_hub:
