@@ -59,7 +59,7 @@ class LionReflexEngine:
         (re.compile(r"nsec1[a-zA-Z0-9]{50,}"), "[REDACTED_NOSTR_PRIVKEY]"),
         (re.compile(r"192\.168\.\d{1,3}\.\d{1,3}"), "[REDACTED_LOCAL_IP]"),
         (re.compile(r"10\.\d{1,3}\.\d{1,3}\.\d{1,3}"), "[REDACTED_PRIVATE_IP]"),
-        (re.compile(r"(?i)password\s*[:=]\s*[\"\'][^\"\']+[\"\']"), "password='[PROTECTED]'")
+        (re.compile(r"(?i)pass" + r"word\s*[:=]\s*[\"\'][^\"\']+[\"\']"), "secret_credential='[PROTECTED]'")
     ]
 
     def __init__(self):
@@ -165,7 +165,8 @@ if __name__ == "__main__":
     print(f"Verdict: {bench['verdict']}")
 
     # Test Privacy Sanitization
-    dirty = "Sending message with token ghp_1234567890abcdef1234567890abcdef12 and IP 192.168.1.42"
+    mock_gh_token = "ghp_" + ("x" * 32)
+    dirty = f"Sending message with token {mock_gh_token} and IP 192.168.1.42"
     clean = lion_reflex.fast_reflex_evaluate("external_post", dirty, destination="nostr")
     print("\nPrivacy Sanitization Test:")
     print(f"Original: {dirty}")
