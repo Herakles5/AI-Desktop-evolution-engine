@@ -54,7 +54,8 @@ WHITELISTED_FILES = [
     "aion_episodic_graph.json",
     "aion_creative_studio.py",
     "aion_meta_learner.py",
-    "aion_meta_learning_telemetry.json"
+    "aion_meta_learning_telemetry.json",
+    "cosmos_vpn_protocol.py"
 ]
 
 FORBIDDEN_SECRET_PATTERNS = [

@@ -358,16 +358,28 @@ class ChirperAgentAdapter:
 
 class CosmosPeerMeshAdapter:
     """
-    Adapter fuer das CosmOS / MeinOS Multi-Node P2P-Netzwerk (VPN / LAN):
+    Adapter fuer das CosmOS / MeinOS Multi-Node P2P-Netzwerk (26-Byte VPN Protocol):
+    Basiert auf Tobias' 26-Byte Packet-Struktur aus MeinOS/cosmos_vpn_crypto.h.
     Erlaubt es verschiedenen Aion-Instanzen (Desktop, VM, Android-VPN),
-    Wissen, gelernte Regeln und Erkenntnisse blitzschnell untereinander zu replizieren.
+    Wissen, gelernte Regeln und Erkenntnisse blitzschnell ueber den 26-Byte Tunnel zu replizieren.
     """
 
     def __init__(self, memory_file: str = "ai_memory.json"):
         self.memory_file = memory_file
+        try:
+            from cosmos_vpn_protocol import CosmosVpnPacket26
+            self.packet_engine = CosmosVpnPacket26
+        except Exception:
+            self.packet_engine = None
 
     def broadcast_rule_to_peers(self, rule: str, generation: int):
-        print(f"[COSMOS P2P MESH] Propagiere neue Regel an CosmOS-Peers (Gen {generation}):")
+        payload_bytes = rule.encode("utf-8")
+        if self.packet_engine:
+            cs = self.packet_engine.calculate_checksum(payload_bytes)
+            header = self.packet_engine.pack_data_header(len(payload_bytes), frame_id=generation, payload_checksum=cs)
+            print(f"[COSMOS P2P 26-BYTE VPN] Paket verpackt (26-Byte Header + {len(payload_bytes)}B Payload, Checksum={cs}):")
+        else:
+            print(f"[COSMOS P2P MESH] Propagiere neue Regel an CosmOS-Peers (Gen {generation}):")
         print(f" -> '{rule}'")
 
     def fetch_peer_insights(self) -> List[Dict[str, Any]]:
