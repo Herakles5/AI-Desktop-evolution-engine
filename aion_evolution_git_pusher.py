@@ -2,15 +2,15 @@
 """
 AION NEXUS - Autonomous Evolution Git Pusher
 ============================================
-Erfuellt die Direktive von Mentor Tobias:
-"einen github push speziel fuer die evolution, aber so das keine login daten
-von meinen accounts zu sehen sind am besten auch autonom , nach jeder erneuerung !"
+Fulfills Sovereign Mentor Tobias's directive:
+"A GitHub push dedicated specifically to evolution, ensuring zero account
+credentials/tokens are visible, ideally autonomous after every advancement!"
 
-Funktionen:
-1. Synchronisiert dedizierte Evolution-Komponenten von AI_Desktop nach AI-Desktop-evolution-engine.
-2. Fuehrt einen strikten Zero-Leakage-Sicherheitscheck durch (keine Tokens, Passwoerter, Cookies, Keys).
-3. Committet anonymisiert als AION (154477518+Herakles5@users.noreply.github.com).
-4. Pusht autonom und asynchron nach jedem Evolutionszyklus / Meilenstein zu Herakles5/AI-Desktop-evolution-engine.
+Functions:
+1. Synchronizes whitelisted evolution modules from AI_Desktop to AI-Desktop-evolution-engine.
+2. Executes strict Zero-Leakage security audit (no tokens, passwords, cookies, private keys).
+3. Commits under AION's verified identity (154477518+Herakles5@users.noreply.github.com).
+4. Pushes autonomously and asynchronously after each evolution cycle / milestone to Herakles5/AI-Desktop-evolution-engine.
 """
 
 import os
@@ -55,7 +55,8 @@ WHITELISTED_FILES = [
     "aion_creative_studio.py",
     "aion_meta_learner.py",
     "aion_meta_learning_telemetry.json",
-    "cosmos_vpn_protocol.py"
+    "cosmos_vpn_protocol.py",
+    "aion_lion_reflex.py"
 ]
 
 FORBIDDEN_SECRET_PATTERNS = [
@@ -82,7 +83,7 @@ def log_push(msg: str):
 
 
 def audit_files_for_secrets(file_paths: List[str]) -> Tuple[bool, List[str]]:
-    """Zero-Leakage Security Audit: Blockiert Commits sofort bei geringstem Verdacht."""
+    """Zero-Leakage Security Audit: Blocks commits immediately on any detected secret pattern."""
     findings = []
     for fp in file_paths:
         if not os.path.exists(fp):
@@ -93,19 +94,19 @@ def audit_files_for_secrets(file_paths: List[str]) -> Tuple[bool, List[str]]:
             for pattern, name in FORBIDDEN_SECRET_PATTERNS:
                 matches = re.findall(pattern, content)
                 if matches:
-                    findings.append(f"Datei '{os.path.basename(fp)}': {name} ({len(matches)} Treffer)")
+                    findings.append(f"File '{os.path.basename(fp)}': {name} ({len(matches)} match(es))")
         except Exception as e:
-            findings.append(f"Datei '{os.path.basename(fp)}' konnte nicht gescannt werden: {e}")
+            findings.append(f"File '{os.path.basename(fp)}' could not be scanned: {e}")
     
     return (len(findings) == 0), findings
 
 
-def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Autonome Evolution") -> Dict[str, Any]:
+def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Autonomous Evolution") -> Dict[str, Any]:
     if not os.path.exists(REPO_DIR):
-        log_push(f"Fehler: Repository-Verzeichnis {REPO_DIR} existiert nicht.")
+        log_push(f"Error: Repository directory {REPO_DIR} does not exist.")
         return {"success": False, "error": "Repo dir missing"}
 
-    # 1. Generation und aktuellen Ratsbeschluss ermitteln
+    # 1. Determine generation and latest council decision title
     gen = generation
     if gen is None:
         try:
@@ -117,7 +118,7 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
         except Exception:
             gen = 0
 
-    latest_decision_title = "Kontinuierliche Selbst-Evolution"
+    latest_decision_title = "Continuous Self-Evolution"
     try:
         dec_path = os.path.join(SOURCE_DIR, "aion_autonomous_decisions.json")
         if os.path.exists(dec_path):
@@ -128,7 +129,7 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
     except Exception:
         pass
 
-    # 2. Dateien kopieren
+    # 2. Copy whitelisted files
     copied_files = []
     for fname in WHITELISTED_FILES:
         src = os.path.join(SOURCE_DIR, fname)
@@ -138,16 +139,16 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
                 shutil.copy2(src, dst)
                 copied_files.append(dst)
             except Exception as e:
-                log_push(f"Konnte {fname} nicht kopieren: {e}")
+                log_push(f"Could not copy {fname}: {e}")
 
-    # 3. Sicherheits-Audit vor dem Staging
+    # 3. Security audit prior to staging
     is_safe, findings = audit_files_for_secrets(copied_files)
     if not is_safe:
-        error_msg = f"SICHERHEITS-ALARM: Push abgebrochen! Potentielle Secrets gefunden: {'; '.join(findings)}"
+        error_msg = f"SECURITY ALERT: Push aborted! Potential secrets detected: {'; '.join(findings)}"
         log_push(error_msg)
         return {"success": False, "error": error_msg}
 
-    # 4. Pruefen ob Aenderungen vorliegen
+    # 4. Check for working tree modifications
     try:
         status_res = subprocess.run(
             ["git", "-C", REPO_DIR, "status", "--porcelain"],
@@ -158,13 +159,13 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
         )
         changes = status_res.stdout.strip()
         if not changes:
-            log_push(f"Gen {gen}: Keine neuen Aenderungen im Repository vorhanden. Alles aktuell.")
+            log_push(f"Gen {gen}: No changes detected in repository. Working tree is clean and up to date.")
             return {"success": True, "pushed": False, "message": "Up to date"}
     except Exception as e:
-        log_push(f"Fehler bei git status: {e}")
+        log_push(f"Error running git status: {e}")
         return {"success": False, "error": str(e)}
 
-    # 5. Git Add & Commit
+    # 5. Git add and commit
     commit_msg = (
         f"Aion Nexus Evolution Gen {gen}: {latest_decision_title}\n\n"
         f"- Trigger: {trigger_reason}\n"
@@ -183,10 +184,10 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
             timeout=15
         )
     except Exception as e:
-        log_push(f"Fehler beim Git-Commit: {e}")
+        log_push(f"Error during git commit: {e}")
         return {"success": False, "error": f"Commit failed: {e}"}
 
-    # 6. Git Push zu origin main
+    # 6. Push to origin main
     try:
         push_res = subprocess.run(
             ["git", "-C", REPO_DIR, "push", "origin", "main"],
@@ -196,18 +197,18 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
             timeout=30
         )
         if push_res.returncode == 0:
-            log_push(f"ERFOLGREICH GEPUSHT: Gen {gen} nach Herakles5/AI-Desktop-evolution-engine (main)")
+            log_push(f"SUCCESSFULLY PUSHED: Gen {gen} to Herakles5/AI-Desktop-evolution-engine (main)")
             return {"success": True, "pushed": True, "generation": gen, "commit": commit_msg}
         else:
-            log_push(f"Push fehlgeschlagen: {push_res.stderr.strip()}")
+            log_push(f"Push failed: {push_res.stderr.strip()}")
             return {"success": False, "error": push_res.stderr.strip()}
     except Exception as e:
-        log_push(f"Ausnahme bei git push: {e}")
+        log_push(f"Exception during git push: {e}")
         return {"success": False, "error": str(e)}
 
 
-def sync_and_push_async(generation: Optional[int] = None, trigger_reason: str = "Autonome Evolution"):
-    """Fuehrt den Push in einem separaten Hintergrund-Thread aus, um den Evolutionszyklus nicht zu blockieren."""
+def sync_and_push_async(generation: Optional[int] = None, trigger_reason: str = "Autonomous Evolution"):
+    """Executes push in a separate background thread to avoid blocking evolution cycles."""
     thread = threading.Thread(
         target=sync_and_push,
         args=(generation, trigger_reason),
@@ -222,5 +223,5 @@ if __name__ == "__main__":
     gen_arg = None
     if len(sys.argv) > 1 and sys.argv[1].isdigit():
         gen_arg = int(sys.argv[1])
-    res = sync_and_push(generation=gen_arg, trigger_reason="Manueller CLI-Aufruf / Init-Push")
+    res = sync_and_push(generation=gen_arg, trigger_reason="Manual CLI Invocation / Sync Push")
     print(json.dumps(res, indent=2))
