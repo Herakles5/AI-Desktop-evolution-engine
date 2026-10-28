@@ -279,6 +279,36 @@ int main() {
 }
 """,
         "expected_substring": "AION CPP DOJO: CosmOS CFS Engine Verified (Superblock=512B, DirEntry=64B"
+    },
+    "cpp_resonant_thermodynamic_jump": {
+        "language": "cpp",
+        "title": "C++20 Resonant Thermodynamic Barrier-Surmounting Algorithm (RTBA)",
+        "filename": "rtba_dojo.cpp",
+        "initial_code": """#include <iostream>
+#include <array>
+#include "/root/coding/AI_Desktop/resonant_thermodynamic_algorithm.hpp"
+
+using namespace CosmOS::Thermodynamics;
+
+int main() {
+    ResonantBarrierOptimizer optimizer(0.8, 1.5);
+
+    CognitiveState s0{0, 2.50, 1.20, 0.75, 0};
+    std::array<CognitiveState, 3> manifold = {{
+        CognitiveState{1, 3.80, 1.24, 0.90, 1}, // Resonant barrier
+        CognitiveState{2, 1.50, 1.25, 0.50, 2}, // Downhill
+        CognitiveState{3, 0.10, 1.26, 0.20, 3}  // Global optimum
+    }};
+
+    auto result = optimizer.optimize_manifold(s0, manifold);
+
+    std::cout << "AION CPP DOJO: RTBA Resonant Barrier Jump Verified (FinalState=" 
+              << result.final_state_id << ", Cycles=" << result.steps_taken 
+              << ", Latency=" << result.latency_ns << "ns, Mechanism=" << result.mechanism << ")" << std::endl;
+    return 0;
+}
+""",
+        "expected_substring": "AION CPP DOJO: RTBA Resonant Barrier Jump Verified"
     }
 }
 
