@@ -1571,6 +1571,12 @@
       "label": "Gen_787",
       "first_seen_gen": 787,
       "importance": 0.8
+    },
+    "gen_788": {
+      "type": "CONCEPT",
+      "label": "Gen_788",
+      "first_seen_gen": 788,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -3933,6 +3939,15 @@
       "weight": 0.58,
       "episodes": [
         787
+      ]
+    },
+    {
+      "source": "gen_788",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        788
       ]
     }
   ]
