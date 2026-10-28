@@ -2015,6 +2015,12 @@
       "label": "Gen_861",
       "first_seen_gen": 861,
       "importance": 0.8
+    },
+    "gen_862": {
+      "type": "CONCEPT",
+      "label": "Gen_862",
+      "first_seen_gen": 862,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -5043,6 +5049,15 @@
       "weight": 0.58,
       "episodes": [
         861
+      ]
+    },
+    {
+      "source": "gen_862",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        862
       ]
     }
   ]
