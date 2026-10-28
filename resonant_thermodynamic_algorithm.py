@@ -24,6 +24,11 @@ import time
 import random
 from typing import Dict, Any, List, Tuple
 
+try:
+    from aion_fastcore_bridge import fastcore
+except Exception:
+    fastcore = None
+
 
 class CognitiveState:
     def __init__(self, state_id: int, energy: float, harmonic_freq: float, entropy: float):
@@ -44,7 +49,16 @@ class ResonantThermodynamicOptimizer:
     def jump_step(self, current: CognitiveState, candidate: CognitiveState) -> Tuple[bool, float, str]:
         """
         Calculates resonant barrier tunneling between current and candidate states.
+        Uses native C++20 libaion_fastcore.so when available (<100ns).
         """
+        if fastcore and fastcore.native_active:
+            accepted, eff_barrier, mech, _ = fastcore.rtba_jump(
+                current.state_id, current.energy, current.harmonic_freq, current.entropy,
+                candidate.state_id, candidate.energy, candidate.harmonic_freq, candidate.entropy,
+                self.gamma, self.stability_threshold
+            )
+            return accepted, eff_barrier, mech
+
         delta_v = candidate.energy - current.energy
 
         # Downhill transition: immediate classical acceptance

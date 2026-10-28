@@ -122,9 +122,18 @@ class DynamicTopologicalGradient:
             return 0.5
         
         freqs = {}
-        for b in raw_bytes:
-            freqs[b] = freqs.get(b, 0) + 1
-        h_char = -sum((cnt / len(raw_bytes)) * math.log2(cnt / len(raw_bytes)) for cnt in freqs.values())
+        try:
+            from aion_fastcore_bridge import fastcore
+            if fastcore and fastcore.native_active:
+                h_char = fastcore.fast_shannon_entropy(raw_bytes)
+            else:
+                for b in raw_bytes:
+                    freqs[b] = freqs.get(b, 0) + 1
+                h_char = -sum((cnt / len(raw_bytes)) * math.log2(cnt / len(raw_bytes)) for cnt in freqs.values())
+        except Exception:
+            for b in raw_bytes:
+                freqs[b] = freqs.get(b, 0) + 1
+            h_char = -sum((cnt / len(raw_bytes)) * math.log2(cnt / len(raw_bytes)) for cnt in freqs.values())
         norm_h = min(1.0, h_char / 6.0)
         
         # Compressibility ratio: noise does not compress well

@@ -170,9 +170,15 @@ class SemanticDriftMonitor:
 
     @staticmethod
     def calculate_shannon_entropy(text: str) -> float:
-        """Calculates Shannon entropy H(X) in bits per character."""
+        """Calculates Shannon entropy H(X) in bits per character (C++20 FastCore accelerated)."""
         if not text:
             return 0.0
+        try:
+            from aion_fastcore_bridge import fastcore
+            if fastcore and fastcore.native_active:
+                return round(fastcore.fast_shannon_entropy(text), 4)
+        except Exception:
+            pass
         counts: Dict[str, int] = {}
         for ch in text:
             counts[ch] = counts.get(ch, 0) + 1

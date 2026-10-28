@@ -81,14 +81,28 @@ class LionReflexEngine:
         start_ns = time.perf_counter_ns()
         self.telemetry.total_reflex_evals += 1
 
-        # 1. Safety First Check
+        # 1. Safety First Check (Native C++20 FastCore if active)
         safety_violation = False
         violation_reason = None
-        for path in self.PROTECTED_SYSTEM_PATHS:
-            if path in raw_payload:
-                safety_violation = True
-                violation_reason = f"Safety Barrier: Invariant system path detected: {path}"
-                break
+        try:
+            from aion_fastcore_bridge import fastcore
+            if fastcore and fastcore.native_active:
+                allowed, reason, _ = fastcore.lion_safety_check(raw_payload)
+                if not allowed:
+                    safety_violation = True
+                    violation_reason = reason
+            else:
+                for path in self.PROTECTED_SYSTEM_PATHS:
+                    if path in raw_payload:
+                        safety_violation = True
+                        violation_reason = f"Safety Barrier: Invariant system path detected: {path}"
+                        break
+        except Exception:
+            for path in self.PROTECTED_SYSTEM_PATHS:
+                if path in raw_payload:
+                    safety_violation = True
+                    violation_reason = f"Safety Barrier: Invariant system path detected: {path}"
+                    break
 
         if safety_violation:
             self.telemetry.safety_intercepts += 1

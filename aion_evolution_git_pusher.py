@@ -28,6 +28,7 @@ REPO_DIR = "/root/coding/AI-Desktop-evolution-engine"
 PUSH_LOG = "/root/evolution_git_push.log"
 
 WHITELISTED_FILES = [
+    "README.md",
     "evolution_engine.py",
     "semantic_drift_monitor.py",
     "topological_memory.py",
@@ -56,7 +57,19 @@ WHITELISTED_FILES = [
     "aion_meta_learner.py",
     "aion_meta_learning_telemetry.json",
     "cosmos_vpn_protocol.py",
-    "aion_lion_reflex.py"
+    "aion_lion_reflex.py",
+    "cosmos_cfs_engine.py",
+    "cosmos_udp_beacon.py",
+    "aion_acoustic_ear.py",
+    "aion_intuition_distiller.py",
+    "aion_proactive_mind.py",
+    "cosmos_mesh_pulse.py",
+    "resonant_thermodynamic_algorithm.hpp",
+    "resonant_thermodynamic_algorithm.py",
+    "aion_hypervisor_sentinel.py",
+    "aion_fastcore.cpp",
+    "aion_fastcore_bridge.py",
+    "aion_evolution_git_pusher.py"
 ]
 
 FORBIDDEN_SECRET_PATTERNS = [

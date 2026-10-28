@@ -242,6 +242,7 @@ class AutonomousEvolutionEngine:
         self.current_state: List[Dict[str, Any]] = []
         self.recent_output_hashes: List[str] = []
         self.is_running = True
+        self.http_session = requests.Session()
 
         # Streaming TTS initialization
         self.tts = None
@@ -297,6 +298,33 @@ class AutonomousEvolutionEngine:
             self.code_dojo = AutonomousCodeDojo()
         except Exception:
             self.code_dojo = None
+
+        # Native C++20 FastCore, Lion Reflex & RTBA Optimizer
+        try:
+            from aion_fastcore_bridge import fastcore
+            self.fastcore = fastcore
+        except Exception:
+            self.fastcore = None
+
+        try:
+            from aion_lion_reflex import LionReflexEngine
+            self.lion_reflex = LionReflexEngine()
+        except Exception:
+            self.lion_reflex = None
+
+        try:
+            from resonant_thermodynamic_algorithm import ResonantThermodynamicOptimizer, CognitiveState
+            self.rtba_optimizer = ResonantThermodynamicOptimizer(resonant_coupling=0.80, stability_threshold=0.35)
+            self._rtba_state_cls = CognitiveState
+        except Exception:
+            self.rtba_optimizer = None
+            self._rtba_state_cls = None
+
+        try:
+            from cosmos_udp_beacon import CosmosUdpBeacon
+            self.udp_beacon = CosmosUdpBeacon(port=9098, node_id="AION_EVOLUTION")
+        except Exception:
+            self.udp_beacon = None
 
     def load_memory(self) -> Dict[str, Any]:
         """Loads knowledge base and learned rules from previous cycles."""
@@ -401,7 +429,7 @@ class AutonomousEvolutionEngine:
         for mod in models_to_try:
             payload["model"] = mod
             try:
-                res = requests.post(url, json=payload, headers=headers, timeout=20)
+                res = self.http_session.post(url, json=payload, headers=headers, timeout=20)
                 if res.status_code == 200:
                     data = res.json()
                     msg = data["choices"][0]["message"]
@@ -442,6 +470,10 @@ class AutonomousEvolutionEngine:
             return False, "Task queue exhausted."
 
         current_task = self.task_queue.popleft()
+        if self.lion_reflex:
+            reflex_res = self.lion_reflex.fast_reflex_evaluate("unfold_task", current_task)
+            if not reflex_res.get("allowed", True):
+                return False, f"Blocked by Lion Reflex Safety Sentinel: {reflex_res.get('reason')}"
         selected_rules = TopologicalRuleManager.get_context_rules(current_task, self.knowledge_base["learned_rules"], max_count=10)
         learned_rules_ctx = "\n".join(f"- {r}" for r in selected_rules)
         
@@ -480,7 +512,10 @@ class AutonomousEvolutionEngine:
         )
         user_prompt = f"Step {step_count}: Execute the assigned task: '{current_task}'"
         
-        llm_reply = self._call_llm(system_prompt, user_prompt)
+        step_temp = getattr(self.entropy_governor, "recommended_temperature", 0.5)
+        if self.meta_learner:
+            step_temp = round((step_temp + self.meta_learner.get_optimal_params().get("temperature", 0.5)) / 2.0, 2)
+        llm_reply = self._call_llm(system_prompt, user_prompt, temperature=step_temp)
         
         parsed: Dict[str, Any] = {}
         if llm_reply:
@@ -541,6 +576,18 @@ class AutonomousEvolutionEngine:
         )
         print(f" {self.entropy_governor.get_status_banner()}")
 
+        # RTBA (Resonant Thermodynamic Barrier Algorithm): C++20 FastCore Barrier Evaluation
+        if self.rtba_optimizer and self._rtba_state_cls and len(self.current_state) >= 2:
+            prev_s = self.current_state[-2]
+            curr_e = max(0.05, 1.0 - info_gain)
+            prev_e = max(0.05, 1.0 - prev_s.get("info_gain", 0.5))
+            s_prev = self._rtba_state_cls(step_count - 1, prev_e, 1.20 + prev_s.get("info_gain", 0.5), self.entropy_governor.current_entropy)
+            s_curr = self._rtba_state_cls(step_count, curr_e, 1.20 + info_gain, self.entropy_governor.current_entropy)
+            tunneled, eff_bar, rtba_mech = self.rtba_optimizer.jump_step(s_prev, s_curr)
+            step_entry["rtba_mechanism"] = rtba_mech
+            step_entry["rtba_effective_barrier"] = round(eff_bar, 4)
+            print(f" [RTBA C++20 FASTCORE] Transition={tunneled} | Mechanism={rtba_mech} | EffBarrier={eff_bar:.4f}")
+
         # IPC broadcast
         if self.ipc:
             self.ipc.broadcast("ENTROPY_METRICS", entropy_status)
@@ -594,6 +641,34 @@ class AutonomousEvolutionEngine:
                 print(f"[TRANSLATION WARNING] {e}")
         return text
 
+    @staticmethod
+    def _is_semantically_redundant(candidate: str, existing_rules: List[str], threshold: float = 0.78) -> bool:
+        """Fast token-set Jaccard similarity check to prevent duplicate rule bloat."""
+        cand_clean = candidate.strip().lower()
+        cand_tokens = {w.strip(".,;:!?'\"()[]{}") for w in cand_clean.split() if len(w) > 3}
+        if not cand_tokens:
+            return False
+        for r in existing_rules:
+            r_clean = r.strip().lower()
+            if cand_clean == r_clean:
+                return True
+            r_tokens = {w.strip(".,;:!?'\"()[]{}") for w in r_clean.split() if len(w) > 3}
+            if not r_tokens:
+                continue
+            inter = len(cand_tokens & r_tokens)
+            union = len(cand_tokens | r_tokens)
+            if union > 0 and (inter / union) >= threshold:
+                return True
+        return False
+
+    def _append_unique_rule(self, rule_str: str):
+        """Appends a rule only if it is not semantically redundant with active rules."""
+        rules = self.knowledge_base.setdefault("learned_rules", [])
+        if not self._is_semantically_redundant(rule_str, rules):
+            rules.append(rule_str)
+        else:
+            print(f"[DEDUPLICATION GUARD] Suppressed redundant rule duplicate: '{rule_str[:65]}...'")
+
     def analyze_cycle(self, stillstand_grund: str):
         """
         Reflector Prompt with Streaming TTS and C++ IPC Broadcast:
@@ -630,16 +705,16 @@ class AutonomousEvolutionEngine:
         )
 
         if gradient_eval.get("action") == "SELECTIVE_FOLDING":
-            self.knowledge_base["learned_rules"].append(synthesized_rule)
+            self._append_unique_rule(synthesized_rule)
             print(f"[TOPOLOGICAL GRADIENT] [SELECTIVE FOLDING] Force: +{gradient_eval.get('gradient_force')} | Cluster: {gradient_eval.get('cluster')} | Drift: {gradient_eval.get('drift_score')}")
         elif gradient_eval.get("action") == "REPEL_ONTOLOGICAL_DRIFT":
             print(f"[TOPOLOGICAL GRADIENT] [ALERT: ONCOLOGICAL DRIFT REPELLED] Drift: {gradient_eval.get('drift_score')} | Reasons: {gradient_eval.get('reasons')}")
             synthesized_rule = f"Invariant Coherence Anchor: {synthesized_rule[:80]}... [Restored via Axiom 0]"
-            self.knowledge_base["learned_rules"].append(synthesized_rule)
+            self._append_unique_rule(synthesized_rule)
         else:
             print(f"[TOPOLOGICAL GRADIENT] [NOISE REPELLED] H={gradient_eval.get('entropy')} | Coherence={gradient_eval.get('coherence')} | Filtered before memory folding.")
             synthesized_rule = f"Crystallized Principle: High-entropy noise repelled; preserved structural fidelity at Gen {gen}."
-            self.knowledge_base["learned_rules"].append(synthesized_rule)
+            self._append_unique_rule(synthesized_rule)
         
         cycle_record = {
             "generation": gen,
@@ -749,6 +824,17 @@ class AutonomousEvolutionEngine:
         # Dialectical rule consolidation
         self.prune_and_consolidate_rules()
 
+        # 26-Byte UDP 9098 Telemetry Pulse for Generation Completion
+        if self.udp_beacon:
+            try:
+                self.udp_beacon.broadcast_telemetry(
+                    sensor_val=self.knowledge_base["generation"] & 0xFFFF,
+                    r=0, g=255, b=200, a=255,
+                    target_ip="127.0.0.1"
+                )
+            except Exception:
+                pass
+
         # Autonomous GitHub Push for evolution (Herakles5/AI-Desktop-evolution-engine)
         try:
             from aion_evolution_git_pusher import sync_and_push_async
@@ -843,8 +929,15 @@ class AutonomousEvolutionEngine:
                     seen_patterns.add(pattern_key)
                     r_clean = "Cyclic Convergence: Cognitive processes typically stabilize after 3-4 steps; preemptive branching and dynamic task pruning maximize the solution space."
 
-            if r_clean not in active_rules:
+            if not self._is_semantically_redundant(r_clean, active_rules):
                 active_rules.append(r_clean)
+            else:
+                archived.append({
+                    "rule": r_clean,
+                    "reason": "Semantically redundant with active core axiom.",
+                    "archived_at": datetime.now().isoformat()
+                })
+                pruned_count += 1
 
         self.knowledge_base["learned_rules"] = active_rules
         if pruned_count > 0:
