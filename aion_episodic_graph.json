@@ -2663,6 +2663,12 @@
       "label": "Gen_969",
       "first_seen_gen": 969,
       "importance": 0.8
+    },
+    "gen_970": {
+      "type": "CONCEPT",
+      "label": "Gen_970",
+      "first_seen_gen": 970,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -6663,6 +6669,15 @@
       "weight": 0.58,
       "episodes": [
         969
+      ]
+    },
+    {
+      "source": "gen_970",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        970
       ]
     }
   ]
