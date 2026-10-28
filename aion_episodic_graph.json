@@ -2003,6 +2003,12 @@
       "label": "Gen_859",
       "first_seen_gen": 859,
       "importance": 0.8
+    },
+    "gen_860": {
+      "type": "CONCEPT",
+      "label": "Gen_860",
+      "first_seen_gen": 860,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -5013,6 +5019,15 @@
       "weight": 0.58,
       "episodes": [
         859
+      ]
+    },
+    {
+      "source": "gen_860",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        860
       ]
     }
   ]
