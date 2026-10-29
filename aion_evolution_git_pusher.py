@@ -69,6 +69,7 @@ WHITELISTED_FILES = [
     "aion_hypervisor_sentinel.py",
     "aion_fastcore.cpp",
     "aion_fastcore_bridge.py",
+    "semantic_consensus_telemetry.json",
     "aion_evolution_git_pusher.py"
 ]
 

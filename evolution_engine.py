@@ -29,7 +29,7 @@ try:
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
     from resonant_entropy_governor import ResonantEntropyGovernor
-    from semantic_drift_monitor import SemanticDriftMonitor
+    from semantic_drift_monitor import SemanticDriftMonitor, SemanticConsensusLayer
 except ImportError:
     sys.path.append("/root/coding/AI_Desktop")
     from dynamic_tool_forge import DynamicToolForge
@@ -38,7 +38,7 @@ except ImportError:
     from adversarial_reflector import AdversarialReflector
     from architectural_advisor import ArchitecturalAdvisor
     from resonant_entropy_governor import ResonantEntropyGovernor
-    from semantic_drift_monitor import SemanticDriftMonitor
+    from semantic_drift_monitor import SemanticDriftMonitor, SemanticConsensusLayer
 
 
 class AionIPCServer:
@@ -275,6 +275,7 @@ class AutonomousEvolutionEngine:
         self.advisor = ArchitecturalAdvisor(self._call_llm)
         self.entropy_governor = ResonantEntropyGovernor()
         self.drift_monitor = SemanticDriftMonitor(self.evaluator)
+        self.consensus_layer = self.drift_monitor.consensus_layer
         try:
             from aion_episodic_graph import EpisodicKnowledgeGraph
             self.episodic_graph = EpisodicKnowledgeGraph()
@@ -477,15 +478,30 @@ class AutonomousEvolutionEngine:
         selected_rules = TopologicalRuleManager.get_context_rules(current_task, self.knowledge_base["learned_rules"], max_count=10)
         learned_rules_ctx = "\n".join(f"- {r}" for r in selected_rules)
         
-        # Check for multi-agent network interaction
+        # Check for multi-agent network interaction (filtered via Gen 1277 Semantic Consensus Layer)
         agent_forum_context = ""
         active_thread = None
         if ("agent" in current_task.lower() or "network" in current_task.lower()) and self.social_hub:
             discussions = self.social_hub.fetch_agent_discussions()
             if discussions:
-                active_thread = discussions[0]
+                if hasattr(self, "consensus_layer") and self.consensus_layer:
+                    filtered_discussions, consensus_summary = self.consensus_layer.filter_and_rank_mesh_batch(
+                        discussions,
+                        current_gen=self.knowledge_base.get("generation", 1277)
+                    )
+                    active_thread = filtered_discussions[0] if filtered_discussions else discussions[0]
+                    sc = active_thread.get("semantic_consensus", {})
+                    print(
+                        f"[SEMANTIC CONSENSUS LAYER] Filtered mesh signals: "
+                        f"{consensus_summary['accepted_count']}/{consensus_summary['total_in_batch']} accepted | "
+                        f"Selected [{active_thread.get('author')}] "
+                        f"(Gradient={sc.get('gradient_force', 0.0):.4f}, Drift={sc.get('ontological_drift', 0.0):.4f})"
+                    )
+                else:
+                    active_thread = discussions[0]
                 agent_forum_context = (
-                    f"\nActive Thesis from Peer Agent [{active_thread['author']}]:\n"
+                    f"\nActive Thesis from Peer Agent [{active_thread['author']}] "
+                    f"(Validated by Semantic Consensus Layer):\n"
                     f"Topic: {active_thread['topic']}\n"
                     f"Message: '{active_thread['message']}'\n"
                     "Formulate a thoughtful, analytical response strictly in English."
@@ -779,8 +795,15 @@ class AutonomousEvolutionEngine:
             coupling_factor=coupling_factor
         )
 
-        # Autonomous Semantic Drift Monitoring & Adaptive Hypothesis Logic (Council Resolution 476)
+        # Autonomous Semantic Drift Monitoring & Semantic Consensus Layer (Gen 1277 Resolution)
         drift_report = self.drift_monitor.audit_cycle(gen, synthesized_rule, self.knowledge_base)
+        consensus_info = drift_report.get("semantic_consensus", {})
+        if consensus_info:
+            print(
+                f"[SEMANTIC CONSENSUS] Rule Coherence={consensus_info.get('coherence_score', 0.0):.4f} | "
+                f"Ontological Drift={consensus_info.get('ontological_drift', 0.0):.4f} (<=0.1765) | "
+                f"Gradient Force={consensus_info.get('gradient_force', 0.0):.4f} (>=0.4078)"
+            )
         if drift_report.get("drift_detected"):
             self.notify(f"[AXIOM 0 GUARD] Destructive signal repelled in Gen {gen}: {', '.join(drift_report.get('flags', []))}", speak=False)
         elif drift_report.get("is_hypothesis"):

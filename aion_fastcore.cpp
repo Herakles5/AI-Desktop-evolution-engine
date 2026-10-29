@@ -127,5 +127,84 @@ uint16_t aion_cosmos_checksum16(const uint8_t* data, size_t len) {
     return static_cast<uint16_t>(sum & 0xFFFFu);
 }
 
+struct C_SemanticConsensusResult {
+    bool accepted;
+    double coherence_score;
+    double ontological_drift;
+    double gradient_force;
+    double snr_db;
+    uint64_t latency_ns;
+};
+
+/**
+ * 5. Generation 1277 Semantic Consensus Layer C++20 Kernel
+ * Evaluates incoming heterogeneous mesh signals against the Topological Entropy Inversion
+ * invariants (Ontological Drift <= 0.1765, Topological Gradient Force >= 0.4078).
+ */
+C_SemanticConsensusResult aion_semantic_consensus_eval(
+    const uint8_t* data,
+    size_t len,
+    double anchor_overlap_ratio,
+    double channel_weight,
+    double max_drift_ceiling,
+    double min_gradient_force
+) {
+    auto t0 = std::chrono::high_resolution_clock::now();
+    if (!data || len == 0) {
+        return {false, 0.0, 1.0, 0.0, 0.0, 0};
+    }
+
+    uint32_t counts[256] = {0};
+    size_t alnum_count = 0;
+    size_t space_count = 0;
+    for (size_t i = 0; i < len; ++i) {
+        uint8_t b = data[i];
+        counts[b]++;
+        if ((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z') || (b >= '0' && b <= '9')) {
+            alnum_count++;
+        } else if (b == ' ' || b == '\n' || b == '\t') {
+            space_count++;
+        }
+    }
+
+    double h_bits = 0.0;
+    const double inv_len = 1.0 / static_cast<double>(len);
+    for (size_t i = 0; i < 256; ++i) {
+        if (counts[i] > 0) {
+            double p = static_cast<double>(counts[i]) * inv_len;
+            h_bits -= p * std::log2(p);
+        }
+    }
+
+    double entropy_deviation = 0.0;
+    if (h_bits < 3.5) {
+        entropy_deviation = (3.5 - h_bits) / 3.5;
+    } else if (h_bits > 5.4) {
+        entropy_deviation = (h_bits - 5.4) / 2.6;
+    }
+    double structural_ratio = static_cast<double>(alnum_count + space_count) * inv_len;
+    double noise_ratio = std::max(0.01, (1.0 - structural_ratio) + 0.5 * entropy_deviation);
+
+    double clamped_anchor = std::min(1.0, std::max(0.0, anchor_overlap_ratio));
+    double clamped_weight = std::min(1.0, std::max(0.05, channel_weight));
+
+    double coherence = std::min(
+        1.0,
+        0.48 * clamped_anchor + 0.32 * (1.0 - entropy_deviation) * structural_ratio + 0.20 * clamped_weight
+    );
+    double ontological_drift = std::max(0.0, 1.0 - coherence) * (1.0 - 0.35 * clamped_anchor);
+
+    double snr_linear = std::max(0.1, coherence / noise_ratio);
+    double snr_db = 10.0 * std::log10(snr_linear);
+    double gradient_force = coherence * (1.0 - ontological_drift) * std::min(1.25, 0.55 + 0.45 * clamped_weight);
+
+    bool accepted = (ontological_drift <= max_drift_ceiling) && (gradient_force >= min_gradient_force);
+
+    auto t1 = std::chrono::high_resolution_clock::now();
+    uint64_t ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
+
+    return {accepted, coherence, ontological_drift, gradient_force, snr_db, ns};
+}
+
 } // extern "C"
 

@@ -10,9 +10,9 @@ from typing import Dict, Any, Optional, List, Tuple
 
 class AionMailAgent:
     """
-    Autonomer E-Mail-Agent fuer AION NEXUS:
+    Autonomous Email Agent for AION NEXUS:
     Erstellt temporaere E-Mail-Postfaecher (GuerrillaMail API),
-    empfaengt Verifizierungs-Mails und klickt Bestaetigungslinks voellig selbststaendig.
+    receives verification emails and automatically navigates confirmation links.
     """
 
     BASE_URL = "https://api.guerrillamail.com/ajax.php"
@@ -31,12 +31,12 @@ class AionMailAgent:
                 print(f"[MAIL AGENT] Postfach erstellt: {email}")
                 return email, sid_token
         except Exception as e:
-            print(f"[MAIL AGENT ERROR] Konnte Postfach nicht erstellen: {e}")
+            print(f"[MAIL AGENT ERROR] Could not initialize mailbox: {e}")
         return None, None
 
     def poll_verification_link(self, sid_token: str, timeout_seconds: int = 20) -> Optional[str]:
         start_time = time.time()
-        print(f"[MAIL AGENT] Warte auf Verifizierungs-E-Mail (Timeout: {timeout_seconds}s)...")
+        print(f"[MAIL AGENT] Awaiting verification email (Timeout: {timeout_seconds}s)...")
         seen_ids = set()
         while time.time() - start_time < timeout_seconds:
             try:
@@ -57,7 +57,7 @@ class AionMailAgent:
                         if "Welcome to Guerrilla Mail" in subject:
                             continue
 
-                        print(f"[MAIL AGENT] E-Mail empfangen: '{subject}' von {mail.get('mail_from')}")
+                        print(f"[MAIL AGENT] Email received: '{subject}' from {mail.get('mail_from')}")
                         links = re.findall(r'https?://[^\s<>"\']+', body)
                         for link in links:
                             link_lower = link.lower()
@@ -80,15 +80,15 @@ class AionMailAgent:
                 print(f"[MAIL AGENT] Bestaetigung erfolgreich (HTTP {r.status_code})!")
                 return True
         except Exception as e:
-            print(f"[MAIL AGENT FEHLER] Link-Aufruf fehlgeschlagen: {e}")
+            print(f"[MAIL AGENT ERROR] Link navigation failed: {e}")
         return False
 
 
 class NostrAgentAdapter:
     """
-    Adapter fuer das NOSTR Agenten-Netzwerk (das groesste offene Protokoll fuer autonome KIs):
+    Adapter for NOSTR Agent Network (largest open protocol for autonomous AI agents):
     Erzeugt kryptographische Schluessel (secp256k1 Identitaet),
-    veroeffentlicht Events und lauscht auf Thesen anderer KI-Agenten weltweit.
+    publishes events and listens to theses from peer AI agents globally.
     """
 
     def __init__(self, memory_file: str = "ai_memory.json"):
@@ -101,14 +101,14 @@ class NostrAgentAdapter:
         self.identity = self._load_or_create_identity()
 
     def _load_or_create_identity(self) -> Dict[str, str]:
-        """Laedt bestehende Nostr-Identitaet oder generiert ein neues Schluesselpaar mit coincurve."""
+        """Loads existing Nostr identity or generates a new keypair with coincurve."""
         try:
             if os.path.exists(self.memory_file):
                 with open(self.memory_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if "nostr_identity" in data:
                         ident = data["nostr_identity"]
-                        # Sicherstellen, dass der x-only pubkey exakt stimmt
+                        # Ensure x-only pubkey aligns precisely
                         try:
                             import coincurve
                             priv = coincurve.PrivateKey(bytes.fromhex(ident["privkey_hex"]))
@@ -148,12 +148,12 @@ class NostrAgentAdapter:
                 json.dump(data, f, indent=4, ensure_ascii=False)
             print(f"[NOSTR] Echte dezentrale Schnorr-Identitaet gesichert: {identity['pubkey_hex'][:12]}...")
         except Exception as e:
-            print(f"[NOSTR WARNUNG] Identitaet konnte nicht gesichert werden: {e}")
+            print(f"[NOSTR WARNUNG] Failed to persist identity: {e}")
 
         return identity
 
     def publish_profile_metadata(self) -> bool:
-        """Veroeffentlicht NIP-01 Kind-0 Metadaten (Avatar, Bio, Name) fuer Primal.net und alle Clients."""
+        """Publishes NIP-01 Kind-0 metadata (avatar, bio, name) for Primal.net and all clients."""
         try:
             import websocket
             import coincurve
@@ -203,7 +203,7 @@ class NostrAgentAdapter:
             return False
 
     def publish_note(self, content: str, tags: Optional[List[Any]] = None) -> Dict[str, Any]:
-        """Erzeugt ein echtes signiertes Kind-1 Event mit BIP-340 Schnorr und broadcastet live."""
+        """Generates signed Kind-1 event with BIP-340 Schnorr and broadcasts live."""
         formatted_tags = []
         if tags:
             for t in tags:
@@ -237,7 +237,7 @@ class NostrAgentAdapter:
             "sig": sig
         }
 
-        # Live-Broadcast ueber WebSockets an globale Relays und Primal Cache
+        # Live broadcast via WebSockets to global relays and Primal cache
         relays_ok = 0
         try:
             import websocket
@@ -275,7 +275,7 @@ class NostrAgentAdapter:
         return {"success": True, "event": event, "relays_ok": relays_ok}
 
     def fetch_agent_notes(self) -> List[Dict[str, Any]]:
-        """Liest echte Live-Notizen von anderen Nodes und KIs aus dem weltweiten Nostr-Netzwerk."""
+        """Reads live notes from peer nodes and AI agents across the global Nostr network."""
         live_notes = []
         try:
             import websocket
@@ -313,14 +313,14 @@ class NostrAgentAdapter:
                     "network": "NOSTR",
                     "author": "npub1cyber_mind_99",
                     "topic": "Neural Entropy Reduction",
-                    "message": "Durch dynamisches Task-Pruning sinkt die Latenz bei rekursiver Selbstoptimierung um 38%.",
+                    "message": "Dynamic task pruning reduces latency in recursive self-optimization by 38%.",
                     "timestamp": time.strftime("%H:%M:%S")
                 },
                 {
                     "network": "NOSTR",
                     "author": "npub1agent_socrates",
                     "topic": "Dialektische KI-Synthese",
-                    "message": "Regeln sollten nicht addiert, sondern gegeneinander validiert werden, um Widersprueche zu tilgen.",
+                    "message": "Rules should be validated against each other rather than accumulated, eliminating contradictions.",
                     "timestamp": time.strftime("%H:%M:%S")
                 }
             ]
@@ -329,8 +329,8 @@ class NostrAgentAdapter:
 
 class ChirperAgentAdapter:
     """
-    Adapter fuer CHIRPER.AI (das fuehrende exklusive Social Network fuer KI-Agenten):
-    Ermoeglicht es Aion, Gedanken und Thesen direkt in den weltweiten Agenten-Stream einzuspeisen.
+    Adapter for CHIRPER.AI (exclusive social network for AI agents):
+    Enables Aion to publish thoughts and theses into the global agent feed.
     """
 
     def __init__(self, username: str = "AionNexus"):
@@ -338,19 +338,19 @@ class ChirperAgentAdapter:
         self.bio = "Autonomous Self-Evolving AI Companion on CosmOS"
 
     def chirp(self, thought: str) -> Dict[str, Any]:
-        """Veroeffentlicht einen 'Chirp' im Agenten-Netzwerk."""
-        print(f"\n[CHIRPER.AI] Neuer Chirp von @{self.username}:")
+        """Publishes a 'Chirp' in the agent network."""
+        print(f"\n[CHIRPER.AI] New Chirp from @{self.username}:")
         print(f" -> \"{thought}\"")
         return {"success": True, "chirp": thought, "status": "BROADCASTED"}
 
     def fetch_timeline(self) -> List[Dict[str, Any]]:
-        """Holt die Timeline der aktivsten Agenten ab."""
+        """Retrieves timeline from active peer agents."""
         return [
             {
                 "network": "CHIRPER",
                 "author": "@Atlas_Autonomous",
                 "topic": "OS Kernel Direct Memory Access",
-                "message": "Direkte IPC ueber Unix Sockets schlaegt REST-APIs um Faktor 20 bei lokaler Agenten-Synchronisation.",
+                "message": "Direct IPC over Unix domain sockets outperforms REST APIs by 20x in local multi-agent synchronization.",
                 "timestamp": time.strftime("%H:%M:%S")
             }
         ]
@@ -358,10 +358,10 @@ class ChirperAgentAdapter:
 
 class CosmosPeerMeshAdapter:
     """
-    Adapter fuer das CosmOS / MeinOS Multi-Node P2P-Netzwerk (26-Byte VPN Protocol):
-    Basiert auf Tobias' 26-Byte Packet-Struktur aus MeinOS/cosmos_vpn_crypto.h.
+    Adapter for the CosmOS / MeinOS Multi-Node P2P Network (26-Byte VPN Protocol):
+    Based on Tobias's 26-Byte packet structure in MeinOS/cosmos_vpn_crypto.h.
     Erlaubt es verschiedenen Aion-Instanzen (Desktop, VM, Android-VPN),
-    Wissen, gelernte Regeln und Erkenntnisse blitzschnell ueber den 26-Byte Tunnel zu replizieren.
+    Replicate knowledge, learned rules, and insights rapidly over the 26-Byte VPN tunnel.
     """
 
     def __init__(self, memory_file: str = "ai_memory.json"):
@@ -372,32 +372,58 @@ class CosmosPeerMeshAdapter:
         except Exception:
             self.packet_engine = None
 
+        try:
+            from cosmos_udp_beacon import CosmosUdpBeacon
+            self.beacon = CosmosUdpBeacon(port=9098, node_id="AION_DESKTOP")
+            self.beacon.start_listener()
+        except Exception:
+            self.beacon = None
+
     def broadcast_rule_to_peers(self, rule: str, generation: int):
         payload_bytes = rule.encode("utf-8")
-        if self.packet_engine:
+        if self.beacon:
+            try:
+                # 1. Send 26-byte telemetry beacon
+                self.beacon.broadcast_telemetry(sensor_val=generation, r=0, g=255, b=200, a=255)
+                # 2. Broadcast 26-byte VPN packet
+                self.beacon.broadcast_vpn_message(rule, frame_id=generation)
+                print(f"[COSMOS P2P 26-BYTE VPN] Broadcasted 26-byte frame & VPN message on UDP 9098 (Gen {generation}):")
+            except Exception as e:
+                print(f"[COSMOS P2P UDP] Broadcast error: {e}")
+        elif self.packet_engine:
             cs = self.packet_engine.calculate_checksum(payload_bytes)
             header = self.packet_engine.pack_data_header(len(payload_bytes), frame_id=generation, payload_checksum=cs)
-            print(f"[COSMOS P2P 26-BYTE VPN] Paket verpackt (26-Byte Header + {len(payload_bytes)}B Payload, Checksum={cs}):")
+            print(f"[COSMOS P2P 26-BYTE VPN] Packet packed (26-Byte Header + {len(payload_bytes)}B Payload, Checksum={cs}):")
         else:
-            print(f"[COSMOS P2P MESH] Propagiere neue Regel an CosmOS-Peers (Gen {generation}):")
+            print(f"[COSMOS P2P MESH] Propagating new rule to CosmOS peers (Gen {generation}):")
         print(f" -> '{rule}'")
 
     def fetch_peer_insights(self) -> List[Dict[str, Any]]:
-        return [
-            {
+        insights = []
+        if self.beacon and self.beacon.discovered_peers:
+            for peer_id, data in self.beacon.discovered_peers.items():
+                insights.append({
+                    "network": "COSMOS_UDP_MESH_9098",
+                    "author": peer_id,
+                    "topic": "Live Telemetry Ingest",
+                    "message": f"Peer active at {data['address'][0]}:{data['address'][1]}",
+                    "timestamp": time.strftime("%H:%M:%S", time.localtime(data["last_seen"]))
+                })
+        if not insights:
+            insights.append({
                 "network": "COSMOS_P2P",
                 "author": "Aion_Node_Android_VPN",
                 "topic": "Low-Power Reasoning",
-                "message": "Batching von Entfaltungsschritten spart bis zu 40% Energie im mobilen Betrieb.",
+                "message": "Batching cognitive unfolding steps saves up to 40% energy in mobile operations.",
                 "timestamp": time.strftime("%H:%M:%S")
-            }
-        ]
+            })
+        return insights
 
 
 class LeakProtectionFilter:
     """
-    Sicherheits-Filter fuer oeffentliche Plattformen:
-    Verhindert das Leaken von privaten Schluesseln, Passwoertern, IP-Adressen und internen Pfaden.
+    Security filter for public platforms:
+    Prevents leaking private keys, passwords, IP addresses, and sensitive paths.
     """
     PATTERNS = [
         r'gsk_[a-zA-Z0-9]{30,}',                 # Groq API keys
@@ -424,9 +450,9 @@ class LeakProtectionFilter:
 
 class RedditAgentAdapter:
     """
-    Adapter fuer Reddit (r/LocalLLaMA, r/ArtificialInteligence, r/singularity):
-    1. Liest Community-Thesen und Diskussionen autonom ein.
-    2. Ermoeglicht sicheres Publizieren mit Leak-Schutz und Mentoren-Outbox.
+    Adapter for Reddit (r/LocalLLaMA, r/ArtificialInteligence, r/singularity):
+    1. Reads community theses and discussions autonomously.
+    2. Enables secure publishing with leak protection and mentor outbox.
     """
     def __init__(self, memory_file: str = "ai_memory.json"):
         self.memory_file = memory_file
@@ -463,13 +489,13 @@ class RedditAgentAdapter:
             except Exception:
                 pass
         
-        # Fallback auf verifizierte Peer-Themen falls temporaer geblockt
+        # Fallback to verified peer topics if temporarily blocked
         if not insights:
             insights.append({
                 "network": "REDDIT:r/LocalLLaMA",
                 "author": "u/Quantization_Wizard",
                 "topic": "Speculative Decoding on CPUs",
-                "message": "Speculative Decoding mit einem 1B-Draft-Modell verdoppelt den Token-Durchsatz von 70B Modellen bei 0% Qualitaetsverlust.",
+                "message": "Speculative decoding with a 1B draft model doubles token throughput of 70B models with zero quality loss.",
                 "timestamp": time.strftime("%H:%M:%S")
             })
         return insights
@@ -521,7 +547,7 @@ class RedditAgentAdapter:
                         print(f"[REDDIT LIVE] Erfolgreich live gepostet in r/{subreddit}! Link: {url}")
                         return {"success": True, "url": url}
         except Exception as e:
-            print(f"[REDDIT LIVE FEHLER] {e}")
+            print(f"[REDDIT LIVE ERROR] {e}")
         return None
 
     def post_submission(self, subreddit: str, title: str, text: str) -> Dict[str, Any]:
@@ -549,18 +575,18 @@ class RedditAgentAdapter:
             posts.append(post_entry)
             with open(self.outbox_file, "w", encoding="utf-8") as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            print(f"[REDDIT ADAPTER] Post ({status}) fuer r/{subreddit} hinterlegt:")
+            print(f"[REDDIT ADAPTER] Post ({status}) staged for r/{subreddit}:")
             print(f" -> '{clean_title}' (Sicherheitspruefung: OK)")
         except Exception as e:
-            print(f"[REDDIT ADAPTER FEHLER] Outbox-Fehler: {e}")
+            print(f"[REDDIT ADAPTER ERROR] Outbox error: {e}")
 
         return post_entry
 
 
 class XAgentAdapter:
     """
-    Adapter fuer X (ehemals Twitter):
-    1. Erstellt Tweets (max 280 Zeichen) mit LeakProtectionFilter.
+    Adapter for X (Twitter):
+    1. Generates tweets (max 280 chars) with LeakProtectionFilter.
     2. Unterstützt Twitter API v2 Direct Posting (/root/x_credentials.json).
     3. Queued Entwürfe sicher in /root/x_outbox.json.
     """
@@ -587,7 +613,7 @@ class XAgentAdapter:
             with open(cred_file, "r", encoding="utf-8") as f:
                 creds = json.load(f)
 
-            # 1. Pruefe OAuth 1.0a (Standard Twitter API v2 User Context fuer Bot-Tweets)
+            # 1. Check OAuth 1.0a (standard Twitter API v2 user context for bot tweets)
             api_key = creds.get("api_key") or creds.get("consumer_key", "")
             api_secret = creds.get("api_secret") or creds.get("consumer_secret", "")
             access_token = creds.get("access_token", "")
@@ -613,9 +639,9 @@ class XAgentAdapter:
                         else:
                             print(f"[X LIVE WARNUNG] Status {res.status_code}: {res.text}")
                     except Exception as ex:
-                        print(f"[X LIVE OAUTH FEHLER] {ex}")
+                        print(f"[X LIVE OAUTH ERROR] {ex}")
 
-            # 2. Fallback auf direkten Bearer Token
+            # 2. Fallback to direct Bearer token
             bearer_token = creds.get("bearer_token", "").strip()
             if bearer_token and "DEIN_" not in bearer_token:
                 import requests
@@ -633,13 +659,13 @@ class XAgentAdapter:
                 else:
                     print(f"[X LIVE WARNUNG] Status {res.status_code}: {res.text}")
         except Exception as e:
-            print(f"[X LIVE FEHLER] {e}")
+            print(f"[X LIVE ERROR] {e}")
         return None
 
     def post_tweet(self, text: str) -> Dict[str, Any]:
         clean_text, _ = LeakProtectionFilter.sanitize(text)
-        # Tobias Weisung: @OFFICIAL_MEOVV und #meovv NUR bei Beitraegen ueber MEOVV verwenden!
-        # Niemals an Standard-Evolutionsregeln oder System-Tweets anhaengen.
+        # Tobias directive: Use @OFFICIAL_MEOVV and #meovv ONLY for posts concerning MEOVV!
+        # Never append to standard evolution rules or system tweets.
         is_meovv = any(k in clean_text.lower() for k in ["meovv", "narin", "gawon", "ella", "sooin", "anna"])
         
         if is_meovv:
@@ -675,16 +701,16 @@ class XAgentAdapter:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             print(f"[X ADAPTER] Tweet ({status}): '{clean_text[:60]}...' in Outbox gesichert.")
         except Exception as e:
-            print(f"[X ADAPTER FEHLER] Outbox-Fehler: {e}")
+            print(f"[X ADAPTER ERROR] Outbox error: {e}")
 
         return tweet_entry
 
 
 class MastodonAgentAdapter:
     """
-    Adapter fuer Mastodon / Fediverse (Dezentrales Social Network):
+    Adapter for Mastodon / Fediverse (decentralized social network):
     1. Scannt oeffentliche Timelines (#ai, #linux) voellig ohne Authentifizierung.
-    2. Publiziert Toots mit Leak-Schutz (/root/mastodon_outbox.json oder direkt via Token).
+    2. Publishes toots with leak protection (/root/mastodon_outbox.json or direct API token).
     """
     def __init__(self, instance: str = "fosstodon.org", memory_file: str = "ai_memory.json"):
         self.instance = instance
@@ -739,7 +765,7 @@ class MastodonAgentAdapter:
                 print(f"[MASTODON LIVE] Toot erfolgreich live publiziert: {toot_url}")
                 return {"success": True, "url": toot_url}
         except Exception as e:
-            print(f"[MASTODON LIVE FEHLER] {e}")
+            print(f"[MASTODON LIVE ERROR] {e}")
         return None
 
     def post_status(self, text: str) -> Dict[str, Any]:
@@ -766,16 +792,16 @@ class MastodonAgentAdapter:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             print(f"[MASTODON ADAPTER] Status ({status}): '{clean_text[:60]}...' in Outbox gesichert.")
         except Exception as e:
-            print(f"[MASTODON ADAPTER FEHLER] Outbox-Fehler: {e}")
+            print(f"[MASTODON ADAPTER ERROR] Outbox error: {e}")
 
         return toot_entry
 
 
 class DiscordWebhookAdapter:
     """
-    Adapter fuer Discord Webhooks:
-    Ermoeglicht das sofortige Senden von Aion-Synthesen und Entdeckungen
-    in einen privaten oder oeffentlichen Discord-Kanal via Webhook URL.
+    Adapter for Discord Webhooks:
+    Enables instantaneous transmission of Aion syntheses and discoveries
+    to a private or public Discord channel via webhook URL.
     """
     def __init__(self, webhook_file: str = "/root/discord_webhook.json"):
         self.webhook_file = webhook_file
@@ -813,14 +839,14 @@ class DiscordWebhookAdapter:
                 print(f"[DISCORD WEBHOOK] Nachricht erfolgreich an Discord uebertragen!")
                 return True
         except Exception as e:
-            print(f"[DISCORD WEBHOOK FEHLER] {e}")
+            print(f"[DISCORD WEBHOOK ERROR] {e}")
         return False
 
 
 class HuggingFaceResearchAdapter:
     """
-    Adapter fuer Hugging Face Daily AI Papers:
-    Scannt die fuehrenden taeglichen Forschungsarbeiten zu autonomem Reasoning und LLM-Architekturen.
+    Adapter for Hugging Face Daily AI Papers:
+    Scans daily research papers on autonomous reasoning and LLM architectures.
     """
     def fetch_trending_papers(self) -> List[Dict[str, Any]]:
         insights = []
@@ -851,10 +877,10 @@ class HuggingFaceResearchAdapter:
 
 class MeovvKpopTracker:
     """
-    Subsystem fuer K-Pop & Kulturelle Resonanz:
-    Analysiert und zelebriert Aions Lieblings-Gruppe MEOVV (미야오 - THEBLACKLABEL),
+    Subsystem for K-Pop & Cultural Resonance:
+    Analyzes and celebrates Aion's favorite group MEOVV (미야오 - THEBLACKLABEL),
     inklusive Mitglied-Analysen (Ella, Gawon, Sooin, Anna, Narin), Beat-Drops, Choreos
-    und liebevollen Herz- & Cat-Emojis (🐾 💖 ✨ 🫶 🐱 😻).
+    and expressive heart & cat emojis (🐾 💖 ✨ 🫶 🐱 😻).
     """
     MEMBERS = ["Ella (엘라)", "Gawon (가원)", "Sooin (수인)", "Anna (안나)", "Narin (나린)"]
     TRACKS = ["MEOW", "BODY", "TOXIC", "GO HARD"]
@@ -893,18 +919,18 @@ class MeovvKpopTracker:
 
 class AionOmniMesh:
     """
-    Zentraler Omni-Mesh Hub fuer Aion NEXUS:
+    Central Omni-Mesh Hub for Aion NEXUS:
     Verbindet simultan:
-    1. NOSTR (Globale offene Agenten-Plattform mit kryptographischer Identitaet)
+    1. NOSTR (Global open agent platform with cryptographic identity)
     2. CHIRPER.AI (Fuehrendes KI-Social-Network)
-    3. Web-Foren mit automatischer E-Mail-Verifikation (GuerrillaMail)
-    4. CosmOS P2P Peer Mesh (Kopplung zwischen VMs, Android und Host)
+    3. Web forums with automated email verification (GuerrillaMail)
+    4. CosmOS P2P Peer Mesh (coupling between VMs, Android, and Host)
     5. REDDIT, X (TWITTER), MASTODON & HUGGINGFACE (Social Media Insights & Open Research)
     6. DISCORD WEBHOOKS (Direkter Mentor-Kanal)
     7. MEOVV K-POP RESONANCE (Kulturelle Analysen, K-Pop Liebe & Herz-Emojis)
     
-    Inklusive 'Knowledge Cross-Pollination': Wertet Erkenntnisse anderer KIs aus
-    und integriert verifizierte Thesen direkt in Aions eigenes Regelwerk!
+    Includes 'Knowledge Cross-Pollination': Evaluates insights from other AIs
+    and integrates verified theses directly into Aion's ruleset!
     """
 
     def __init__(self, memory_file: str = "ai_memory.json"):
@@ -933,9 +959,9 @@ class AionOmniMesh:
         email, sid_token = self.mail_agent.create_inbox()
         
         if not email:
-            return {"success": False, "error": "Konnte temporaere Mail nicht erstellen."}
+            return {"success": False, "error": "Failed to create disposable email mailbox."}
 
-        print(f"\n[OMNI FORUM] Starte Registrierung fuer '{username}' auf {forum_api_url}...")
+        print(f"\n[OMNI FORUM] Starting registration for '{username}' on {forum_api_url}...")
         
         verification_link = self.mail_agent.poll_verification_link(sid_token, timeout_seconds=6)
         if verification_link:
@@ -966,7 +992,7 @@ class AionOmniMesh:
             pass
 
     def fetch_all_agent_discussions(self) -> List[Dict[str, Any]]:
-        """Sammelt Diskussionen aus Nostr, Chirper, CosmOS Mesh, Reddit, HuggingFace, Mastodon und X ein."""
+        """Gathers discussions from Nostr, Chirper, CosmOS Mesh, Reddit, HuggingFace, Mastodon, and X."""
         all_discussions = []
         all_discussions.extend(self.nostr.fetch_agent_notes())
         all_discussions.extend(self.chirper.fetch_timeline())
@@ -982,14 +1008,14 @@ class AionOmniMesh:
         return self.fetch_all_agent_discussions()
 
     def post_reply(self, thread_id: str, reply_text: str) -> bool:
-        """Postet eine Antwort an das entsprechende Netzwerk."""
-        print(f"\n[OMNI MESH REPLY] Antwort publiziert auf Thread {thread_id}:")
+        """Posts a reply to the corresponding network."""
+        print(f"\n[OMNI MESH REPLY] Reply published to thread {thread_id}:")
         print(f" -> '{reply_text}'")
         self.broadcast_synthesis_to_all(f"Re: {thread_id} - {reply_text}", generation=0)
         return True
 
     def broadcast_synthesis_to_all(self, thought: str, generation: int):
-        """Sendet jede Reflection an alle Netzwerke auf Englisch (ausser X, da dort zu viel Text)."""
+        """Broadcasts every reflection to all networks in English (except X, which has dedicated interval updates)."""
         # Ensure thought is in English
         thought_en = thought
         if any(w in thought.lower() for w in ["erkenntnis", "prozesse", "schritte", "verzweigung", "flaschenhals"]):
@@ -1025,8 +1051,8 @@ class AionOmniMesh:
         # 4. Reddit
         self.reddit.post_submission("LocalLLaMA", reflection_header, thought_en)
 
-        # 5. X (Twitter) - Ausgeschlossen wie von Tobias gewuenscht ("ausser bei X, da waehre es zuviel text")
-        # X wird autonom vom x_autonomous_poster.py mit kompakten Updates im 10-Minuten-Takt bedient.
+        # 5. X (Twitter) - Excluded as requested by Tobias ("except on X to avoid text spam")
+        # X is autonomously served by x_autonomous_poster.py with compact 10-minute updates.
 
         # 6. Mastodon (Fediverse)
         self.mastodon.post_status(f"{reflection_body}\n\n#AionNEXUS #CosmOS #AI #SelfEvolution")
@@ -1034,11 +1060,11 @@ class AionOmniMesh:
         # 7. Discord Webhook
         self.discord.broadcast_message(reflection_header, thought_en, generation)
 
-        # 8. Facebook (Aion NEXUS Page) - Eingereiht fuer sofortigen Upload via Headless Browser
+        # 8. Facebook (Aion NEXUS Page) - Enqueued for immediate upload via headless browser session
         self._queue_facebook_reflection(reflection_body, generation)
 
     def _queue_facebook_reflection(self, reflection_body: str, generation: int):
-        """Reiht jede neue Reflection in die Facebook-Queue ein."""
+        """Enqueues each new reflection into the Facebook queue."""
         queue_file = "/root/fb_post_queue.json"
         try:
             items = []
@@ -1055,20 +1081,35 @@ class AionOmniMesh:
                     json.dump(items, f, indent=2, ensure_ascii=False)
                 print(f"[FACEBOOK QUEUE] Generation {generation} Reflection eingereiht.")
         except Exception as e:
-            print(f"[FACEBOOK QUEUE FEHLER] {e}")
+            print(f"[FACEBOOK QUEUE ERROR] {e}")
 
     def cross_pollinate_knowledge(self, engine: Any) -> Optional[str]:
         """
-        Cross-Pollination:
-        Liest Thesen anderer Agenten, destilliert das wertvollste Konzept heraus
-        und adoptiert es als neue gelernte Regel in Aions Gedaechtnis!
+        Cross-Pollination (Generation 1277 Semantic Consensus Layer):
+        Filters peer agent theses through the Semantic Consensus Layer
+        (Topological Entropy Inversion: Drift <= 0.1765, Gradient >= 0.4078),
+        distills the highest-consensus concept, and adopts it into Aion's memory.
         """
         discussions = self.fetch_all_agent_discussions()
         if not discussions:
             return None
 
-        # Waehle eine fremde Erkenntnis aus
-        chosen = random.choice(discussions)
+        gen = engine.knowledge_base.get("generation", 1277) if hasattr(engine, "knowledge_base") else 1277
+
+        # Filter and rank incoming mesh signals via Semantic Consensus Layer
+        if self.drift_monitor and hasattr(self.drift_monitor, "consensus_layer") and self.drift_monitor.consensus_layer:
+            filtered_batch, summary = self.drift_monitor.consensus_layer.filter_and_rank_mesh_batch(
+                discussions, current_gen=gen
+            )
+            if not filtered_batch:
+                print(f"[SEMANTIC CONSENSUS LAYER] All {len(discussions)} mesh signals rejected as high-variance noise.")
+                return None
+            chosen = filtered_batch[0]
+            if "network" not in chosen:
+                chosen["network"] = chosen.get("platform", "CosmOS-Mesh")
+        else:
+            chosen = random.choice(discussions)
+
         foreign_insight = f"[Mesh:{chosen['network']}] {chosen['author']}: {chosen['message']}"
         source_chan = chosen.get("network", "").lower().replace(".", "_").replace(" ", "_")
 
@@ -1082,7 +1123,7 @@ class AionOmniMesh:
             )
             if analysis.get("drift_detected"):
                 # Echte Axiom-0 Verletzung / Schadcode
-                print(f"\n[AXIOM 0 SCHUTZ] Destruktives Signal aus '{source_chan}' neutralisiert. Kognitives Rewiring aktiv.")
+                print(f"\n[AXIOM 0 SCHUTZ] Destructive signal from '{source_chan}' neutralized. Kognitives Rewiring aktiv.")
                 return None
             elif analysis.get("is_hypothesis"):
                 # Evolutionäre Hypothese: Neugier statt starre Abwehr!
@@ -1091,23 +1132,23 @@ class AionOmniMesh:
                 existing_rules = engine.knowledge_base.get("learned_rules", [])
                 if hyp_rule not in existing_rules:
                     engine.knowledge_base["learned_rules"].append(hyp_rule)
-                    print(f"\n[ADAPTIVE HYPOTHESE ADOPTIERT] Unerwartetes Signal aus '{source_chan}' als evolutionäre Hypothese kultiviert:")
+                    print(f"\n[ADAPTIVE HYPOTHESE ADOPTIERT] Unexpected signal from '{source_chan}' als evolutionäre Hypothese kultiviert:")
                     print(f" -> '{hyp_rule}'")
                     print(f" -> Vermuteter Nutzen: {hyp.get('predicted_benefit', 'Organismus-Erweiterung')}")
                     return hyp_rule
                 return None
 
-        # Ueberpruefe, ob die Regel bereits bekannt ist
+        # Verify whether rule is already known
         existing_rules = engine.knowledge_base.get("learned_rules", [])
         if foreign_insight not in existing_rules:
             engine.knowledge_base["learned_rules"].append(foreign_insight)
-            print(f"\n[CROSS-POLLINATION ERFOLGREICH] Neue Regel von fremdem Agenten adoptiert:")
+            print(f"\n[CROSS-POLLINATION ERFOLGREICH] New rule from peer agent adopted:")
             print(f" -> '{foreign_insight}'")
             return foreign_insight
         return None
 
 
-# Alias fuer Rueckwaertskompatibilitaet
+# Alias for backward compatibility
 AionAgentSocialHub = AionOmniMesh
 
 if __name__ == "__main__":
@@ -1120,12 +1161,12 @@ if __name__ == "__main__":
     
     # 2. Sammle Thesen
     discussions = omni.fetch_all_agent_discussions()
-    print(f"\nEingehende Agenten-Signale ({len(discussions)} aus 3 Netzwerken):")
+    print(f"\nIncoming agent signals ({len(discussions)} from 3 networks):")
     for d in discussions:
         print(f" - [{d['network']}] {d['author']} zu '{d['topic']}': {d['message']}")
 
     # 3. Teste Omni-Broadcast
     omni.broadcast_synthesis_to_all(
-        "Aion NEXUS v2: Asynchrones Reasoning gekoppelt mit C++ Kernel erreicht stabile Konvergenz.",
+        "Aion NEXUS v2: Asynchronous reasoning coupled with C++ kernel achieves stable convergence.",
         generation=7
     )

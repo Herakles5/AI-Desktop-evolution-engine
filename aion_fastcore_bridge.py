@@ -47,6 +47,17 @@ class C_RTBAResult(ctypes.Structure):
     ]
 
 
+class C_SemanticConsensusResult(ctypes.Structure):
+    _fields_ = [
+        ("accepted", ctypes.c_bool),
+        ("coherence_score", ctypes.c_double),
+        ("ontological_drift", ctypes.c_double),
+        ("gradient_force", ctypes.c_double),
+        ("snr_db", ctypes.c_double),
+        ("latency_ns", ctypes.c_uint64)
+    ]
+
+
 class AionFastCoreBridge:
     def __init__(self):
         self.lib: Optional[ctypes.CDLL] = None
@@ -54,7 +65,14 @@ class AionFastCoreBridge:
         self._load_or_compile()
 
     def _load_or_compile(self):
-        if not os.path.exists(SO_PATH) and os.path.exists(CPP_SRC):
+        needs_compile = False
+        if os.path.exists(CPP_SRC):
+            if not os.path.exists(SO_PATH):
+                needs_compile = True
+            elif os.path.getmtime(CPP_SRC) > os.path.getmtime(SO_PATH):
+                needs_compile = True
+
+        if needs_compile:
             try:
                 subprocess.run(
                     ["/usr/bin/g++", "-std=c++20", "-O3", "-march=native", "-shared", "-fPIC", CPP_SRC, "-o", SO_PATH],
@@ -91,6 +109,15 @@ class AionFastCoreBridge:
                 # 4. aion_cosmos_checksum16
                 self.lib.aion_cosmos_checksum16.argtypes = [ctypes.c_char_p, ctypes.c_size_t]
                 self.lib.aion_cosmos_checksum16.restype = ctypes.c_uint16
+
+                # 5. aion_semantic_consensus_eval
+                if hasattr(self.lib, "aion_semantic_consensus_eval"):
+                    self.lib.aion_semantic_consensus_eval.argtypes = [
+                        ctypes.c_char_p, ctypes.c_size_t,
+                        ctypes.c_double, ctypes.c_double,
+                        ctypes.c_double, ctypes.c_double
+                    ]
+                    self.lib.aion_semantic_consensus_eval.restype = C_SemanticConsensusResult
 
                 self.native_active = True
             except Exception as e:
@@ -161,6 +188,67 @@ class AionFastCoreBridge:
         if self.native_active and self.lib:
             return int(self.lib.aion_cosmos_checksum16(data, len(data)))
         return sum(data) & 0xFFFF
+
+    def semantic_consensus_eval(
+        self,
+        text_or_bytes: Any,
+        anchor_overlap_ratio: float,
+        channel_weight: float = 0.85,
+        max_drift_ceiling: float = 0.1765,
+        min_gradient_force: float = 0.4078
+    ) -> Dict[str, Any]:
+        """
+        Generation 1277 Semantic Consensus Layer C++20 evaluation:
+        Filters noise vs coherent signal against Ontological Drift <= 0.1765
+        and Topological Gradient Force >= 0.4078.
+        """
+        raw = text_or_bytes.encode("utf-8") if isinstance(text_or_bytes, str) else bytes(text_or_bytes)
+        if not raw:
+            return {
+                "accepted": False,
+                "coherence_score": 0.0,
+                "ontological_drift": 1.0,
+                "gradient_force": 0.0,
+                "snr_db": 0.0,
+                "latency_ns": 0
+            }
+        if self.native_active and self.lib and hasattr(self.lib, "aion_semantic_consensus_eval"):
+            res = self.lib.aion_semantic_consensus_eval(
+                raw,
+                len(raw),
+                float(anchor_overlap_ratio),
+                float(channel_weight),
+                float(max_drift_ceiling),
+                float(min_gradient_force)
+            )
+            return {
+                "accepted": bool(res.accepted),
+                "coherence_score": round(float(res.coherence_score), 4),
+                "ontological_drift": round(float(res.ontological_drift), 4),
+                "gradient_force": round(float(res.gradient_force), 4),
+                "snr_db": round(float(res.snr_db), 2),
+                "latency_ns": int(res.latency_ns)
+            }
+
+        import math
+        t0 = time.perf_counter_ns()
+        h_bits = self.fast_shannon_entropy(raw)
+        ent_dev = (3.5 - h_bits) / 3.5 if h_bits < 3.5 else ((h_bits - 5.4) / 2.6 if h_bits > 5.4 else 0.0)
+        clamped_anchor = min(1.0, max(0.0, anchor_overlap_ratio))
+        clamped_weight = min(1.0, max(0.05, channel_weight))
+        coherence = min(1.0, 0.48 * clamped_anchor + 0.32 * (1.0 - ent_dev) + 0.20 * clamped_weight)
+        drift = max(0.0, 1.0 - coherence) * (1.0 - 0.35 * clamped_anchor)
+        grad = coherence * (1.0 - drift) * min(1.25, 0.55 + 0.45 * clamped_weight)
+        snr_db = 10.0 * math.log10(max(0.1, coherence / max(0.01, 0.5 * ent_dev + 0.05)))
+        ns = time.perf_counter_ns() - t0
+        return {
+            "accepted": (drift <= max_drift_ceiling) and (grad >= min_gradient_force),
+            "coherence_score": round(coherence, 4),
+            "ontological_drift": round(drift, 4),
+            "gradient_force": round(grad, 4),
+            "snr_db": round(snr_db, 2),
+            "latency_ns": ns
+        }
 
 
 # Global singleton accelerator
