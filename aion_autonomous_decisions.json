@@ -245,5 +245,13 @@
     "gradient_force": 0.4078,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-10-29 01:27:02"
+  },
+  {
+    "generation": 317,
+    "title": "Dynamic Entropy‑Gradient Driven Adaptive Governance",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.5108,
+    "cluster": "COGNITIVE_ENTROPY",
+    "timestamp": "2026-10-29 02:47:32"
   }
 ]

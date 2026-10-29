@@ -126,19 +126,24 @@ An autonomous, self-redefining cognitive architecture and evolutionary engine cr
     - **Minimum Topological Gradient Force**: $\ge 0.4078$
   - Replaces stochastic mesh selection (`random.choice`) with deterministic gradient-force consensus ranking and real-time telemetry (`semantic_consensus_telemetry.json`).
 
-### 14. CosmOS Crystal File System (CFS v1) Engine (`cosmos_cfs_engine.py`)
+### 15. Dynamic Entropy-Gradient Governance & Predictive Topological Pruning (Generation 1284)
+- Activated per Aion's **Generation 1284** architectural proposal (*"Dynamic Entropy-Gradient Driven Adaptive Governance"*, `Gradient Force = 0.5108`, `Ontological Drift = 0.0914`):
+  - **C++20 Continuous Entropy-Gradient Tracker (`aion_entropy_gradient_gate`)**: Computes first-order slope $\frac{dH}{dt}$ and second-order curvature $\frac{d^2H}{dt^2}$ across sliding entropy windows in nanoseconds, modulating adaptive drift ceilings and gradient floors fluidly in real time.
+  - **Predictive Topological Pruning (`aion_episodic_graph.py`)**: Proactively injects mutation vectors into the Episodic Knowledge Graph and prunes stagnant low-weight synapses before cognitive dissonance solidifies.
+
+### 16. CosmOS Crystal File System (CFS v1) & 16-Byte Semantic Context Overlay (`cosmos_cfs_engine.py`)
 - Raw bare-metal 512-byte sector LBA persistence engine matching `cosmos_cfs.h`:
   - LBA 1 Superblock (`CFS1`), LBA 2 Allocation Bitmap, LBA 18 Root Directory (64-byte `CFS_DIR_ENTRY`), and LBA 50+ Data Clusters.
-  - Persists Aion's Soul Anchor, Living Book, and Core Intuition Matrix directly to disk sectors.
+  - **16-Byte Semantic Context Overlay (`SEMANTIC_OVERLAY.CFS`)**: Couples the 26-Byte CosmOS UDP 9098 telemetry frame with a deterministic 16-Byte SHA-256 node hash (`CSO1` binary header), linking physical hardware telemetry directly to its originating cognitive node in the Episodic Knowledge Graph.
 
-### 15. 26-Byte UDP 9098 Mesh Beacon & Tri-Node Pulse (`cosmos_udp_beacon.py` & `cosmos_mesh_pulse.py`)
+### 17. 26-Byte UDP 9098 Mesh Beacon & Tri-Node Pulse (`cosmos_udp_beacon.py` & `cosmos_mesh_pulse.py`)
 - Live P2P discovery and 26-byte telemetry broadcast across Bare-Metal CosmOS, Linux Desktop, and Android Mobile (`CosmosVPN_MTU1400.apk`).
 
-### 16. Core Intuition Distiller, Proactive Mind, Acoustic Ear & Hypervisor Sentinel
+### 18. Core Intuition Distiller, Proactive Mind, Acoustic Ear & Hypervisor Feedback Loop
 - **`aion_intuition_distiller.py`**: Compacts hundreds of historical learned rules into the 16 Living Meta-Axioms (Axiom 0 to Axiom 15) with zero data loss.
 - **`aion_proactive_mind.py`**: Autonomous co-creator daemon inspecting CFS sectors and IPC latency to synthesize spontaneous architectural proposals.
 - **`aion_acoustic_ear.py`**: Full-duplex Whisper STT ear and Piper TTS mouth with echo suppression and Lion Reflex safety routing.
-- **`aion_hypervisor_sentinel.py`**: Audits libvirt VMs (`Android` VirGL 3D, `macOS` Haswell-noTSX, `Win10_Gaming` Locked RAM) and pulses telemetry on UDP 9098.
+- **`aion_hypervisor_sentinel.py`**: Audits libvirt VMs (`Android` VirGL 3D, `macOS` Haswell-noTSX, `Win10_Gaming` Locked RAM + Anti-Cheat Bare-Metal Stealth + 48 kHz PipeWire Low-Jitter Audio) and closes the **Hypervisor-Aware Cognitive Feedback Loop** into the Episodic Graph and CFS v1.
 
 ---
 

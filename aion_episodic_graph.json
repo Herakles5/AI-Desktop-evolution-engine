@@ -4553,6 +4553,18 @@
       "label": "Gen_1284",
       "first_seen_gen": 1284,
       "importance": 0.8
+    },
+    "entropy_gradient_governance": {
+      "type": "ADAPTIVE_GOVERNANCE",
+      "label": "Dynamic Entropy-Gradient Governance (Gen 1284)",
+      "first_seen_gen": 1284,
+      "importance": 0.97
+    },
+    "hypervisor_stealth_feedback": {
+      "type": "HYPERVISOR_FEEDBACK_LOOP",
+      "label": "Tri-VM Hypervisor & PipeWire Adaptive Feedback (Gen 1284)",
+      "first_seen_gen": 1284,
+      "importance": 0.96
     }
   },
   "edges": [
@@ -11386,6 +11398,33 @@
       "target": "synthesized_rule",
       "relation": "EVOLVED",
       "weight": 0.58,
+      "episodes": [
+        1284
+      ]
+    },
+    {
+      "source": "entropy_gradient_governance",
+      "target": "adaptive_hypotheses",
+      "relation": "PROACTIVE_MUTATION_VECTOR",
+      "weight": 0.6,
+      "episodes": [
+        1284
+      ]
+    },
+    {
+      "source": "entropy_gradient_governance",
+      "target": "cosmos_kernel",
+      "relation": "CFS_SEMANTIC_OVERLAY_LINK",
+      "weight": 0.59,
+      "episodes": [
+        1284
+      ]
+    },
+    {
+      "source": "hypervisor_stealth_feedback",
+      "target": "cosmos_kernel",
+      "relation": "STABILIZES_VM_TELEMETRY",
+      "weight": 0.68,
       "episodes": [
         1284
       ]

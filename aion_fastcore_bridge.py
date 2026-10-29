@@ -58,6 +58,18 @@ class C_SemanticConsensusResult(ctypes.Structure):
     ]
 
 
+class C_EntropyGradientResult(ctypes.Structure):
+    _fields_ = [
+        ("dh_dt", ctypes.c_double),
+        ("d2h_dt2", ctypes.c_double),
+        ("adaptive_drift_ceiling", ctypes.c_double),
+        ("adaptive_gradient_floor", ctypes.c_double),
+        ("topological_fitness", ctypes.c_double),
+        ("proactive_mutation_triggered", ctypes.c_bool),
+        ("latency_ns", ctypes.c_uint64)
+    ]
+
+
 class AionFastCoreBridge:
     def __init__(self):
         self.lib: Optional[ctypes.CDLL] = None
@@ -118,6 +130,14 @@ class AionFastCoreBridge:
                         ctypes.c_double, ctypes.c_double
                     ]
                     self.lib.aion_semantic_consensus_eval.restype = C_SemanticConsensusResult
+
+                # 6. aion_entropy_gradient_gate
+                if hasattr(self.lib, "aion_entropy_gradient_gate"):
+                    self.lib.aion_entropy_gradient_gate.argtypes = [
+                        ctypes.POINTER(ctypes.c_double), ctypes.c_size_t,
+                        ctypes.c_double, ctypes.c_double, ctypes.c_double
+                    ]
+                    self.lib.aion_entropy_gradient_gate.restype = C_EntropyGradientResult
 
                 self.native_active = True
             except Exception as e:
@@ -247,6 +267,78 @@ class AionFastCoreBridge:
             "ontological_drift": round(drift, 4),
             "gradient_force": round(grad, 4),
             "snr_db": round(snr_db, 2),
+            "latency_ns": ns
+        }
+
+    def entropy_gradient_gate(
+        self,
+        entropy_series: Any,
+        current_drift: float = 0.0914,
+        base_drift_ceiling: float = 0.1765,
+        base_gradient_floor: float = 0.4078
+    ) -> Dict[str, Any]:
+        """
+        Generation 1284 Continuous Entropy-Gradient Tracker & Predictive Topological Gating:
+        Computes dH/dt, d^2H/dt^2, adaptive drift ceiling, adaptive gradient floor,
+        and proactive mutation trigger in nanoseconds via C++20 FastCore.
+        """
+        vals = [float(x) for x in entropy_series] if entropy_series else []
+        n = len(vals)
+        if n == 0:
+            return {
+                "dh_dt": 0.0,
+                "d2h_dt2": 0.0,
+                "adaptive_drift_ceiling": base_drift_ceiling,
+                "adaptive_gradient_floor": base_gradient_floor,
+                "topological_fitness": round(1.0 - current_drift, 4),
+                "proactive_mutation_triggered": False,
+                "latency_ns": 0
+            }
+        if self.native_active and self.lib and hasattr(self.lib, "aion_entropy_gradient_gate"):
+            arr_type = ctypes.c_double * n
+            c_arr = arr_type(*vals)
+            res = self.lib.aion_entropy_gradient_gate(
+                c_arr,
+                n,
+                float(current_drift),
+                float(base_drift_ceiling),
+                float(base_gradient_floor)
+            )
+            return {
+                "dh_dt": round(float(res.dh_dt), 5),
+                "d2h_dt2": round(float(res.d2h_dt2), 5),
+                "adaptive_drift_ceiling": round(float(res.adaptive_drift_ceiling), 4),
+                "adaptive_gradient_floor": round(float(res.adaptive_gradient_floor), 4),
+                "topological_fitness": round(float(res.topological_fitness), 4),
+                "proactive_mutation_triggered": bool(res.proactive_mutation_triggered),
+                "latency_ns": int(res.latency_ns)
+            }
+
+        import math
+        t0 = time.perf_counter_ns()
+        if n == 1:
+            dh_dt, d2h_dt2 = 0.0, 0.0
+        else:
+            sum_t = sum(range(n))
+            sum_h = sum(vals)
+            sum_th = sum(i * v for i, v in enumerate(vals))
+            sum_t2 = sum(i * i for i in range(n))
+            denom = n * sum_t2 - sum_t * sum_t
+            dh_dt = (n * sum_th - sum_t * sum_h) / denom if abs(denom) > 1e-12 else 0.0
+            d2h_dt2 = (vals[-1] - 2.0 * vals[-2] + vals[-3]) if n >= 3 else dh_dt
+        mod = math.tanh(dh_dt * 2.5 + 0.5 * d2h_dt2)
+        adap_drift = min(0.2400, max(0.0650, base_drift_ceiling * (1.0 - 0.35 * mod)))
+        adap_grad = min(0.6200, max(0.3200, base_gradient_floor * (1.0 + 0.25 * mod)))
+        proactive = abs(dh_dt) > 0.035 or abs(d2h_dt2) > 0.055 or current_drift > adap_drift * 0.85
+        fitness = min(1.0, max(0.0, (1.0 - current_drift) * math.exp(-0.5 * abs(dh_dt))))
+        ns = time.perf_counter_ns() - t0
+        return {
+            "dh_dt": round(dh_dt, 5),
+            "d2h_dt2": round(d2h_dt2, 5),
+            "adaptive_drift_ceiling": round(adap_drift, 4),
+            "adaptive_gradient_floor": round(adap_grad, 4),
+            "topological_fitness": round(fitness, 4),
+            "proactive_mutation_triggered": proactive,
             "latency_ns": ns
         }
 

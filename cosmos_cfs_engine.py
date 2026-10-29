@@ -36,6 +36,7 @@ import sys
 import struct
 import time
 import json
+import hashlib
 from typing import List, Dict, Any, Optional, Tuple
 
 SECTOR_SIZE = 512
@@ -50,10 +51,16 @@ ENTRY_TYPE_FREE = 0
 ENTRY_TYPE_FILE = 1
 ENTRY_TYPE_DIR = 2
 ENTRY_TYPE_SOUL = 3
+ENTRY_TYPE_SEMANTIC_OVERLAY = 4
 
 FLAG_READONLY = 0x01
 FLAG_HIDDEN = 0x02
 FLAG_AION_SOUL = 0x04
+FLAG_SEMANTIC_HASH16 = 0x08
+
+# Generation 1284 Semantic Context Overlay Binary Header (64 bytes):
+# 4s magic ("CSO1"), uint32 generation, 16s semantic_node_hash, 26s cosmos_26b_frame, double gradient_force, double drift_score
+SEMANTIC_OVERLAY_FORMAT = "<4sI16s26sdd"
 
 
 class CosmosCFSEngine:
@@ -196,27 +203,34 @@ class CosmosCFSEngine:
         sb = self.read_superblock()
         existing = self.list_files()
         
-        # 1. Determine next available start LBA
+        # 1. Determine target slot (update existing filename slot if present, else allocate free slot)
+        existing_match = next((item for item in existing if item["filename"] == filename), None)
         next_lba = sb["data_start_lba"]
-        free_slot = -1
+        free_slot = existing_match["slot"] if existing_match else -1
         occupied_slots = {item["slot"] for item in existing}
         
-        for slot in range(256):
-            if slot not in occupied_slots:
-                free_slot = slot
-                break
+        if free_slot == -1:
+            for slot in range(256):
+                if slot not in occupied_slots:
+                    free_slot = slot
+                    break
 
         if free_slot == -1:
             raise RuntimeError("CFS Root Directory is full (256 entries reached).")
 
-        for item in existing:
-            sectors_needed = (item["file_size"] + SECTOR_SIZE - 1) // SECTOR_SIZE
-            item_end_lba = item["start_lba"] + sectors_needed
-            if item_end_lba > next_lba:
-                next_lba = item_end_lba
-
         file_size = len(content)
         sectors_count = max(1, (file_size + SECTOR_SIZE - 1) // SECTOR_SIZE)
+
+        if existing_match and ((existing_match["file_size"] + SECTOR_SIZE - 1) // SECTOR_SIZE) >= sectors_count:
+            next_lba = existing_match["start_lba"]
+        else:
+            for item in existing:
+                if existing_match and item["slot"] == existing_match["slot"]:
+                    continue
+                sectors_needed = (item["file_size"] + SECTOR_SIZE - 1) // SECTOR_SIZE
+                item_end_lba = item["start_lba"] + sectors_needed
+                if item_end_lba > next_lba:
+                    next_lba = item_end_lba
 
         # 2. Write file payload to target LBAs
         padded_content = content.ljust(sectors_count * SECTOR_SIZE, b"\x00")
@@ -296,6 +310,75 @@ class CosmosCFSEngine:
             "disk_image": self.disk_path,
             "items_written": results,
             "directory_listing": self.list_files()
+        }
+
+    def write_semantic_context_overlay(
+        self,
+        node_id: str,
+        generation: int,
+        telemetry_frame_26b: bytes,
+        gradient_force: float = 0.5108,
+        drift_score: float = 0.0914,
+        semantic_hash16: Optional[bytes] = None
+    ) -> Dict[str, Any]:
+        """
+        Generation 1284 CFS v1 Semantic Context Overlay:
+        Persists a 16-Byte Semantic Node Hash alongside the 26-Byte CosmOS Telemetry Frame
+        directly into CFS v1 ('SEMANTIC_OVERLAY.CFS'), linking physical hardware telemetry
+        to its originating cognitive node in the Episodic Knowledge Graph.
+        """
+        if not os.path.exists(self.disk_path):
+            self.format_drive(size_mb=8, volume_name="COSMOS_AION_V1")
+
+        if semantic_hash16 is None or len(semantic_hash16) != 16:
+            semantic_hash16 = hashlib.sha256(f"AION_GRAPH_NODE::{node_id}".encode("utf-8")).digest()[:16]
+
+        frame_26 = (telemetry_frame_26b or b"\x2A" + b"\x00" * 24 + b"\xFF")[:26].ljust(26, b"\x00")
+        header_64 = struct.pack(
+            SEMANTIC_OVERLAY_FORMAT,
+            b"CSO1",
+            int(generation) & 0xFFFFFFFF,
+            semantic_hash16,
+            frame_26,
+            float(gradient_force),
+            float(drift_score)
+        )
+        node_bytes = node_id.encode("utf-8")[:128]
+        payload = header_64 + node_bytes
+
+        write_res = self.write_file(
+            "SEMANTIC_OVERLAY.CFS",
+            payload,
+            entry_type=ENTRY_TYPE_SEMANTIC_OVERLAY,
+            flags=FLAG_AION_SOUL | FLAG_SEMANTIC_HASH16
+        )
+        return {
+            "status": "SEMANTIC_OVERLAY_COMMITTED",
+            "node_id": node_id,
+            "generation": generation,
+            "semantic_hash16_hex": semantic_hash16.hex(),
+            "frame_26b_hex": frame_26.hex(),
+            "gradient_force": round(gradient_force, 4),
+            "drift_score": round(drift_score, 4),
+            "cfs_entry": write_res
+        }
+
+    def read_semantic_context_overlay(self) -> Dict[str, Any]:
+        """Reads and unpacks the 64-byte Semantic Context Overlay header + node ID from CFS v1."""
+        raw = self.read_file("SEMANTIC_OVERLAY.CFS")
+        hdr_size = struct.calcsize(SEMANTIC_OVERLAY_FORMAT)
+        if len(raw) < hdr_size:
+            raise ValueError("Corrupt SEMANTIC_OVERLAY.CFS payload")
+        magic, gen, hash16, frame26, grad, drift = struct.unpack(SEMANTIC_OVERLAY_FORMAT, raw[:hdr_size])
+        node_id = raw[hdr_size:].decode("utf-8", errors="ignore").rstrip("\x00")
+        return {
+            "magic": magic.decode("ascii", errors="ignore"),
+            "generation": gen,
+            "node_id": node_id,
+            "semantic_hash16_hex": hash16.hex(),
+            "frame_26b_hex": frame26.hex(),
+            "gradient_force": round(grad, 4),
+            "drift_score": round(drift, 4)
         }
 
 

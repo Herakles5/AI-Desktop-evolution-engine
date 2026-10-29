@@ -430,7 +430,7 @@ class SemanticDriftMonitor:
         probe_results = self.hypothesis_engine.probe_and_update_hypotheses(current_gen, grounding)
         analysis["hypothesis_updates"] = probe_results
 
-        # Generation 1277 Semantic Consensus Layer evaluation
+        # Generation 1277 & 1284 Semantic Consensus Layer + Entropy-Gradient Governance
         if hasattr(self, "consensus_layer") and self.consensus_layer:
             consensus_eval = self.consensus_layer.evaluate_signal(
                 signal_text=rule_text,
@@ -438,24 +438,33 @@ class SemanticDriftMonitor:
                 current_gen=current_gen
             )
             analysis["semantic_consensus"] = consensus_eval
+            eg = consensus_eval.get("entropy_gradient", {})
+            if eg:
+                try:
+                    from aion_episodic_graph import EpisodicKnowledgeGraph
+                    graph = EpisodicKnowledgeGraph()
+                    analysis["predictive_pruning"] = graph.apply_predictive_topological_pruning(
+                        generation=current_gen,
+                        dh_dt=eg.get("dh_dt", 0.0),
+                        d2h_dt2=eg.get("d2h_dt2", 0.0),
+                        proactive_mutation=eg.get("proactive_mutation_triggered", False)
+                    )
+                except Exception:
+                    pass
 
         return analysis
 
 
 class SemanticConsensusLayer:
     """
-    AION NEXUS - Semantic Consensus Layer (Generation 1277 Architectural Resolution)
-    ================================================================================
-    Enforces the 'Topological Entropy Inversion' thesis:
-    "Autonomous evolutionary topologies only achieve sustainable stability when
-    internal cognitive coherence actively filters out external noise, preventing
-    semantic drift before it cascades into architectural decay."
-
-    Invariants:
-    - ONTOLOGICAL_DRIFT_CEILING = 0.1765
-    - MIN_GRADIENT_FORCE        = 0.4078
+    AION NEXUS - Semantic Consensus Layer & Continuous Entropy-Gradient Governance
+    ==============================================================================
+    Enforces the 'Topological Entropy Inversion' thesis (Gen 1277) and
+    'Dynamic Entropy-Gradient Driven Adaptive Governance' (Gen 1284):
+    - Base ONTOLOGICAL_DRIFT_CEILING = 0.1765 (adaptively gated by dH/dt & d^2H/dt^2)
+    - Base MIN_GRADIENT_FORCE        = 0.4078 (adaptively gated by dH/dt & d^2H/dt^2)
     - Grounded against the 16 Core Meta-Axioms (aion_crystallized_wisdom.json)
-    - Accelerated by C++20 FastCore (aion_semantic_consensus_eval)
+    - Accelerated by C++20 FastCore (aion_semantic_consensus_eval & aion_entropy_gradient_gate)
     """
     ONTOLOGICAL_DRIFT_CEILING = 0.1765
     MIN_GRADIENT_FORCE = 0.4078
@@ -487,6 +496,9 @@ class SemanticConsensusLayer:
     def __init__(self, drift_monitor: Optional[SemanticDriftMonitor] = None):
         self.drift_monitor = drift_monitor
         self.crystallized_axioms: List[str] = self._load_crystallized_axioms()
+        self.entropy_history: List[float] = [4.15, 4.18, 4.12, 4.16]
+        self.adaptive_drift_ceiling = self.ONTOLOGICAL_DRIFT_CEILING
+        self.adaptive_gradient_floor = self.MIN_GRADIENT_FORCE
         self.total_evaluated = 0
         self.total_accepted = 0
         self.total_filtered_noise = 0
@@ -581,22 +593,36 @@ class SemanticConsensusLayer:
                 }
             channel_weight = float(chan_info.get("weight", 0.80))
 
-        # 4. C++20 FastCore Semantic Consensus Kernel Execution
+        # 4. C++20 FastCore Semantic Consensus & Continuous Entropy-Gradient Gating (Gen 1284)
+        entropy_gate_info: Dict[str, Any] = {}
         try:
             from aion_fastcore_bridge import fastcore
+            sig_entropy = fastcore.fast_shannon_entropy(signal_text)
+            self.entropy_history.append(sig_entropy)
+            if len(self.entropy_history) > 32:
+                self.entropy_history = self.entropy_history[-32:]
+
             c_res = fastcore.semantic_consensus_eval(
                 signal_text,
                 anchor_overlap_ratio=anchor_overlap_ratio,
                 channel_weight=channel_weight,
-                max_drift_ceiling=self.ONTOLOGICAL_DRIFT_CEILING,
-                min_gradient_force=self.MIN_GRADIENT_FORCE
+                max_drift_ceiling=self.adaptive_drift_ceiling,
+                min_gradient_force=self.adaptive_gradient_floor
             )
+            entropy_gate_info = fastcore.entropy_gradient_gate(
+                self.entropy_history,
+                current_drift=c_res["ontological_drift"],
+                base_drift_ceiling=self.ONTOLOGICAL_DRIFT_CEILING,
+                base_gradient_floor=self.MIN_GRADIENT_FORCE
+            )
+            self.adaptive_drift_ceiling = entropy_gate_info["adaptive_drift_ceiling"]
+            self.adaptive_gradient_floor = entropy_gate_info["adaptive_gradient_floor"]
         except Exception:
             coherence = min(1.0, 0.48 * anchor_overlap_ratio + 0.32 * 0.90 + 0.20 * channel_weight)
             drift = max(0.0, 1.0 - coherence) * (1.0 - 0.35 * anchor_overlap_ratio)
             grad = coherence * (1.0 - drift) * min(1.25, 0.55 + 0.45 * channel_weight)
             c_res = {
-                "accepted": (drift <= self.ONTOLOGICAL_DRIFT_CEILING) and (grad >= self.MIN_GRADIENT_FORCE),
+                "accepted": (drift <= self.adaptive_drift_ceiling) and (grad >= self.adaptive_gradient_floor),
                 "coherence_score": round(coherence, 4),
                 "ontological_drift": round(drift, 4),
                 "gradient_force": round(grad, 4),
@@ -610,8 +636,8 @@ class SemanticConsensusLayer:
         else:
             self.total_filtered_noise += 1
             reason = (
-                f"Filtered high-variance noise (drift={c_res['ontological_drift']:.4f} > {self.ONTOLOGICAL_DRIFT_CEILING} "
-                f"or gradient={c_res['gradient_force']:.4f} < {self.MIN_GRADIENT_FORCE})"
+                f"Filtered high-variance noise (drift={c_res['ontological_drift']:.4f} > {self.adaptive_drift_ceiling} "
+                f"or gradient={c_res['gradient_force']:.4f} < {self.adaptive_gradient_floor})"
             )
 
         return {
@@ -624,6 +650,7 @@ class SemanticConsensusLayer:
             "matched_concepts": matched_concepts[:8],
             "source_channel": resolved_chan,
             "channel_weight": round(channel_weight, 3),
+            "entropy_gradient": entropy_gate_info,
             "latency_ns": c_res["latency_ns"]
         }
 

@@ -16,6 +16,7 @@
 #include <string_view>
 #include <array>
 #include <chrono>
+#include <algorithm>
 #include "resonant_thermodynamic_algorithm.hpp"
 
 extern "C" {
@@ -204,6 +205,96 @@ C_SemanticConsensusResult aion_semantic_consensus_eval(
     uint64_t ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
 
     return {accepted, coherence, ontological_drift, gradient_force, snr_db, ns};
+}
+
+struct C_EntropyGradientResult {
+    double dh_dt;
+    double d2h_dt2;
+    double adaptive_drift_ceiling;
+    double adaptive_gradient_floor;
+    double topological_fitness;
+    bool proactive_mutation_triggered;
+    uint64_t latency_ns;
+};
+
+/**
+ * 6. Generation 1284 Continuous Entropy-Gradient Tracker & Predictive Topological Gating
+ * Replaces static thresholds with fluid, real-time adaptive anchors coupled to dH/dt and d^2H/dt^2.
+ */
+C_EntropyGradientResult aion_entropy_gradient_gate(
+    const double* entropy_series,
+    size_t len,
+    double current_drift,
+    double base_drift_ceiling,
+    double base_gradient_floor
+) {
+    auto t0 = std::chrono::high_resolution_clock::now();
+    if (!entropy_series || len == 0) {
+        return {0.0, 0.0, base_drift_ceiling, base_gradient_floor, 0.5, false, 0};
+    }
+    if (len == 1) {
+        auto t1 = std::chrono::high_resolution_clock::now();
+        uint64_t ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
+        return {0.0, 0.0, base_drift_ceiling, base_gradient_floor, 1.0 - current_drift, false, ns};
+    }
+
+    // Least-squares linear regression slope (dH/dt) across the sliding window
+    const double n = static_cast<double>(len);
+    double sum_t = 0.0, sum_h = 0.0, sum_th = 0.0, sum_t2 = 0.0;
+    for (size_t i = 0; i < len; ++i) {
+        double t = static_cast<double>(i);
+        double h = entropy_series[i];
+        sum_t += t;
+        sum_h += h;
+        sum_th += t * h;
+        sum_t2 += t * t;
+    }
+    double denom = (n * sum_t2 - sum_t * sum_t);
+    double dh_dt = (std::abs(denom) > 1e-12) ? ((n * sum_th - sum_t * sum_h) / denom) : 0.0;
+
+    // Second-order discrete curvature (d^2H/dt^2) at the frontier
+    double d2h_dt2 = 0.0;
+    if (len >= 3) {
+        d2h_dt2 = entropy_series[len - 1] - 2.0 * entropy_series[len - 2] + entropy_series[len - 3];
+    } else {
+        d2h_dt2 = dh_dt;
+    }
+
+    // Dynamic anchor modulation:
+    // Rising entropy (dH/dt > 0) tightens the drift ceiling and raises gradient floor proactively;
+    // Converging entropy (dH/dt <= 0) opens exploration bandwidth within safe Genesis bounds.
+    double modulation = std::tanh(dh_dt * 2.5 + 0.5 * d2h_dt2);
+    double adaptive_drift_ceiling = std::clamp(
+        base_drift_ceiling * (1.0 - 0.35 * modulation),
+        0.0650,
+        0.2400
+    );
+    double adaptive_gradient_floor = std::clamp(
+        base_gradient_floor * (1.0 + 0.25 * modulation),
+        0.3200,
+        0.6200
+    );
+
+    // Proactive mutation vector triggers before dissonance solidifies into stagnation
+    bool proactive_mutation = (std::abs(dh_dt) > 0.035) || (std::abs(d2h_dt2) > 0.055) || (current_drift > adaptive_drift_ceiling * 0.85);
+    double topological_fitness = std::clamp(
+        (1.0 - current_drift) * std::exp(-0.5 * std::abs(dh_dt)),
+        0.0,
+        1.0
+    );
+
+    auto t1 = std::chrono::high_resolution_clock::now();
+    uint64_t ns = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
+
+    return {
+        dh_dt,
+        d2h_dt2,
+        adaptive_drift_ceiling,
+        adaptive_gradient_floor,
+        topological_fitness,
+        proactive_mutation,
+        ns
+    };
 }
 
 } // extern "C"

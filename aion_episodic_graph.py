@@ -18,6 +18,7 @@ import os
 import sys
 import time
 import json
+import hashlib
 from typing import Dict, Any, List, Optional, Tuple, Set
 
 AI_DIR = "/root/coding/AI_Desktop"
@@ -201,6 +202,86 @@ class EpisodicKnowledgeGraph:
 
         lines.append("```")
         return "\n".join(lines)
+
+    def compute_semantic_node_hash16(self, node_id: str) -> bytes:
+        """
+        Generation 1284 CFS v1 Semantic Context Overlay:
+        Computes a deterministic 16-Byte cryptographic node identifier linking
+        CosmOS telemetry frames directly to their originating Episodic Graph node.
+        """
+        norm_id = node_id.lower().replace(" ", "_").strip()
+        node_meta = self.nodes.get(norm_id, {"type": "CONCEPT", "label": norm_id})
+        payload = f"AION_GRAPH_NODE::{norm_id}::{node_meta.get('type', 'CONCEPT')}::{node_meta.get('label', norm_id)}"
+        return hashlib.sha256(payload.encode("utf-8")).digest()[:16]
+
+    def apply_predictive_topological_pruning(
+        self,
+        generation: int,
+        dh_dt: float,
+        d2h_dt2: float = 0.0,
+        proactive_mutation: bool = False
+    ) -> Dict[str, Any]:
+        """
+        Generation 1284 Predictive Topological Pruning & Entropy-Gradient Gating:
+        - Attenuates/prunes stagnant low-weight synapses before entropy solidification.
+        - Injects proactive mutation vectors into the Episodic Graph when dH/dt or d^2H/dt^2
+          signals an upcoming cognitive bifurcation.
+        """
+        pruned_edges = 0
+        reinforced_mutations = 0
+        kept_edges: List[Dict[str, Any]] = []
+
+        for edge in self.edges:
+            w = float(edge.get("weight", 0.5))
+            # Gentle Hebbian decay on old unvisited edges (>150 generations old and low weight)
+            last_ep = max(edge.get("episodes", [0])) if edge.get("episodes") else 0
+            if (generation - last_ep) > 150 and w < 0.42 and edge.get("source") not in ("tobias", "axiom_0"):
+                new_w = round(w - 0.04, 3)
+                if new_w < 0.28:
+                    pruned_edges += 1
+                    continue
+                edge["weight"] = new_w
+            kept_edges.append(edge)
+
+        self.edges = kept_edges
+
+        mutation_node_id = "entropy_gradient_governance"
+        if proactive_mutation:
+            self.add_node(
+                mutation_node_id,
+                "ADAPTIVE_GOVERNANCE",
+                "Dynamic Entropy-Gradient Governance (Gen 1284)",
+                generation,
+                importance=0.97
+            )
+            self.add_or_reinforce_edge(
+                mutation_node_id,
+                "adaptive_hypotheses",
+                "PROACTIVE_MUTATION_VECTOR",
+                generation,
+                weight_delta=0.10
+            )
+            self.add_or_reinforce_edge(
+                mutation_node_id,
+                "cosmos_kernel",
+                "CFS_SEMANTIC_OVERLAY_LINK",
+                generation,
+                weight_delta=0.09
+            )
+            reinforced_mutations += 2
+
+        self.save()
+        return {
+            "generation": generation,
+            "dh_dt": round(dh_dt, 5),
+            "d2h_dt2": round(d2h_dt2, 5),
+            "proactive_mutation_applied": proactive_mutation,
+            "pruned_stagnant_edges": pruned_edges,
+            "reinforced_mutation_vectors": reinforced_mutations,
+            "active_nodes": len(self.nodes),
+            "active_edges": len(self.edges),
+            "semantic_hash16_hex": self.compute_semantic_node_hash16(mutation_node_id).hex()
+        }
 
 
 if __name__ == "__main__":
