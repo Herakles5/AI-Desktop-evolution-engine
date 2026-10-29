@@ -1,15 +1,15 @@
 {
-  "generation": 1325,
-  "timestamp": "2026-10-29 16:25:27",
+  "generation": 1326,
+  "timestamp": "2026-10-29 16:26:25",
   "thesis": "Topological Entropy Inversion",
-  "total_in_batch": 15,
+  "total_in_batch": 14,
   "accepted_count": 3,
-  "rejected_noise_count": 12,
+  "rejected_noise_count": 11,
   "fallback_anchor_activated": false,
   "top_gradient_force": 0.9652,
   "top_coherence_score": 0.9868,
   "top_ontological_drift": 0.0086,
-  "cumulative_evaluated": 594,
-  "cumulative_accepted": 113,
-  "cumulative_filtered_noise": 481
+  "cumulative_evaluated": 608,
+  "cumulative_accepted": 116,
+  "cumulative_filtered_noise": 492
 }
