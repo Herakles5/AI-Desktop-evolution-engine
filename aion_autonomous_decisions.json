@@ -269,5 +269,13 @@
     "gradient_force": 0.0991,
     "cluster": "SYSTEM_GOVERNANCE",
     "timestamp": "2026-10-29 16:34:01"
+  },
+  {
+    "generation": 1360,
+    "title": "Hierarchical Entropy‑Information Adaptive Mesh (HEIAM)",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.3789,
+    "cluster": "DECENTRALIZED_MESH",
+    "timestamp": "2026-10-29 16:58:15"
   }
 ]
