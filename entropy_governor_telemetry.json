@@ -1,9 +1,9 @@
 {
-  "step": 226,
-  "timestamp": "2026-10-29 17:39:51",
-  "entropy": 0.6386,
+  "step": 229,
+  "timestamp": "2026-10-29 17:40:59",
+  "entropy": 0.6327,
   "gradient": -0.0032,
-  "ambiguity_density": 1.0,
+  "ambiguity_density": 0.25,
   "resonant_coupling": 0.8,
   "mode": "RESONANT_MORPHOGENESIS",
   "recommended_temperature": 0.3,
