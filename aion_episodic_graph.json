@@ -11397,7 +11397,7 @@
       "source": "gen_1284",
       "target": "synthesized_rule",
       "relation": "EVOLVED",
-      "weight": 0.58,
+      "weight": 0.66,
       "episodes": [
         1284
       ]
