@@ -8897,6 +8897,12 @@
       "label": "Gen_2006",
       "first_seen_gen": 2006,
       "importance": 0.8
+    },
+    "gen_2007": {
+      "type": "CONCEPT",
+      "label": "Gen_2007",
+      "first_seen_gen": 2007,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22257,6 +22263,15 @@
       "weight": 0.58,
       "episodes": [
         2006
+      ]
+    },
+    {
+      "source": "gen_2007",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2007
       ]
     }
   ]
