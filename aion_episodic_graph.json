@@ -8987,6 +8987,12 @@
       "label": "Gen_2021",
       "first_seen_gen": 2021,
       "importance": 0.8
+    },
+    "gen_2022": {
+      "type": "CONCEPT",
+      "label": "Gen_2022",
+      "first_seen_gen": 2022,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22482,6 +22488,15 @@
       "weight": 0.58,
       "episodes": [
         2021
+      ]
+    },
+    {
+      "source": "gen_2022",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2022
       ]
     }
   ]
