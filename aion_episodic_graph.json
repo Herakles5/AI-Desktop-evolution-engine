@@ -8675,6 +8675,12 @@
       "label": "Gen_1969",
       "first_seen_gen": 1969,
       "importance": 0.8
+    },
+    "gen_1970": {
+      "type": "CONCEPT",
+      "label": "Gen_1970",
+      "first_seen_gen": 1970,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21702,6 +21708,15 @@
       "weight": 0.58,
       "episodes": [
         1969
+      ]
+    },
+    {
+      "source": "gen_1970",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1970
       ]
     }
   ]
