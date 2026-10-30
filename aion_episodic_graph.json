@@ -8993,6 +8993,12 @@
       "label": "Gen_2022",
       "first_seen_gen": 2022,
       "importance": 0.8
+    },
+    "gen_2023": {
+      "type": "CONCEPT",
+      "label": "Gen_2023",
+      "first_seen_gen": 2023,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22497,6 +22503,15 @@
       "weight": 0.58,
       "episodes": [
         2022
+      ]
+    },
+    {
+      "source": "gen_2023",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2023
       ]
     }
   ]
