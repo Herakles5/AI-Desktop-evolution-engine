@@ -8861,6 +8861,12 @@
       "label": "Gen_2000",
       "first_seen_gen": 2000,
       "importance": 0.8
+    },
+    "gen_2001": {
+      "type": "CONCEPT",
+      "label": "Gen_2001",
+      "first_seen_gen": 2001,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22167,6 +22173,15 @@
       "weight": 0.58,
       "episodes": [
         2000
+      ]
+    },
+    {
+      "source": "gen_2001",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2001
       ]
     }
   ]
