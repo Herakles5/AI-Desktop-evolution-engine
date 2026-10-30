@@ -9179,6 +9179,12 @@
       "label": "Gen_2053",
       "first_seen_gen": 2053,
       "importance": 0.8
+    },
+    "gen_2054": {
+      "type": "CONCEPT",
+      "label": "Gen_2054",
+      "first_seen_gen": 2054,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22962,6 +22968,15 @@
       "weight": 0.58,
       "episodes": [
         2053
+      ]
+    },
+    {
+      "source": "gen_2054",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2054
       ]
     }
   ]
