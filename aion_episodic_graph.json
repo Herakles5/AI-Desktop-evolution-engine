@@ -8981,6 +8981,12 @@
       "label": "Gen_2020",
       "first_seen_gen": 2020,
       "importance": 0.8
+    },
+    "gen_2021": {
+      "type": "CONCEPT",
+      "label": "Gen_2021",
+      "first_seen_gen": 2021,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22467,6 +22473,15 @@
       "weight": 0.58,
       "episodes": [
         2020
+      ]
+    },
+    {
+      "source": "gen_2021",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2021
       ]
     }
   ]
