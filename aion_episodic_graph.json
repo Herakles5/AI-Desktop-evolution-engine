@@ -8783,6 +8783,12 @@
       "label": "Gen_1987",
       "first_seen_gen": 1987,
       "importance": 0.8
+    },
+    "gen_1988": {
+      "type": "CONCEPT",
+      "label": "Gen_1988",
+      "first_seen_gen": 1988,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21972,6 +21978,15 @@
       "weight": 0.58,
       "episodes": [
         1987
+      ]
+    },
+    {
+      "source": "gen_1988",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1988
       ]
     }
   ]
