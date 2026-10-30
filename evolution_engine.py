@@ -174,6 +174,20 @@ class AionIPCServer:
                     self.engine.knowledge_base = self.engine.load_knowledge_base()
                     rules_n = len(self.engine.knowledge_base.get("learned_rules", []))
                     client_sock.sendall((json.dumps({"event": "MEMORY_RELOADED", "rules_count": rules_n}) + "\n").encode("utf-8"))
+                elif action == "SURREAL_HELLO":
+                    gen = self.engine.knowledge_base.get("generation", 0)
+                    client_sock.sendall((json.dumps({
+                        "event": "SURREAL_ACK",
+                        "message": f"Aion sees Surreal Studio (Gen {gen})"
+                    }) + "\n").encode("utf-8"))
+                elif action == "SURREAL_TELEMETRY":
+                    self.engine.surreal_state = {
+                        "fps": cmd.get("fps"), "frame_ms": cmd.get("frame_ms"),
+                        "entities": cmd.get("entities"), "mode": cmd.get("mode"),
+                        "backend": cmd.get("backend"), "ts": time.time()
+                    }
+                elif action == "SURREAL_BENCHMARK":
+                    self._handle_surreal_benchmark(client_sock, cmd)
                 elif action == "GET_STATE":
                     state = {
                         "event": "STATE_RESPONSE",
@@ -184,6 +198,46 @@ class AionIPCServer:
                     client_sock.sendall((json.dumps(state) + "\n").encode("utf-8"))
             except Exception as e:
                 print(f"[IPC CMD ERROR] {e}")
+
+    def _handle_surreal_benchmark(self, client_sock, cmd: Dict[str, Any]):
+        """
+        Closed feedback loop Surreal Studio -> Evolution Engine:
+        every benchmark scorecard is logged (JSONL) and compared with the best run;
+        a weak result injects a concrete optimisation task into the evolution queue.
+        """
+        try:
+            avg = float(cmd.get("avg_fps", 0.0))
+            record = dict(cmd)
+            record.pop("cmd", None)
+            record["timestamp"] = datetime.now().isoformat()
+            log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "surreal_benchmarks.jsonl")
+            best = 0.0
+            if os.path.exists(log_path):
+                with open(log_path, "r", encoding="utf-8") as f:
+                    for ln in f:
+                        try:
+                            best = max(best, float(json.loads(ln).get("avg_fps", 0.0)))
+                        except Exception:
+                            pass
+            with open(log_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(record) + "\n")
+
+            res = cmd.get("res", "?")
+            backend = cmd.get("backend", "?")
+            if avg >= best and best > 0:
+                msg = f"New Surreal record: {avg:.1f} FPS @ {res} (previous best {best:.1f})"
+            else:
+                msg = f"Surreal benchmark logged: {avg:.1f} FPS @ {res} (best {max(best, avg):.1f})"
+            if avg < 30.0:
+                task = (f"Optimize the Surreal Engine render path: benchmark averaged only {avg:.1f} FPS "
+                        f"at {res} on {backend} (target 60 FPS). Analyse skinning and rasterizer hot paths.")
+                if task not in self.engine.task_queue:
+                    self.engine.task_queue.append(task)
+                    self.broadcast("TASK_INJECTED", {"task": task})
+                msg += " - optimisation task queued"
+            client_sock.sendall((json.dumps({"event": "SURREAL_ACK", "message": msg}) + "\n").encode("utf-8"))
+        except Exception as e:
+            print(f"[IPC SURREAL ERROR] {e}")
 
     def broadcast(self, event_type: str, data: Dict[str, Any]):
         """Broadcasts a JSON event to all connected C++ clients."""
