@@ -8921,6 +8921,12 @@
       "label": "Gen_2010",
       "first_seen_gen": 2010,
       "importance": 0.8
+    },
+    "gen_2011": {
+      "type": "CONCEPT",
+      "label": "Gen_2011",
+      "first_seen_gen": 2011,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22317,6 +22323,15 @@
       "weight": 0.58,
       "episodes": [
         2010
+      ]
+    },
+    {
+      "source": "gen_2011",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2011
       ]
     }
   ]
