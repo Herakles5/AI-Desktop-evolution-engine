@@ -8663,6 +8663,12 @@
       "label": "Gen_1967",
       "first_seen_gen": 1967,
       "importance": 0.8
+    },
+    "gen_1968": {
+      "type": "CONCEPT",
+      "label": "Gen_1968",
+      "first_seen_gen": 1968,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21672,6 +21678,15 @@
       "weight": 0.58,
       "episodes": [
         1967
+      ]
+    },
+    {
+      "source": "gen_1968",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1968
       ]
     }
   ]
