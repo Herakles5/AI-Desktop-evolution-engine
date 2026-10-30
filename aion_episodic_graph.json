@@ -8531,6 +8531,12 @@
       "label": "Gen_1945",
       "first_seen_gen": 1945,
       "importance": 0.8
+    },
+    "gen_1946": {
+      "type": "CONCEPT",
+      "label": "Gen_1946",
+      "first_seen_gen": 1946,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21342,6 +21348,15 @@
       "weight": 0.58,
       "episodes": [
         1945
+      ]
+    },
+    {
+      "source": "gen_1946",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1946
       ]
     }
   ]
