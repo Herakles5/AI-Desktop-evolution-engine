@@ -8417,6 +8417,12 @@
       "label": "Gen_1926",
       "first_seen_gen": 1926,
       "importance": 0.8
+    },
+    "gen_1927": {
+      "type": "CONCEPT",
+      "label": "Gen_1927",
+      "first_seen_gen": 1927,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21057,6 +21063,15 @@
       "weight": 0.58,
       "episodes": [
         1926
+      ]
+    },
+    {
+      "source": "gen_1927",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1927
       ]
     }
   ]
