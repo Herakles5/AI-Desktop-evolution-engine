@@ -8939,6 +8939,12 @@
       "label": "Gen_2013",
       "first_seen_gen": 2013,
       "importance": 0.8
+    },
+    "gen_2014": {
+      "type": "CONCEPT",
+      "label": "Gen_2014",
+      "first_seen_gen": 2014,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22362,6 +22368,15 @@
       "weight": 0.58,
       "episodes": [
         2013
+      ]
+    },
+    {
+      "source": "gen_2014",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2014
       ]
     }
   ]
