@@ -8645,6 +8645,12 @@
       "label": "Gen_1964",
       "first_seen_gen": 1964,
       "importance": 0.8
+    },
+    "gen_1965": {
+      "type": "CONCEPT",
+      "label": "Gen_1965",
+      "first_seen_gen": 1965,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -21627,6 +21633,15 @@
       "weight": 0.58,
       "episodes": [
         1964
+      ]
+    },
+    {
+      "source": "gen_1965",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        1965
       ]
     }
   ]
