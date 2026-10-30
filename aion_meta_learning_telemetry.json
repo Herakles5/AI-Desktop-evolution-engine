@@ -3,21 +3,9 @@
   "current_learning_rate": 0.093,
   "exploration_temperature": 0.3,
   "plasticity_factor": 1.0,
-  "consecutive_successes": 2055,
+  "consecutive_successes": 2056,
   "consecutive_drifts": 0,
   "evaluation_history": [
-    {
-      "generation": 2616,
-      "timestamp": "2026-10-30 18:41:50",
-      "learning_rate": 0.093,
-      "exploration_temperature": 0.3,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.5,
-      "adjustments": [
-        "High stability confirmed -> Increased exploration temperature",
-        "Low hardware grounding -> Active cognitive throttling"
-      ]
-    },
     {
       "generation": 2617,
       "timestamp": "2026-10-30 18:42:52",
@@ -1192,6 +1180,18 @@
     {
       "generation": 2715,
       "timestamp": "2026-10-30 20:24:09",
+      "learning_rate": 0.093,
+      "exploration_temperature": 0.3,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.5,
+      "adjustments": [
+        "High stability confirmed -> Increased exploration temperature",
+        "Low hardware grounding -> Active cognitive throttling"
+      ]
+    },
+    {
+      "generation": 2716,
+      "timestamp": "2026-10-30 20:25:07",
       "learning_rate": 0.093,
       "exploration_temperature": 0.3,
       "plasticity_factor": 1.0,
