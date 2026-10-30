@@ -9011,6 +9011,12 @@
       "label": "Gen_2025",
       "first_seen_gen": 2025,
       "importance": 0.8
+    },
+    "gen_2026": {
+      "type": "CONCEPT",
+      "label": "Gen_2026",
+      "first_seen_gen": 2026,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22542,6 +22548,15 @@
       "weight": 0.58,
       "episodes": [
         2025
+      ]
+    },
+    {
+      "source": "gen_2026",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2026
       ]
     }
   ]
