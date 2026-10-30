@@ -11675,6 +11675,12 @@
       "label": "Gen_2469",
       "first_seen_gen": 2469,
       "importance": 0.8
+    },
+    "gen_2470": {
+      "type": "CONCEPT",
+      "label": "Gen_2470",
+      "first_seen_gen": 2470,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -29202,6 +29208,15 @@
       "weight": 0.58,
       "episodes": [
         2469
+      ]
+    },
+    {
+      "source": "gen_2470",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2470
       ]
     }
   ]
