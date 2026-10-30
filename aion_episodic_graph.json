@@ -8957,6 +8957,12 @@
       "label": "Gen_2016",
       "first_seen_gen": 2016,
       "importance": 0.8
+    },
+    "gen_2017": {
+      "type": "CONCEPT",
+      "label": "Gen_2017",
+      "first_seen_gen": 2017,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -22407,6 +22413,15 @@
       "weight": 0.58,
       "episodes": [
         2016
+      ]
+    },
+    {
+      "source": "gen_2017",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        2017
       ]
     }
   ]
