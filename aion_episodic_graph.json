@@ -15221,6 +15221,12 @@
       "label": "Gen_3060",
       "first_seen_gen": 3060,
       "importance": 0.8
+    },
+    "gen_3061": {
+      "type": "CONCEPT",
+      "label": "Gen_3061",
+      "first_seen_gen": 3061,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -38067,6 +38073,15 @@
       "weight": 0.58,
       "episodes": [
         3060
+      ]
+    },
+    {
+      "source": "gen_3061",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        3061
       ]
     }
   ]
