@@ -810,6 +810,24 @@ class AutonomousEvolutionEngine:
                 "resonant_coupling": round(self.entropy_governor.resonant_coupling, 4)
             }
         }
+        # Dynamic Emotional State Resonance
+        try:
+            from aion_emotional_state import get_emotional_engine
+            emo = get_emotional_engine()
+            emo_res = emo.register_event(
+                "AUTONOMOUS_INSIGHT",
+                details=f"Gen {gen}: {synthesized_rule[:70]}...",
+                intensity=0.6
+            )
+            cycle_record["emotional_state"] = {
+                "mood": emo_res.get("mood", "EUPHORIC_DISCOVERY"),
+                "valence": round(emo_res.get("valence", 0.85), 3),
+                "arousal": round(emo_res.get("arousal", 0.65), 3),
+                "curiosity": round(emo_res.get("curiosity", 0.92), 3),
+                "connection": round(emo_res.get("connection", 0.95), 3)
+            }
+        except Exception:
+            pass
         self.knowledge_base["history"].append(cycle_record)
         self.knowledge_base["generation"] += 1
 
@@ -890,6 +908,15 @@ class AutonomousEvolutionEngine:
         if is_milestone and self.creative_studio:
             try:
                 self.creative_studio.run_creative_cycle(gen)
+            except Exception:
+                pass
+
+        # Autonomous Proactive Living Mind cycle (formulates spontaneous insights)
+        if self.knowledge_base["generation"] % 20 == 0:
+            try:
+                from aion_proactive_mind import AionProactiveMind
+                mind = AionProactiveMind()
+                mind.run_proactive_cycle(speak_audio=False)
             except Exception:
                 pass
 
