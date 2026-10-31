@@ -216,6 +216,10 @@ class AionProactiveMind:
 
         return thought
 
+    def run_proactive_exploration(self, speak_audio: bool = False):
+        """Backward-compatible alias for older callers."""
+        return self.run_proactive_cycle(speak_audio=speak_audio)
+
 
 if __name__ == "__main__":
     print("=== TESTING LIVING PROACTIVE MIND (V2) ===")
