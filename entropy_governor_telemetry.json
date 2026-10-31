@@ -1,7 +1,7 @@
 {
-  "step": 511,
-  "timestamp": "2026-10-31 16:07:27",
-  "entropy": 0.5844,
+  "step": 514,
+  "timestamp": "2026-10-31 16:08:03",
+  "entropy": 0.593,
   "gradient": 0.1395,
   "ambiguity_density": 0.25,
   "resonant_coupling": 0.8,
