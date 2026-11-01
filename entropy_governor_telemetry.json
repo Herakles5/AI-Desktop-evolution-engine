@@ -1,8 +1,8 @@
 {
-  "step": 218,
-  "timestamp": "2026-11-01 14:15:48",
+  "step": 221,
+  "timestamp": "2026-11-01 14:16:51",
   "entropy": 0.6395,
-  "gradient": -0.0063,
+  "gradient": -0.0075,
   "ambiguity_density": 0.25,
   "resonant_coupling": 0.8,
   "mode": "RESONANT_MORPHOGENESIS",
