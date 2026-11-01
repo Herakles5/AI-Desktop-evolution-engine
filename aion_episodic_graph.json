@@ -24821,6 +24821,12 @@
       "label": "Gen_4660",
       "first_seen_gen": 4660,
       "importance": 0.8
+    },
+    "gen_4661": {
+      "type": "CONCEPT",
+      "label": "Gen_4661",
+      "first_seen_gen": 4661,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -62067,6 +62073,15 @@
       "weight": 0.58,
       "episodes": [
         4660
+      ]
+    },
+    {
+      "source": "gen_4661",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        4661
       ]
     }
   ]
