@@ -72,6 +72,9 @@ WHITELISTED_FILES = [
     "topological_pruning_kernel.hpp",
     "topological_pruning_kernel.py",
     "topological_pruning_telemetry.json",
+    "aion_universal_allrounder.py",
+    "aion_allrounder_skill_matrix.json",
+    "aion_allrounder_telemetry.json",
     "semantic_consensus_telemetry.json",
     "aion_evolution_git_pusher.py"
 ]

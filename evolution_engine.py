@@ -170,6 +170,20 @@ class AionIPCServer:
                 except Exception:
                     pass
                 continue
+            if line == "GET_ALLROUNDER_SKILLS":
+                try:
+                    ar = getattr(self.engine, "allrounder", None)
+                    if ar:
+                        client_sock.sendall((json.dumps({
+                            "event": "ALLROUNDER_SKILLS_RESPONSE",
+                            "mastery_index": ar.get_overall_mastery_index(),
+                            "total_skills": len(ar.skills),
+                            "domains": ar.get_domain_summary(),
+                            "skills": ar.skills
+                        }) + "\n").encode("utf-8"))
+                except Exception:
+                    pass
+                continue
             try:
                 cmd = json.loads(line)
                 action = cmd.get("cmd", "")
@@ -381,6 +395,12 @@ class AutonomousEvolutionEngine:
             self.pruning_engine = pruning_engine
         except Exception:
             self.pruning_engine = None
+
+        try:
+            from aion_universal_allrounder import allrounder_engine
+            self.allrounder = allrounder_engine
+        except Exception:
+            self.allrounder = None
 
         try:
             from aion_lion_reflex import LionReflexEngine
