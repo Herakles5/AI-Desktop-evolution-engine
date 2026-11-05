@@ -18,6 +18,7 @@
 #include <chrono>
 #include <algorithm>
 #include "resonant_thermodynamic_algorithm.hpp"
+#include "topological_pruning_kernel.hpp"
 
 extern "C" {
 
@@ -294,6 +295,66 @@ C_EntropyGradientResult aion_entropy_gradient_gate(
         topological_fitness,
         proactive_mutation,
         ns
+    };
+}
+
+struct C_TopologicalPruningResult {
+    bool pruning_triggered;
+    bool predictive_preempt;
+    bool oracle_verified;
+    double current_entropy;
+    double predicted_entropy;
+    double dh_dt;
+    double d2h_dt2;
+    double curvature_vector;
+    double caec_effective_cost;
+    double contraction_ratio;
+    uint32_t target_manifold_dim;
+    uint64_t oracle_audit_hash;
+    uint64_t latency_ns;
+};
+
+/**
+ * 7. Generation 4833 & 4834 Deterministic Topological Pruning Engine & Auditable Oracle
+ * Executes real-time EGT=0.75 manifold contraction with predictive curvature vector
+ * interpolation, 12% CAEC reduction, and external resolution oracle verification.
+ */
+C_TopologicalPruningResult aion_topological_pruning_eval(
+    const double* entropy_series,
+    size_t series_len,
+    double ontological_drift,
+    double gradient_force,
+    double empirical_grounding,
+    uint32_t current_manifold_dim,
+    double egt_threshold
+) {
+    Aion::TopologicalPruningConfig cfg{};
+    if (egt_threshold > 0.1 && egt_threshold <= 0.99) {
+        cfg.entropy_gradient_threshold = egt_threshold;
+    }
+    auto r = Aion::TopologicalPruningKernel::evaluate(
+        entropy_series,
+        series_len,
+        ontological_drift,
+        gradient_force,
+        empirical_grounding,
+        current_manifold_dim,
+        cfg
+    );
+    return {
+        r.pruning_triggered,
+        r.predictive_preempt,
+        r.oracle_verified,
+        r.current_entropy,
+        r.predicted_entropy,
+        r.dh_dt,
+        r.d2h_dt2,
+        r.curvature_vector,
+        r.caec_effective_cost,
+        r.contraction_ratio,
+        r.target_manifold_dim,
+        r.oracle_audit_hash,
+        r.latency_ns
     };
 }
 
