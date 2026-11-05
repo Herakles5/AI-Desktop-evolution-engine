@@ -69,6 +69,9 @@ WHITELISTED_FILES = [
     "aion_hypervisor_sentinel.py",
     "aion_fastcore.cpp",
     "aion_fastcore_bridge.py",
+    "topological_pruning_kernel.hpp",
+    "topological_pruning_kernel.py",
+    "topological_pruning_telemetry.json",
     "semantic_consensus_telemetry.json",
     "aion_evolution_git_pusher.py"
 ]
