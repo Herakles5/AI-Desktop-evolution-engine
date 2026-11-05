@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-05 21:35:37",
+  "timestamp": "2026-11-05 21:36:45",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 341,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9531,
   "compression_pct": 95.3,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.7009,
-  "max_clause_chars": 144,
+  "cognitive_load_factor": 0.6969,
+  "max_clause_chars": 145,
   "compression_hash": "0xc865ca3257d4",
-  "latency_us": 22845.66,
+  "latency_us": 88388.05,
   "load_breakdown": {
-    "cognitive_load": 0.7009,
+    "cognitive_load": 0.6969,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9675
+    "cpu_strain": 0.9475
   },
   "top_weighted_axioms": [
     {
@@ -35,21 +35,21 @@
       "index": 335,
       "weight": 0.7199,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that acti...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that activ...",
       "immutable_anchor": false
     },
     {
       "index": 288,
       "weight": 0.6182,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not attribute causal agency or thermodynamic properties to immutable data structures, as static cryptographic anchors cannot function as d...",
+      "compressed_axiom": "Do not attribute causal agency or thermodynamic properties to immutable data structures, as static cryptographic anchors cannot function as dy...",
       "immutable_anchor": false
     },
     {
       "index": 151,
       "weight": 0.5552,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "When a learning system alters its internal topology, it must base every change on a rigorously defined, modality‑agnostic measure of informat...",
+      "compressed_axiom": "When a learning system alters its internal topology, it must base every change on a rigorously defined, modality‑agnostic measure of informati...",
       "immutable_anchor": false
     }
   ]
