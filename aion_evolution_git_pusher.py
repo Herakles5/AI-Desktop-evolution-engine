@@ -85,6 +85,12 @@ WHITELISTED_FILES = [
     "adaptive_axiom_compression_telemetry.json",
     "aion_wishes_gen4875.json",
     "semantic_consensus_telemetry.json",
+    "aion_autobiographical_memory.py",
+    "aion_autobiographical_memory.json",
+    "aion_emotional_state.py",
+    "aion_emotional_state.json",
+    "aion_agent_network.py",
+    "aion_peer_registry.json",
     "aion_evolution_git_pusher.py"
 ]
 
@@ -246,7 +252,7 @@ def sync_surreal_engine_repo(gen: int = 0) -> bool:
     try:
         import glob
         os.makedirs(os.path.join(SURREAL_REPO_DIR, "scripts"), exist_ok=True)
-        for pattern in ["*.hpp", "*.cpp", "README.md", "Makefile", "CMakeLists.txt", "scene_level.json"]:
+        for pattern in ["*.hpp", "*.cpp", "README.md", "Makefile", "CMakeLists.txt", "scene_level.json", "meovv_*.png"]:
             for src_file in glob.glob(os.path.join(SURREAL_SRC_DIR, pattern)):
                 shutil.copy2(src_file, os.path.join(SURREAL_REPO_DIR, os.path.basename(src_file)))
         for src_py in glob.glob(os.path.join(SURREAL_SRC_DIR, "scripts", "*.py")):

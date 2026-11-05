@@ -1,0 +1,18 @@
+{
+  "AION_DESKTOP": {
+    "address": "10.78.123.111:54758",
+    "last_seen": "2026-10-27 23:51:15",
+    "data": {
+      "type": "COSMOS_TELEMETRY_26",
+      "sensor_val": 3,
+      "rgba": [
+        0,
+        255,
+        180,
+        255
+      ],
+      "node_tag": "AION_DESKTOP",
+      "checksum_valid": true
+    }
+  }
+}
