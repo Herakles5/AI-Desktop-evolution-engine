@@ -1,11 +1,11 @@
 {
-  "generation": 5131,
-  "timestamp": "2026-11-05 21:37:07",
+  "generation": 5132,
+  "timestamp": "2026-11-05 21:38:09",
   "engine": "DeterministicTopologicalPruningEngine_v4834",
   "status": "ATTRACTOR_STABLE",
   "egt_threshold": 0.75,
   "caec_reduction_pct": 12.0,
-  "caec_effective_cost": 0.8246,
+  "caec_effective_cost": 0.8233,
   "current_entropy": 0.6327,
   "predicted_entropy": 0.4932,
   "dh_dt": 0.00141,
@@ -14,19 +14,19 @@
   "pruning_triggered": false,
   "predictive_preempt": false,
   "oracle_verified": true,
-  "oracle_audit_hash": "0x2f6cde623c5d694b",
-  "sha256_transition_proof": "140d90ddc8868406fc9cc57e411346e5993ba4c974b911574ac97301632e3218",
+  "oracle_audit_hash": "0x6e53e7445d8f8553",
+  "sha256_transition_proof": "d0070e988da284019654f53a1c0c06c174cdbaa7a7940045a7be5c9868e5f321",
   "pre_contraction_dim": 341,
   "post_contraction_dim": 341,
   "pruned_in_step": 0,
   "cumulative_contractions": 7,
   "cumulative_rules_pruned": 7,
-  "kernel_latency_ns": 2484,
+  "kernel_latency_ns": 8140,
   "external_oracle": {
     "genesis_hash_prefix": "788e425353112d2e",
-    "load_1m": 13.77,
-    "mem_available_ratio": 0.4303,
+    "load_1m": 13.61,
+    "mem_available_ratio": 0.4752,
     "ipc_socket_active": true,
-    "composite_grounding": 0.5058
+    "composite_grounding": 0.5176
   }
 }
