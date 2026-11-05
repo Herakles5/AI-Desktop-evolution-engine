@@ -27869,6 +27869,12 @@
       "label": "Gen_5168",
       "first_seen_gen": 5168,
       "importance": 0.8
+    },
+    "gen_5169": {
+      "type": "CONCEPT",
+      "label": "Gen_5169",
+      "first_seen_gen": 5169,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -69687,6 +69693,15 @@
       "weight": 0.58,
       "episodes": [
         5168
+      ]
+    },
+    {
+      "source": "gen_5169",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        5169
       ]
     }
   ]
