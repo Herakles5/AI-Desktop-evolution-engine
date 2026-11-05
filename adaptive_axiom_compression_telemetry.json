@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-05 19:29:38",
+  "timestamp": "2026-11-05 19:31:00",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 341,
   "active_focal_axioms": 18,
   "compression_ratio": 0.9472,
   "compression_pct": 94.7,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6371,
+  "cognitive_load_factor": 0.6294,
   "max_clause_chars": 149,
   "compression_hash": "0x22f69b1d3378",
-  "latency_us": 23309.82,
+  "latency_us": 20691.93,
   "load_breakdown": {
-    "cognitive_load": 0.6371,
+    "cognitive_load": 0.6294,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6483
+    "cpu_strain": 0.61
   },
   "top_weighted_axioms": [
     {
