@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-05 17:17:11",
+  "timestamp": "2026-11-05 18:00:46",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 385,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9584,
-  "compression_pct": 95.8,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0x73975d77fff4",
-  "latency_us": 21205.4,
+  "total_axioms_in_manifold": 403,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9553,
+  "compression_pct": 95.5,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6524,
+  "max_clause_chars": 148,
+  "compression_hash": "0x0668d8517f35",
+  "latency_us": 52577.9,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6524,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.725
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 342,
-      "weight": 0.7976,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Semantic coherence is not a static property to be preserved but a dynamic topological phase transition driven by the precise calibration of e...",
+      "index": 394,
+      "weight": 0.8281,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic ent...",
       "immutable_anchor": false
     },
     {
-      "index": 349,
-      "weight": 0.7487,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "The calculus must invert the standard entropy-reduction paradigm by treating high-divergence informational states as topological singularitie...",
+      "index": 396,
+      "weight": 0.7198,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that actively...",
       "immutable_anchor": false
     },
     {
-      "index": 348,
-      "weight": 0.7478,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "By treating static cryptographic constraints as topological singularities rather than fixed barriers, the system can autonomously collapse hi...",
+      "index": 347,
+      "weight": 0.6235,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not attribute causal agency or thermodynamic properties to immutable data structures, as static cryptographic anchors cannot function as dynam...",
       "immutable_anchor": false
     },
     {
-      "index": 346,
-      "weight": 0.7461,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "By treating cryptographic anchors not as static constraints but as dynamic attractors that actively lower the energetic cost of topological c...",
+      "index": 151,
+      "weight": 0.5385,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "When a learning system alters its internal topology, it must base every change on a rigorously defined, modality‑agnostic measure of informationa...",
       "immutable_anchor": false
     }
   ]

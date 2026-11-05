@@ -147,3 +147,4 @@ if __name__ == "__main__":
     print(f" -> Pulse #{p1['pulse_id']} [{p1['event_type']}]: Amp={p1['effective_amplitude']}, Radius={p1['max_radius_m']}m, Color={p1['color_hex']}")
     print(f" -> Tactile Feel: {p1['tactile_feel']}")
     print("[SUCCESS] Haptic-Visual Sensory Bridge Verified!")
+

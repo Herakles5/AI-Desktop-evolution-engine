@@ -178,3 +178,4 @@ if __name__ == "__main__":
     print(f" -> Active Speaker  : {st['active_speaker']}")
     print(f" -> Spoken Line     : \"{st['active_dialogue']}\"")
     print("[SUCCESS] Emergent Narrative Weave Engine Verified!")
+

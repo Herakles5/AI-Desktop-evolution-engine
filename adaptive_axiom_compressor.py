@@ -235,3 +235,4 @@ if __name__ == "__main__":
     for item in focal[:3]:
         print(f"    [{item['index']}] (w={item['weight']:.3f}) {item['compressed_axiom'][:95]}...")
     print("[SUCCESS] Dynamic Axiom Compressor Verified!")
+
