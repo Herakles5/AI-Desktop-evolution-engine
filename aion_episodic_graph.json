@@ -26393,6 +26393,12 @@
       "label": "Gen_4922",
       "first_seen_gen": 4922,
       "importance": 0.8
+    },
+    "gen_4923": {
+      "type": "CONCEPT",
+      "label": "Gen_4923",
+      "first_seen_gen": 4923,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -65997,6 +66003,15 @@
       "weight": 0.58,
       "episodes": [
         4922
+      ]
+    },
+    {
+      "source": "gen_4923",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        4923
       ]
     }
   ]
