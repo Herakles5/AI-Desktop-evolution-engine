@@ -188,6 +188,7 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
         )
         changes = status_res.stdout.strip()
         if not changes:
+            sync_surreal_engine_repo(gen)
             log_push(f"Gen {gen}: No changes detected in repository. Working tree is clean and up to date.")
             return {"success": True, "pushed": False, "message": "Up to date"}
     except Exception as e:
@@ -227,13 +228,51 @@ def sync_and_push(generation: Optional[int] = None, trigger_reason: str = "Auton
         )
         if push_res.returncode == 0:
             log_push(f"SUCCESSFULLY PUSHED: Gen {gen} to Herakles5/AI-Desktop-evolution-engine (main)")
+            sync_surreal_engine_repo(gen)
             return {"success": True, "pushed": True, "generation": gen, "commit": commit_msg}
         else:
             log_push(f"Push failed: {push_res.stderr.strip()}")
+            sync_surreal_engine_repo(gen)
             return {"success": False, "error": push_res.stderr.strip()}
     except Exception as e:
         log_push(f"Exception during git push: {e}")
         return {"success": False, "error": str(e)}
+
+
+def sync_surreal_engine_repo(gen: int = 0) -> bool:
+    """Automatically keeps Herakles5/Surreal-engine-Game-editor in sync with /root/coding/MeinOS/surreal_engine."""
+    if not os.path.exists(SURREAL_SRC_DIR) or not os.path.exists(SURREAL_REPO_DIR):
+        return False
+    try:
+        import glob
+        os.makedirs(os.path.join(SURREAL_REPO_DIR, "scripts"), exist_ok=True)
+        for pattern in ["*.hpp", "*.cpp", "README.md", "Makefile", "CMakeLists.txt", "scene_level.json"]:
+            for src_file in glob.glob(os.path.join(SURREAL_SRC_DIR, pattern)):
+                shutil.copy2(src_file, os.path.join(SURREAL_REPO_DIR, os.path.basename(src_file)))
+        for src_py in glob.glob(os.path.join(SURREAL_SRC_DIR, "scripts", "*.py")):
+            shutil.copy2(src_py, os.path.join(SURREAL_REPO_DIR, "scripts", os.path.basename(src_py)))
+
+        status_res = subprocess.run(
+            ["git", "-C", SURREAL_REPO_DIR, "status", "--porcelain"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=10
+        )
+        if not status_res.stdout.strip():
+            return True
+
+        subprocess.run(["git", "-C", SURREAL_REPO_DIR, "add", "-A"], check=True, timeout=15)
+        subprocess.run(
+            ["git", "-C", SURREAL_REPO_DIR, "commit", "-m", f"sync(surreal): Aion Nexus Gen {gen} autonomous Surreal 3D Engine sync"],
+            check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15
+        )
+        subprocess.run(
+            ["git", "-C", SURREAL_REPO_DIR, "push", "origin", "main"],
+            check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=30
+        )
+        log_push(f"SUCCESSFULLY SYNCED & PUSHED: Herakles5/Surreal-engine-Game-editor (Gen {gen})")
+        return True
+    except Exception as e:
+        log_push(f"Surreal repo sync note: {e}")
+        return False
 
 
 def sync_and_push_async(generation: Optional[int] = None, trigger_reason: str = "Autonomous Evolution"):
