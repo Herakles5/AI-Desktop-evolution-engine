@@ -1,9 +1,9 @@
 {
-  "step": 258,
-  "timestamp": "2026-11-05 21:10:26",
+  "step": 261,
+  "timestamp": "2026-11-05 21:11:26",
   "entropy": 0.6327,
   "predicted_entropy": 0.4932,
-  "gradient": -0.0046,
+  "gradient": -0.0043,
   "curvature_vector": -0.21334,
   "caec_effective_cost": 0.8041,
   "egt_pruning_triggered": false,
