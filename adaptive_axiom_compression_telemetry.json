@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-05 18:00:46",
+  "timestamp": "2026-11-05 18:02:05",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 403,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9553,
-  "compression_pct": 95.5,
+  "total_axioms_in_manifold": 339,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9499,
+  "compression_pct": 95.0,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6524,
-  "max_clause_chars": 148,
-  "compression_hash": "0x0668d8517f35",
-  "latency_us": 52577.9,
+  "cognitive_load_factor": 0.6834,
+  "max_clause_chars": 146,
+  "compression_hash": "0x984e78b1204a",
+  "latency_us": 23340.68,
   "load_breakdown": {
-    "cognitive_load": 0.6524,
+    "cognitive_load": 0.6834,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.725
+    "cpu_strain": 0.88
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 394,
-      "weight": 0.8281,
+      "index": 333,
+      "weight": 0.8298,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic ent...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
       "immutable_anchor": false
     },
     {
-      "index": 396,
-      "weight": 0.7198,
+      "index": 335,
+      "weight": 0.7219,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that actively...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that active...",
       "immutable_anchor": false
     },
     {
-      "index": 347,
-      "weight": 0.6235,
+      "index": 288,
+      "weight": 0.6198,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not attribute causal agency or thermodynamic properties to immutable data structures, as static cryptographic anchors cannot function as dynam...",
+      "compressed_axiom": "Do not attribute causal agency or thermodynamic properties to immutable data structures, as static cryptographic anchors cannot function as dyn...",
       "immutable_anchor": false
     },
     {
       "index": 151,
-      "weight": 0.5385,
+      "weight": 0.5559,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "When a learning system alters its internal topology, it must base every change on a rigorously defined, modality‑agnostic measure of informationa...",
+      "compressed_axiom": "When a learning system alters its internal topology, it must base every change on a rigorously defined, modality‑agnostic measure of informatio...",
       "immutable_anchor": false
     }
   ]
