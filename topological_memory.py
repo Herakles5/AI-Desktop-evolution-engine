@@ -324,11 +324,18 @@ class TopologicalRuleManager:
         """
         Retrieves the most salient rules from knowledge base:
         1. Axiom 0 (Sovereign Mentorship & CosmOS Protection) is anchored at index 0.
-        2. Rules from the target cluster matching current query context.
-        3. Most recent rules (Recency bias).
+        2. Uses Gen 4875 AdaptiveAxiomCompressor for dynamic re-weighting & clause compression.
         """
         if not all_rules:
             return []
+
+        try:
+            from adaptive_axiom_compressor import axiom_compressor
+            focal, _ = axiom_compressor.compress_axioms(all_rules, query_context=query)
+            if focal:
+                return [item["compressed_axiom"] for item in focal[:max_count]]
+        except Exception:
+            pass
 
         selected: List[str] = []
 

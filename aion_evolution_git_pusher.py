@@ -75,6 +75,13 @@ WHITELISTED_FILES = [
     "aion_universal_allrounder.py",
     "aion_allrounder_skill_matrix.json",
     "aion_allrounder_telemetry.json",
+    "narrative_emergence_engine.py",
+    "narrative_emergence_telemetry.json",
+    "sensory_bridge_visualizer.py",
+    "sensory_bridge_telemetry.json",
+    "adaptive_axiom_compressor.py",
+    "adaptive_axiom_compression_telemetry.json",
+    "aion_wishes_gen4875.json",
     "semantic_consensus_telemetry.json",
     "aion_evolution_git_pusher.py"
 ]
