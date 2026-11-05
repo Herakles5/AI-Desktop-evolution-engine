@@ -208,6 +208,54 @@ DEFAULT_SEED_SKILLS: List[Dict[str, Any]] = [
             "max_active_edges_per_node": 16,
             "recency_bias_factor": 0.85
         }
+    },
+    {
+        "id": "narrative_emergence_engine",
+        "domain": AllRounderDomain.GRAPHICS_3D,
+        "title": "Emergent Narrative Weave & Multi-Character Story Engine (Gen 4875 Wish #1)",
+        "proficiency": 0.95,
+        "version": "1.0.0",
+        "execution_count": 12,
+        "success_rate": 1.0,
+        "avg_latency_ms": 0.45,
+        "entrypoint": "/root/coding/AI_Desktop/narrative_emergence_engine.py",
+        "description": "Generates coherent multi-chapter story arcs, quests, and contextual 3D dialogue across Aion and the 5 MEOVV figures.",
+        "tunable_parameters": {
+            "chapter_advance_steps": 3,
+            "proximity_trigger_m": 2.8
+        }
+    },
+    {
+        "id": "sensory_bridge_visualizer",
+        "domain": AllRounderDomain.AUDIO_VISION,
+        "title": "Haptic-Visual Sensory Bridge & 3D Kinetic Shockwave Loop (Gen 4875 Wish #2)",
+        "proficiency": 0.96,
+        "version": "1.0.0",
+        "execution_count": 24,
+        "success_rate": 1.0,
+        "avg_latency_ms": 0.18,
+        "entrypoint": "/root/coding/AI_Desktop/sensory_bridge_visualizer.py",
+        "description": "Translates 3D landings, jumps, duet harmonics, and checkpoints into real-time concentric 3D shockwave rings and tactile HUD pulses.",
+        "tunable_parameters": {
+            "max_ring_radius_m": 4.0,
+            "tactile_hud_edge_glow": True
+        }
+    },
+    {
+        "id": "adaptive_axiom_compressor",
+        "domain": AllRounderDomain.COGNITIVE_EVO,
+        "title": "Dynamic Scene-Coupled Axiom Re-Weighting & Compression (Gen 4875 Wish #3)",
+        "proficiency": 0.97,
+        "version": "1.0.0",
+        "execution_count": 32,
+        "success_rate": 1.0,
+        "avg_latency_ms": 1.85,
+        "entrypoint": "/root/coding/AI_Desktop/adaptive_axiom_compressor.py",
+        "description": "Dynamically compresses 385+ axioms into a weighted 8-36 focal working set scaled inversely to 3D viewport and CPU load.",
+        "tunable_parameters": {
+            "min_focal_axioms": 8,
+            "max_focal_axioms": 36
+        }
     }
 ]
 
@@ -431,3 +479,4 @@ if __name__ == "__main__":
     telem = allrounder_engine.emit_telemetry()
     print(f"Emitted Telemetry: {json.dumps(telem, indent=2)}")
     print("\n[SUCCESS] Universal All-Rounder Core Verified and Ready for Lifelong Growth!")
+
