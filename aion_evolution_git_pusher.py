@@ -25,6 +25,8 @@ from typing import Dict, Any, List, Optional, Tuple
 
 SOURCE_DIR = "/root/coding/AI_Desktop"
 REPO_DIR = "/root/coding/AI-Desktop-evolution-engine"
+SURREAL_SRC_DIR = "/root/coding/MeinOS/surreal_engine"
+SURREAL_REPO_DIR = "/root/coding/Surreal-engine-Game-editor"
 PUSH_LOG = "/root/evolution_git_push.log"
 
 WHITELISTED_FILES = [
