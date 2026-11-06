@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:14:38",
+  "timestamp": "2026-11-06 17:15:26",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 326,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9509,
-  "compression_pct": 95.1,
+  "total_axioms_in_manifold": 327,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.948,
+  "compression_pct": 94.8,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6991,
-  "max_clause_chars": 145,
-  "compression_hash": "0x008da3256719",
-  "latency_us": 35298.65,
+  "cognitive_load_factor": 0.6716,
+  "max_clause_chars": 146,
+  "compression_hash": "0x510a5cafc090",
+  "latency_us": 40088.31,
   "load_breakdown": {
-    "cognitive_load": 0.6991,
+    "cognitive_load": 0.6716,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9583
+    "cpu_strain": 0.8208
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 325,
-      "weight": 1.0,
+      "weight": 0.9989,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchie...",
+      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 324,
+      "weight": 0.9979,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑organizing learning systems, restrict adaptation to mechanisms expressed in precise, measurable quantities whose invariants...",
       "immutable_anchor": false
     },
     {
       "index": 323,
-      "weight": 0.9978,
+      "weight": 0.9968,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never modify a learning system unless you can measure the change with a concrete, observable entropy metric and prove that the alteration stri...",
+      "compressed_axiom": "Never modify a learning system unless you can measure the change with a concrete, observable entropy metric and prove that the alteration stric...",
       "immutable_anchor": false
     },
     {
       "index": 322,
-      "weight": 0.9968,
+      "weight": 0.9957,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Build adaptive architectures that expand their expressive horizons through rigorously bounded, verifiable rewrites, while explicitly incorpora...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 319,
-      "weight": 0.9936,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined e...",
+      "compressed_axiom": "Build adaptive architectures that expand their expressive horizons through rigorously bounded, verifiable rewrites, while explicitly incorporat...",
       "immutable_anchor": false
     }
   ]
