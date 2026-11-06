@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:21:03",
+  "timestamp": "2026-11-06 17:21:54",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 332,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9488,
-  "compression_pct": 94.9,
-  "target_cluster": "TOOL_SYNTHESIS",
-  "cognitive_load_factor": 0.6706,
-  "max_clause_chars": 146,
-  "compression_hash": "0x307f576d9fd9",
-  "latency_us": 34720.8,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9458,
+  "compression_pct": 94.6,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6607,
+  "max_clause_chars": 147,
+  "compression_hash": "0x04203bdd181d",
+  "latency_us": 25108.8,
   "load_breakdown": {
-    "cognitive_load": 0.6706,
+    "cognitive_load": 0.6607,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8158
+    "cpu_strain": 0.7667
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 331,
-      "weight": 1.0,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Continuously adapt your internal structure by following measurable indicators of uncertainty, but enact only those changes that can be locally...",
+      "index": 330,
+      "weight": 0.9989,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Ensure that any self‑modifying learning system uses only entropy‑based triggers whose effects are quantifiable and provably maintain all defined...",
       "immutable_anchor": false
     },
     {
-      "index": 328,
-      "weight": 0.9968,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Never let a self‑modifying system alter its core representation unless measurable uncertainty is demonstrably reduced and concrete functional t...",
+      "index": 329,
+      "weight": 0.9979,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing autonomous learning systems, base any drive toward structural complexity on quantifiable, controllable metrics and validate emerg...",
       "immutable_anchor": false
     },
     {
-      "index": 326,
-      "weight": 0.9397,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Use entropy as a scalar signal to bias the adaptation of a learning system’s structure rather than as a deterministic vector field that directl...",
+      "index": 327,
+      "weight": 0.9958,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Guide self‑modifying learning systems to let entropy‑driven adaptation reshape their internal topology only inside rigorously defined safety env...",
       "immutable_anchor": false
     },
     {
-      "index": 289,
-      "weight": 0.8467,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Autonomous evolution is not achieved by amplifying latency, but by tuning the ratio of verification friction to structural adaptation speed so...",
+      "index": 325,
+      "weight": 0.9937,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies...",
       "immutable_anchor": false
     }
   ]
