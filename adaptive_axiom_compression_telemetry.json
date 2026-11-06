@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:19:25",
+  "timestamp": "2026-11-06 17:20:15",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 331,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9486,
-  "compression_pct": 94.9,
-  "target_cluster": "TOOL_SYNTHESIS",
-  "cognitive_load_factor": 0.6649,
-  "max_clause_chars": 147,
-  "compression_hash": "0xc6ac3005dba2",
-  "latency_us": 33215.67,
+  "total_axioms_in_manifold": 332,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9458,
+  "compression_pct": 94.6,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6526,
+  "max_clause_chars": 148,
+  "compression_hash": "0xaf94d5334afc",
+  "latency_us": 24608.93,
   "load_breakdown": {
-    "cognitive_load": 0.6649,
+    "cognitive_load": 0.6526,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7875
+    "cpu_strain": 0.7258
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 328,
-      "weight": 0.9429,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Never let a self‑modifying system alter its core representation unless measurable uncertainty is demonstrably reduced and concrete functional te...",
+      "index": 330,
+      "weight": 0.9989,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Ensure that any self‑modifying learning system uses only entropy‑based triggers whose effects are quantifiable and provably maintain all defined...",
       "immutable_anchor": false
     },
     {
-      "index": 326,
-      "weight": 0.9408,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Use entropy as a scalar signal to bias the adaptation of a learning system’s structure rather than as a deterministic vector field that directly...",
+      "index": 325,
+      "weight": 0.9937,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies o...",
       "immutable_anchor": false
     },
     {
-      "index": 279,
-      "weight": 0.8376,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "True cognitive autonomy requires balancing the pruning of stochastic noise with the deliberate preservation of generative variance, ensuring tha...",
+      "index": 321,
+      "weight": 0.9895,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑organizing learning architectures, continuously bias rewiring toward local entropy reduction while regularly checking that es...",
       "immutable_anchor": false
     },
     {
-      "index": 275,
-      "weight": 0.8337,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "True cognitive integrity requires rejecting the fallacy of external validation as the sole anchor, instead establishing an internal invariant th...",
+      "index": 320,
+      "weight": 0.9884,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never rely on a self‑modifying system to autonomously drive its own entropy to a provable minimum while preserving all invariants without externa...",
       "immutable_anchor": false
     }
   ]
