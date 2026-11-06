@@ -95,24 +95,39 @@ class AionFastCoreBridge:
         self._load_or_compile()
 
     def _load_or_compile(self):
-        needs_compile = False
-        if os.path.exists(CPP_SRC):
-            if not os.path.exists(SO_PATH):
-                needs_compile = True
-            elif os.path.getmtime(CPP_SRC) > os.path.getmtime(SO_PATH):
-                needs_compile = True
+        import fcntl
+        lock_path = os.path.join(BASE_DIR, ".aion_fastcore_compile.lock")
+        try:
+            with open(lock_path, "w") as lf:
+                fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+                needs_compile = False
+                if os.path.exists(CPP_SRC):
+                    if not os.path.exists(SO_PATH):
+                        needs_compile = True
+                    elif os.path.getmtime(CPP_SRC) > os.path.getmtime(SO_PATH):
+                        needs_compile = True
 
-        if needs_compile:
-            try:
-                subprocess.run(
-                    ["/usr/bin/g++", "-std=c++20", "-O3", "-march=native", "-shared", "-fPIC", CPP_SRC, "-o", SO_PATH],
-                    check=True,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    timeout=15
-                )
-            except Exception as e:
-                print(f"[FASTCORE BRIDGE] Native C++20 compile warning: {e}", file=sys.stderr)
+                if needs_compile:
+                    tmp_so = f"{SO_PATH}.tmp.{os.getpid()}"
+                    try:
+                        subprocess.run(
+                            ["/usr/bin/g++", "-std=c++20", "-O3", "-march=native", "-shared", "-fPIC", CPP_SRC, "-o", tmp_so],
+                            check=True,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            timeout=15
+                        )
+                        os.replace(tmp_so, SO_PATH)
+                    except Exception as e:
+                        if os.path.exists(tmp_so):
+                            try:
+                                os.remove(tmp_so)
+                            except Exception:
+                                pass
+                        print(f"[FASTCORE BRIDGE] Native C++20 compile warning: {e}", file=sys.stderr)
+                fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
+        except Exception as e:
+            print(f"[FASTCORE BRIDGE] Lock warning: {e}", file=sys.stderr)
 
         if os.path.exists(SO_PATH):
             try:
@@ -165,6 +180,14 @@ class AionFastCoreBridge:
                         ctypes.c_uint32, ctypes.c_double
                     ]
                     self.lib.aion_topological_pruning_eval.restype = C_TopologicalPruningResult
+
+                # 8. aion_fast_token_jaccard
+                if hasattr(self.lib, "aion_fast_token_jaccard"):
+                    self.lib.aion_fast_token_jaccard.argtypes = [
+                        ctypes.c_char_p, ctypes.c_size_t,
+                        ctypes.c_char_p, ctypes.c_size_t
+                    ]
+                    self.lib.aion_fast_token_jaccard.restype = ctypes.c_double
 
                 self.native_active = True
             except Exception as e:
@@ -460,6 +483,34 @@ class AionFastCoreBridge:
             "oracle_audit_hash": "0x249d5611a10e4834",
             "latency_ns": ns
         }
+
+    def fast_token_jaccard(self, str_a: str, str_b: str) -> float:
+        """Computes token-set Jaccard similarity in nanoseconds via C++20 FNV-1a token hashing."""
+        if not str_a or not str_b:
+            return 0.0
+        if self.native_active and self.lib and hasattr(self.lib, "aion_fast_token_jaccard"):
+            ba = str_a.encode("utf-8", errors="ignore")
+            bb = str_b.encode("utf-8", errors="ignore")
+            return float(self.lib.aion_fast_token_jaccard(ba, len(ba), bb, len(bb)))
+        ta = {w.strip(".,;:!?'\"()[]{}").lower() for w in str_a.split() if len(w) > 3}
+        tb = {w.strip(".,;:!?'\"()[]{}").lower() for w in str_b.split() if len(w) > 3}
+        if not ta or not tb:
+            return 0.0
+        return len(ta & tb) / len(ta | tb)
+
+    def is_rule_redundant(self, candidate: str, existing_rules: Any, threshold: float = 0.78) -> bool:
+        """Checks whether candidate rule is semantically redundant against existing rules via C++20 FastCore."""
+        cand_clean = candidate.strip()
+        if not cand_clean or not existing_rules:
+            return False
+        cand_lower = cand_clean.lower()
+        for r in existing_rules:
+            r_clean = r.strip()
+            if cand_lower == r_clean.lower():
+                return True
+            if self.fast_token_jaccard(cand_clean, r_clean) >= threshold:
+                return True
+        return False
 
 
 # Global singleton accelerator

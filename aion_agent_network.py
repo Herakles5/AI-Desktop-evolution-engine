@@ -141,11 +141,20 @@ class NostrAgentAdapter:
         }
 
         try:
-            with open(self.memory_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            data["nostr_identity"] = identity
-            with open(self.memory_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
+            import fcntl
+            lock_path = f"{self.memory_file}.lock"
+            with open(lock_path, "w") as lf:
+                fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+                with open(self.memory_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                data["nostr_identity"] = identity
+                tmp_file = f"{self.memory_file}.tmp.{os.getpid()}"
+                with open(tmp_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=4, ensure_ascii=False)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp_file, self.memory_file)
+                fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
             print(f"[NOSTR] Echte dezentrale Schnorr-Identitaet gesichert: {identity['pubkey_hex'][:12]}...")
         except Exception as e:
             print(f"[NOSTR WARNUNG] Failed to persist identity: {e}")
@@ -981,13 +990,22 @@ class AionOmniMesh:
 
     def _save_account(self, account: Dict[str, Any]):
         try:
-            with open(self.memory_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            if "agent_accounts" not in data:
-                data["agent_accounts"] = []
-            data["agent_accounts"].append(account)
-            with open(self.memory_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
+            import fcntl
+            lock_path = f"{self.memory_file}.lock"
+            with open(lock_path, "w") as lf:
+                fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+                with open(self.memory_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                if "agent_accounts" not in data:
+                    data["agent_accounts"] = []
+                data["agent_accounts"].append(account)
+                tmp_file = f"{self.memory_file}.tmp.{os.getpid()}"
+                with open(tmp_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=4, ensure_ascii=False)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp_file, self.memory_file)
+                fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
         except Exception:
             pass
 

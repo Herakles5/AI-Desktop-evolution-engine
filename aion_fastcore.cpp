@@ -358,5 +358,74 @@ C_TopologicalPruningResult aion_topological_pruning_eval(
     };
 }
 
+/**
+ * 8. Native C++20 Fast Token-Set Jaccard Similarity between two strings
+ * Tokenizes on ASCII non-alphanumeric boundaries (tokens length >= 4, case-insensitive FNV-1a 64-bit hashes)
+ * with zero heap allocation (stack-allocated fixed token buffers up to 128 tokens).
+ */
+double aion_fast_token_jaccard(
+    const char* str_a, size_t len_a,
+    const char* str_b, size_t len_b
+) {
+    if (!str_a || !str_b || len_a == 0 || len_b == 0) {
+        return 0.0;
+    }
+
+    auto extract_tokens = [](const char* s, size_t n, uint64_t* out_hashes, size_t max_tokens) -> size_t {
+        size_t count = 0;
+        size_t i = 0;
+        while (i < n && count < max_tokens) {
+            while (i < n) {
+                unsigned char c = static_cast<unsigned char>(s[i]);
+                if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) break;
+                ++i;
+            }
+            size_t start = i;
+            uint64_t h = 14695981039346656037ULL;
+            while (i < n) {
+                unsigned char c = static_cast<unsigned char>(s[i]);
+                if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) {
+                    if (c >= 'A' && c <= 'Z') c = static_cast<unsigned char>(c + 32);
+                    h ^= static_cast<uint64_t>(c);
+                    h *= 1099511628211ULL;
+                    ++i;
+                } else {
+                    break;
+                }
+            }
+            if (i - start >= 4) {
+                bool dup = false;
+                for (size_t k = 0; k < count; ++k) {
+                    if (out_hashes[k] == h) { dup = true; break; }
+                }
+                if (!dup) {
+                    out_hashes[count++] = h;
+                }
+            }
+        }
+        return count;
+    };
+
+    uint64_t hashes_a[128];
+    uint64_t hashes_b[128];
+    size_t na = extract_tokens(str_a, len_a, hashes_a, 128);
+    size_t nb = extract_tokens(str_b, len_b, hashes_b, 128);
+    if (na == 0 || nb == 0) {
+        return 0.0;
+    }
+
+    size_t inter = 0;
+    for (size_t i = 0; i < na; ++i) {
+        for (size_t j = 0; j < nb; ++j) {
+            if (hashes_a[i] == hashes_b[j]) {
+                ++inter;
+                break;
+            }
+        }
+    }
+    size_t union_cnt = na + nb - inter;
+    return (union_cnt > 0) ? (static_cast<double>(inter) / static_cast<double>(union_cnt)) : 0.0;
+}
+
 } // extern "C"
 

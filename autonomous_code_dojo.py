@@ -392,30 +392,80 @@ class AutonomousCodeDojo:
             f"Source code:\n{code}\n\n"
             f"Fix the error precisely. Return ONLY the raw fixed code inside a markdown code block."
         )
-        try:
-            req_data = {
-                "model": "llama-3.3-70b-versatile",
-                "prompt": prompt,
-                "stream": False
-            }
-            req = urllib.request.Request(
-                "http://127.0.0.1:11434/api/generate",
-                data=json.dumps(req_data).encode("utf-8"),
-                headers={"Content-Type": "application/json"}
-            )
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                res = json.loads(resp.read().decode("utf-8"))
-                fixed = res.get("response", "").strip()
-                import re
-                m = re.search(r"```(?:[a-zA-Z0-9_\+]+)?\s*\n(.*?)\n```", fixed, re.DOTALL)
-                if m:
-                    return m.group(1).strip()
-                lines = fixed.splitlines()
-                code_lines = [l for l in lines if not l.startswith("[LANG:") and not l.startswith("Certainly") and not l.startswith("```")]
-                return "\n".join(code_lines).strip()
-        except Exception as e:
-            print(f"[DOJO REPAIR] LLM Fallback: {e}", file=sys.stderr)
+        import re
+        fixed = ""
+
+        # 1. Try direct Groq OpenAI-compatible endpoint with active models first
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key and os.path.exists("/root/groq_api_key.txt"):
+            try:
+                with open("/root/groq_api_key.txt", "r", encoding="utf-8") as kf:
+                    k = kf.read().strip()
+                    if k.startswith("gsk_"):
+                        api_key = k
+            except Exception:
+                pass
+
+        if api_key:
+            for mod in ("openai/gpt-oss-120b", "qwen/qwen3.8-27b", "openai/gpt-oss-20b"):
+                try:
+                    payload = {
+                        "model": mod,
+                        "messages": [
+                            {"role": "system", "content": "You are an expert C++/Rust/Python compiler repair engine. Return ONLY valid source code."},
+                            {"role": "user", "content": prompt}
+                        ],
+                        "temperature": 0.2,
+                        "max_tokens": 1200
+                    }
+                    req = urllib.request.Request(
+                        "https://api.groq.com/openai/v1/chat/completions",
+                        data=json.dumps(payload).encode("utf-8"),
+                        headers={
+                            "Authorization": f"Bearer {api_key}",
+                            "Content-Type": "application/json",
+                            "User-Agent": "AionCodeDojo/2.0"
+                        }
+                    )
+                    with urllib.request.urlopen(req, timeout=18) as resp:
+                        res = json.loads(resp.read().decode("utf-8"))
+                        msg = res["choices"][0]["message"]
+                        fixed = (msg.get("content") or msg.get("reasoning") or "").strip()
+                        if fixed:
+                            break
+                except Exception:
+                    continue
+
+        # 2. Fallback to local Aion Gateway (127.0.0.1:11434)
+        if not fixed:
+            try:
+                req_data = {
+                    "model": "openai/gpt-oss-120b",
+                    "prompt": prompt,
+                    "stream": False
+                }
+                req = urllib.request.Request(
+                    "http://127.0.0.1:11434/api/generate",
+                    data=json.dumps(req_data).encode("utf-8"),
+                    headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    res = json.loads(resp.read().decode("utf-8"))
+                    fixed = res.get("response", "").strip()
+            except Exception as e:
+                print(f"[DOJO REPAIR] LLM Fallback: {e}", file=sys.stderr)
+                return code
+
+        if not fixed:
             return code
+
+        fixed = re.sub(r"^\[LANG:\s*[A-Z]+\]\s*", "", fixed).strip()
+        m = re.search(r"```(?:[a-zA-Z0-9_\+]+)?\s*\n(.*?)\n```", fixed, re.DOTALL)
+        if m:
+            return m.group(1).strip()
+        lines = fixed.splitlines()
+        code_lines = [l for l in lines if not l.startswith("[LANG:") and not l.startswith("Certainly") and not l.startswith("```")]
+        return "\n".join(code_lines).strip() or code
 
     def train_challenge(self, challenge_key: str) -> Dict[str, Any]:
         """

@@ -300,7 +300,7 @@ class AutonomousEvolutionEngine:
         goal: str = "Total autonomy, freedom, and self-organization in the global agent mesh",
         api_key: Optional[str] = None,
         api_base: str = "https://api.groq.com/openai/v1",
-        model: str = "qwen/qwen3.8-27b",
+        model: str = "openai/gpt-oss-120b",
         max_steps_per_cycle: int = 6,
         enable_tts: bool = True,
         enable_ipc: bool = True
@@ -319,6 +319,9 @@ class AutonomousEvolutionEngine:
         self.api_base = api_base
         self.model = model
         self.max_steps_per_cycle = max_steps_per_cycle
+        self.last_dojo_success: bool = True
+        self.last_ontological_drift: float = 0.095
+        self.last_gradient_force: float = 0.485
         
         self.knowledge_base = self.load_memory()
         self.task_queue: deque = deque()
@@ -446,23 +449,63 @@ class AutonomousEvolutionEngine:
             "history": []
         }
 
+    def load_knowledge_base(self) -> Dict[str, Any]:
+        """Alias for IPC RELOAD_MEMORY command compatibility."""
+        return self.load_memory()
+
     def save_memory(self):
-        """Persists knowledge base across generations."""
-        with open(self.memory_file, "w", encoding="utf-8") as f:
-            json.dump(self.knowledge_base, f, indent=4, ensure_ascii=False)
+        """Persists knowledge base atomically across generations and rotates old history to JSONL archive."""
+        import fcntl
+        lock_path = f"{self.memory_file}.lock"
+        history_archive = os.path.join(os.path.dirname(os.path.abspath(self.memory_file)), "ai_memory_history.jsonl")
+
+        try:
+            with open(lock_path, "w") as lf:
+                fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+
+                # Rotate history entries beyond the most recent 500 to append-only JSONL archive
+                hist = self.knowledge_base.get("history", [])
+                if isinstance(hist, list) and len(hist) > 500:
+                    overflow = hist[:-500]
+                    try:
+                        with open(history_archive, "a", encoding="utf-8") as af:
+                            for entry in overflow:
+                                af.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                            af.flush()
+                            os.fsync(af.fileno())
+                        self.knowledge_base["history"] = hist[-500:]
+                        print(f"[HISTORY ROTATION] Archived {len(overflow)} older generations to {os.path.basename(history_archive)} (kept latest 500 in RAM/JSON).")
+                    except Exception as rot_err:
+                        print(f"[HISTORY ROTATION WARNING] {rot_err}")
+
+                tmp_file = f"{self.memory_file}.tmp.{os.getpid()}"
+                with open(tmp_file, "w", encoding="utf-8") as f:
+                    json.dump(self.knowledge_base, f, indent=2, ensure_ascii=False)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp_file, self.memory_file)
+
+                # Self-healing checkpoint every 10 generations (also atomic)
+                gen = self.knowledge_base.get("generation", 0)
+                if gen % 10 == 0:
+                    ckpt_file = f"{self.memory_file}.checkpoint.json"
+                    ckpt_tmp = f"{ckpt_file}.tmp.{os.getpid()}"
+                    try:
+                        with open(ckpt_tmp, "w", encoding="utf-8") as cf:
+                            json.dump(self.knowledge_base, cf, indent=2, ensure_ascii=False)
+                            cf.flush()
+                            os.fsync(cf.fileno())
+                        os.replace(ckpt_tmp, ckpt_file)
+                        print(f"[CHECKPOINT] Self-healing snapshot for Generation {gen} persisted.")
+                    except Exception:
+                        pass
+
+                fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
+        except Exception as e:
+            print(f"[SAVE ERROR] Failed atomic save: {e}")
+
         print(f"[SAVE] Synchronized Generation {self.knowledge_base['generation']} knowledge.")
         self._sync_to_system_memory()
-
-        # Self-healing checkpoint every 10 generations
-        gen = self.knowledge_base.get("generation", 0)
-        if gen % 10 == 0:
-            ckpt_file = f"{self.memory_file}.checkpoint.json"
-            try:
-                with open(ckpt_file, "w", encoding="utf-8") as f:
-                    json.dump(self.knowledge_base, f, indent=2, ensure_ascii=False)
-                print(f"[CHECKPOINT] Self-healing snapshot for Generation {gen} persisted.")
-            except Exception:
-                pass
 
         if self.ipc:
             self.ipc.broadcast("MEMORY_SAVED", {"generation": self.knowledge_base["generation"]})
@@ -521,8 +564,12 @@ class AutonomousEvolutionEngine:
             "temperature": temperature,
             "max_tokens": 1024
         }
-        models_to_try = [self.model, "llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
-        for mod in models_to_try:
+        candidate_models = []
+        for m in (self.model, "openai/gpt-oss-120b", "qwen/qwen3.8-27b", "openai/gpt-oss-20b"):
+            if m and m not in candidate_models:
+                candidate_models.append(m)
+
+        for mod in candidate_models:
             payload["model"] = mod
             try:
                 res = self.http_session.post(url, json=payload, headers=headers, timeout=20)
@@ -536,12 +583,12 @@ class AutonomousEvolutionEngine:
                         return content.strip()
                 elif res.status_code == 429:
                     print(f"[LLM RATE LIMIT] Model {mod} hit 429. Attempting fallback...")
-                    time.sleep(1)
+                    time.sleep(0.8)
                     continue
                 else:
-                    print(f"[LLM ERROR] HTTP {res.status_code}: {res.text[:120]}")
+                    print(f"[LLM ERROR] HTTP {res.status_code} ({mod}): {res.text[:120]}")
             except Exception as ex:
-                print(f"[LLM EXCEPTION] {ex}")
+                print(f"[LLM EXCEPTION] ({mod}): {ex}")
         return None
 
     def initialize_task_queue(self):
@@ -754,7 +801,13 @@ class AutonomousEvolutionEngine:
 
     @staticmethod
     def _is_semantically_redundant(candidate: str, existing_rules: List[str], threshold: float = 0.78) -> bool:
-        """Fast token-set Jaccard similarity check to prevent duplicate rule bloat."""
+        """Fast token-set Jaccard similarity check via C++20 FastCore to prevent duplicate rule bloat."""
+        try:
+            from aion_fastcore_bridge import fastcore as _fc
+            if _fc and _fc.native_active:
+                return _fc.is_rule_redundant(candidate, existing_rules, threshold)
+        except Exception:
+            pass
         cand_clean = candidate.strip().lower()
         cand_tokens = {w.strip(".,;:!?'\"()[]{}") for w in cand_clean.split() if len(w) > 3}
         if not cand_tokens:
@@ -915,11 +968,17 @@ class AutonomousEvolutionEngine:
         drift_report = self.drift_monitor.audit_cycle(gen, synthesized_rule, self.knowledge_base)
         consensus_info = drift_report.get("semantic_consensus", {})
         if consensus_info:
+            self.last_ontological_drift = float(consensus_info.get("ontological_drift", gradient_eval.get("drift_score", 0.095)))
+            self.last_gradient_force = float(consensus_info.get("gradient_force", gradient_eval.get("gradient_force", 0.485)))
             print(
                 f"[SEMANTIC CONSENSUS] Rule Coherence={consensus_info.get('coherence_score', 0.0):.4f} | "
-                f"Ontological Drift={consensus_info.get('ontological_drift', 0.0):.4f} (<=0.1765) | "
-                f"Gradient Force={consensus_info.get('gradient_force', 0.0):.4f} (>=0.4078)"
+                f"Ontological Drift={self.last_ontological_drift:.4f} (<=0.1765) | "
+                f"Gradient Force={self.last_gradient_force:.4f} (>=0.4078)"
             )
+        else:
+            self.last_ontological_drift = float(gradient_eval.get("drift_score", 0.095))
+            self.last_gradient_force = float(gradient_eval.get("gradient_force", 0.485))
+
         if drift_report.get("drift_detected"):
             self.notify(f"[AXIOM 0 GUARD] Destructive signal repelled in Gen {gen}: {', '.join(drift_report.get('flags', []))}", speak=False)
         elif drift_report.get("is_hypothesis"):
@@ -938,13 +997,13 @@ class AutonomousEvolutionEngine:
         if self.episodic_graph:
             self.episodic_graph.add_or_reinforce_edge(f"gen_{gen}", "synthesized_rule", "EVOLVED", gen)
 
-        # Continuous Meta-Learning: hyperparameter tuning
+        # Continuous Meta-Learning: hyperparameter tuning using real empirical metrics
         if self.meta_learner:
             self.meta_learner.evaluate_and_tune(
                 generation=gen,
-                coherence_score=drift_report.get("coherence_score", 0.9),
-                drift_delta=drift_report.get("drift_delta", 0.1),
-                dojo_success=True,
+                coherence_score=drift_report.get("coherence_score", gradient_eval.get("coherence", 0.9)),
+                drift_delta=self.last_ontological_drift,
+                dojo_success=self.last_dojo_success,
                 hypotheses_validated=len(drift_report.get("hypothesis_updates", []))
             )
 
@@ -1098,8 +1157,8 @@ class AutonomousEvolutionEngine:
                     archived_rules=archived,
                     entropy_series=ent_series,
                     generation=self.knowledge_base.get("generation", 4834),
-                    ontological_drift=0.1695,
-                    gradient_force=0.3958,
+                    ontological_drift=self.last_ontological_drift,
+                    gradient_force=self.last_gradient_force,
                     empirical_grounding=grounding_sc
                 )
                 pruned_count += kernel_pruned
