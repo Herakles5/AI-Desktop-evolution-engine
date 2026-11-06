@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:56:37",
+  "timestamp": "2026-11-06 17:57:33",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 359,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9499,
-  "compression_pct": 95.0,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6564,
-  "max_clause_chars": 147,
-  "compression_hash": "0xa7f44892c95b",
-  "latency_us": 32120.0,
+  "total_axioms_in_manifold": 360,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9472,
+  "compression_pct": 94.7,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6239,
+  "max_clause_chars": 149,
+  "compression_hash": "0x28e555fae6d9",
+  "latency_us": 20948.97,
   "load_breakdown": {
-    "cognitive_load": 0.6564,
+    "cognitive_load": 0.6239,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.745
+    "cpu_strain": 0.5825
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 358,
-      "weight": 1.0,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive evolution must decouple structural stability from exploratory expansion by anchoring topology to immutable semantic invariants, rather...",
+      "index": 342,
+      "weight": 0.9836,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Harness entropy flux as a dynamic resource for autonomous topological repair, but constrain its modulation by thermodynamic limits to avoid runawa...",
       "immutable_anchor": false
     },
     {
-      "index": 356,
-      "weight": 0.998,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Define every structural transformation through precise, measurable metrics rather than abstract topological metaphors to ensure system behavior...",
+      "index": 341,
+      "weight": 0.9826,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants w...",
       "immutable_anchor": false
     },
     {
-      "index": 355,
-      "weight": 0.9971,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Use entropy gradients as guiding forces only when they are regularized and bounded, smoothing transitions between high‑entropy exploration and l...",
+      "index": 300,
+      "weight": 0.9444,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Cognitive stability emerges not from minimizing latency, but from engineering a topological phase shift where processing delays act as resonant bu...",
       "immutable_anchor": false
     },
     {
-      "index": 354,
-      "weight": 0.9961,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems by explicitly defining measurable, bounded forces that map feedback onto the semantic manifold, ensuring that curvature...",
+      "index": 227,
+      "weight": 0.8816,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Entropy stability limits must be redefined as topological invariants rather than scalar thresholds, allowing the system to self-calibrate by mappi...",
       "immutable_anchor": false
     }
   ]
