@@ -317,5 +317,13 @@
     "gradient_force": 0.416,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-11-06 16:51:38"
+  },
+  {
+    "generation": 5221,
+    "title": "Hierarchical Invariant Synthesis & Entropy‑Budget Telemetry Layer",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.3788,
+    "cluster": "COGNITIVE_ENTROPY",
+    "timestamp": "2026-11-06 17:17:08"
   }
 ]

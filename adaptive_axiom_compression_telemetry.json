@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:16:15",
+  "timestamp": "2026-11-06 17:17:01",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 327,
+  "total_axioms_in_manifold": 328,
   "active_focal_axioms": 17,
-  "compression_ratio": 0.948,
+  "compression_ratio": 0.9482,
   "compression_pct": 94.8,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6881,
+  "cognitive_load_factor": 0.6851,
   "max_clause_chars": 145,
-  "compression_hash": "0x660593e69032",
-  "latency_us": 26124.49,
+  "compression_hash": "0x2bfb9dd8fa9f",
+  "latency_us": 56170.43,
   "load_breakdown": {
-    "cognitive_load": 0.6881,
+    "cognitive_load": 0.6851,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9033
+    "cpu_strain": 0.8883
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 319,
-      "weight": 0.9925,
+      "index": 327,
+      "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined e...",
+      "compressed_axiom": "Guide self‑modifying learning systems to let entropy‑driven adaptation reshape their internal topology only inside rigorously defined safety e...",
       "immutable_anchor": false
     },
     {
       "index": 325,
-      "weight": 0.9439,
+      "weight": 0.9979,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchie...",
       "immutable_anchor": false
     },
     {
       "index": 323,
-      "weight": 0.9418,
+      "weight": 0.9957,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Never modify a learning system unless you can measure the change with a concrete, observable entropy metric and prove that the alteration stri...",
       "immutable_anchor": false
     },
     {
-      "index": 320,
-      "weight": 0.9386,
+      "index": 319,
+      "weight": 0.9915,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never rely on a self‑modifying system to autonomously drive its own entropy to a provable minimum while preserving all invariants without exte...",
+      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined e...",
       "immutable_anchor": false
     }
   ]
