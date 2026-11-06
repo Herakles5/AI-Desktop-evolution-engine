@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:26:50",
+  "timestamp": "2026-11-06 17:27:37",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 336,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9494,
-  "compression_pct": 94.9,
+  "total_axioms_in_manifold": 337,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9525,
+  "compression_pct": 95.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6711,
-  "max_clause_chars": 146,
-  "compression_hash": "0xde0bf9fa3945",
-  "latency_us": 30764.29,
+  "cognitive_load_factor": 0.7032,
+  "max_clause_chars": 144,
+  "compression_hash": "0xec2ce961adff",
+  "latency_us": 46030.11,
   "load_breakdown": {
-    "cognitive_load": 0.6711,
+    "cognitive_load": 0.7032,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8183
+    "cpu_strain": 0.9792
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 335,
+      "index": 336,
       "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑organizing systems to continually reshape their internal topology by locally minimizing entropy, while coupling each change with tra...",
+      "compressed_axiom": "Base any self‑modifying system on rigorously defined, computable metrics of program state rather than metaphorical notions, and require that...",
       "immutable_anchor": false
     },
     {
-      "index": 333,
-      "weight": 0.9979,
+      "index": 319,
+      "weight": 0.9825,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never let a locally justified change become a global guarantee; always embed every adaptive rewrite within a provably compositional safety fram...",
+      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined...",
       "immutable_anchor": false
     },
     {
-      "index": 325,
-      "weight": 0.9896,
+      "index": 335,
+      "weight": 0.944,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies...",
+      "compressed_axiom": "Guide self‑organizing systems to continually reshape their internal topology by locally minimizing entropy, while coupling each change with t...",
       "immutable_anchor": false
     },
     {
-      "index": 316,
-      "weight": 0.9804,
+      "index": 334,
+      "weight": 0.9429,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide system reconfigurations toward locally estimated reductions in informational entropy while preserving essential topological invariants, e...",
+      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed m...",
       "immutable_anchor": false
     }
   ]
