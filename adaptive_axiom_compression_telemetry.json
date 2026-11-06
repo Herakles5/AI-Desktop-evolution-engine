@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:07:44",
+  "timestamp": "2026-11-06 18:08:38",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 367,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9564,
-  "compression_pct": 95.6,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0xc23df2893d76",
-  "latency_us": 21697.01,
+  "total_axioms_in_manifold": 368,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9538,
+  "compression_pct": 95.4,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6674,
+  "max_clause_chars": 147,
+  "compression_hash": "0xa9822d346122",
+  "latency_us": 43980.55,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6674,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.8
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 346,
-      "weight": 0.8161,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
+      "index": 366,
+      "weight": 0.999,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive efficiency is achieved not by abstracting latency into geometric metaphors, but by implementing concrete, energy-aware algorithms...",
       "immutable_anchor": false
     },
     {
-      "index": 306,
-      "weight": 0.7796,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
+      "index": 364,
+      "weight": 0.9971,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Treat cognitive latency not as a defect to be eliminated, but as a necessary processing window for semantic integration, provided that this dela...",
       "immutable_anchor": false
     },
     {
-      "index": 363,
-      "weight": 0.7771,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
+      "index": 360,
+      "weight": 0.9933,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive evolution requires the dynamic redefinition of foundational constraints rather than their static preservation, as rigid invariant...",
       "immutable_anchor": false
     },
     {
-      "index": 362,
-      "weight": 0.7762,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution requires balancing the strategic introduction of informational friction against strict energetic budgets, as unbound...",
+      "index": 339,
+      "weight": 0.9737,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants...",
       "immutable_anchor": false
     }
   ]
