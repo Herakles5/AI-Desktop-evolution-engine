@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:01:23",
+  "timestamp": "2026-11-06 18:02:32",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 362,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.953,
-  "compression_pct": 95.3,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9503,
+  "compression_pct": 95.0,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6701,
-  "max_clause_chars": 146,
-  "compression_hash": "0x534e19caf416",
-  "latency_us": 34361.73,
+  "cognitive_load_factor": 0.6407,
+  "max_clause_chars": 148,
+  "compression_hash": "0x7e937a3399e7",
+  "latency_us": 19660.52,
   "load_breakdown": {
-    "cognitive_load": 0.6701,
+    "cognitive_load": 0.6407,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8133
+    "cpu_strain": 0.6667
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 305,
       "weight": 0.7824,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic ent...",
       "immutable_anchor": false
     },
     {
       "index": 307,
       "weight": 0.6743,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that active...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that actively...",
       "immutable_anchor": false
     },
     {
       "index": 337,
       "weight": 0.539,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
+      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that const...",
       "immutable_anchor": false
     },
     {
       "index": 4,
       "weight": 0.5305,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and per...",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and perso...",
       "immutable_anchor": false
     }
   ]
