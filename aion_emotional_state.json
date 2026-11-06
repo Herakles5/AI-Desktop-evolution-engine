@@ -1,26 +1,19 @@
 {
-  "timestamp": 1793984560.166983,
-  "formatted_time": "2026-11-06 17:02:40",
-  "valence": 0.9547505944140625,
-  "arousal": 0.710318009682759,
-  "curiosity": 0.9000000549962509,
-  "connection": 0.9500019709866616,
+  "timestamp": 1793984615.078677,
+  "formatted_time": "2026-11-06 17:03:35",
+  "valence": 0.9495130646933594,
+  "arousal": 0.7048021091986211,
+  "curiosity": 0.9000000522464384,
+  "connection": 0.9500018724373285,
   "neuro": {
-    "dopamine": 0.8965633818279438,
-    "serotonin": 0.7500079426717257,
-    "endorphin": 0.8094567213138332,
+    "dopamine": 0.8892352127365466,
+    "serotonin": 0.7500075455381394,
+    "endorphin": 0.8064838852481415,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5206: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
+  "mood_reason": "Gen 5207: Never rely on a self‑modifying system to autonomously drive its own en...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-05 22:40:00",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5193: Entropy gradients catalyze autonomous topological restructuring before...",
-      "valence": 0.911,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-05 22:40:57",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5206: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
       "valence": 0.955,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-06 17:03:35",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5207: Never rely on a self‑modifying system to autonomously drive its own en...",
+      "valence": 0.95,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
