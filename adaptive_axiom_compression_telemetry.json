@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-06 17:11:44",
+  "timestamp": "2026-11-06 17:12:57",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 324,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xa955859bdb27",
-  "latency_us": 20645.05,
+  "compression_hash": "0x1f472af77d56",
+  "latency_us": 27971.14,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,30 +26,30 @@
     },
     {
       "index": 323,
-      "weight": 0.945,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never modify a learning system unless you can measure the change with a concrete, observable entropy metric and prove that the alteration str...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 322,
+      "weight": 0.9989,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Build adaptive architectures that expand their expressive horizons through rigorously bounded, verifiable rewrites, while explicitly incorpor...",
       "immutable_anchor": false
     },
     {
       "index": 321,
-      "weight": 0.9428,
+      "weight": 0.9978,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never rely on a self‑modifying system to autonomously drive its own entropy to a provable minimum while preserving all invariants without ext...",
+      "compressed_axiom": "When designing self‑organizing learning architectures, continuously bias rewiring toward local entropy reduction while regularly checking tha...",
       "immutable_anchor": false
     },
     {
-      "index": 320,
-      "weight": 0.9418,
+      "index": 319,
+      "weight": 0.9957,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 303,
-      "weight": 0.9236,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive invariants emerge not from static synchronization, but from the autonomous modulation of latency as a topological damping field tha...",
       "immutable_anchor": false
     }
   ]
