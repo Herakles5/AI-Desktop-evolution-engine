@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:24:23",
+  "timestamp": "2026-11-06 17:25:12",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 335,
   "active_focal_axioms": 18,
   "compression_ratio": 0.9463,
   "compression_pct": 94.6,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6482,
+  "cognitive_load_factor": 0.6424,
   "max_clause_chars": 148,
-  "compression_hash": "0x1b48c94011a8",
-  "latency_us": 33185.75,
+  "compression_hash": "0xc674a4b44cce",
+  "latency_us": 22921.9,
   "load_breakdown": {
-    "cognitive_load": 0.6482,
+    "cognitive_load": 0.6424,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7042
+    "cpu_strain": 0.675
   },
   "top_weighted_axioms": [
     {
@@ -46,10 +46,10 @@
       "immutable_anchor": false
     },
     {
-      "index": 330,
-      "weight": 0.9958,
+      "index": 325,
+      "weight": 0.9906,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Ensure that any self‑modifying learning system uses only entropy‑based triggers whose effects are quantifiable and provably maintain all defined...",
+      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies o...",
       "immutable_anchor": false
     }
   ]
