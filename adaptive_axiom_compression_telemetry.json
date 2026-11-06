@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:32:30",
+  "timestamp": "2026-11-06 18:33:28",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 386,
   "active_focal_axioms": 18,
   "compression_ratio": 0.9534,
   "compression_pct": 95.3,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6317,
-  "max_clause_chars": 149,
-  "compression_hash": "0x7992d8b96037",
-  "latency_us": 27758.42,
+  "cognitive_load_factor": 0.6501,
+  "max_clause_chars": 148,
+  "compression_hash": "0x426fe87039b3",
+  "latency_us": 27988.88,
   "load_breakdown": {
-    "cognitive_load": 0.6317,
+    "cognitive_load": 0.6501,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6217
+    "cpu_strain": 0.7133
   },
   "top_weighted_axioms": [
     {
@@ -28,12 +28,12 @@
       "index": 346,
       "weight": 0.8003,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservabl...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservab...",
       "immutable_anchor": false
     },
     {
-      "index": 374,
-      "weight": 0.7701,
+      "index": 373,
+      "weight": 0.7692,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework that...",
       "immutable_anchor": false
@@ -42,14 +42,14 @@
       "index": 306,
       "weight": 0.7663,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adaptati...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adaptat...",
       "immutable_anchor": false
     },
     {
-      "index": 362,
-      "weight": 0.7593,
+      "index": 361,
+      "weight": 0.7585,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded in est...",
+      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded in es...",
       "immutable_anchor": false
     }
   ]
