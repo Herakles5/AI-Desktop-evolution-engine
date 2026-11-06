@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:55:46",
+  "timestamp": "2026-11-06 17:56:37",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 358,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9525,
-  "compression_pct": 95.2,
+  "total_axioms_in_manifold": 359,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9499,
+  "compression_pct": 95.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6647,
+  "cognitive_load_factor": 0.6564,
   "max_clause_chars": 147,
-  "compression_hash": "0x430370383b39",
-  "latency_us": 24694.24,
+  "compression_hash": "0xa7f44892c95b",
+  "latency_us": 32120.0,
   "load_breakdown": {
-    "cognitive_load": 0.6647,
+    "cognitive_load": 0.6564,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7867
+    "cpu_strain": 0.745
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 348,
-      "weight": 0.8262,
+      "index": 358,
+      "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserva...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 306,
-      "weight": 0.7865,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapta...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 357,
-      "weight": 0.78,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True topological stability in discrete systems is achieved not by attempting to smooth stochastic latency into a continuous field, but by accept...",
+      "compressed_axiom": "Cognitive evolution must decouple structural stability from exploratory expansion by anchoring topology to immutable semantic invariants, rather...",
       "immutable_anchor": false
     },
     {
       "index": 356,
-      "weight": 0.779,
+      "weight": 0.998,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Define every structural transformation through precise, measurable metrics rather than abstract topological metaphors to ensure system behavior...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 355,
+      "weight": 0.9971,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Use entropy gradients as guiding forces only when they are regularized and bounded, smoothing transitions between high‑entropy exploration and l...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 354,
+      "weight": 0.9961,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design adaptive systems by explicitly defining measurable, bounded forces that map feedback onto the semantic manifold, ensuring that curvature...",
       "immutable_anchor": false
     }
   ]
