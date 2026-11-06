@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:52:01",
+  "timestamp": "2026-11-06 17:52:54",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 356,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9522,
   "compression_pct": 95.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6764,
-  "max_clause_chars": 146,
+  "cognitive_load_factor": 0.6847,
+  "max_clause_chars": 145,
   "compression_hash": "0x8aaa7771eaa3",
-  "latency_us": 34781.05,
+  "latency_us": 38898.88,
   "load_breakdown": {
-    "cognitive_load": 0.6764,
+    "cognitive_load": 0.6847,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.845
+    "cpu_strain": 0.8867
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 348,
       "weight": 0.8281,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserv...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobser...",
       "immutable_anchor": false
     },
     {
       "index": 306,
       "weight": 0.7881,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapt...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adap...",
       "immutable_anchor": false
     },
     {
       "index": 353,
       "weight": 0.778,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat local entropy not as noise to be eliminated, but as a measurable signal for pruning inferential pathways, provided that every topological...",
+      "compressed_axiom": "Treat local entropy not as noise to be eliminated, but as a measurable signal for pruning inferential pathways, provided that every topologica...",
       "immutable_anchor": false
     },
     {
       "index": 339,
       "weight": 0.7644,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
+      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that co...",
       "immutable_anchor": false
     }
   ]
