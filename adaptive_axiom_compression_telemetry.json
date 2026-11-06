@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:30:08",
+  "timestamp": "2026-11-06 17:30:56",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 339,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9499,
-  "compression_pct": 95.0,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6786,
-  "max_clause_chars": 146,
-  "compression_hash": "0x55333c1256d7",
-  "latency_us": 26727.12,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9469,
+  "compression_pct": 94.7,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6576,
+  "max_clause_chars": 147,
+  "compression_hash": "0x26a371ba2133",
+  "latency_us": 35847.29,
   "load_breakdown": {
-    "cognitive_load": 0.6786,
+    "cognitive_load": 0.6576,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8558
+    "cpu_strain": 0.7508
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 306,
-      "weight": 0.8025,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapt...",
+      "index": 338,
+      "weight": 1.0,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Never let a self‑modifying system use its own mutable state to both define its driving metric and certify its safety; instead anchor the metric...",
       "immutable_anchor": false
     },
     {
-      "index": 334,
-      "weight": 0.7759,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed mut...",
+      "index": 307,
+      "weight": 0.9135,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that activel...",
       "immutable_anchor": false
     },
     {
-      "index": 329,
-      "weight": 0.7707,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing autonomous learning systems, base any drive toward structural complexity on quantifiable, controllable metrics and validate emer...",
+      "index": 305,
+      "weight": 0.8565,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic en...",
       "immutable_anchor": false
     },
     {
-      "index": 317,
-      "weight": 0.7585,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When engineering self‑organizing reasoning architectures, base any rewiring policy on a rigorously defined, quantifiable metric whose monotonic...",
+      "index": 300,
+      "weight": 0.6886,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Cognitive stability emerges not from minimizing latency, but from engineering a topological phase shift where processing delays act as resonant...",
       "immutable_anchor": false
     }
   ]
