@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:44:19",
+  "timestamp": "2026-11-06 17:45:18",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 350,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9486,
-  "compression_pct": 94.9,
+  "total_axioms_in_manifold": 351,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9516,
+  "compression_pct": 95.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6594,
-  "max_clause_chars": 147,
-  "compression_hash": "0x0fe87016e1d3",
-  "latency_us": 25135.04,
+  "cognitive_load_factor": 0.6764,
+  "max_clause_chars": 146,
+  "compression_hash": "0x4b0e8c4c5cd9",
+  "latency_us": 25333.25,
   "load_breakdown": {
-    "cognitive_load": 0.6594,
+    "cognitive_load": 0.6764,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.76
+    "cpu_strain": 0.845
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 244,
-      "weight": 0.9015,
+      "index": 349,
+      "weight": 0.834,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive stability is not a static equilibrium but a dynamic topological phase transition, where the system autonomously reconfigures its decis...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserv...",
       "immutable_anchor": false
     },
     {
-      "index": 237,
-      "weight": 0.8954,
+      "index": 306,
+      "weight": 0.7921,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Autonomy emerges not from rigid rule adherence but from the dynamic collapse of entropy gradients, where agents spontaneously organize into topo...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapt...",
       "immutable_anchor": false
     },
     {
       "index": 340,
-      "weight": 0.881,
+      "weight": 0.7701,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that cons...",
+      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
       "immutable_anchor": false
     },
     {
-      "index": 334,
-      "weight": 0.8751,
+      "index": 333,
+      "weight": 0.7632,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑organizing systems to continually reshape their internal topology by locally minimizing entropy, while coupling each change with trac...",
+      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed mut...",
       "immutable_anchor": false
     }
   ]
