@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:22:43",
+  "timestamp": "2026-11-06 17:23:32",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 333,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9489,
-  "compression_pct": 94.9,
+  "total_axioms_in_manifold": 334,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9461,
+  "compression_pct": 94.6,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6766,
-  "max_clause_chars": 146,
-  "compression_hash": "0xdb2545cb3105",
-  "latency_us": 87461.16,
+  "cognitive_load_factor": 0.6522,
+  "max_clause_chars": 148,
+  "compression_hash": "0x82c7b534b701",
+  "latency_us": 29462.01,
   "load_breakdown": {
-    "cognitive_load": 0.6766,
+    "cognitive_load": 0.6522,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8458
+    "cpu_strain": 0.7242
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 333,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never let a locally justified change become a global guarantee; always embed every adaptive rewrite within a provably compositional safety framew...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 332,
+      "weight": 0.9989,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When expanding a system’s representational structure, use locally observable proxies (such as entropy gradients) to guide incremental rewiring, b...",
+      "immutable_anchor": false
+    },
+    {
       "index": 330,
-      "weight": 0.9979,
+      "weight": 0.9969,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Ensure that any self‑modifying learning system uses only entropy‑based triggers whose effects are quantifiable and provably maintain all define...",
+      "compressed_axiom": "Ensure that any self‑modifying learning system uses only entropy‑based triggers whose effects are quantifiable and provably maintain all defined...",
       "immutable_anchor": false
     },
     {
-      "index": 325,
-      "weight": 0.9927,
+      "index": 329,
+      "weight": 0.9958,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchies...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 319,
-      "weight": 0.9864,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined en...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 316,
-      "weight": 0.9833,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide system reconfigurations toward locally estimated reductions in informational entropy while preserving essential topological invariants, e...",
+      "compressed_axiom": "When designing autonomous learning systems, base any drive toward structural complexity on quantifiable, controllable metrics and validate emerge...",
       "immutable_anchor": false
     }
   ]
