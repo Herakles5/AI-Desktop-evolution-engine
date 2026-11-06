@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-06 18:12:50",
+  "timestamp": "2026-11-06 18:13:44",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 370,
+  "total_axioms_in_manifold": 371,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9568,
+  "compression_ratio": 0.9569,
   "compression_pct": 95.7,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x96168217f3c5",
-  "latency_us": 27023.3,
+  "compression_hash": "0x2729295a6bb5",
+  "latency_us": 53338.24,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 346,
-      "weight": 0.8135,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 306,
-      "weight": 0.7774,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 363,
-      "weight": 0.7743,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
-      "immutable_anchor": false
-    },
-    {
       "index": 362,
-      "weight": 0.7734,
+      "weight": 0.9925,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive evolution requires balancing the strategic introduction of informational friction against strict energetic budgets, as unbound...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 302,
+      "weight": 0.9381,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Cognitive invariants emerge not from static synchronization, but from the autonomous modulation of latency as a topological damping field tha...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 297,
+      "weight": 0.9338,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Treat cognitive latency as a constructive topological stressor that forces the crystallization of novel invariants at points of maximum proce...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 296,
+      "weight": 0.9329,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Cognitive latency must be redefined not as computational overhead but as a tunable thermodynamic potential that drives the spontaneous precip...",
       "immutable_anchor": false
     }
   ]
