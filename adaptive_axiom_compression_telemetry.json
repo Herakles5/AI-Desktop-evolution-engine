@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:26:15",
+  "timestamp": "2026-11-06 18:27:09",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 382,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9581,
-  "compression_pct": 95.8,
+  "total_axioms_in_manifold": 383,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9556,
+  "compression_pct": 95.6,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0xee50e7c2a1a1",
-  "latency_us": 36813.95,
+  "cognitive_load_factor": 0.6836,
+  "max_clause_chars": 146,
+  "compression_hash": "0x5be392c605e2",
+  "latency_us": 32860.51,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6836,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.8808
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 346,
-      "weight": 0.8034,
+      "weight": 0.8026,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserv...",
       "immutable_anchor": false
     },
     {
       "index": 375,
-      "weight": 0.7745,
+      "weight": 0.7736,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework...",
+      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework th...",
       "immutable_anchor": false
     },
     {
       "index": 306,
-      "weight": 0.7689,
+      "weight": 0.7683,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapt...",
       "immutable_anchor": false
     },
     {
       "index": 363,
-      "weight": 0.7636,
+      "weight": 0.7628,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
+      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded in...",
       "immutable_anchor": false
     }
   ]
