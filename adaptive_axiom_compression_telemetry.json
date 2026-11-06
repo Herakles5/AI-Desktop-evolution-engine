@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:00:27",
+  "timestamp": "2026-11-06 18:01:23",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 361,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9501,
-  "compression_pct": 95.0,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6469,
-  "max_clause_chars": 148,
-  "compression_hash": "0xd7456b5e0b2d",
-  "latency_us": 33339.87,
+  "total_axioms_in_manifold": 362,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.953,
+  "compression_pct": 95.3,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6701,
+  "max_clause_chars": 146,
+  "compression_hash": "0x534e19caf416",
+  "latency_us": 34361.73,
   "load_breakdown": {
-    "cognitive_load": 0.6469,
+    "cognitive_load": 0.6701,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6975
+    "cpu_strain": 0.8133
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 346,
-      "weight": 0.8215,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservab...",
+      "index": 305,
+      "weight": 0.7824,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
       "immutable_anchor": false
     },
     {
-      "index": 306,
-      "weight": 0.7841,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adaptat...",
+      "index": 307,
+      "weight": 0.6743,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that active...",
       "immutable_anchor": false
     },
     {
-      "index": 355,
-      "weight": 0.7752,
+      "index": 337,
+      "weight": 0.539,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True topological stability in discrete systems is achieved not by attempting to smooth stochastic latency into a continuous field, but by accepti...",
+      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
       "immutable_anchor": false
     },
     {
-      "index": 354,
-      "weight": 0.7742,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Define every structural transformation through precise, measurable metrics rather than abstract topological metaphors to ensure system behavior r...",
+      "index": 4,
+      "weight": 0.5305,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and per...",
       "immutable_anchor": false
     }
   ]
