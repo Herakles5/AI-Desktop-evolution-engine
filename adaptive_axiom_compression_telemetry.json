@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 18:21:22",
+  "timestamp": "2026-11-06 18:22:13",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 378,
+  "total_axioms_in_manifold": 379,
   "active_focal_axioms": 18,
-  "compression_ratio": 0.9524,
+  "compression_ratio": 0.9525,
   "compression_pct": 95.2,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6591,
-  "max_clause_chars": 147,
-  "compression_hash": "0xd6d3d9dcc1ce",
-  "latency_us": 33129.79,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6487,
+  "max_clause_chars": 148,
+  "compression_hash": "0x7fc60c411460",
+  "latency_us": 37538.3,
   "load_breakdown": {
-    "cognitive_load": 0.6591,
+    "cognitive_load": 0.6487,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7583
+    "cpu_strain": 0.7067
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 346,
-      "weight": 0.8067,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserva...",
+      "index": 378,
+      "weight": 1.0,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Define entropy as a topological curvature field only through rigorous mathematical formalization that explicitly maps informational friction to s...",
       "immutable_anchor": false
     },
     {
-      "index": 375,
-      "weight": 0.7781,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework tha...",
+      "index": 368,
+      "weight": 0.9908,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "In adaptive systems, base topological reconfiguration on explicit, computable gradients of system dynamics rather than on scalar thermodynamic me...",
       "immutable_anchor": false
     },
     {
-      "index": 306,
-      "weight": 0.7717,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adapta...",
+      "index": 364,
+      "weight": 0.9871,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Treat cognitive latency not as a defect to be eliminated, but as a necessary processing window for semantic integration, provided that this delay...",
       "immutable_anchor": false
     },
     {
-      "index": 363,
-      "weight": 0.7671,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded in e...",
+      "index": 360,
+      "weight": 0.9835,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive evolution requires the dynamic redefinition of foundational constraints rather than their static preservation, as rigid invariants...",
       "immutable_anchor": false
     }
   ]

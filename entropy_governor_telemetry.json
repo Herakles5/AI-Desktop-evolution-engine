@@ -1,16 +1,16 @@
 {
-  "step": 149,
-  "timestamp": "2026-11-06 18:21:25",
-  "entropy": 0.82,
-  "predicted_entropy": 1.0,
-  "gradient": -0.0078,
-  "curvature_vector": 0.44406,
+  "step": 150,
+  "timestamp": "2026-11-06 18:22:16",
+  "entropy": 0.6386,
+  "predicted_entropy": 0.3721,
+  "gradient": -0.0035,
+  "curvature_vector": -0.40339,
   "caec_effective_cost": 0.8009,
-  "egt_pruning_triggered": true,
-  "oracle_audit_hash": "0xd28f9925ee896e69",
+  "egt_pruning_triggered": false,
+  "oracle_audit_hash": "0x3932a756ad8c73bf",
   "ambiguity_density": 1.0,
-  "resonant_coupling": 0.2,
-  "mode": "CHAOTIC_DAMPING",
-  "recommended_temperature": 0.18,
-  "recommendation": "Engage Mentor Axiom 0 damping; prevent semantic divergence."
+  "resonant_coupling": 0.8,
+  "mode": "RESONANT_MORPHOGENESIS",
+  "recommended_temperature": 0.3,
+  "recommendation": "Active sweet spot. Channeling ambiguity directly into structural evolution."
 }
