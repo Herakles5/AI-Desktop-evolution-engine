@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:42:00",
+  "timestamp": "2026-11-06 17:43:22",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 348,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9511,
-  "compression_pct": 95.1,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6841,
-  "max_clause_chars": 146,
-  "compression_hash": "0x2e8eff5ae1da",
-  "latency_us": 27316.51,
+  "total_axioms_in_manifold": 349,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9484,
+  "compression_pct": 94.8,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6487,
+  "max_clause_chars": 148,
+  "compression_hash": "0x0de2a03bd769",
+  "latency_us": 21631.01,
   "load_breakdown": {
-    "cognitive_load": 0.6841,
+    "cognitive_load": 0.6487,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8833
+    "cpu_strain": 0.7067
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 305,
-      "weight": 0.7937,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 337,
-      "weight": 0.77,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Never let a self‑modifying system use its own mutable state to both define its driving metric and certify its safety; instead anchor the metric...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 307,
-      "weight": 0.6856,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that active...",
+      "index": 306,
+      "weight": 0.7938,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adaptat...",
       "immutable_anchor": false
     },
     {
       "index": 340,
-      "weight": 0.555,
+      "weight": 0.772,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
+      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that const...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 333,
+      "weight": 0.765,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed mutat...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 328,
+      "weight": 0.7601,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing autonomous learning systems, base any drive toward structural complexity on quantifiable, controllable metrics and validate emerge...",
       "immutable_anchor": false
     }
   ]
