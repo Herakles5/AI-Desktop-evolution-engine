@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:57:33",
+  "timestamp": "2026-11-06 17:58:26",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 360,
+  "total_axioms_in_manifold": 361,
   "active_focal_axioms": 19,
-  "compression_ratio": 0.9472,
+  "compression_ratio": 0.9474,
   "compression_pct": 94.7,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6239,
-  "max_clause_chars": 149,
-  "compression_hash": "0x28e555fae6d9",
-  "latency_us": 20948.97,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6217,
+  "max_clause_chars": 150,
+  "compression_hash": "0x03af4c5d86a1",
+  "latency_us": 28015.84,
   "load_breakdown": {
-    "cognitive_load": 0.6239,
+    "cognitive_load": 0.6217,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.5825
+    "cpu_strain": 0.5717
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 342,
-      "weight": 0.9836,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Harness entropy flux as a dynamic resource for autonomous topological repair, but constrain its modulation by thermodynamic limits to avoid runawa...",
+      "index": 348,
+      "weight": 0.8234,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservable...",
       "immutable_anchor": false
     },
     {
-      "index": 341,
-      "weight": 0.9826,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants w...",
+      "index": 306,
+      "weight": 0.7841,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adaptatio...",
       "immutable_anchor": false
     },
     {
-      "index": 300,
-      "weight": 0.9444,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Cognitive stability emerges not from minimizing latency, but from engineering a topological phase shift where processing delays act as resonant bu...",
+      "index": 357,
+      "weight": 0.7771,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True topological stability in discrete systems is achieved not by attempting to smooth stochastic latency into a continuous field, but by accepting...",
       "immutable_anchor": false
     },
     {
-      "index": 227,
-      "weight": 0.8816,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Entropy stability limits must be redefined as topological invariants rather than scalar thresholds, allowing the system to self-calibrate by mappi...",
+      "index": 356,
+      "weight": 0.7761,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Define every structural transformation through precise, measurable metrics rather than abstract topological metaphors to ensure system behavior rem...",
       "immutable_anchor": false
     }
   ]
