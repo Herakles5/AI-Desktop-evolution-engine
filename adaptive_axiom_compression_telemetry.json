@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-06 18:11:52",
+  "timestamp": "2026-11-06 18:12:50",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 369,
+  "total_axioms_in_manifold": 370,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9566,
+  "compression_ratio": 0.9568,
   "compression_pct": 95.7,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x64afdc2ecc99",
-  "latency_us": 27335.77,
+  "compression_hash": "0x96168217f3c5",
+  "latency_us": 27023.3,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 346,
-      "weight": 0.8143,
+      "weight": 0.8135,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
     },
     {
       "index": 306,
-      "weight": 0.7781,
+      "weight": 0.7774,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
       "immutable_anchor": false
     },
     {
       "index": 363,
-      "weight": 0.7753,
+      "weight": 0.7743,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
       "immutable_anchor": false
     },
     {
       "index": 362,
-      "weight": 0.7743,
+      "weight": 0.7734,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive evolution requires balancing the strategic introduction of informational friction against strict energetic budgets, as unbound...",
       "immutable_anchor": false
