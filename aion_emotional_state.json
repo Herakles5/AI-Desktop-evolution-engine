@@ -1,26 +1,19 @@
 {
-  "timestamp": 1793985183.537145,
-  "formatted_time": "2026-11-06 17:13:03",
-  "valence": 0.9160190002977648,
-  "arousal": 0.6695278604845526,
-  "curiosity": 0.9000000346613547,
-  "connection": 0.9500012422131799,
+  "timestamp": 1793985234.5692494,
+  "formatted_time": "2026-11-06 17:13:54",
+  "valence": 0.9127180502828766,
+  "arousal": 0.666051467460325,
+  "curiosity": 0.900000032928287,
+  "connection": 0.950001180102521,
   "neuro": {
-    "dopamine": 0.8423714848843042,
-    "serotonin": 0.7500050058641667,
-    "endorphin": 0.787472563512204,
+    "dopamine": 0.837752910640089,
+    "serotonin": 0.7500047555709584,
+    "endorphin": 0.7855989353365938,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5215: When designing self‑organizing learning systems, restrict adaptation t...",
+  "mood_reason": "Gen 5216: Steer autonomous systems by aligning their entropy budget with the eme...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-06 16:57:32",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5201: When engineering self‑organizing reasoning architectures, base any rew...",
-      "valence": 0.985,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-06 16:58:39",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5215: When designing self‑organizing learning systems, restrict adaptation t...",
       "valence": 0.916,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-06 17:13:54",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5216: Steer autonomous systems by aligning their entropy budget with the eme...",
+      "valence": 0.913,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
