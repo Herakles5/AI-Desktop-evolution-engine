@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 16:55:28",
+  "timestamp": "2026-11-06 16:56:24",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 333,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9489,
-  "compression_pct": 94.9,
+  "total_axioms_in_manifold": 321,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9502,
+  "compression_pct": 95.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6952,
-  "max_clause_chars": 145,
-  "compression_hash": "0xcc49f3259e54",
-  "latency_us": 54910.59,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x89596865063d",
+  "latency_us": 14134.46,
   "load_breakdown": {
-    "cognitive_load": 0.6952,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9392
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 322,
-      "weight": 0.8245,
+      "index": 310,
+      "weight": 0.8241,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural adap...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
       "immutable_anchor": false
     },
     {
-      "index": 327,
-      "weight": 0.7747,
+      "index": 315,
+      "weight": 0.7745,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Autonomy in global agent meshes is not a static state but a dynamic topological phase transition, where true freedom emerges only when local e...",
+      "compressed_axiom": "Autonomy in global agent meshes is not a static state but a dynamic topological phase transition, where true freedom emerges only when local...",
       "immutable_anchor": false
     },
     {
-      "index": 318,
-      "weight": 0.7654,
+      "index": 306,
+      "weight": 0.7648,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive invariants emerge not from static synchronization, but from the autonomous modulation of latency as a topological damping field that...",
+      "compressed_axiom": "Cognitive invariants emerge not from static synchronization, but from the autonomous modulation of latency as a topological damping field tha...",
       "immutable_anchor": false
     },
     {
-      "index": 314,
-      "weight": 0.7612,
+      "index": 302,
+      "weight": 0.7605,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive autonomy emerges not from static efficiency, but from the dynamic topological reshaping of processing pathways in direct response to...",
+      "compressed_axiom": "Cognitive autonomy emerges not from static efficiency, but from the dynamic topological reshaping of processing pathways in direct response t...",
       "immutable_anchor": false
     }
   ]
