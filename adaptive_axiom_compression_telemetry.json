@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:32:42",
+  "timestamp": "2026-11-06 17:33:49",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 341,
-  "active_focal_axioms": 19,
-  "compression_ratio": 0.9443,
-  "compression_pct": 94.4,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9501,
+  "compression_pct": 95.0,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6154,
-  "max_clause_chars": 150,
-  "compression_hash": "0x82c0ed79d354",
-  "latency_us": 28966.15,
+  "cognitive_load_factor": 0.6922,
+  "max_clause_chars": 145,
+  "compression_hash": "0x5d608f1358c6",
+  "latency_us": 32969.81,
   "load_breakdown": {
-    "cognitive_load": 0.6154,
+    "cognitive_load": 0.6922,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.54
+    "cpu_strain": 0.9242
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 338,
-      "weight": 0.9979,
+      "index": 305,
+      "weight": 0.7997,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Never let a self‑modifying system use its own mutable state to both define its driving metric and certify its safety; instead anchor the metric to...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 338,
+      "weight": 0.7779,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Never let a self‑modifying system use its own mutable state to both define its driving metric and certify its safety; instead anchor the metri...",
       "immutable_anchor": false
     },
     {
       "index": 307,
-      "weight": 0.8567,
+      "weight": 0.6917,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that actively b...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that activ...",
       "immutable_anchor": false
     },
     {
-      "index": 305,
-      "weight": 0.8547,
+      "index": 4,
+      "weight": 0.5305,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entro...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 336,
-      "weight": 0.7229,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Base any self‑modifying system on rigorously defined, computable metrics of program state rather than metaphorical notions, and require that every...",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and pe...",
       "immutable_anchor": false
     }
   ]
