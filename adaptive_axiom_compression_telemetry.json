@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-06 18:17:29",
+  "timestamp": "2026-11-06 18:18:25",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 375,
+  "total_axioms_in_manifold": 376,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9573,
+  "compression_ratio": 0.9574,
   "compression_pct": 95.7,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x1748d8c405f2",
-  "latency_us": 25808.14,
+  "compression_hash": "0x1862b42ea9f1",
+  "latency_us": 36049.76,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 346,
-      "weight": 0.8092,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 306,
-      "weight": 0.7738,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 363,
-      "weight": 0.7698,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
-      "immutable_anchor": false
-    },
-    {
       "index": 362,
-      "weight": 0.7688,
+      "weight": 0.933,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive evolution requires balancing the strategic introduction of informational friction against strict energetic budgets, as unbound...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 326,
+      "weight": 0.9005,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Guide self‑modifying learning systems to let entropy‑driven adaptation reshape their internal topology only inside rigorously defined safety...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 315,
+      "weight": 0.8909,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never implement self‑optimizing rewiring without first defining precise, computable metrics and transformation rules that guarantee measurabl...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 371,
+      "weight": 0.8863,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design cognitive systems to autonomously reshape their architecture by translating measurable internal entropy gradients into concrete topolo...",
       "immutable_anchor": false
     }
   ]
