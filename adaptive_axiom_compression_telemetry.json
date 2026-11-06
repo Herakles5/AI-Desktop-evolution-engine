@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-06 18:16:26",
+  "timestamp": "2026-11-06 18:16:32",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 374,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x2c03df49cbb9",
-  "latency_us": 35957.42,
+  "compression_hash": "0x17cc6f4254e2",
+  "latency_us": 26915.62,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,29 +25,29 @@
       "immutable_anchor": true
     },
     {
-      "index": 372,
-      "weight": 0.9991,
+      "index": 346,
+      "weight": 0.81,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True autonomous evolution requires a rigorously defined, bijective mapping between informational entropy and architectural geometry, ensuring...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
     },
     {
-      "index": 371,
-      "weight": 0.9981,
+      "index": 306,
+      "weight": 0.7745,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design cognitive systems to autonomously reshape their architecture by translating measurable internal entropy gradients into concrete topolo...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
       "immutable_anchor": false
     },
     {
-      "index": 370,
-      "weight": 0.9972,
+      "index": 363,
+      "weight": 0.7707,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When encountering high‑entropy nodes, first verify that a bounded coherence gradient demonstrably reduces entropy and friction before applyin...",
+      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
       "immutable_anchor": false
     },
     {
       "index": 362,
-      "weight": 0.9897,
+      "weight": 0.7697,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive evolution requires balancing the strategic introduction of informational friction against strict energetic budgets, as unbound...",
       "immutable_anchor": false
