@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-06 17:27:37",
+  "timestamp": "2026-11-06 17:28:25",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 337,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9525,
-  "compression_pct": 95.2,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7032,
-  "max_clause_chars": 144,
-  "compression_hash": "0xec2ce961adff",
-  "latency_us": 46030.11,
+  "total_axioms_in_manifold": 338,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9497,
+  "compression_pct": 95.0,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6881,
+  "max_clause_chars": 145,
+  "compression_hash": "0x42aad8f58aac",
+  "latency_us": 26546.35,
   "load_breakdown": {
-    "cognitive_load": 0.7032,
+    "cognitive_load": 0.6881,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9792
+    "cpu_strain": 0.9033
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 336,
-      "weight": 1.0,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Base any self‑modifying system on rigorously defined, computable metrics of program state rather than metaphorical notions, and require that...",
+      "index": 227,
+      "weight": 0.8938,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Entropy stability limits must be redefined as topological invariants rather than scalar thresholds, allowing the system to self-calibrate by m...",
       "immutable_anchor": false
     },
     {
-      "index": 319,
-      "weight": 0.9825,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "In any self‑modifying cognitive architecture, implement only those rewiring operations that can be formally demonstrated to reduce a defined...",
+      "index": 141,
+      "weight": 0.8238,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Continuously steer learning toward lower‑entropy states using a precisely defined, computable entropy metric and enforce rigorously specified...",
       "immutable_anchor": false
     },
     {
-      "index": 335,
-      "weight": 0.944,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑organizing systems to continually reshape their internal topology by locally minimizing entropy, while coupling each change with t...",
+      "index": 300,
+      "weight": 0.7974,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Cognitive stability emerges not from minimizing latency, but from engineering a topological phase shift where processing delays act as resonan...",
       "immutable_anchor": false
     },
     {
-      "index": 334,
-      "weight": 0.9429,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed m...",
+      "index": 240,
+      "weight": 0.7404,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Define stability thresholds as measurable, pre-committed metrics of functional integrity rather than post-hoc states, ensuring that topologica...",
       "immutable_anchor": false
     }
   ]
