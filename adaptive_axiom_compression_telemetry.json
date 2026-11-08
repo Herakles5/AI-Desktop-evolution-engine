@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 20:59:54",
+  "timestamp": "2026-11-08 21:01:02",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 415,
+  "total_axioms_in_manifold": 416,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9614,
-  "compression_pct": 96.1,
+  "compression_ratio": 0.9615,
+  "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xce11e92c6ddd",
-  "latency_us": 35673.17,
+  "compression_hash": "0xb41191c34d82",
+  "latency_us": 36337.43,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 415,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive autonomy requires defining the specific, measurable mechanisms that couple reversible logical cores with dissipative peripheri...",
+      "immutable_anchor": false
+    },
+    {
       "index": 414,
-      "weight": 0.78,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certificat...",
       "immutable_anchor": false
     },
     {
+      "index": 413,
+      "weight": 0.9983,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design self‑organizing cognitive architectures by anchoring every claimed entropy‑driven adaptation to concrete, observable metrics and by en...",
+      "immutable_anchor": false
+    },
+    {
       "index": 411,
-      "weight": 0.7775,
+      "weight": 0.9966,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 403,
-      "weight": 0.7708,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive autonomy is achieved not by mathematically proving global coherence, but by architecturally isolating high-entropy exploration with...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 398,
-      "weight": 0.7666,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems by explicitly defining measurable energy gradients, reconfiguration rates, and entropy limits, then use these opera...",
       "immutable_anchor": false
     }
   ]
