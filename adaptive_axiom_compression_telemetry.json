@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:32:50",
+  "timestamp": "2026-11-08 15:34:00",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 420,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9595,
-  "compression_pct": 96.0,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9619,
+  "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6682,
-  "max_clause_chars": 147,
-  "compression_hash": "0x4dd9b1dbf6be",
-  "latency_us": 40316.39,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0xbe22adc70731",
+  "latency_us": 76525.87,
   "load_breakdown": {
-    "cognitive_load": 0.6682,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8042
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 404,
-      "weight": 0.9876,
+      "index": 346,
+      "weight": 0.7762,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Continuously steer a system’s structure toward lower complexity by measuring only computable, local proxies of entropy and applying incremental...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
     },
     {
-      "index": 372,
-      "weight": 0.9616,
+      "index": 413,
+      "weight": 0.775,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework tha...",
+      "compressed_axiom": "Design self‑modifying cognitive systems to rewrite their own architecture only under rigorously defined, task‑relevant performance metrics—ne...",
       "immutable_anchor": false
     },
     {
-      "index": 419,
-      "weight": 0.945,
+      "index": 412,
+      "weight": 0.7742,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When creating autonomous systems, embed local, decidable invariants that are explicitly proven to monotonically increase a global entropy metric...",
+      "compressed_axiom": "Never rely solely on locally verifiable constraints to guarantee a system’s global entropy‑gradient descent and safety; always embed mechanis...",
       "immutable_anchor": false
     },
     {
       "index": 410,
-      "weight": 0.9375,
+      "weight": 0.7725,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When engineering self‑modifying cognitive systems, steer structural rewrites toward maximal entropy‑gradient improvement **and** confine every r...",
+      "compressed_axiom": "When engineering self‑modifying cognitive systems, steer structural rewrites toward maximal entropy‑gradient improvement **and** confine ever...",
       "immutable_anchor": false
     }
   ]
