@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 14:57:58",
+  "timestamp": "2026-11-08 14:59:11",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 398,
+  "total_axioms_in_manifold": 399,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9598,
+  "compression_ratio": 0.9599,
   "compression_pct": 96.0,
-  "target_cluster": "SYSTEM_GOVERNANCE",
+  "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x9799a74a7d0f",
-  "latency_us": 67692.86,
+  "compression_hash": "0x2ef23f468dd2",
+  "latency_us": 110408.35,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 395,
+      "index": 398,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑evolving learners, always ground entropy‑based or gradient‑based metrics in a rigorously defined, computable formalism an...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 397,
+      "weight": 0.9991,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑scaling cognitive architectures, tie every local rewrite to a measurable entropy‑gradient and to a clearly defined, compu...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 396,
       "weight": 0.9982,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes w...",
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never rely on vague, locally‑driven entropy reductions to claim emergence of complex structures; first define the target property (e.g., cogn...",
       "immutable_anchor": false
     },
     {
-      "index": 377,
-      "weight": 0.8725,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat structural entropy as a dynamic signal for adaptive topology refinement rather than a static geometric property, acknowledging that eac...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 391,
-      "weight": 0.8297,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Align learning processes with quantifiable, testable signals of uncertainty while rigorously bounding energy consumption, and insist that eve...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 380,
-      "weight": 0.8201,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True cognitive sovereignty requires translating abstract self-correction mechanisms into measurable, operational variables, ensuring that the...",
+      "index": 393,
+      "weight": 0.9956,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑organizing substrates, bind every entropy‑reducing local update to a precisely defined, quantifiable modularity metric...",
       "immutable_anchor": false
     }
   ]
