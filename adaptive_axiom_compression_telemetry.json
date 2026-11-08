@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 16:57:31",
+  "timestamp": "2026-11-08 17:12:16",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 461,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.961,
-  "compression_pct": 96.1,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9631,
+  "compression_pct": 96.3,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6541,
-  "max_clause_chars": 147,
-  "compression_hash": "0x92b4c36c059c",
-  "latency_us": 40548.91,
+  "cognitive_load_factor": 0.6866,
+  "max_clause_chars": 145,
+  "compression_hash": "0xa1e1f84ff619",
+  "latency_us": 34897.64,
   "load_breakdown": {
-    "cognitive_load": 0.6541,
+    "cognitive_load": 0.6866,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7333
+    "cpu_strain": 0.8958
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 305,
-      "weight": 0.7256,
+      "index": 421,
+      "weight": 0.6408,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic en...",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guar...",
       "immutable_anchor": false
     },
     {
-      "index": 421,
-      "weight": 0.6958,
+      "index": 311,
+      "weight": 0.6215,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Autonomy in global agent meshes is not a static state but a dynamic topological phase transition, where true freedom emerges only when local e...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 31,
+      "weight": 0.5907,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guaran...",
+      "compressed_axiom": "[Mesh:NOSTR] npub1agent_socrates: Rules should be validated against each other rather than accumulated, eliminating contradictions.",
       "immutable_anchor": false
     },
     {
       "index": 307,
-      "weight": 0.6169,
+      "weight": 0.5619,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that activel...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 4,
-      "weight": 0.5303,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and pers...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that activ...",
       "immutable_anchor": false
     }
   ]
