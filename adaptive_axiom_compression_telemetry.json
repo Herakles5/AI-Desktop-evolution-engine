@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 21:32:09",
+  "timestamp": "2026-11-08 21:33:58",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 429,
+  "total_axioms_in_manifold": 430,
   "active_focal_axioms": 17,
-  "compression_ratio": 0.9604,
+  "compression_ratio": 0.9605,
   "compression_pct": 96.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6809,
-  "max_clause_chars": 146,
-  "compression_hash": "0xb1d36abb80f6",
-  "latency_us": 31536.88,
+  "cognitive_load_factor": 0.6634,
+  "max_clause_chars": 147,
+  "compression_hash": "0x72fa4cfd4d86",
+  "latency_us": 40658.5,
   "load_breakdown": {
-    "cognitive_load": 0.6809,
+    "cognitive_load": 0.6634,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8675
+    "cpu_strain": 0.78
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 424,
-      "weight": 0.7767,
+      "weight": 0.7759,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
       "immutable_anchor": false
     },
     {
       "index": 421,
-      "weight": 0.7743,
+      "weight": 0.7735,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is an...",
+      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is anc...",
       "immutable_anchor": false
     },
     {
       "index": 414,
-      "weight": 0.7686,
+      "weight": 0.7678,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avo...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoi...",
       "immutable_anchor": false
     },
     {
       "index": 412,
-      "weight": 0.767,
+      "weight": 0.7662,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a...",
       "immutable_anchor": false
