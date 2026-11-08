@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:04:35",
+  "timestamp": "2026-11-08 15:05:28",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 402,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9602,
-  "compression_pct": 96.0,
+  "total_axioms_in_manifold": 403,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9578,
+  "compression_pct": 95.8,
   "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.7002,
-  "max_clause_chars": 144,
-  "compression_hash": "0xeef52f4ec705",
-  "latency_us": 24467.23,
+  "cognitive_load_factor": 0.6709,
+  "max_clause_chars": 146,
+  "compression_hash": "0x6ced4df6118b",
+  "latency_us": 35267.83,
   "load_breakdown": {
-    "cognitive_load": 0.7002,
+    "cognitive_load": 0.6709,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9642
+    "cpu_strain": 0.8175
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 399,
-      "weight": 0.9983,
+      "weight": 0.9424,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably ra...",
+      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably rais...",
       "immutable_anchor": false
     },
     {
       "index": 359,
-      "weight": 0.9091,
+      "weight": 0.8534,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "When designing adaptive systems, anchor every self‑referential adjustment to explicit, quantifiable metrics and a clear objective function so...",
+      "compressed_axiom": "When designing adaptive systems, anchor every self‑referential adjustment to explicit, quantifiable metrics and a clear objective function so t...",
       "immutable_anchor": false
     },
     {
-      "index": 339,
-      "weight": 0.8376,
+      "index": 402,
+      "weight": 0.835,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invaria...",
+      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to expl...",
       "immutable_anchor": false
     },
     {
       "index": 395,
-      "weight": 0.8298,
+      "weight": 0.8289,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes w...",
+      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes who...",
       "immutable_anchor": false
     }
   ]
