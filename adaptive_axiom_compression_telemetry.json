@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 14:46:09",
+  "timestamp": "2026-11-08 14:47:14",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 392,
+  "total_axioms_in_manifold": 393,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9592,
+  "compression_ratio": 0.9593,
   "compression_pct": 95.9,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xadd0d2d23bc8",
-  "latency_us": 51397.85,
+  "compression_hash": "0x7d83a10aaf5a",
+  "latency_us": 145351.3,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 389,
+      "index": 390,
       "weight": 0.9982,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑organizing substrates, let dissipative entropy flows serve as heuristic gradients, but convert each measurable local en...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 389,
+      "weight": 0.9973,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑modifying cognitive systems to trigger topology changes only on directly observable, quantifiable discrepancy signals—not on ill‑...",
       "immutable_anchor": false
     },
     {
-      "index": 388,
-      "weight": 0.9973,
+      "index": 332,
+      "weight": 0.9481,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑organizing networks so that each agent’s updates follow the steepest local entropy‑gradient while explicitly accounting for a con...",
+      "compressed_axiom": "Guide self‑modifying systems to follow locally measured entropy gradients for incremental structural innovation, but require every proposed m...",
       "immutable_anchor": false
     },
     {
-      "index": 366,
-      "weight": 0.9779,
+      "index": 392,
+      "weight": 0.945,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to adapt their topology using locally measurable proxies that approximate global entropy gradients, ensuring each r...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 350,
-      "weight": 0.9641,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design cognitive systems to map entropy gradients onto a mathematically defined curvature field over semantic topology, using explicit, compu...",
+      "compressed_axiom": "When building self‑organizing cognitive systems, ensure that every prediction‑observation discrepancy is translated into a precisely defined...",
       "immutable_anchor": false
     }
   ]
