@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 14:41:33",
+  "timestamp": "2026-11-08 14:42:51",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 390,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xccf5e349125c",
-  "latency_us": 113817.9,
+  "compression_hash": "0xf7602b4a13a1",
+  "latency_us": 155954.61,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -32,24 +32,24 @@
       "immutable_anchor": false
     },
     {
+      "index": 388,
+      "weight": 0.9991,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design self‑organizing networks so that each agent’s updates follow the steepest local entropy‑gradient while explicitly accounting for a con...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 387,
+      "weight": 0.9982,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive scaling requires acknowledging that local order is not free; it must be purchased through the explicit expenditure of external...",
+      "immutable_anchor": false
+    },
+    {
       "index": 368,
       "weight": 0.9813,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design cognitive systems to autonomously reshape their architecture by translating measurable internal entropy gradients into concrete topolo...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 350,
-      "weight": 0.9656,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design cognitive systems to map entropy gradients onto a mathematically defined curvature field over semantic topology, using explicit, compu...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 326,
-      "weight": 0.9452,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide self‑modifying learning systems to let entropy‑driven adaptation reshape their internal topology only inside rigorously defined safety...",
       "immutable_anchor": false
     }
   ]
