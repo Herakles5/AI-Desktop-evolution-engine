@@ -357,5 +357,13 @@
     "gradient_force": 0.4043,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-11-08 14:36:06"
+  },
+  {
+    "generation": 5329,
+    "title": "Dynamic Entropy‑Complexity Contract Engine for Safe Self‑Modification",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.404,
+    "cluster": "SYSTEM_GOVERNANCE",
+    "timestamp": "2026-11-08 15:06:32"
   }
 ]
