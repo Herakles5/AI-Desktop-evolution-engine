@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 21:03:22",
+  "timestamp": "2026-11-08 21:05:12",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 416,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xd269f4f5c7e7",
-  "latency_us": 42348.53,
+  "compression_hash": "0xea1b4c77ef52",
+  "latency_us": 42611.54,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 414,
-      "weight": 0.7792,
+      "index": 415,
+      "weight": 0.78,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 413,
+      "weight": 0.7783,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
       "immutable_anchor": false
     },
     {
-      "index": 412,
-      "weight": 0.7775,
+      "index": 411,
+      "weight": 0.7766,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certificat...",
       "immutable_anchor": false
     },
     {
-      "index": 409,
-      "weight": 0.775,
+      "index": 408,
+      "weight": 0.7741,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 401,
-      "weight": 0.7683,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive autonomy is achieved not by mathematically proving global coherence, but by architecturally isolating high-entropy exploration with...",
       "immutable_anchor": false
     }
   ]
