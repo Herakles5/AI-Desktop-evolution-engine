@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 14:40:12",
+  "timestamp": "2026-11-08 14:41:33",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 389,
+  "total_axioms_in_manifold": 390,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9589,
+  "compression_ratio": 0.959,
   "compression_pct": 95.9,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x42d1eb43425c",
-  "latency_us": 71488.91,
+  "compression_hash": "0xccf5e349125c",
+  "latency_us": 113817.9,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 324,
-      "weight": 0.9442,
+      "index": 389,
+      "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Steer autonomous systems by aligning their entropy budget with the emergent topology of the solution space, allowing self‑organized hierarchi...",
+      "compressed_axiom": "Design self‑modifying cognitive systems to trigger topology changes only on directly observable, quantifiable discrepancy signals—not on ill‑...",
       "immutable_anchor": false
     },
     {
       "index": 368,
-      "weight": 0.9271,
+      "weight": 0.9813,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design cognitive systems to autonomously reshape their architecture by translating measurable internal entropy gradients into concrete topolo...",
       "immutable_anchor": false
     },
     {
-      "index": 379,
-      "weight": 0.8819,
+      "index": 350,
+      "weight": 0.9656,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Scale cognitive architectures by dynamically decoupling high-entropy exploratory processes from stable semantic cores, but strictly enforce b...",
+      "compressed_axiom": "Design cognitive systems to map entropy gradients onto a mathematically defined curvature field over semantic topology, using explicit, compu...",
       "immutable_anchor": false
     },
     {
-      "index": 357,
-      "weight": 0.8625,
+      "index": 326,
+      "weight": 0.9452,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Harness entropy gradients as catalysts for emergent structure, but anchor evolution with explicit, enforceable invariants that filter noise a...",
+      "compressed_axiom": "Guide self‑modifying learning systems to let entropy‑driven adaptation reshape their internal topology only inside rigorously defined safety...",
       "immutable_anchor": false
     }
   ]
