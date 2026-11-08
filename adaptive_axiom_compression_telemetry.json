@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 16:02:55",
+  "timestamp": "2026-11-08 16:04:16",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 438,
+  "total_axioms_in_manifold": 439,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9635,
+  "compression_ratio": 0.9636,
   "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x406a255075b1",
-  "latency_us": 46513.64,
+  "compression_hash": "0x0a2e03bfabd0",
+  "latency_us": 33668.45,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 432,
-      "weight": 0.776,
+      "weight": 0.7752,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When designing self‑organizing cognitive systems, ensure that any transformation of entropy gradients into structural changes is defined by e...",
       "immutable_anchor": false
     },
     {
       "index": 428,
-      "weight": 0.7728,
+      "weight": 0.772,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Anchor every dynamic optimization mechanism in a rigorous, verifiable mathematical formalism that explicitly distinguishes structural signal...",
       "immutable_anchor": false
     },
     {
       "index": 426,
-      "weight": 0.7712,
+      "weight": 0.7705,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design autonomous systems by grounding adaptive rewiring in measurable entropy gradients and quantifiable decision fidelity, ensuring each st...",
       "immutable_anchor": false
     },
     {
       "index": 346,
-      "weight": 0.7653,
+      "weight": 0.7647,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
