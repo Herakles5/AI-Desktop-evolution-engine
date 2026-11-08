@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 21:29:29",
+  "timestamp": "2026-11-08 21:30:40",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 428,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9626,
-  "compression_pct": 96.3,
+  "total_axioms_in_manifold": 429,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9604,
+  "compression_pct": 96.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0x69e85bc3e440",
-  "latency_us": 21868.73,
+  "cognitive_load_factor": 0.6907,
+  "max_clause_chars": 145,
+  "compression_hash": "0x780b746b02cd",
+  "latency_us": 40341.06,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6907,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.9167
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 424,
-      "weight": 0.7775,
+      "index": 427,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
+      "compressed_axiom": "When designing self‑reconfiguring neural systems, use concrete, measurable local energy or entropy gradients to drive modular changes and embe...",
       "immutable_anchor": false
     },
     {
-      "index": 421,
-      "weight": 0.7751,
+      "index": 426,
+      "weight": 0.9984,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is...",
+      "compressed_axiom": "Design autonomous systems to quantify local entropy gradients and free‑energy changes with observable metrics, and iteratively adjust their co...",
       "immutable_anchor": false
     },
     {
-      "index": 414,
-      "weight": 0.7694,
+      "index": 425,
+      "weight": 0.9976,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
+      "compressed_axiom": "When reconfiguring a system, quantify semantic change with a rigorously defined computational or informational cost metric and permit mutation...",
       "immutable_anchor": false
     },
     {
-      "index": 412,
-      "weight": 0.7678,
+      "index": 423,
+      "weight": 0.9959,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
+      "compressed_axiom": "Cognitive systems should be engineered as dynamic manifolds that let local entropy gradients autonomously drive topological reconfiguration, y...",
       "immutable_anchor": false
     }
   ]
