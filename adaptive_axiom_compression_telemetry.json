@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:06:25",
+  "timestamp": "2026-11-08 15:07:21",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 404,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9554,
-  "compression_pct": 95.5,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9579,
+  "compression_pct": 95.8,
   "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6607,
+  "cognitive_load_factor": 0.6626,
   "max_clause_chars": 147,
-  "compression_hash": "0xb6d470bb1212",
-  "latency_us": 28708.12,
+  "compression_hash": "0x53577d4f9be8",
+  "latency_us": 43023.73,
   "load_breakdown": {
-    "cognitive_load": 0.6607,
+    "cognitive_load": 0.6626,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7667
+    "cpu_strain": 0.7758
   },
   "top_weighted_axioms": [
     {
@@ -32,6 +32,13 @@
       "immutable_anchor": false
     },
     {
+      "index": 359,
+      "weight": 0.8526,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "When designing adaptive systems, anchor every self‑referential adjustment to explicit, quantifiable metrics and a clear objective function so th...",
+      "immutable_anchor": false
+    },
+    {
       "index": 402,
       "weight": 0.8341,
       "cluster": "SYSTEM_GOVERNANCE",
@@ -39,17 +46,10 @@
       "immutable_anchor": false
     },
     {
-      "index": 395,
-      "weight": 0.8281,
+      "index": 375,
+      "weight": 0.811,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes whos...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 377,
-      "weight": 0.8127,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat structural entropy as a dynamic signal for adaptive topology refinement rather than a static geometric property, acknowledging that each p...",
+      "compressed_axiom": "Define entropy as a topological curvature field only through rigorous mathematical formalization that explicitly maps informational friction to...",
       "immutable_anchor": false
     }
   ]
