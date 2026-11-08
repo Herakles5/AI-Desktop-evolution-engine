@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 16:09:00",
+  "timestamp": "2026-11-08 16:10:00",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 442,
+  "total_axioms_in_manifold": 443,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9638,
+  "compression_ratio": 0.9639,
   "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x5644d831de61",
-  "latency_us": 29040.09,
+  "compression_hash": "0x6fd64f4fd1c4",
+  "latency_us": 40404.43,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 441,
+      "index": 442,
       "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Treat local entropy gradients as constructive topological fuel only when coupled with a strict reversibility constraint that ensures every st...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 441,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "A system that senses a local entropy gradient must rewire itself to transform that disequilibrium into directed energy flow, but only if it c...",
       "immutable_anchor": false
     },
     {
       "index": 440,
-      "weight": 0.9992,
+      "weight": 0.9984,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True adaptive emergence requires a rigorous, testable mechanism that explicitly bridges local entropy gradients to global free-energy minimiz...",
       "immutable_anchor": false
     },
     {
       "index": 439,
-      "weight": 0.9984,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive stability emerges when agents dynamically adjust their internal informational topology to align with local entropy gradients, conve...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 438,
       "weight": 0.9976,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Entropy gradients can guide autonomous reconfiguration, but only when coupled with constraints that preserve functional diversity and global...",
+      "compressed_axiom": "Cognitive stability emerges when agents dynamically adjust their internal informational topology to align with local entropy gradients, conve...",
       "immutable_anchor": false
     }
   ]
