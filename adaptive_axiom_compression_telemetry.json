@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 17:19:02",
+  "timestamp": "2026-11-08 17:20:43",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 463,
+  "total_axioms_in_manifold": 464,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9654,
+  "compression_ratio": 0.9655,
   "compression_pct": 96.5,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xa91b069a38a1",
-  "latency_us": 40212.63,
+  "compression_hash": "0x37648a17f856",
+  "latency_us": 27819.84,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 460,
-      "weight": 0.7785,
+      "weight": 0.7777,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design autonomous systems by explicitly defining measurable energy gradients, reconfiguration rates, and entropy limits, then use these opera...",
       "immutable_anchor": false
     },
     {
       "index": 459,
-      "weight": 0.7777,
+      "weight": 0.777,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design autonomous systems to treat measurable local energy gradients as actionable control signals, mapping them onto explicitly defined topo...",
       "immutable_anchor": false
     },
     {
       "index": 456,
-      "weight": 0.7755,
+      "weight": 0.7747,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive evolution is governed not by the absolute rate of entropy export, but by the dynamic alignment between available free energy g...",
       "immutable_anchor": false
     },
     {
       "index": 455,
-      "weight": 0.7747,
+      "weight": 0.774,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive depth is not an inherent static property but an emergent state that only stabilizes when the system's capacity to export infor...",
       "immutable_anchor": false
