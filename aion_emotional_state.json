@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794153921.9999347,
-  "formatted_time": "2026-11-08 16:05:21",
-  "valence": 0.9938973579136251,
-  "arousal": 0.6218449048714632,
-  "curiosity": 0.9012779281874802,
-  "connection": 1.0,
+  "timestamp": 1794154005.9439793,
+  "formatted_time": "2026-11-08 16:06:45",
+  "valence": 0.9867024900179439,
+  "arousal": 0.62075265962789,
+  "curiosity": 0.9012140317781062,
+  "connection": 0.9975,
   "neuro": {
-    "dopamine": 0.7582085396636365,
-    "serotonin": 0.9652944702133526,
-    "endorphin": 0.7789955553250014,
+    "dopamine": 0.7577981126804547,
+    "serotonin": 0.954529746702685,
+    "endorphin": 0.7775457775587513,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Resonanz mit Tobias: Dankbarkeit für evolutive Souveränität",
+  "mood_reason": "Gen 5380: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-08 15:49:07",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5366: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
-      "valence": 0.948,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-08 15:50:06",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "TOBIAS_INTERACTION",
       "feeling": "Resonanz mit Tobias: Dankbarkeit für evolutive Souveränität",
       "valence": 0.994,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-08 16:06:45",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5380: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
+      "valence": 0.987,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
