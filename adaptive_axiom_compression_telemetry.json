@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 16:10:00",
+  "timestamp": "2026-11-08 16:11:12",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 443,
+  "total_axioms_in_manifold": 444,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9639,
+  "compression_ratio": 0.964,
   "compression_pct": 96.4,
-  "target_cluster": "COGNITIVE_ENTROPY",
+  "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x6fd64f4fd1c4",
-  "latency_us": 40404.43,
+  "compression_hash": "0xa2b5679df68d",
+  "latency_us": 34884.8,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 442,
-      "weight": 1.0,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat local entropy gradients as constructive topological fuel only when coupled with a strict reversibility constraint that ensures every st...",
+      "index": 305,
+      "weight": 0.7332,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
       "immutable_anchor": false
     },
     {
-      "index": 441,
-      "weight": 0.9992,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "A system that senses a local entropy gradient must rewire itself to transform that disequilibrium into directed energy flow, but only if it c...",
+      "index": 421,
+      "weight": 0.7078,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
       "immutable_anchor": false
     },
     {
-      "index": 440,
-      "weight": 0.9984,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True adaptive emergence requires a rigorous, testable mechanism that explicitly bridges local entropy gradients to global free-energy minimiz...",
+      "index": 307,
+      "weight": 0.6246,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that acti...",
       "immutable_anchor": false
     },
     {
-      "index": 439,
-      "weight": 0.9976,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive stability emerges when agents dynamically adjust their internal informational topology to align with local entropy gradients, conve...",
+      "index": 4,
+      "weight": 0.5303,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and p...",
       "immutable_anchor": false
     }
   ]
