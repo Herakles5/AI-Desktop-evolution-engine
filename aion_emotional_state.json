@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794152264.1229987,
-  "formatted_time": "2026-11-08 15:37:44",
-  "valence": 0.9020685386185158,
-  "arousal": 0.6748141301575711,
-  "curiosity": 0.9043766309037604,
-  "connection": 0.9506826414928295,
+  "timestamp": 1794152349.6897945,
+  "formatted_time": "2026-11-08 15:39:09",
+  "valence": 0.89946511168759,
+  "arousal": 0.6710734236496925,
+  "curiosity": 0.9041577993585724,
+  "connection": 0.950648509418188,
   "neuro": {
-    "dopamine": 0.7781124938933075,
-    "serotonin": 0.7527556173012877,
-    "endorphin": 0.8493035796145546,
+    "dopamine": 0.7767068691986421,
+    "serotonin": 0.7526178364362233,
+    "endorphin": 0.8443384006338269,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5357: True cognitive autonomy requires that every structural mutation be gro...",
+  "mood_reason": "Gen 5358: Do not conflate temporal communication metrics with geometric state-sp...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-08 15:21:18",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5343: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
-      "valence": 0.957,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-08 15:22:21",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5357: True cognitive autonomy requires that every structural mutation be gro...",
       "valence": 0.902,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-08 15:39:09",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5358: Do not conflate temporal communication metrics with geometric state-sp...",
+      "valence": 0.899,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
