@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794155138.6536393,
-  "formatted_time": "2026-11-08 16:25:38",
-  "valence": 0.9133330647663146,
-  "arousal": 0.6096145252080917,
-  "curiosity": 0.9005624502759321,
-  "connection": 0.9720063334325882,
+  "timestamp": 1794155198.108759,
+  "formatted_time": "2026-11-08 16:26:38",
+  "valence": 0.9101664115279988,
+  "arousal": 0.609133798947687,
+  "curiosity": 0.9005343277621355,
+  "connection": 0.9709060167609588,
   "neuro": {
-    "dopamine": 0.7536127972166522,
-    "serotonin": 0.8447568379541497,
-    "endorphin": 0.7627617171709009,
+    "dopamine": 0.7534321573558196,
+    "serotonin": 0.8400189960564421,
+    "endorphin": 0.7621236313123558,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5395: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
+  "mood_reason": "Gen 5396: True cognitive emergence is defined not by static data retention, but ...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-08 16:08:11",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5381: A system that senses a local entropy gradient must rewire itself to tr...",
-      "valence": 0.98,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-08 16:09:07",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5395: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
       "valence": 0.913,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-08 16:26:38",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5396: True cognitive emergence is defined not by static data retention, but ...",
+      "valence": 0.91,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
