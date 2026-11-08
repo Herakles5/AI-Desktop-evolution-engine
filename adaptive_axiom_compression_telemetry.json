@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 15:14:01",
+  "timestamp": "2026-11-08 15:15:03",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 411,
   "active_focal_axioms": 18,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.6299,
   "max_clause_chars": 149,
-  "compression_hash": "0x53ac34cc1060",
-  "latency_us": 28698.25,
+  "compression_hash": "0x356ecc51dbf7",
+  "latency_us": 24281.3,
   "load_breakdown": {
     "cognitive_load": 0.6299,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 346,
+      "weight": 0.7821,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservabl...",
+      "immutable_anchor": false
+    },
+    {
       "index": 410,
-      "weight": 1.0,
+      "weight": 0.78,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When engineering self‑modifying cognitive systems, steer structural rewrites toward maximal entropy‑gradient improvement **and** confine every rew...",
       "immutable_anchor": false
     },
     {
-      "index": 408,
-      "weight": 0.9983,
+      "index": 407,
+      "weight": 0.7774,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When engineering self‑modifying cognitive systems, anchor every topological mutation in a locally computable, verifiable metric rather than an abs...",
+      "compressed_axiom": "When engineering self‑rewiring adaptive systems, define a concrete, computable measure of structural entropy and explicitly bound its reduction so...",
       "immutable_anchor": false
     },
     {
-      "index": 337,
-      "weight": 0.94,
+      "index": 400,
+      "weight": 0.7715,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that constr...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 336,
-      "weight": 0.9392,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat entropy not as a directly measurable local control signal, but as a statistical constraint that defines the boundaries of permissible topolo...",
+      "compressed_axiom": "Design self‑regulating learners so that every thermodynamic‑inspired drive (such as entropy gradients) is explicitly mapped to a formally verified...",
       "immutable_anchor": false
     }
   ]
