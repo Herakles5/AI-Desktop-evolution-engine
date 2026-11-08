@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:08:12",
+  "timestamp": "2026-11-08 15:09:09",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 405,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9556,
-  "compression_pct": 95.6,
+  "total_axioms_in_manifold": 406,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9581,
+  "compression_pct": 95.8,
   "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6462,
-  "max_clause_chars": 148,
-  "compression_hash": "0xacdd928448c7",
-  "latency_us": 31358.47,
+  "cognitive_load_factor": 0.6726,
+  "max_clause_chars": 146,
+  "compression_hash": "0x374e797aecdf",
+  "latency_us": 41659.62,
   "load_breakdown": {
-    "cognitive_load": 0.6462,
+    "cognitive_load": 0.6726,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6942
+    "cpu_strain": 0.8258
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 399,
-      "weight": 0.8857,
+      "weight": 0.9948,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably raisin...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 395,
-      "weight": 0.8822,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes whose...",
+      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably rais...",
       "immutable_anchor": false
     },
     {
       "index": 402,
-      "weight": 0.8333,
+      "weight": 0.8874,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to explic...",
+      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to expl...",
       "immutable_anchor": false
     },
     {
       "index": 377,
-      "weight": 0.8119,
+      "weight": 0.8661,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat structural entropy as a dynamic signal for adaptive topology refinement rather than a static geometric property, acknowledging that each pr...",
+      "compressed_axiom": "Treat structural entropy as a dynamic signal for adaptive topology refinement rather than a static geometric property, acknowledging that each...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 339,
+      "weight": 0.8349,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariant...",
       "immutable_anchor": false
     }
   ]
