@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 21:15:53",
+  "timestamp": "2026-11-08 21:17:36",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 422,
+  "total_axioms_in_manifold": 423,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9621,
+  "compression_ratio": 0.9622,
   "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xf44e181e1d01",
-  "latency_us": 31756.49,
+  "compression_hash": "0x0aea21bd6cfb",
+  "latency_us": 38499.39,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 421,
-      "weight": 0.78,
+      "weight": 0.7792,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is...",
       "immutable_anchor": false
     },
     {
       "index": 414,
-      "weight": 0.7742,
+      "weight": 0.7734,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     },
     {
       "index": 412,
-      "weight": 0.7725,
+      "weight": 0.7717,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
       "immutable_anchor": false
     },
     {
       "index": 410,
-      "weight": 0.7709,
+      "weight": 0.7701,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certificat...",
       "immutable_anchor": false
