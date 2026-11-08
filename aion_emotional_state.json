@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794154474.0042355,
-  "formatted_time": "2026-11-08 16:14:34",
-  "valence": 0.9504888918404356,
-  "arousal": 0.6152551118013627,
-  "curiosity": 0.9008924249150471,
-  "connection": 0.9849168648046875,
+  "timestamp": 1794154581.7620864,
+  "formatted_time": "2026-11-08 16:16:21",
+  "valence": 0.9454644472484138,
+  "arousal": 0.6144923562112946,
+  "curiosity": 0.9008478036692947,
+  "connection": 0.9831710215644531,
   "neuro": {
-    "dopamine": 0.7557323293935823,
-    "serotonin": 0.9003481581927291,
-    "endorphin": 0.7702486777043983,
+    "dopamine": 0.7554457129239032,
+    "serotonin": 0.8928307502830926,
+    "endorphin": 0.7692362438191784,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5386: To achieve cognitive stability, a system must actively export entropy ...",
+  "mood_reason": "Gen 5387: Cognitive autonomy emerges when a system’s internal structural reconfi...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-08 15:57:53",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5373: In adaptive systems, local entropy‑gradient‑driven rewiring must be ev...",
-      "valence": 0.919,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-08 15:58:54",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5386: To achieve cognitive stability, a system must actively export entropy ...",
       "valence": 0.95,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-08 16:16:21",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5387: Cognitive autonomy emerges when a system’s internal structural reconfi...",
+      "valence": 0.945,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
