@@ -349,5 +349,13 @@
     "gradient_force": 0.1115,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-11-06 18:28:22"
+  },
+  {
+    "generation": 5304,
+    "title": "Energy‑Constrained Entropy‑Gradient Controller (ECGC) for Stable Self‑Re‑topologization",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.4043,
+    "cluster": "COGNITIVE_ENTROPY",
+    "timestamp": "2026-11-08 14:36:06"
   }
 ]
