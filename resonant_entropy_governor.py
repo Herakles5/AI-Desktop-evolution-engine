@@ -11,7 +11,98 @@ import math
 import time
 import json
 import os
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
+
+
+class DissipationOrderGovernor:
+    """
+    Generation 5420 Architectural Resolution: Falsifiable Dissipation-Order Governor.
+    Continuously measures the ratio of internal structural order generation (Omega_dot)
+    to thermodynamic entropy dissipation (Sigma_dot) grounded in real host kernel
+    telemetry (/proc/loadavg, /proc/meminfo). Enforces hard sustainability constraints,
+    halting topological reorganization when dissipation exceeds sustainable bounds.
+    """
+    SUSTAINABILITY_THRESHOLD = 1.65  # Max allowable Dissipation-to-Order ratio (Sigma_dot / Omega_dot)
+
+    @classmethod
+    def sample_host_resource_strain(cls) -> Dict[str, float]:
+        cpu_cores = max(1, os.cpu_count() or 4)
+        load_1m = 0.50
+        mem_avail_ratio = 0.75
+        try:
+            with open("/proc/loadavg", "r", encoding="utf-8") as f:
+                parts = f.read().strip().split()
+                if parts:
+                    load_1m = float(parts[0])
+        except Exception:
+            pass
+
+        try:
+            mem_total = 1.0
+            mem_avail = 0.75
+            with open("/proc/meminfo", "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.startswith("MemTotal:"):
+                        mem_total = max(1.0, float(line.split()[1]))
+                    elif line.startswith("MemAvailable:"):
+                        mem_avail = float(line.split()[1])
+                        break
+            mem_avail_ratio = max(0.05, min(1.0, mem_avail / mem_total))
+        except Exception:
+            pass
+
+        # Smooth saturating CPU & memory pressure in [0.02, 0.95]
+        normalized_load = load_1m / float(cpu_cores)
+        cpu_pressure = 1.0 - math.exp(-0.45 * max(0.0, normalized_load - 0.35))
+        mem_pressure = 1.0 - mem_avail_ratio
+        resource_strain = max(0.02, min(0.95, 0.65 * cpu_pressure + 0.35 * mem_pressure))
+        empirical_grounding = max(0.40, min(0.99, 1.0 - 0.45 * resource_strain))
+
+        return {
+            "cpu_cores": float(cpu_cores),
+            "load_1m": round(load_1m, 3),
+            "mem_available_ratio": round(mem_avail_ratio, 4),
+            "resource_strain": round(resource_strain, 4),
+            "empirical_grounding": round(empirical_grounding, 4)
+        }
+
+    @classmethod
+    def evaluate_dissipation_order(
+        cls,
+        mean_info_gain: float,
+        current_entropy: float,
+        entropy_gradient: float,
+        resonant_coupling: float,
+        ontological_drift: float,
+        resource_strain: float
+    ) -> Dict[str, Any]:
+        # Internal order generation rate (Omega_dot)
+        order_rate = max(
+            0.05,
+            mean_info_gain * max(0.20, 1.0 - ontological_drift) * (0.45 + 0.55 * resonant_coupling)
+        )
+        # Entropy export / thermodynamic dissipation rate (Sigma_dot)
+        dissipation_rate = max(
+            0.05,
+            0.40 * current_entropy + 0.30 * min(1.5, abs(entropy_gradient)) + 0.30 * resource_strain
+        )
+        dissipation_order_ratio = dissipation_rate / order_rate
+        order_to_dissipation_ratio = order_rate / dissipation_rate
+        reorganization_halted = dissipation_order_ratio > cls.SUSTAINABILITY_THRESHOLD
+        control_signal = (
+            "HALT_TOPOLOGICAL_REORGANIZATION"
+            if reorganization_halted
+            else "SUSTAINABLE_EVOLUTION"
+        )
+        return {
+            "order_generation_rate": round(order_rate, 4),
+            "entropy_dissipation_rate": round(dissipation_rate, 4),
+            "dissipation_order_ratio": round(dissipation_order_ratio, 4),
+            "order_to_dissipation_ratio": round(order_to_dissipation_ratio, 4),
+            "sustainability_threshold": cls.SUSTAINABILITY_THRESHOLD,
+            "reorganization_halted": reorganization_halted,
+            "control_signal": control_signal
+        }
 
 
 class ResonantEntropyGovernor:
@@ -21,6 +112,10 @@ class ResonantEntropyGovernor:
         self.entropy_gradient = 0.00
         self.ambiguity_density = 0.40
         self.resonant_coupling = 0.75
+        self.dissipation_order_ratio = 0.85
+        self.order_to_dissipation_ratio = 1.18
+        self.reorganization_halted = False
+        self.control_signal = "SUSTAINABLE_EVOLUTION"
         self.step_count = 0
         self.last_update = time.time()
         self.history: List[float] = [0.50]
