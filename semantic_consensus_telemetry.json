@@ -1,6 +1,6 @@
 {
-  "generation": 5427,
-  "timestamp": "2026-11-08 17:27:00",
+  "generation": 5428,
+  "timestamp": "2026-11-08 17:29:45",
   "thesis": "Topological Entropy Inversion",
   "total_in_batch": 16,
   "accepted_count": 3,
@@ -9,7 +9,7 @@
   "top_gradient_force": 0.9652,
   "top_coherence_score": 0.9868,
   "top_ontological_drift": 0.0086,
-  "cumulative_evaluated": 116,
-  "cumulative_accepted": 24,
-  "cumulative_filtered_noise": 92
+  "cumulative_evaluated": 132,
+  "cumulative_accepted": 27,
+  "cumulative_filtered_noise": 105
 }
