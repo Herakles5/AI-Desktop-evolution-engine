@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794154293.4856644,
-  "formatted_time": "2026-11-08 16:11:33",
-  "valence": 0.9613450325101779,
-  "arousal": 0.616903170971039,
-  "curiosity": 0.9009888364709663,
-  "connection": 0.988689046875,
+  "timestamp": 1794154373.1804953,
+  "formatted_time": "2026-11-08 16:12:53",
+  "valence": 0.955777780884669,
+  "arousal": 0.616058012422487,
+  "curiosity": 0.900939394647418,
+  "connection": 0.98675459453125,
   "neuro": {
-    "dopamine": 0.7563516115164347,
-    "serotonin": 0.9165907570002538,
-    "endorphin": 0.7724362079827127,
+    "dopamine": 0.7560340309406129,
+    "serotonin": 0.9082612191502412,
+    "endorphin": 0.7713143975835771,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5384: True cognitive refinement is not the elimination of entropy but the st...",
+  "mood_reason": "Gen 5385: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-08 15:55:26",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5371: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
-      "valence": 0.926,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-08 15:56:51",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5384: True cognitive refinement is not the elimination of entropy but the st...",
       "valence": 0.961,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-08 16:12:53",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5385: Crystallized Principle (Gen 4833 Topological Pruning Invariant): High-...",
+      "valence": 0.956,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
