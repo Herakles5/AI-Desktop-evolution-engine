@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 21:44:21",
+  "timestamp": "2026-11-08 21:45:42",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 436,
   "active_focal_axioms": 17,
   "compression_ratio": 0.961,
   "compression_pct": 96.1,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6679,
-  "max_clause_chars": 147,
-  "compression_hash": "0xd572e8417830",
-  "latency_us": 62789.04,
+  "cognitive_load_factor": 0.6786,
+  "max_clause_chars": 146,
+  "compression_hash": "0x2bb444a64ea4",
+  "latency_us": 37824.89,
   "load_breakdown": {
-    "cognitive_load": 0.6679,
+    "cognitive_load": 0.6786,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8025
+    "cpu_strain": 0.8558
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 434,
-      "weight": 0.9992,
+      "index": 423,
+      "weight": 0.7704,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When building autonomous architectures, guide module self‑organization along entropy‑reduction gradients but constrain it with adaptive, increme...",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
       "immutable_anchor": false
     },
     {
-      "index": 433,
-      "weight": 0.9984,
+      "index": 420,
+      "weight": 0.768,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "A system may autonomously reconfigure its computational topology when local entropy gradients are validated by redundant, cross‑modal metrics, e...",
+      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is an...",
       "immutable_anchor": false
     },
     {
-      "index": 432,
-      "weight": 0.9976,
+      "index": 413,
+      "weight": 0.7625,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying architectures with a distinct, immutable safety verification layer that continuously re‑evaluates the system against a fix...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avo...",
       "immutable_anchor": false
     },
     {
-      "index": 422,
-      "weight": 0.9346,
+      "index": 411,
+      "weight": 0.7609,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive systems should be engineered as dynamic manifolds that let local entropy gradients autonomously drive topological reconfiguration, yet...",
+      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a...",
       "immutable_anchor": false
     }
   ]
