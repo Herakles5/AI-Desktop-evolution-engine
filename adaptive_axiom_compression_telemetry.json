@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:11:05",
+  "timestamp": "2026-11-08 15:12:03",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 408,
+  "total_axioms_in_manifold": 409,
   "active_focal_axioms": 18,
-  "compression_ratio": 0.9559,
+  "compression_ratio": 0.956,
   "compression_pct": 95.6,
   "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6597,
-  "max_clause_chars": 147,
-  "compression_hash": "0xd0d61dbb0215",
-  "latency_us": 30094.19,
+  "cognitive_load_factor": 0.6507,
+  "max_clause_chars": 148,
+  "compression_hash": "0x45f80d57bebe",
+  "latency_us": 35589.39,
   "load_breakdown": {
-    "cognitive_load": 0.6597,
+    "cognitive_load": 0.6507,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7617
+    "cpu_strain": 0.7167
   },
   "top_weighted_axioms": [
     {
@@ -25,29 +25,29 @@
       "immutable_anchor": true
     },
     {
-      "index": 399,
-      "weight": 0.9931,
+      "index": 406,
+      "weight": 0.9983,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably raisi...",
+      "compressed_axiom": "Ensure that any self‑modifying or self‑optimizing system is built on precisely defined, measurable metrics for entropy change, explicit topologic...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 399,
+      "weight": 0.9923,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably raisin...",
       "immutable_anchor": false
     },
     {
       "index": 402,
-      "weight": 0.9407,
+      "weight": 0.9399,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to expli...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 406,
-      "weight": 0.8891,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Ensure that any self‑modifying or self‑optimizing system is built on precisely defined, measurable metrics for entropy change, explicit topologi...",
+      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to explic...",
       "immutable_anchor": false
     },
     {
       "index": 339,
-      "weight": 0.8885,
+      "weight": 0.8879,
       "cluster": "SYSTEM_GOVERNANCE",
       "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants...",
       "immutable_anchor": false
