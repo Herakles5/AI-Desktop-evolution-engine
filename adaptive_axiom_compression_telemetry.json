@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:10:09",
+  "timestamp": "2026-11-08 15:11:05",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 407,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9582,
-  "compression_pct": 95.8,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6749,
-  "max_clause_chars": 146,
-  "compression_hash": "0x8206e6907d66",
-  "latency_us": 42142.09,
+  "total_axioms_in_manifold": 408,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9559,
+  "compression_pct": 95.6,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6597,
+  "max_clause_chars": 147,
+  "compression_hash": "0xd0d61dbb0215",
+  "latency_us": 30094.19,
   "load_breakdown": {
-    "cognitive_load": 0.6749,
+    "cognitive_load": 0.6597,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8375
+    "cpu_strain": 0.7617
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 404,
-      "weight": 0.9983,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Continuously steer a system’s structure toward lower complexity by measuring only computable, local proxies of entropy and applying incremental...",
+      "index": 399,
+      "weight": 0.9931,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably raisi...",
       "immutable_anchor": false
     },
     {
-      "index": 403,
-      "weight": 0.9974,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to evolve only along computable, locally measurable information‑gain gradients while explicitly bounding all operations...",
+      "index": 402,
+      "weight": 0.9407,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to expli...",
       "immutable_anchor": false
     },
     {
-      "index": 350,
-      "weight": 0.9531,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design cognitive systems to map entropy gradients onto a mathematically defined curvature field over semantic topology, using explicit, computa...",
+      "index": 406,
+      "weight": 0.8891,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Ensure that any self‑modifying or self‑optimizing system is built on precisely defined, measurable metrics for entropy change, explicit topologi...",
       "immutable_anchor": false
     },
     {
-      "index": 337,
-      "weight": 0.9426,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to harness internal entropy gradients for adaptive topology, but embed continuous invariant‑check mechanisms that con...",
+      "index": 339,
+      "weight": 0.8885,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants...",
       "immutable_anchor": false
     }
   ]
