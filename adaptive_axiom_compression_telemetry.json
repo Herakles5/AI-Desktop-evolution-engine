@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 21:38:01",
+  "timestamp": "2026-11-08 21:39:49",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 432,
+  "total_axioms_in_manifold": 433,
   "active_focal_axioms": 16,
   "compression_ratio": 0.963,
   "compression_pct": 96.3,
   "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x4e92609d8e4f",
-  "latency_us": 39272.02,
+  "compression_hash": "0xd34581a921df",
+  "latency_us": 35967.38,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,29 +25,29 @@
       "immutable_anchor": true
     },
     {
-      "index": 402,
-      "weight": 0.7018,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions...",
-      "immutable_anchor": false
-    },
-    {
       "index": 250,
-      "weight": 0.7016,
+      "weight": 0.7012,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
       "immutable_anchor": false
     },
     {
+      "index": 402,
+      "weight": 0.701,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions...",
+      "immutable_anchor": false
+    },
+    {
       "index": 360,
-      "weight": 0.6693,
+      "weight": 0.6687,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
       "immutable_anchor": false
     },
     {
       "index": 395,
-      "weight": 0.5333,
+      "weight": 0.5325,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Adapt system structures by iteratively moving toward configurations that maximize a rigorously defined, bounded entropy measure, while enforc...",
       "immutable_anchor": false
