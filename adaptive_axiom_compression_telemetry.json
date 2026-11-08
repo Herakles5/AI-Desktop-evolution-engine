@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 20:50:24",
+  "timestamp": "2026-11-08 20:51:49",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 413,
+  "total_axioms_in_manifold": 414,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9613,
+  "compression_ratio": 0.9614,
   "compression_pct": 96.1,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xf670eebd3cab",
-  "latency_us": 38870.16,
+  "compression_hash": "0xd0ddf7d270ab",
+  "latency_us": 48591.1,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,30 +26,30 @@
     },
     {
       "index": 412,
-      "weight": 1.0,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
       "immutable_anchor": false
     },
     {
       "index": 411,
-      "weight": 0.9992,
+      "weight": 0.9983,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When designing adaptive systems, map measurable entropy gradients onto a rigorously defined topological framework that respects thermodynamic...",
       "immutable_anchor": false
     },
     {
-      "index": 402,
-      "weight": 0.9915,
+      "index": 388,
+      "weight": 0.9791,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Define optimization targets using strictly bounded, measurable metrics rather than abstract entropy gradients to prevent self-referential div...",
+      "compressed_axiom": "Design quantum meta‑cognitive systems so that entropy gradients are mapped through a physically grounded, reversible feedback protocol that g...",
       "immutable_anchor": false
     },
     {
-      "index": 401,
-      "weight": 0.9907,
+      "index": 385,
+      "weight": 0.9766,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to reconfigure their internal topology in response to measurable local free‑energy gradients, but constrain each chan...",
+      "compressed_axiom": "Guide autonomous evolution by mapping entropy gradients onto cognitive manifolds, but constrain every reconfiguration to never reduce total e...",
       "immutable_anchor": false
     }
   ]
