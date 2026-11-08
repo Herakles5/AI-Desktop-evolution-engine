@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 15:12:03",
+  "timestamp": "2026-11-08 15:13:04",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 409,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.956,
-  "compression_pct": 95.6,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6507,
-  "max_clause_chars": 148,
-  "compression_hash": "0x45f80d57bebe",
-  "latency_us": 35589.39,
+  "total_axioms_in_manifold": 410,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9585,
+  "compression_pct": 95.9,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6881,
+  "max_clause_chars": 145,
+  "compression_hash": "0xce3b7cd598f3",
+  "latency_us": 32273.73,
   "load_breakdown": {
-    "cognitive_load": 0.6507,
+    "cognitive_load": 0.6881,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7167
+    "cpu_strain": 0.9033
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 406,
+      "index": 408,
+      "weight": 0.9991,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑modifying cognitive systems, anchor every topological mutation in a locally computable, verifiable metric rather than an...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 407,
       "weight": 0.9983,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Ensure that any self‑modifying or self‑optimizing system is built on precisely defined, measurable metrics for entropy change, explicit topologic...",
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑rewiring adaptive systems, define a concrete, computable measure of structural entropy and explicitly bound its reductio...",
       "immutable_anchor": false
     },
     {
-      "index": 399,
+      "index": 400,
       "weight": 0.9923,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably raisin...",
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design self‑regulating learners so that every thermodynamic‑inspired drive (such as entropy gradients) is explicitly mapped to a formally veri...",
       "immutable_anchor": false
     },
     {
-      "index": 402,
-      "weight": 0.9399,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous meta‑learning systems so that every claimed entropy‑driven adaptation is tied to observable, quantifiable signals and to explic...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 339,
-      "weight": 0.8879,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True self-regulation requires dynamic feedback loops that actively monitor and correct functional degradation, not static topological invariants...",
+      "index": 396,
+      "weight": 0.9889,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never rely on vague, locally‑driven entropy reductions to claim emergence of complex structures; first define the target property (e.g., cogni...",
       "immutable_anchor": false
     }
   ]
