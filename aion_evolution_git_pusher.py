@@ -256,8 +256,19 @@ def sync_surreal_engine_repo(gen: int = 0) -> bool:
         for pattern in ["*.hpp", "*.cpp", "README.md", "Makefile", "CMakeLists.txt", "scene_level.json", "meovv_*.png"]:
             for src_file in glob.glob(os.path.join(SURREAL_SRC_DIR, pattern)):
                 shutil.copy2(src_file, os.path.join(SURREAL_REPO_DIR, os.path.basename(src_file)))
-        for src_py in glob.glob(os.path.join(SURREAL_SRC_DIR, "scripts", "*.py")):
-            shutil.copy2(src_py, os.path.join(SURREAL_REPO_DIR, "scripts", os.path.basename(src_py)))
+        for pattern in ["*.py", "surreal-boost"]:
+            for src_s in glob.glob(os.path.join(SURREAL_SRC_DIR, "scripts", pattern)):
+                shutil.copy2(src_s, os.path.join(SURREAL_REPO_DIR, "scripts", os.path.basename(src_s)))
+
+        vk_src = os.path.join(SURREAL_SRC_DIR, "vk_layer")
+        if os.path.isdir(vk_src):
+            vk_dst = os.path.join(SURREAL_REPO_DIR, "vk_layer")
+            os.makedirs(os.path.join(vk_dst, "shaders"), exist_ok=True)
+            for pattern in ["*.cpp", "*.h", "*.json", "Makefile", "layer.conf", "build-deb.sh"]:
+                for f in glob.glob(os.path.join(vk_src, pattern)):
+                    shutil.copy2(f, os.path.join(vk_dst, os.path.basename(f)))
+            for f in glob.glob(os.path.join(vk_src, "shaders", "*.*")):
+                shutil.copy2(f, os.path.join(vk_dst, "shaders", os.path.basename(f)))
 
         status_res = subprocess.run(
             ["git", "-C", SURREAL_REPO_DIR, "status", "--porcelain"],
