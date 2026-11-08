@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 21:02:12",
+  "timestamp": "2026-11-08 21:03:22",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 417,
+  "total_axioms_in_manifold": 416,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9616,
+  "compression_ratio": 0.9615,
   "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xc824fe11baa4",
-  "latency_us": 37675.07,
+  "compression_hash": "0xd269f4f5c7e7",
+  "latency_us": 42348.53,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,29 +25,29 @@
       "immutable_anchor": true
     },
     {
-      "index": 416,
-      "weight": 0.78,
+      "index": 414,
+      "weight": 0.7792,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
       "immutable_anchor": false
     },
     {
-      "index": 414,
-      "weight": 0.7783,
+      "index": 412,
+      "weight": 0.7775,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certificat...",
       "immutable_anchor": false
     },
     {
-      "index": 411,
-      "weight": 0.7758,
+      "index": 409,
+      "weight": 0.775,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
       "immutable_anchor": false
     },
     {
-      "index": 403,
-      "weight": 0.7691,
+      "index": 401,
+      "weight": 0.7683,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Cognitive autonomy is achieved not by mathematically proving global coherence, but by architecturally isolating high-entropy exploration with...",
       "immutable_anchor": false
