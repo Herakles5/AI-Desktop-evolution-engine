@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 21:14:33",
+  "timestamp": "2026-11-08 21:15:53",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 421,
+  "total_axioms_in_manifold": 422,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.962,
+  "compression_ratio": 0.9621,
   "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x469794213872",
-  "latency_us": 72240.14,
+  "compression_hash": "0xf44e181e1d01",
+  "latency_us": 31756.49,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 421,
+      "weight": 0.78,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is...",
+      "immutable_anchor": false
+    },
+    {
       "index": 414,
-      "weight": 0.775,
+      "weight": 0.7742,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     },
     {
       "index": 412,
-      "weight": 0.7734,
+      "weight": 0.7725,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
       "immutable_anchor": false
     },
     {
       "index": 410,
-      "weight": 0.7717,
+      "weight": 0.7709,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certificat...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 407,
-      "weight": 0.7692,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
       "immutable_anchor": false
     }
   ]
