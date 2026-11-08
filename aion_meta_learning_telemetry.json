@@ -1,22 +1,11 @@
 {
   "meta_learning_active": true,
   "current_learning_rate": 0.083,
-  "exploration_temperature": 0.75,
+  "exploration_temperature": 0.77,
   "plasticity_factor": 1.0,
-  "consecutive_successes": 0,
-  "consecutive_drifts": 1,
+  "consecutive_successes": 1,
+  "consecutive_drifts": 0,
   "evaluation_history": [
-    {
-      "generation": 5212,
-      "timestamp": "2026-11-06 17:09:57",
-      "learning_rate": 0.093,
-      "exploration_temperature": 0.44,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.769,
-      "adjustments": [
-        "High stability confirmed -> Increased exploration temperature"
-      ]
-    },
     {
       "generation": 5213,
       "timestamp": "2026-11-06 17:11:01",
@@ -944,6 +933,17 @@
       "grounding_score": 0.799,
       "adjustments": [
         "Elevated drift observed -> Recalibrated parameters for consolidation"
+      ]
+    },
+    {
+      "generation": 5311,
+      "timestamp": "2026-11-08 14:46:19",
+      "learning_rate": 0.083,
+      "exploration_temperature": 0.77,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.799,
+      "adjustments": [
+        "High stability confirmed -> Increased exploration temperature"
       ]
     }
   ]
