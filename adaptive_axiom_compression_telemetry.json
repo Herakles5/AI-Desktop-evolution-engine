@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 16:06:20",
+  "timestamp": "2026-11-08 16:07:46",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 441,
   "active_focal_axioms": 16,
@@ -9,7 +9,7 @@
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
   "compression_hash": "0x083978380ba4",
-  "latency_us": 28756.94,
+  "latency_us": 30467.99,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
