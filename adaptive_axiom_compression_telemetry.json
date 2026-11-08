@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 16:53:06",
+  "timestamp": "2026-11-08 16:53:43",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 461,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9653,
-  "compression_pct": 96.5,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9631,
+  "compression_pct": 96.3,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.7066,
-  "max_clause_chars": 144,
-  "compression_hash": "0xbc3e35c7917f",
-  "latency_us": 29241.97,
+  "cognitive_load_factor": 0.6836,
+  "max_clause_chars": 146,
+  "compression_hash": "0xd5ab503598c5",
+  "latency_us": 42252.39,
   "load_breakdown": {
-    "cognitive_load": 0.7066,
+    "cognitive_load": 0.6836,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9958
+    "cpu_strain": 0.8808
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 305,
       "weight": 0.7256,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
       "immutable_anchor": false
     },
     {
       "index": 421,
       "weight": 0.6958,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guara...",
       "immutable_anchor": false
     },
     {
       "index": 307,
       "weight": 0.6169,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that acti...",
+      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that active...",
       "immutable_anchor": false
     },
     {
       "index": 4,
       "weight": 0.5303,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and p...",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and per...",
       "immutable_anchor": false
     }
   ]
