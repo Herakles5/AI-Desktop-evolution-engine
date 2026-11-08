@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 14:59:11",
+  "timestamp": "2026-11-08 15:00:35",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 399,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x2ef23f468dd2",
-  "latency_us": 110408.35,
+  "compression_hash": "0xe7f230c082cc",
+  "latency_us": 31063.58,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 398,
-      "weight": 1.0,
+      "index": 346,
+      "weight": 0.7905,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑evolving learners, always ground entropy‑based or gradient‑based metrics in a rigorously defined, computable formalism an...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
     },
     {
-      "index": 397,
-      "weight": 0.9991,
+      "index": 306,
+      "weight": 0.758,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑scaling cognitive architectures, tie every local rewrite to a measurable entropy‑gradient and to a clearly defined, compu...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
       "immutable_anchor": false
     },
     {
-      "index": 396,
-      "weight": 0.9982,
+      "index": 372,
+      "weight": 0.7574,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never rely on vague, locally‑driven entropy reductions to claim emergence of complex structures; first define the target property (e.g., cogn...",
+      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework...",
       "immutable_anchor": false
     },
     {
-      "index": 393,
-      "weight": 0.9956,
+      "index": 361,
+      "weight": 0.7481,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When engineering self‑organizing substrates, bind every entropy‑reducing local update to a precisely defined, quantifiable modularity metric...",
+      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
       "immutable_anchor": false
     }
   ]
