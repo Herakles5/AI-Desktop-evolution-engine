@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 17:20:43",
+  "timestamp": "2026-11-08 17:22:09",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 464,
+  "total_axioms_in_manifold": 465,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9655,
-  "compression_pct": 96.5,
+  "compression_ratio": 0.9656,
+  "compression_pct": 96.6,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x37648a17f856",
-  "latency_us": 27819.84,
+  "compression_hash": "0x8ef88188f07d",
+  "latency_us": 39189.17,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 460,
-      "weight": 0.7777,
+      "index": 463,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems by explicitly defining measurable energy gradients, reconfiguration rates, and entropy limits, then use these opera...",
+      "compressed_axiom": "Define optimization targets using strictly bounded, measurable metrics rather than abstract entropy gradients to prevent self-referential div...",
       "immutable_anchor": false
     },
     {
-      "index": 459,
-      "weight": 0.777,
+      "index": 462,
+      "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous systems to treat measurable local energy gradients as actionable control signals, mapping them onto explicitly defined topo...",
+      "compressed_axiom": "Design adaptive systems to reconfigure their internal topology in response to measurable local free‑energy gradients, but constrain each chan...",
       "immutable_anchor": false
     },
     {
-      "index": 456,
-      "weight": 0.7747,
+      "index": 461,
+      "weight": 0.9977,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution is governed not by the absolute rate of entropy export, but by the dynamic alignment between available free energy g...",
+      "compressed_axiom": "Adapt system structures by iteratively moving toward configurations that maximize a rigorously defined, bounded entropy measure, while enforc...",
       "immutable_anchor": false
     },
     {
-      "index": 455,
-      "weight": 0.774,
+      "index": 444,
+      "weight": 0.985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive depth is not an inherent static property but an emergent state that only stabilizes when the system's capacity to export infor...",
+      "compressed_axiom": "Cognitive autonomy emerges when a system’s internal structural reconfigurations generate more internal order than the entropy it exports, cre...",
       "immutable_anchor": false
     }
   ]
