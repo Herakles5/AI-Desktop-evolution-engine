@@ -146,10 +146,14 @@ class ResonantEntropyGovernor:
         self,
         current_state: List[Dict[str, Any]],
         task_queue_len: int,
-        external_shock: float = 0.0
+        external_shock: float = 0.0,
+        manifold_dim: int = 355,
+        ontological_drift: float = 0.0803,
+        gradient_force: Optional[float] = None
     ) -> Dict[str, Any]:
         """
-        Updates governor state following a cognitive cycle step.
+        Updates governor state following a cognitive cycle step, coupled to live
+        physical host telemetry and the Gen 5420 Falsifiable Dissipation-Order Governor.
         """
         now = time.time()
         dt = max(0.001, now - self.last_update)
@@ -157,17 +161,22 @@ class ResonantEntropyGovernor:
         self.step_count += 1
 
         # 1. Evaluate information gain variance across recent steps
-        gains = [s.get("info_gain", 0.5) for s in current_state[-6:]]
+        gains = [float(s.get("info_gain", 0.5)) for s in current_state[-6:]]
         if not gains:
             gains = [0.5, 0.5]
+        mean_info_gain = sum(gains) / len(gains)
 
         raw_h = self.calculate_shannon_entropy(gains)
 
         # 2. Ambiguity density across unresolved task states
         self.ambiguity_density = max(0.0, min(1.0, task_queue_len / 8.0))
 
+        # 2b. Sample real physical resource strain (replaces hardcoded 0.10)
+        host_hw = DissipationOrderGovernor.sample_host_resource_strain()
+        real_strain = host_hw["resource_strain"]
+
         # 3. Modulate target entropy
-        target_h = (raw_h * 0.55) + (self.ambiguity_density * 0.35) + (external_shock * 0.10)
+        target_h = (raw_h * 0.55) + (self.ambiguity_density * 0.30) + (real_strain * 0.10) + (external_shock * 0.05)
         target_h = max(0.0, min(1.0, target_h))
 
         # 3b. Generation 360: Thermodynamic coupling & explicit boundary constraints
@@ -189,7 +198,7 @@ class ResonantEntropyGovernor:
 
         if self.thermo_governor:
             self.current_entropy, self.entropy_gradient, thermo_telem = self.thermo_governor.apply_thermodynamic_bounds(
-                raw_gradient, dt, external_resource_strain=0.10
+                raw_gradient, dt, external_resource_strain=real_strain
             )
         else:
             alpha = 0.30
@@ -208,7 +217,7 @@ class ResonantEntropyGovernor:
             self.recommendation = "Inject stochastic perturbation; cognitive flow crystallizing prematurely."
         elif self.current_entropy > 0.75:
             self.mode = "CHAOTIC_DAMPING"
-            self.resonant_coupling = 0.20
+            self.resonant_coupling = 0.25
             self.recommended_temperature = 0.18
             self.recommendation = "Engage Mentor Axiom 0 damping; prevent semantic divergence."
         else:
@@ -217,16 +226,39 @@ class ResonantEntropyGovernor:
             self.recommended_temperature = 0.30
             self.recommendation = "Active sweet spot. Channeling ambiguity directly into structural evolution."
 
+        # 4b. Gen 5420 Falsifiable Dissipation-Order Governor
+        diss_order = DissipationOrderGovernor.evaluate_dissipation_order(
+            mean_info_gain=mean_info_gain,
+            current_entropy=self.current_entropy,
+            entropy_gradient=self.entropy_gradient,
+            resonant_coupling=self.resonant_coupling,
+            ontological_drift=ontological_drift,
+            resource_strain=real_strain
+        )
+        self.dissipation_order_ratio = diss_order["dissipation_order_ratio"]
+        self.order_to_dissipation_ratio = diss_order["order_to_dissipation_ratio"]
+        self.reorganization_halted = diss_order["reorganization_halted"]
+        self.control_signal = diss_order["control_signal"]
+
+        if self.reorganization_halted:
+            self.mode = "DISSIPATIVE_CONSERVATION"
+            self.recommended_temperature = min(self.recommended_temperature, 0.15)
+            self.recommendation = (
+                f"Dissipation/Order={self.dissipation_order_ratio:.2f} > {diss_order['sustainability_threshold']:.2f}: "
+                "halting structural drift and conserving manifold invariants."
+            )
+
         # 5. Generation 4833 & 4834: Predictive Curvature Vector & EGT=0.75 Topological Pruning Kernel
+        eff_grad_force = gradient_force if gradient_force is not None else (self.resonant_coupling * 0.5)
         pruning_k = {}
         try:
             from topological_pruning_kernel import pruning_engine
             pruning_k = pruning_engine.evaluate_state(
                 entropy_series=self.history[-16:],
-                ontological_drift=0.1695,
-                gradient_force=self.resonant_coupling * 0.5,
-                empirical_grounding=0.85,
-                current_manifold_dim=355
+                ontological_drift=ontological_drift,
+                gradient_force=eff_grad_force,
+                empirical_grounding=host_hw["empirical_grounding"],
+                current_manifold_dim=manifold_dim
             )
         except Exception:
             pass
@@ -241,6 +273,18 @@ class ResonantEntropyGovernor:
             "caec_effective_cost": pruning_k.get("caec_effective_cost", 0.88),
             "egt_pruning_triggered": pruning_k.get("pruning_triggered", False),
             "oracle_audit_hash": pruning_k.get("oracle_audit_hash", "0x249d5611a10e4834"),
+            "manifold_dim": manifold_dim,
+            "ontological_drift": round(ontological_drift, 4),
+            "resource_strain": real_strain,
+            "host_load_1m": host_hw["load_1m"],
+            "mem_available_ratio": host_hw["mem_available_ratio"],
+            "order_generation_rate": diss_order["order_generation_rate"],
+            "entropy_dissipation_rate": diss_order["entropy_dissipation_rate"],
+            "dissipation_order_ratio": self.dissipation_order_ratio,
+            "order_to_dissipation_ratio": self.order_to_dissipation_ratio,
+            "sustainability_threshold": diss_order["sustainability_threshold"],
+            "reorganization_halted": self.reorganization_halted,
+            "control_signal": self.control_signal,
             "ambiguity_density": round(self.ambiguity_density, 4),
             "resonant_coupling": round(self.resonant_coupling, 4),
             "mode": self.mode,
@@ -248,21 +292,24 @@ class ResonantEntropyGovernor:
             "recommendation": self.recommendation
         }
 
-        # Persist telemetry
+        # Persist telemetry atomically
         try:
-            with open(self.telemetry_file, "w", encoding="utf-8") as f:
+            tmp_file = self.telemetry_file + ".tmp"
+            with open(tmp_file, "w", encoding="utf-8") as f:
                 json.dump(telemetry, f, indent=2, ensure_ascii=False)
+            os.replace(tmp_file, self.telemetry_file)
         except Exception:
             pass
 
         return telemetry
 
     def get_status_banner(self) -> str:
-        """Returns concise visual ASCII resonance status banner."""
+        """Returns concise visual ASCII resonance & dissipation-order status banner."""
         bars = int(self.current_entropy * 20)
         gauge = "[" + "#" * bars + "-" * (20 - bars) + "]"
         sign = "+" if self.entropy_gradient >= 0 else ""
         return (
             f"[ENTROPY GOVERNOR] {gauge} H={self.current_entropy:.3f} "
-            f"(grad={sign}{self.entropy_gradient:.3f}/s) | Mode: {self.mode} | Coupling: {self.resonant_coupling:.2f}"
+            f"(grad={sign}{self.entropy_gradient:.3f}/s) | O/D={self.order_to_dissipation_ratio:.2f} "
+            f"[{self.control_signal}] | Mode: {self.mode}"
         )

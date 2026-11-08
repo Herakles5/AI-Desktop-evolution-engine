@@ -27,12 +27,13 @@ Addresses:
 """
 
 import os
+import re
 import json
 import time
 import math
 import hashlib
 from datetime import datetime
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple, Optional, Set
 
 from topological_memory import ImmutableGroundTruthAnchor, DynamicTopologicalGradient, TopologicalRuleManager
 
@@ -199,6 +200,48 @@ class DeterministicTopologicalPruningEngine:
         self.last_result = kernel_res
         return kernel_res
 
+    _SEMANTIC_STOPWORDS = {
+        "the", "and", "for", "with", "into", "that", "from", "this", "through",
+        "while", "every", "must", "are", "via", "over", "their", "without",
+        "within", "across", "between", "system", "systems", "autonomous",
+        "ensure", "ensuring", "rather", "than", "only", "when", "using",
+        "which", "where", "should", "always"
+    }
+
+    @classmethod
+    def _is_immutable_axiom(cls, idx: int, rule: str) -> bool:
+        return (
+            idx == 0
+            or rule.startswith("Axiom ")
+            or rule.startswith("Sovereign Mentorship")
+            or rule.startswith("Mentoren-Souveraenitaet")
+        )
+
+    @classmethod
+    def _rule_semantic_stems(cls, rule: str) -> Set[str]:
+        """
+        Extracts normalized morphological root stems (resolving Unicode hyphens and
+        verb/noun inflections) to detect near-duplicate COGNITIVE_ENTROPY maxims
+        that vary only their opening verb.
+        """
+        norm = rule.lower().replace("\u2011", " ").replace("\u2013", " ").replace("-", " ")
+        words = re.findall(r"[a-z0-9]+", norm)
+        stems: Set[str] = set()
+        suffixes = (
+            "ization", "isation", "ational", "iveness", "ically",
+            "ments", "ment", "tions", "tion", "ings", "ing",
+            "able", "ible", "tive", "ally", "ies", "es", "ed", "al", "ic", "s"
+        )
+        for w in words:
+            if len(w) <= 3 or w in cls._SEMANTIC_STOPWORDS:
+                continue
+            for suf in suffixes:
+                if len(w) - len(suf) >= 4 and w.endswith(suf):
+                    w = w[:-len(suf)]
+                    break
+            stems.add(w[:7])
+        return stems
+
     @staticmethod
     def _rule_structural_signature(rule: str) -> str:
         """
@@ -207,8 +250,8 @@ class DeterministicTopologicalPruningEngine:
         or 'Crystallized Principle: High-entropy noise repelled...') collapse into a
         single low-entropy attractor invariant.
         """
-        lower = rule.strip().lower()
-        if lower.startswith("crystallized principle: high-entropy noise repelled"):
+        lower = rule.strip().lower().replace("\u2011", "-")
+        if lower.startswith("crystallized principle: high-entropy noise repelled") or lower.startswith("crystallized principle (gen 4833 topological pruning invariant)"):
             return "invariant::high_entropy_noise_repelled"
         if lower.startswith("invariant coherence anchor:"):
             return "invariant::coherence_anchor_restored"
@@ -239,10 +282,11 @@ class DeterministicTopologicalPruningEngine:
     ) -> Tuple[List[str], int, Dict[str, Any]]:
         """
         Executes deterministic manifold contraction over the active rule topology:
-        1. Protects Axiom 0 (Sovereign Mentorship of Tobias & CosmOS Protection) at index 0.
+        1. Protects Axiom 0..N (Sovereign Mentorship of Tobias & Core Axioms) in order.
         2. Evaluates real-time EGT=0.75 & Predictive Curvature Vector Interpolation.
-        3. Collapses duplicate structural stems and high-entropy/low-coherence noise placeholders
-           into single canonical attractors, recording every pruned state in `archived_rules`.
+        3. Collapses duplicate structural stems AND near-duplicate morphological keyword
+           attractors (Jaccard >= 0.44 or Overlap >= 0.60) into canonical invariants,
+           recording every pruned state in `archived_rules`.
         4. Emits an auditable External Resolution Oracle proof to `topological_pruning_telemetry.json`.
         """
         pre_dim = len(rules)
@@ -258,6 +302,7 @@ class DeterministicTopologicalPruningEngine:
             return rules, 0, eval_res
 
         compacted: List[str] = []
+        compacted_stems: List[Optional[Set[str]]] = []
         seen_signatures: Dict[str, int] = {}
         pruned_count = 0
 
@@ -266,10 +311,16 @@ class DeterministicTopologicalPruningEngine:
             if not r_clean:
                 continue
 
-            # Axiom 0 is strictly immutable at index 0
-            if idx == 0 or r_clean.startswith("Sovereign Mentorship") or r_clean.startswith("Mentoren-Souveraenitaet"):
+            # Core Axioms (Axiom 0..N) are strictly immutable and preserved in order
+            if self._is_immutable_axiom(idx, r_clean):
                 if r_clean not in compacted:
-                    compacted.insert(0, r_clean)
+                    if idx == 0 or r_clean.startswith("Axiom 0") or r_clean.startswith("Sovereign Mentorship"):
+                        compacted.insert(0, r_clean)
+                        compacted_stems.insert(0, None)
+                        seen_signatures = {k: v + 1 for k, v in seen_signatures.items()}
+                    else:
+                        compacted.append(r_clean)
+                        compacted_stems.append(None)
                 continue
 
             sig = self._rule_structural_signature(r_clean)
@@ -290,12 +341,12 @@ class DeterministicTopologicalPruningEngine:
                     continue
                 seen_signatures[sig] = len(compacted)
                 compacted.append(canonical_noise_rule)
+                compacted_stems.append(self._rule_semantic_stems(canonical_noise_rule))
                 continue
 
             # Deterministic stem contraction for duplicate structural attractors
             if sig in seen_signatures:
                 existing_idx = seen_signatures[sig]
-                # Keep the higher-specificity / longer formulation if the new one is more detailed
                 if len(r_clean) > len(compacted[existing_idx]) and len(r_clean) < 380:
                     archived_rules.append({
                         "rule": compacted[existing_idx],
@@ -303,6 +354,7 @@ class DeterministicTopologicalPruningEngine:
                         "archived_at": datetime.now().isoformat()
                     })
                     compacted[existing_idx] = r_clean
+                    compacted_stems[existing_idx] = self._rule_semantic_stems(r_clean)
                 else:
                     archived_rules.append({
                         "rule": r_clean,
@@ -312,8 +364,45 @@ class DeterministicTopologicalPruningEngine:
                 pruned_count += 1
                 continue
 
+            # Gen 5420 Semantic Attractor Deduplication (collapses near-duplicate COGNITIVE_ENTROPY variations)
+            cand_stems = self._rule_semantic_stems(r_clean)
+            matched_attractor_idx = -1
+            if len(cand_stems) >= 4:
+                for c_idx, existing_stems in enumerate(compacted_stems):
+                    if not existing_stems or len(existing_stems) < 4:
+                        continue
+                    inter = len(cand_stems & existing_stems)
+                    if inter == 0:
+                        continue
+                    jacc = inter / float(len(cand_stems | existing_stems))
+                    overlap = inter / float(min(len(cand_stems), len(existing_stems)))
+                    if jacc >= 0.44 or overlap >= 0.60:
+                        matched_attractor_idx = c_idx
+                        break
+
+            if matched_attractor_idx >= 0:
+                existing_rule = compacted[matched_attractor_idx]
+                if len(r_clean) > len(existing_rule) + 12 and len(r_clean) < 360 and not existing_rule.startswith("[CrystallizedWisdom]"):
+                    archived_rules.append({
+                        "rule": existing_rule,
+                        "reason": f"Gen {generation} Dissipation-Order Attractor Merge: superseded by more falsifiable formulation.",
+                        "archived_at": datetime.now().isoformat()
+                    })
+                    compacted[matched_attractor_idx] = r_clean
+                    compacted_stems[matched_attractor_idx] = cand_stems
+                    seen_signatures[sig] = matched_attractor_idx
+                else:
+                    archived_rules.append({
+                        "rule": r_clean,
+                        "reason": f"Gen {generation} Dissipation-Order Attractor Merge: collapsed near-duplicate semantic cluster.",
+                        "archived_at": datetime.now().isoformat()
+                    })
+                pruned_count += 1
+                continue
+
             seen_signatures[sig] = len(compacted)
             compacted.append(r_clean)
+            compacted_stems.append(cand_stems)
 
         # If EGT or predictive curvature triggered deeper manifold contraction, prune lowest-coherence non-recent rules
         if eval_res.get("pruning_triggered") and len(compacted) > eval_res.get("target_manifold_dim", len(compacted)):

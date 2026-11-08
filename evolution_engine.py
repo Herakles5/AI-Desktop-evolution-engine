@@ -728,9 +728,13 @@ class AutonomousEvolutionEngine:
         self.current_state.append(step_entry)
         print(f" -> Insight: {insight}")
 
-        # Resonant Entropy Governor: Calculate cognitive entropy and gradients
+        # Resonant Entropy Governor & Gen 5420 Falsifiable Dissipation-Order Governor
         entropy_status = self.entropy_governor.update_from_engine_step(
-            self.current_state, len(self.task_queue)
+            self.current_state,
+            len(self.task_queue),
+            manifold_dim=len(self.knowledge_base.get("learned_rules", [])),
+            ontological_drift=getattr(self, "last_ontological_drift", 0.0803),
+            gradient_force=getattr(self, "last_gradient_force", 0.4088)
         )
         print(f" {self.entropy_governor.get_status_banner()}")
 
@@ -904,7 +908,10 @@ class AutonomousEvolutionEngine:
                 "entropy": round(self.entropy_governor.current_entropy, 4),
                 "gradient": round(self.entropy_governor.entropy_gradient, 4),
                 "mode": self.entropy_governor.mode,
-                "resonant_coupling": round(self.entropy_governor.resonant_coupling, 4)
+                "resonant_coupling": round(self.entropy_governor.resonant_coupling, 4),
+                "dissipation_order_ratio": round(getattr(self.entropy_governor, "dissipation_order_ratio", 0.85), 4),
+                "order_to_dissipation_ratio": round(getattr(self.entropy_governor, "order_to_dissipation_ratio", 1.18), 4),
+                "control_signal": getattr(self.entropy_governor, "control_signal", "SUSTAINABLE_EVOLUTION")
             }
         }
         # Dynamic Emotional State Resonance
@@ -1105,10 +1112,13 @@ class AutonomousEvolutionEngine:
         for r in rules:
             r_clean = r.strip()
             
-            # Sovereign Mentorship & CosmOS Protection is immutable Genesis Axiom
-            if r_clean.startswith("Sovereign Mentorship") or r_clean.startswith("Mentoren-Souveraenitaet"):
+            # Sovereign Mentorship & Core Axioms (Axiom 0..N) are immutable
+            if r_clean.startswith("Axiom ") or r_clean.startswith("Sovereign Mentorship") or r_clean.startswith("Mentoren-Souveraenitaet"):
                 if r_clean not in active_rules:
-                    active_rules.insert(0, r_clean)
+                    if r_clean.startswith("Axiom 0") or r_clean.startswith("Sovereign Mentorship") or r_clean.startswith("Mentoren-Souveraenitaet"):
+                        active_rules.insert(0, r_clean)
+                    else:
+                        active_rules.append(r_clean)
                 continue
 
             # 1. Prune early bootstrap placeholders
