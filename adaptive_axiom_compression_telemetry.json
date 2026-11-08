@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 16:47:17",
+  "timestamp": "2026-11-08 16:49:50",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 461,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9653,
   "compression_pct": 96.5,
-  "target_cluster": "DECENTRALIZED_MESH",
+  "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x292fb3c40350",
-  "latency_us": 71320.16,
+  "compression_hash": "0x7ec0ab48e941",
+  "latency_us": 69527.27,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 305,
-      "weight": 0.7256,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
+      "index": 460,
+      "weight": 0.78,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design autonomous systems to treat measurable local energy gradients as actionable control signals, mapping them onto explicitly defined topo...",
       "immutable_anchor": false
     },
     {
-      "index": 421,
-      "weight": 0.6958,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
+      "index": 457,
+      "weight": 0.7777,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive evolution is governed not by the absolute rate of entropy export, but by the dynamic alignment between available free energy g...",
       "immutable_anchor": false
     },
     {
-      "index": 307,
-      "weight": 0.6169,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Cognitive stability emerges not from suppressing stochastic latency, but by treating communication delay as a topological curvature that acti...",
+      "index": 456,
+      "weight": 0.777,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive depth is not an inherent static property but an emergent state that only stabilizes when the system's capacity to export infor...",
       "immutable_anchor": false
     },
     {
-      "index": 4,
-      "weight": 0.5303,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and p...",
+      "index": 454,
+      "weight": 0.7754,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive autonomy requires a dynamic, bidirectional coupling between reversible logical cores and dissipative peripheries, where the pe...",
       "immutable_anchor": false
     }
   ]
