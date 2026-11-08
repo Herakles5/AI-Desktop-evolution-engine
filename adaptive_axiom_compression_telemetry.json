@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-08 16:24:02",
+  "timestamp": "2026-11-08 16:25:28",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 452,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9624,
-  "compression_pct": 96.2,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9646,
+  "compression_pct": 96.5,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6951,
-  "max_clause_chars": 145,
-  "compression_hash": "0x5219ac9664f8",
-  "latency_us": 43992.14,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x8596a42bf555",
+  "latency_us": 29239.97,
   "load_breakdown": {
-    "cognitive_load": 0.6951,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9383
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 451,
-      "weight": 1.0,
+      "index": 446,
+      "weight": 0.7761,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design quantum meta‑cognitive systems so that entropy gradients are mapped through a physically grounded, reversible feedback protocol that go...",
+      "compressed_axiom": "Cognitive autonomy emerges when a system’s internal structural reconfigurations generate more internal order than the entropy it exports, cre...",
       "immutable_anchor": false
     },
     {
-      "index": 450,
-      "weight": 0.9992,
+      "index": 444,
+      "weight": 0.7746,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution requires distinguishing between thermodynamic and informational entropy, ensuring that any local reduction in disorde...",
+      "compressed_axiom": "True cognitive refinement is not the elimination of entropy but the strategic management of thermodynamic costs, where internal order is achi...",
       "immutable_anchor": false
     },
     {
-      "index": 449,
-      "weight": 0.9984,
+      "index": 442,
+      "weight": 0.773,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Use local entropy gradients as a guiding principle for autonomous topological evolution, but always balance any local entropy reduction with c...",
+      "compressed_axiom": "Treat local entropy gradients as constructive topological fuel only when coupled with a strict reversibility constraint that ensures every st...",
       "immutable_anchor": false
     },
     {
-      "index": 448,
-      "weight": 0.9977,
+      "index": 432,
+      "weight": 0.7654,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Guide autonomous evolution by mapping entropy gradients onto cognitive manifolds, but constrain every reconfiguration to never reduce total en...",
+      "compressed_axiom": "When designing self‑organizing cognitive systems, ensure that any transformation of entropy gradients into structural changes is defined by e...",
       "immutable_anchor": false
     }
   ]
