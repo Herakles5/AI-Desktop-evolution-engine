@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08 16:19:48",
+  "timestamp": "2026-11-08 16:20:51",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 448,
+  "total_axioms_in_manifold": 449,
   "active_focal_axioms": 16,
-  "compression_ratio": 0.9643,
+  "compression_ratio": 0.9644,
   "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x21c0150b6003",
-  "latency_us": 39396.77,
+  "compression_hash": "0xffd92d611ec0",
+  "latency_us": 33038.63,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 448,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Guide autonomous evolution by mapping entropy gradients onto cognitive manifolds, but constrain every reconfiguration to never reduce total e...",
+      "immutable_anchor": false
+    },
+    {
       "index": 446,
-      "weight": 0.7792,
+      "weight": 0.9984,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Cognitive autonomy emerges when a system’s internal structural reconfigurations generate more internal order than the entropy it exports, cre...",
       "immutable_anchor": false
     },
     {
       "index": 444,
-      "weight": 0.7777,
+      "weight": 0.9969,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive refinement is not the elimination of entropy but the strategic management of thermodynamic costs, where internal order is achi...",
       "immutable_anchor": false
     },
     {
-      "index": 442,
-      "weight": 0.7761,
+      "index": 441,
+      "weight": 0.9945,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat local entropy gradients as constructive topological fuel only when coupled with a strict reversibility constraint that ensures every st...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 432,
-      "weight": 0.7683,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑organizing cognitive systems, ensure that any transformation of entropy gradients into structural changes is defined by e...",
+      "compressed_axiom": "A system that senses a local entropy gradient must rewire itself to transform that disequilibrium into directed energy flow, but only if it c...",
       "immutable_anchor": false
     }
   ]
