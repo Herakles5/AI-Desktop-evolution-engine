@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-08 14:42:51",
+  "timestamp": "2026-11-08 14:43:59",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 390,
   "active_focal_axioms": 16,
@@ -8,8 +8,8 @@
   "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xf7602b4a13a1",
-  "latency_us": 155954.61,
+  "compression_hash": "0x77a2208ca788",
+  "latency_us": 119170.87,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 389,
-      "weight": 1.0,
+      "index": 346,
+      "weight": 0.7972,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying cognitive systems to trigger topology changes only on directly observable, quantifiable discrepancy signals—not on ill‑...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
       "immutable_anchor": false
     },
     {
-      "index": 388,
-      "weight": 0.9991,
+      "index": 372,
+      "weight": 0.7648,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑organizing networks so that each agent’s updates follow the steepest local entropy‑gradient while explicitly accounting for a con...",
+      "compressed_axiom": "When designing self‑referential systems that use entropy gradients to drive topological change, embed a formal, testable invariant framework...",
       "immutable_anchor": false
     },
     {
-      "index": 387,
-      "weight": 0.9982,
+      "index": 306,
+      "weight": 0.7637,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive scaling requires acknowledging that local order is not free; it must be purchased through the explicit expenditure of external...",
+      "compressed_axiom": "True systemic resilience emerges not from abstract entropy gradients, but from concrete energy or information flows that drive structural ada...",
       "immutable_anchor": false
     },
     {
-      "index": 368,
-      "weight": 0.9813,
+      "index": 361,
+      "weight": 0.7552,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design cognitive systems to autonomously reshape their architecture by translating measurable internal entropy gradients into concrete topolo...",
+      "compressed_axiom": "Adaptation thrives when systems translate measurable physical constraints into structural innovation, but only when the mapping is grounded i...",
       "immutable_anchor": false
     }
   ]
