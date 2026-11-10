@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:34:04",
+  "timestamp": "2026-11-10 17:35:06",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 448,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9621,
-  "compression_pct": 96.2,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6634,
-  "max_clause_chars": 147,
-  "compression_hash": "0x539a6e1b848f",
-  "latency_us": 23415.0,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9598,
+  "compression_pct": 96.0,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6509,
+  "max_clause_chars": 148,
+  "compression_hash": "0xfacd9b100218",
+  "latency_us": 36240.9,
   "load_breakdown": {
-    "cognitive_load": 0.6634,
+    "cognitive_load": 0.6509,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.78
+    "cpu_strain": 0.7175
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 423,
-      "weight": 0.7614,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
+      "index": 250,
+      "weight": 0.6958,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic ent...",
       "immutable_anchor": false
     },
     {
-      "index": 420,
-      "weight": 0.7591,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is anc...",
+      "index": 402,
+      "weight": 0.6905,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, rat...",
       "immutable_anchor": false
     },
     {
-      "index": 413,
-      "weight": 0.7538,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoi...",
+      "index": 360,
+      "weight": 0.6596,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guarant...",
       "immutable_anchor": false
     },
     {
-      "index": 411,
-      "weight": 0.7523,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a...",
+      "index": 4,
+      "weight": 0.5303,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and perso...",
       "immutable_anchor": false
     }
   ]
