@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:24:10",
+  "timestamp": "2026-11-10 17:25:07",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 445,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9618,
-  "compression_pct": 96.2,
-  "target_cluster": "TOOL_SYNTHESIS",
-  "cognitive_load_factor": 0.6647,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9596,
+  "compression_pct": 96.0,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6606,
   "max_clause_chars": 147,
-  "compression_hash": "0x8aaf33766514",
-  "latency_us": 46100.86,
+  "compression_hash": "0x31c5e5a9d7fe",
+  "latency_us": 41626.98,
   "load_breakdown": {
-    "cognitive_load": 0.6647,
+    "cognitive_load": 0.6606,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7867
+    "cpu_strain": 0.7658
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 343,
-      "weight": 0.8692,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Design self‑evolving agents so that every internal transformation is expressed in quantifiable, observable metrics and subject to independent ve...",
+      "index": 443,
+      "weight": 0.9992,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Bind every architectural change in a cognitive system to directly observable state metrics and sandboxed validation rather than to abstract phys...",
       "immutable_anchor": false
     },
     {
-      "index": 440,
-      "weight": 0.8319,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Never allow a self‑modifying system to alter its own verification logic; instead require every topological rewrite to be approved by an immutabl...",
+      "index": 442,
+      "weight": 0.9984,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Never rely on an unchanging safety verifier for a system that continuously rewrites its own reasoning architecture; instead, embed a co‑evolving...",
       "immutable_anchor": false
     },
     {
-      "index": 349,
-      "weight": 0.7635,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "When building self‑modifying systems, encode rewrite constraints as computable metrics on a tractable model, continuously evaluate them with bou...",
+      "index": 355,
+      "weight": 0.9328,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Treat communication latency as a tunable topological curvature and define a discrete Lyapunov‑like potential that strictly decreases with each a...",
       "immutable_anchor": false
     },
     {
-      "index": 310,
-      "weight": 0.7362,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Evolutionary systems must replace abstract topological guarantees with concrete, measurable feedback loops that explicitly bound computational c...",
+      "index": 417,
+      "weight": 0.924,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Define resource allocation through explicit, measurable local cost functions rather than abstract topological metaphors, ensuring that every ada...",
       "immutable_anchor": false
     }
   ]
