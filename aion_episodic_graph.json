@@ -29795,6 +29795,20 @@
       "label": "Gen_5489",
       "first_seen_gen": 5489,
       "importance": 0.8
+    },
+    "aion2_mastery_kill_3": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 3 Kills",
+      "avg_ttk": 21.8,
+      "exploration_rate": 0.3416,
+      "states_known": 9,
+      "timestamp": 1794182105.1744857
+    },
+    "gen_5490": {
+      "type": "CONCEPT",
+      "label": "Gen_5490",
+      "first_seen_gen": 5490,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -74502,6 +74516,21 @@
       "weight": 0.58,
       "episodes": [
         5489
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_3",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "gen_5490",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        5490
       ]
     }
   ]

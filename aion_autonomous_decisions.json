@@ -413,5 +413,13 @@
     "gradient_force": 0.1298,
     "cluster": "COGNITIVE_ENTROPY",
     "timestamp": "2026-11-08 21:27:50"
+  },
+  {
+    "generation": 5491,
+    "title": "Hierarchical Entropy‑Guided Adaptive Manifold Engine (HEG‑AME)",
+    "decision": "REQUIRES_FURTHER_GROUNDING",
+    "gradient_force": -0.0632,
+    "cluster": "COGNITIVE_ENTROPY",
+    "timestamp": "2026-11-10 17:06:33"
   }
 ]
