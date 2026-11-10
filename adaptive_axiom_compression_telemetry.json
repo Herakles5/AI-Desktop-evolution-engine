@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:27:08",
+  "timestamp": "2026-11-10 17:28:03",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 447,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9597,
-  "compression_pct": 96.0,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6551,
-  "max_clause_chars": 147,
-  "compression_hash": "0xd055ccf518f2",
-  "latency_us": 32517.67,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9575,
+  "compression_pct": 95.8,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6142,
+  "max_clause_chars": 150,
+  "compression_hash": "0x7e6e73c5c5da",
+  "latency_us": 37887.62,
   "load_breakdown": {
-    "cognitive_load": 0.6551,
+    "cognitive_load": 0.6142,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7383
+    "cpu_strain": 0.5342
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 446,
-      "weight": 1.0,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous learning systems so that every safety invariant and adaptation metric is explicitly computable and provably verifiable within...",
+      "index": 445,
+      "weight": 0.9992,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an ill‑s...",
       "immutable_anchor": false
     },
     {
-      "index": 417,
-      "weight": 0.9775,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Define resource allocation through explicit, measurable local cost functions rather than abstract topological metaphors, ensuring that every ada...",
+      "index": 438,
+      "weight": 0.9937,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topologica...",
       "immutable_anchor": false
     },
     {
-      "index": 443,
-      "weight": 0.9426,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Bind every architectural change in a cognitive system to directly observable state metrics and sandboxed validation rather than to abstract phys...",
+      "index": 437,
+      "weight": 0.993,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine can...",
       "immutable_anchor": false
     },
     {
-      "index": 442,
-      "weight": 0.9419,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never rely on an unchanging safety verifier for a system that continuously rewrites its own reasoning architecture; instead, embed a co‑evolving...",
+      "index": 439,
+      "weight": 0.9395,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design self‑modifying cognitive systems only by grounding every external entropy or energy gradient in precise, measurable terms and by mapping it...",
       "immutable_anchor": false
     }
   ]
