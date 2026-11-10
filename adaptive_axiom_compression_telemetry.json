@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:40:05",
+  "timestamp": "2026-11-10 17:41:16",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 450,
-  "active_focal_axioms": 19,
-  "compression_ratio": 0.9578,
-  "compression_pct": 95.8,
+  "total_axioms_in_manifold": 451,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9601,
+  "compression_pct": 96.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6182,
-  "max_clause_chars": 150,
-  "compression_hash": "0xe23fe954dc92",
-  "latency_us": 36110.47,
+  "cognitive_load_factor": 0.6352,
+  "max_clause_chars": 149,
+  "compression_hash": "0xd3bbeaefadfe",
+  "latency_us": 24916.53,
   "load_breakdown": {
-    "cognitive_load": 0.6182,
+    "cognitive_load": 0.6352,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.5542
+    "cpu_strain": 0.6392
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 422,
-      "weight": 0.7592,
+      "weight": 0.7585,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics to...",
       "immutable_anchor": false
     },
     {
       "index": 413,
-      "weight": 0.7524,
+      "weight": 0.7517,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoid t...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoid...",
       "immutable_anchor": false
     },
     {
       "index": 411,
-      "weight": 0.7509,
+      "weight": 0.7502,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a con...",
+      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a co...",
       "immutable_anchor": false
     },
     {
       "index": 409,
-      "weight": 0.7494,
+      "weight": 0.7487,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certification of...",
+      "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certification o...",
       "immutable_anchor": false
     }
   ]

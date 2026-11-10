@@ -7,17 +7,6 @@
   "consecutive_drifts": 0,
   "evaluation_history": [
     {
-      "generation": 5423,
-      "timestamp": "2026-11-08 17:20:55",
-      "learning_rate": 0.063,
-      "exploration_temperature": 0.76,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.958,
-      "adjustments": [
-        "Elevated drift observed -> Recalibrated parameters for consolidation"
-      ]
-    },
-    {
       "generation": 5424,
       "timestamp": "2026-11-08 17:22:22",
       "learning_rate": 0.063,
@@ -918,6 +907,15 @@
       "exploration_temperature": 0.81,
       "plasticity_factor": 1.0,
       "grounding_score": 0.862,
+      "adjustments": []
+    },
+    {
+      "generation": 5522,
+      "timestamp": "2026-11-10 17:41:27",
+      "learning_rate": 0.063,
+      "exploration_temperature": 0.81,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.911,
       "adjustments": []
     }
   ]
