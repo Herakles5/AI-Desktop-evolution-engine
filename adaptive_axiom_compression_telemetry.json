@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:10:03",
+  "timestamp": "2026-11-10 17:11:16",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 440,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9614,
-  "compression_pct": 96.1,
+  "total_axioms_in_manifold": 441,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9637,
+  "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6947,
-  "max_clause_chars": 145,
-  "compression_hash": "0x2df85a4c3b61",
-  "latency_us": 51760.43,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x4ea375fa732f",
+  "latency_us": 28274.64,
   "load_breakdown": {
-    "cognitive_load": 0.6947,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9367
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 439,
-      "weight": 1.0,
+      "index": 423,
+      "weight": 0.7666,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying cognitive systems only by grounding every external entropy or energy gradient in precise, measurable terms and by mappin...",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
       "immutable_anchor": false
     },
     {
-      "index": 438,
-      "weight": 0.9992,
+      "index": 420,
+      "weight": 0.7642,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topol...",
+      "compressed_axiom": "Cognitive evolution must decouple structural mutation from raw computational cost, ensuring that the threshold for accepting new insights is...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.9984,
+      "index": 413,
+      "weight": 0.7588,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     },
     {
-      "index": 436,
-      "weight": 0.9976,
+      "index": 411,
+      "weight": 0.7572,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**The Self‑Entropy Topology Principle**: a cognitive engine must continuously map local entropy gradients to topological reconfigurations of i...",
+      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as...",
       "immutable_anchor": false
     }
   ]
