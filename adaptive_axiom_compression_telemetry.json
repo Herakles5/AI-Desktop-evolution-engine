@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:23:09",
+  "timestamp": "2026-11-10 17:24:10",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 445,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9618,
   "compression_pct": 96.2,
   "target_cluster": "TOOL_SYNTHESIS",
-  "cognitive_load_factor": 0.6662,
+  "cognitive_load_factor": 0.6647,
   "max_clause_chars": 147,
-  "compression_hash": "0xfba83bf22759",
-  "latency_us": 33850.2,
+  "compression_hash": "0x8aaf33766514",
+  "latency_us": 46100.86,
   "load_breakdown": {
-    "cognitive_load": 0.6662,
+    "cognitive_load": 0.6647,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7942
+    "cpu_strain": 0.7867
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 343,
+      "weight": 0.8692,
+      "cluster": "TOOL_SYNTHESIS",
+      "compressed_axiom": "Design self‑evolving agents so that every internal transformation is expressed in quantifiable, observable metrics and subject to independent ve...",
+      "immutable_anchor": false
+    },
+    {
       "index": 440,
-      "weight": 0.9969,
+      "weight": 0.8319,
       "cluster": "TOOL_SYNTHESIS",
       "compressed_axiom": "Never allow a self‑modifying system to alter its own verification logic; instead require every topological rewrite to be approved by an immutabl...",
       "immutable_anchor": false
     },
     {
       "index": 349,
-      "weight": 0.9285,
+      "weight": 0.7635,
       "cluster": "TOOL_SYNTHESIS",
       "compressed_axiom": "When building self‑modifying systems, encode rewrite constraints as computable metrics on a tractable model, continuously evaluate them with bou...",
       "immutable_anchor": false
     },
     {
-      "index": 428,
-      "weight": 0.8775,
+      "index": 310,
+      "weight": 0.7362,
       "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Design self-organizing systems to optimize local performance metrics rather than claiming global thermodynamic guarantees, as real-time verifica...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 347,
-      "weight": 0.872,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "When building self‑modifying cognitive systems, restrict every structural transformation to those whose entropy impact and invariant preservatio...",
+      "compressed_axiom": "Evolutionary systems must replace abstract topological guarantees with concrete, measurable feedback loops that explicitly bound computational c...",
       "immutable_anchor": false
     }
   ]
