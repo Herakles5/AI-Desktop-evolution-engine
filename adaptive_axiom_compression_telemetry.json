@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:31:03",
+  "timestamp": "2026-11-10 17:32:03",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 447,
   "active_focal_axioms": 19,
   "compression_ratio": 0.9575,
   "compression_pct": 95.8,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6134,
+  "cognitive_load_factor": 0.6201,
   "max_clause_chars": 150,
-  "compression_hash": "0xcbf3d55c9c14",
-  "latency_us": 33788.53,
+  "compression_hash": "0x42be888cb35b",
+  "latency_us": 35188.54,
   "load_breakdown": {
-    "cognitive_load": 0.6134,
+    "cognitive_load": 0.6201,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.53
+    "cpu_strain": 0.5633
   },
   "top_weighted_axioms": [
     {
@@ -39,17 +39,17 @@
       "immutable_anchor": false
     },
     {
-      "index": 439,
-      "weight": 0.9945,
+      "index": 438,
+      "weight": 0.9937,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying cognitive systems only by grounding every external entropy or energy gradient in precise, measurable terms and by mapping it...",
+      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topologica...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.993,
+      "index": 436,
+      "weight": 0.9922,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine can...",
+      "compressed_axiom": "**The Self‑Entropy Topology Principle**: a cognitive engine must continuously map local entropy gradients to topological reconfigurations of its re...",
       "immutable_anchor": false
     }
   ]
