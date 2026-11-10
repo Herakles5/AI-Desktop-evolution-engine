@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:50:49",
+  "timestamp": "2026-11-10 17:51:55",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 458,
+  "total_axioms_in_manifold": 459,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9651,
   "compression_pct": 96.5,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.7036,
   "max_clause_chars": 144,
-  "compression_hash": "0xbc4e9a34d26c",
-  "latency_us": 25654.38,
+  "compression_hash": "0xd07673dbe0c9",
+  "latency_us": 41374.59,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.7036,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.9808
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 456,
-      "weight": 0.7792,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to dist...",
+      "index": 457,
+      "weight": 0.8342,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging tha...",
       "immutable_anchor": false
     },
     {
-      "index": 454,
-      "weight": 0.7777,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
+      "index": 250,
+      "weight": 0.6921,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
       "immutable_anchor": false
     },
     {
-      "index": 422,
-      "weight": 0.7536,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
+      "index": 402,
+      "weight": 0.6833,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions...",
       "immutable_anchor": false
     },
     {
-      "index": 413,
-      "weight": 0.747,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
+      "index": 360,
+      "weight": 0.6535,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
       "immutable_anchor": false
     }
   ]
