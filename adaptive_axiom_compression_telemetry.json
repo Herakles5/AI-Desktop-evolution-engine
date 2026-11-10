@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:42:27",
+  "timestamp": "2026-11-10 17:43:36",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 451,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9623,
-  "compression_pct": 96.2,
+  "total_axioms_in_manifold": 452,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9602,
+  "compression_pct": 96.0,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6632,
+  "cognitive_load_factor": 0.6567,
   "max_clause_chars": 147,
-  "compression_hash": "0xdc9122dfce7a",
-  "latency_us": 36018.13,
+  "compression_hash": "0x9bb7cc4d63b8",
+  "latency_us": 30069.71,
   "load_breakdown": {
-    "cognitive_load": 0.6632,
+    "cognitive_load": 0.6567,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7792
+    "cpu_strain": 0.7467
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 422,
-      "weight": 0.7585,
+      "weight": 0.7578,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
       "immutable_anchor": false
     },
     {
       "index": 413,
-      "weight": 0.7517,
+      "weight": 0.751,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoi...",
       "immutable_anchor": false
     },
     {
       "index": 411,
-      "weight": 0.7502,
+      "weight": 0.7495,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a...",
       "immutable_anchor": false
     },
     {
       "index": 409,
-      "weight": 0.7487,
+      "weight": 0.748,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certification...",
       "immutable_anchor": false
