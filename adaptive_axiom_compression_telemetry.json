@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:28:03",
+  "timestamp": "2026-11-10 17:29:01",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 447,
   "active_focal_axioms": 19,
   "compression_ratio": 0.9575,
   "compression_pct": 95.8,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6142,
+  "cognitive_load_factor": 0.6207,
   "max_clause_chars": 150,
-  "compression_hash": "0x7e6e73c5c5da",
-  "latency_us": 37887.62,
+  "compression_hash": "0x8cbb89821128",
+  "latency_us": 31647.28,
   "load_breakdown": {
-    "cognitive_load": 0.6142,
+    "cognitive_load": 0.6207,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.5342
+    "cpu_strain": 0.5667
   },
   "top_weighted_axioms": [
     {
@@ -32,24 +32,24 @@
       "immutable_anchor": false
     },
     {
-      "index": 438,
-      "weight": 0.9937,
+      "index": 444,
+      "weight": 0.9984,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topologica...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 437,
-      "weight": 0.993,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine can...",
+      "compressed_axiom": "Adopt only those autonomous transformations that can be objectively quantified to lower system uncertainty through a rigorously defined entropy‑bas...",
       "immutable_anchor": false
     },
     {
       "index": 439,
-      "weight": 0.9395,
+      "weight": 0.9945,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑modifying cognitive systems only by grounding every external entropy or energy gradient in precise, measurable terms and by mapping it...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 438,
+      "weight": 0.9937,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topologica...",
       "immutable_anchor": false
     }
   ]
