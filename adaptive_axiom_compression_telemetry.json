@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:26:09",
+  "timestamp": "2026-11-10 17:27:08",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 446,
+  "total_axioms_in_manifold": 447,
   "active_focal_axioms": 18,
-  "compression_ratio": 0.9596,
+  "compression_ratio": 0.9597,
   "compression_pct": 96.0,
   "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6501,
-  "max_clause_chars": 148,
-  "compression_hash": "0xb0f2e62f956f",
-  "latency_us": 30478.35,
+  "cognitive_load_factor": 0.6551,
+  "max_clause_chars": 147,
+  "compression_hash": "0xd055ccf518f2",
+  "latency_us": 32517.67,
   "load_breakdown": {
-    "cognitive_load": 0.6501,
+    "cognitive_load": 0.6551,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7133
+    "cpu_strain": 0.7383
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 357,
-      "weight": 0.9336,
+      "index": 446,
+      "weight": 1.0,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Cognitive stability is achieved by treating local entropy reduction as a controlled phase transition that crystallizes new axioms, but only when...",
+      "compressed_axiom": "Design autonomous learning systems so that every safety invariant and adaptation metric is explicitly computable and provably verifiable within...",
       "immutable_anchor": false
     },
     {
-      "index": 404,
-      "weight": 0.9134,
+      "index": 417,
+      "weight": 0.9775,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "When designing self‑optimizing cognitive systems, explicitly formalize the dynamical rules governing entropy‑driven interface contraction and pro...",
+      "compressed_axiom": "Define resource allocation through explicit, measurable local cost functions rather than abstract topological metaphors, ensuring that every ada...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 443,
+      "weight": 0.9426,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Bind every architectural change in a cognitive system to directly observable state metrics and sandboxed validation rather than to abstract phys...",
       "immutable_anchor": false
     },
     {
       "index": 442,
-      "weight": 0.8876,
+      "weight": 0.9419,
       "cluster": "SYSTEM_GOVERNANCE",
       "compressed_axiom": "Never rely on an unchanging safety verifier for a system that continuously rewrites its own reasoning architecture; instead, embed a co‑evolving...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 355,
-      "weight": 0.8772,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat communication latency as a tunable topological curvature and define a discrete Lyapunov‑like potential that strictly decreases with each ar...",
       "immutable_anchor": false
     }
   ]
