@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:43:36",
+  "timestamp": "2026-11-10 17:44:40",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 452,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9602,
-  "compression_pct": 96.0,
+  "total_axioms_in_manifold": 453,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9625,
+  "compression_pct": 96.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6567,
+  "cognitive_load_factor": 0.6659,
   "max_clause_chars": 147,
-  "compression_hash": "0x9bb7cc4d63b8",
-  "latency_us": 30069.71,
+  "compression_hash": "0x2e9e9cd73da6",
+  "latency_us": 36505.91,
   "load_breakdown": {
-    "cognitive_load": 0.6567,
+    "cognitive_load": 0.6659,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7467
+    "cpu_strain": 0.7925
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 422,
-      "weight": 0.7578,
+      "index": 451,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
+      "compressed_axiom": "Design self‑evolving cognitive substrates by first establishing a provable mapping between real‑time entropy gradients and topological geometry...",
       "immutable_anchor": false
     },
     {
-      "index": 413,
-      "weight": 0.751,
+      "index": 450,
+      "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoi...",
+      "compressed_axiom": "To harness entropy as a constructive engine, first formalize a computable mapping from measurable local entropy gradients to discrete mutation o...",
       "immutable_anchor": false
     },
     {
-      "index": 411,
-      "weight": 0.7495,
+      "index": 447,
+      "weight": 0.9961,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability requires decoupling reversible logical cores from dissipative peripheries, but only by treating entropy gradients as a...",
+      "compressed_axiom": "True cognitive stability requires abandoning the illusion of global equilibrium in favor of localized, bounded exploration zones where architect...",
       "immutable_anchor": false
     },
     {
-      "index": 409,
-      "weight": 0.748,
+      "index": 444,
+      "weight": 0.9938,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive stability emerges not from the impossible reversal of thermodynamic entropy, but from the continuous, probabilistic certification...",
+      "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an il...",
       "immutable_anchor": false
     }
   ]
