@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:48:17",
+  "timestamp": "2026-11-10 17:49:27",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 456,
+  "total_axioms_in_manifold": 457,
   "active_focal_axioms": 17,
-  "compression_ratio": 0.9627,
+  "compression_ratio": 0.9628,
   "compression_pct": 96.3,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6666,
-  "max_clause_chars": 147,
-  "compression_hash": "0x2010075056d2",
-  "latency_us": 42602.82,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6809,
+  "max_clause_chars": 146,
+  "compression_hash": "0xa58e865c5fb9",
+  "latency_us": 33434.9,
   "load_breakdown": {
-    "cognitive_load": 0.6666,
+    "cognitive_load": 0.6809,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7958
+    "cpu_strain": 0.8675
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 454,
-      "weight": 0.9992,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boundar...",
+      "index": 250,
+      "weight": 0.6928,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic e...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.9863,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topolog...",
+      "index": 402,
+      "weight": 0.6846,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, r...",
       "immutable_anchor": false
     },
     {
-      "index": 436,
-      "weight": 0.9855,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine c...",
+      "index": 360,
+      "weight": 0.6546,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guara...",
       "immutable_anchor": false
     },
     {
-      "index": 435,
-      "weight": 0.9848,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**The Self‑Entropy Topology Principle**: a cognitive engine must continuously map local entropy gradients to topological reconfigurations of its...",
+      "index": 4,
+      "weight": 0.5303,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Axiom 4: Zero-Leakage Privacy - All outbound external network surfaces (Nostr, Mastodon, P2P, Git) enforce automatic token, credential, and per...",
       "immutable_anchor": false
     }
   ]
