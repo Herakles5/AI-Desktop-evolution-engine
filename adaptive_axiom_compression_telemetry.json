@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:18:04",
+  "timestamp": "2026-11-10 17:19:01",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 443,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9594,
-  "compression_pct": 95.9,
+  "total_axioms_in_manifold": 444,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9572,
+  "compression_pct": 95.7,
   "target_cluster": "TOOL_SYNTHESIS",
-  "cognitive_load_factor": 0.6394,
-  "max_clause_chars": 148,
-  "compression_hash": "0x60f79dc898d2",
-  "latency_us": 30617.96,
+  "cognitive_load_factor": 0.6242,
+  "max_clause_chars": 149,
+  "compression_hash": "0xa2c83eb647f8",
+  "latency_us": 40559.03,
   "load_breakdown": {
-    "cognitive_load": 0.6394,
+    "cognitive_load": 0.6242,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.66
+    "cpu_strain": 0.5842
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 440,
-      "weight": 0.9984,
+      "weight": 0.9426,
       "cluster": "TOOL_SYNTHESIS",
       "compressed_axiom": "Never allow a self‑modifying system to alter its own verification logic; instead require every topological rewrite to be approved by an immutable...",
       "immutable_anchor": false
     },
     {
       "index": 349,
-      "weight": 0.9296,
+      "weight": 0.929,
       "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "When building self‑modifying systems, encode rewrite constraints as computable metrics on a tractable model, continuously evaluate them with boun...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 343,
-      "weight": 0.9253,
-      "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Design self‑evolving agents so that every internal transformation is expressed in quantifiable, observable metrics and subject to independent ver...",
+      "compressed_axiom": "When building self‑modifying systems, encode rewrite constraints as computable metrics on a tractable model, continuously evaluate them with bound...",
       "immutable_anchor": false
     },
     {
       "index": 268,
-      "weight": 0.8741,
+      "weight": 0.8737,
       "cluster": "TOOL_SYNTHESIS",
-      "compressed_axiom": "Continuously adapt your internal structure by following measurable indicators of uncertainty, but enact only those changes that can be locally ve...",
+      "compressed_axiom": "Continuously adapt your internal structure by following measurable indicators of uncertainty, but enact only those changes that can be locally ver...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 343,
+      "weight": 0.8697,
+      "cluster": "TOOL_SYNTHESIS",
+      "compressed_axiom": "Design self‑evolving agents so that every internal transformation is expressed in quantifiable, observable metrics and subject to independent veri...",
       "immutable_anchor": false
     }
   ]
