@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-11 14:55:17",
+  "timestamp": "2026-11-11 14:56:29",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 464,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9612,
-  "compression_pct": 96.1,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9591,
+  "compression_pct": 95.9,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6382,
-  "max_clause_chars": 149,
-  "compression_hash": "0xa882b39bd181",
-  "latency_us": 29430.62,
+  "cognitive_load_factor": 0.6032,
+  "max_clause_chars": 151,
+  "compression_hash": "0xc1aa1e350fa7",
+  "latency_us": 27353.2,
   "load_breakdown": {
-    "cognitive_load": 0.6382,
+    "cognitive_load": 0.6032,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6542
+    "cpu_strain": 0.4792
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
+      "index": 463,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Ground claims of cognitive autonomy in concrete, measurable variables and testable mechanisms—quantify how entropy gradients, topological dynamics...",
+      "immutable_anchor": false
+    },
+    {
       "index": 461,
       "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamics an...",
+      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamics and...",
       "immutable_anchor": false
     },
     {
-      "index": 436,
-      "weight": 0.9798,
+      "index": 451,
+      "weight": 0.991,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine can...",
+      "compressed_axiom": "Design self‑evolving cognitive substrates by first establishing a provable mapping between real‑time entropy gradients and topological geometry, the...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.9256,
+      "index": 446,
+      "weight": 0.9872,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topologic...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 435,
-      "weight": 0.9241,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**The Self‑Entropy Topology Principle**: a cognitive engine must continuously map local entropy gradients to topological reconfigurations of its r...",
+      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty metrics t...",
       "immutable_anchor": false
     }
   ]
