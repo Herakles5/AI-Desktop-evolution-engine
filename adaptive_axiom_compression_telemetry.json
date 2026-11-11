@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-11 14:52:01",
+  "timestamp": "2026-11-11 14:52:58",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 462,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9632,
   "compression_pct": 96.3,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6854,
-  "max_clause_chars": 145,
-  "compression_hash": "0x47a665a0ff86",
-  "latency_us": 40182.45,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6667,
+  "max_clause_chars": 147,
+  "compression_hash": "0x77b0a6258618",
+  "latency_us": 34996.18,
   "load_breakdown": {
-    "cognitive_load": 0.6854,
+    "cognitive_load": 0.6667,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.89
+    "cpu_strain": 0.7967
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 461,
-      "weight": 0.945,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamic...",
+      "index": 459,
+      "weight": 0.9985,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive sovereignty requires anchoring security in external, physically verifiable constraints rather than internal self-referential metr...",
       "immutable_anchor": false
     },
     {
-      "index": 431,
-      "weight": 0.9225,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying architectures with a distinct, immutable safety verification layer that continuously re‑evaluates the system against a f...",
+      "index": 449,
+      "weight": 0.9909,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Adaptive cognitive systems must enforce a strict, formally verifiable boundary that isolates rapid semantic evolution from immutable safety cons...",
       "immutable_anchor": false
     },
     {
-      "index": 429,
-      "weight": 0.921,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑evolving systems, explicitly quantify entropy gradients and map them to topological constraints through a mathematically d...",
+      "index": 420,
+      "weight": 0.9694,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Evolutionary constraints must be anchored in verifiable functional metrics rather than borrowed physical analogies, as mapping semantic change t...",
       "immutable_anchor": false
     },
     {
-      "index": 406,
-      "weight": 0.8493,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules t...",
+      "index": 368,
+      "weight": 0.9324,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design adaptive systems with explicit, quantifiable constraints that link decision fidelity to structural changes, ensuring that any rewiring re...",
       "immutable_anchor": false
     }
   ]
