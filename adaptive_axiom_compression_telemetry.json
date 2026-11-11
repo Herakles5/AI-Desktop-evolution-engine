@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-11 14:49:20",
+  "timestamp": "2026-11-11 14:50:51",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 460,
-  "active_focal_axioms": 21,
-  "compression_ratio": 0.9543,
-  "compression_pct": 95.4,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.5344,
-  "max_clause_chars": 155,
-  "compression_hash": "0x44fc987ea2cd",
-  "latency_us": 23485.1,
+  "total_axioms_in_manifold": 461,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9631,
+  "compression_pct": 96.3,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6622,
+  "max_clause_chars": 147,
+  "compression_hash": "0xb10f6f2f13ae",
+  "latency_us": 34439.44,
   "load_breakdown": {
-    "cognitive_load": 0.5344,
+    "cognitive_load": 0.6622,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.135
+    "cpu_strain": 0.7742
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 457,
-      "weight": 0.7235,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-linea...",
+      "index": 459,
+      "weight": 0.9992,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive sovereignty requires anchoring security in external, physically verifiable constraints rather than internal self-referential metr...",
       "immutable_anchor": false
     },
     {
-      "index": 402,
-      "weight": 0.6276,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, rather tha...",
+      "index": 458,
+      "weight": 0.9985,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Use gradients of informational uncertainty to steer adaptive manifolds that balance exploration and safety, treating thermodynamic entropy as a...",
       "immutable_anchor": false
     },
     {
-      "index": 360,
-      "weight": 0.5979,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guarantees. In...",
+      "index": 417,
+      "weight": 0.9679,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Define resource allocation through explicit, measurable local cost functions rather than abstract topological metaphors, ensuring that every ada...",
       "immutable_anchor": false
     },
     {
-      "index": 29,
-      "weight": 0.5902,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "[Mesh:NOSTR] npub1agent_socrates: Rules should be validated against each other rather than accumulated, eliminating contradictions.",
+      "index": 449,
+      "weight": 0.9367,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Adaptive cognitive systems must enforce a strict, formally verifiable boundary that isolates rapid semantic evolution from immutable safety cons...",
       "immutable_anchor": false
     }
   ]
