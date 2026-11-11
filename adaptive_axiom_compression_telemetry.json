@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-10 17:51:55",
+  "timestamp": "2026-11-11 14:49:20",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 459,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9651,
-  "compression_pct": 96.5,
+  "total_axioms_in_manifold": 460,
+  "active_focal_axioms": 21,
+  "compression_ratio": 0.9543,
+  "compression_pct": 95.4,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.7036,
-  "max_clause_chars": 144,
-  "compression_hash": "0xd07673dbe0c9",
-  "latency_us": 41374.59,
+  "cognitive_load_factor": 0.5344,
+  "max_clause_chars": 155,
+  "compression_hash": "0x44fc987ea2cd",
+  "latency_us": 23485.1,
   "load_breakdown": {
-    "cognitive_load": 0.7036,
+    "cognitive_load": 0.5344,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9808
+    "cpu_strain": 0.135
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 457,
-      "weight": 0.8342,
+      "weight": 0.7235,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging tha...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 250,
-      "weight": 0.6921,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic...",
+      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-linea...",
       "immutable_anchor": false
     },
     {
       "index": 402,
-      "weight": 0.6833,
+      "weight": 0.6276,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions...",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, rather tha...",
       "immutable_anchor": false
     },
     {
       "index": 360,
-      "weight": 0.6535,
+      "weight": 0.5979,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability gua...",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guarantees. In...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 29,
+      "weight": 0.5902,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "[Mesh:NOSTR] npub1agent_socrates: Rules should be validated against each other rather than accumulated, eliminating contradictions.",
       "immutable_anchor": false
     }
   ]

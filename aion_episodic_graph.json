@@ -30055,6 +30055,524 @@
       "label": "Gen_5531",
       "first_seen_gen": 5531,
       "importance": 0.8
+    },
+    "aion2_mastery_kill_6": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 6 Kills",
+      "avg_ttk": 15.99,
+      "exploration_rate": 0.3335,
+      "states_known": 13,
+      "timestamp": 1794334772.941126
+    },
+    "aion2_mastery_kill_9": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 9 Kills",
+      "avg_ttk": 12.43,
+      "exploration_rate": 0.3256,
+      "states_known": 14,
+      "timestamp": 1794335201.3084419
+    },
+    "aion2_mastery_kill_12": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 12 Kills",
+      "avg_ttk": 12.75,
+      "exploration_rate": 0.3178,
+      "states_known": 16,
+      "timestamp": 1794335315.5731602
+    },
+    "aion2_mastery_kill_15": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 15 Kills",
+      "avg_ttk": 6.41,
+      "exploration_rate": 0.3103,
+      "states_known": 17,
+      "timestamp": 1794335398.8473938
+    },
+    "aion2_mastery_kill_18": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonome Kampferfahrung: 18 Kills",
+      "avg_ttk": 10.77,
+      "exploration_rate": 0.3029,
+      "states_known": 17,
+      "timestamp": 1794335456.731992
+    },
+    "aion2_mastery_kill_21": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 21 Kills",
+      "avg_ttk": 7.77,
+      "exploration_rate": 0.2957,
+      "states_known": 17,
+      "timestamp": 1794336762.7492359
+    },
+    "aion2_mastery_kill_24": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 24 Kills",
+      "avg_ttk": 7.89,
+      "exploration_rate": 0.2887,
+      "states_known": 17,
+      "timestamp": 1794336769.074918
+    },
+    "aion2_mastery_kill_27": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 27 Kills",
+      "avg_ttk": 9.82,
+      "exploration_rate": 0.2818,
+      "states_known": 17,
+      "timestamp": 1794336774.8743138
+    },
+    "aion2_mastery_kill_30": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 30 Kills",
+      "avg_ttk": 12.66,
+      "exploration_rate": 0.2751,
+      "states_known": 17,
+      "timestamp": 1794336781.2103713
+    },
+    "aion2_mastery_kill_33": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 33 Kills",
+      "avg_ttk": 19.0,
+      "exploration_rate": 0.2685,
+      "states_known": 17,
+      "timestamp": 1794336787.7354908
+    },
+    "aion2_mastery_kill_36": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 36 Kills",
+      "avg_ttk": 25.16,
+      "exploration_rate": 0.2622,
+      "states_known": 17,
+      "timestamp": 1794336793.4096274
+    },
+    "aion2_mastery_kill_39": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 39 Kills",
+      "avg_ttk": 31.13,
+      "exploration_rate": 0.2559,
+      "states_known": 17,
+      "timestamp": 1794336799.0583808
+    },
+    "aion2_mastery_kill_42": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 42 Kills",
+      "avg_ttk": 37.03,
+      "exploration_rate": 0.2499,
+      "states_known": 17,
+      "timestamp": 1794336806.0899382
+    },
+    "aion2_mastery_kill_45": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 45 Kills",
+      "avg_ttk": 45.68,
+      "exploration_rate": 0.2439,
+      "states_known": 17,
+      "timestamp": 1794336830.1639254
+    },
+    "aion2_mastery_kill_48": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 48 Kills",
+      "avg_ttk": 57.26,
+      "exploration_rate": 0.2381,
+      "states_known": 17,
+      "timestamp": 1794336835.7469397
+    },
+    "aion2_mastery_kill_51": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 51 Kills",
+      "avg_ttk": 68.89,
+      "exploration_rate": 0.2324,
+      "states_known": 17,
+      "timestamp": 1794336841.7669382
+    },
+    "aion2_mastery_kill_54": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 54 Kills",
+      "avg_ttk": 79.43,
+      "exploration_rate": 0.2269,
+      "states_known": 17,
+      "timestamp": 1794336847.428171
+    },
+    "aion2_mastery_kill_57": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 57 Kills",
+      "avg_ttk": 85.16,
+      "exploration_rate": 0.2215,
+      "states_known": 17,
+      "timestamp": 1794336852.9533088
+    },
+    "aion2_mastery_kill_60": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 60 Kills",
+      "avg_ttk": 91.39,
+      "exploration_rate": 0.2162,
+      "states_known": 18,
+      "timestamp": 1794336861.1570642
+    },
+    "aion2_mastery_kill_63": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 63 Kills",
+      "avg_ttk": 70.29,
+      "exploration_rate": 0.2111,
+      "states_known": 18,
+      "timestamp": 1794336972.7303255
+    },
+    "aion2_mastery_kill_66": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 66 Kills",
+      "avg_ttk": 49.17,
+      "exploration_rate": 0.206,
+      "states_known": 18,
+      "timestamp": 1794336978.2446404
+    },
+    "aion2_mastery_kill_69": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 69 Kills",
+      "avg_ttk": 27.79,
+      "exploration_rate": 0.2012,
+      "states_known": 18,
+      "timestamp": 1794336983.7947633
+    },
+    "aion2_mastery_kill_72": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 72 Kills",
+      "avg_ttk": 24.18,
+      "exploration_rate": 0.1964,
+      "states_known": 18,
+      "timestamp": 1794336989.3070157
+    },
+    "aion2_mastery_kill_75": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 75 Kills",
+      "avg_ttk": 29.72,
+      "exploration_rate": 0.1917,
+      "states_known": 18,
+      "timestamp": 1794336994.828262
+    },
+    "aion2_mastery_kill_78": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 78 Kills",
+      "avg_ttk": 35.6,
+      "exploration_rate": 0.1872,
+      "states_known": 18,
+      "timestamp": 1794337003.7514417
+    },
+    "aion2_mastery_kill_81": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 81 Kills",
+      "avg_ttk": 42.13,
+      "exploration_rate": 0.1827,
+      "states_known": 18,
+      "timestamp": 1794337009.282494
+    },
+    "aion2_mastery_kill_84": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 84 Kills",
+      "avg_ttk": 48.71,
+      "exploration_rate": 0.1784,
+      "states_known": 18,
+      "timestamp": 1794337014.887312
+    },
+    "aion2_mastery_kill_87": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 87 Kills",
+      "avg_ttk": 56.4,
+      "exploration_rate": 0.1742,
+      "states_known": 18,
+      "timestamp": 1794337031.7926545
+    },
+    "aion2_mastery_kill_90": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 90 Kills",
+      "avg_ttk": 65.37,
+      "exploration_rate": 0.17,
+      "states_known": 18,
+      "timestamp": 1794337037.3361685
+    },
+    "aion2_mastery_kill_93": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 93 Kills",
+      "avg_ttk": 74.34,
+      "exploration_rate": 0.166,
+      "states_known": 18,
+      "timestamp": 1794337042.9232628
+    },
+    "aion2_mastery_kill_96": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 96 Kills",
+      "avg_ttk": 83.32,
+      "exploration_rate": 0.1621,
+      "states_known": 18,
+      "timestamp": 1794337048.4997003
+    },
+    "aion2_mastery_kill_99": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 99 Kills",
+      "avg_ttk": 88.89,
+      "exploration_rate": 0.1582,
+      "states_known": 18,
+      "timestamp": 1794337053.998184
+    },
+    "aion2_mastery_kill_102": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 102 Kills",
+      "avg_ttk": 94.61,
+      "exploration_rate": 0.1544,
+      "states_known": 18,
+      "timestamp": 1794337060.34337
+    },
+    "aion2_mastery_kill_105": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 105 Kills",
+      "avg_ttk": 100.4,
+      "exploration_rate": 0.1508,
+      "states_known": 18,
+      "timestamp": 1794337066.0213895
+    },
+    "aion2_mastery_kill_108": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 108 Kills",
+      "avg_ttk": 95.42,
+      "exploration_rate": 0.1472,
+      "states_known": 18,
+      "timestamp": 1794341293.2601032
+    },
+    "aion2_mastery_kill_111": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 111 Kills",
+      "avg_ttk": 68.62,
+      "exploration_rate": 0.1436,
+      "states_known": 18,
+      "timestamp": 1794341298.5018098
+    },
+    "aion2_mastery_kill_114": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 114 Kills",
+      "avg_ttk": 41.57,
+      "exploration_rate": 0.1403,
+      "states_known": 18,
+      "timestamp": 1794341303.6793869
+    },
+    "aion2_mastery_kill_117": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 117 Kills",
+      "avg_ttk": 14.36,
+      "exploration_rate": 0.137,
+      "states_known": 18,
+      "timestamp": 1794341308.9564903
+    },
+    "aion2_mastery_kill_120": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 120 Kills",
+      "avg_ttk": 19.59,
+      "exploration_rate": 0.1337,
+      "states_known": 18,
+      "timestamp": 1794341314.1729398
+    },
+    "aion2_mastery_kill_123": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 123 Kills",
+      "avg_ttk": 24.82,
+      "exploration_rate": 0.1304,
+      "states_known": 18,
+      "timestamp": 1794341319.4081132
+    },
+    "aion2_mastery_kill_126": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 126 Kills",
+      "avg_ttk": 30.31,
+      "exploration_rate": 0.1274,
+      "states_known": 18,
+      "timestamp": 1794341325.5439646
+    },
+    "aion2_mastery_kill_129": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 129 Kills",
+      "avg_ttk": 35.8,
+      "exploration_rate": 0.1244,
+      "states_known": 18,
+      "timestamp": 1794341330.7194278
+    },
+    "aion2_mastery_kill_132": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 132 Kills",
+      "avg_ttk": 41.32,
+      "exploration_rate": 0.1214,
+      "states_known": 18,
+      "timestamp": 1794341336.0808465
+    },
+    "aion2_mastery_kill_135": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 135 Kills",
+      "avg_ttk": 46.67,
+      "exploration_rate": 0.1184,
+      "states_known": 18,
+      "timestamp": 1794341341.282397
+    },
+    "aion2_mastery_kill_138": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 138 Kills",
+      "avg_ttk": 53.0,
+      "exploration_rate": 0.1157,
+      "states_known": 18,
+      "timestamp": 1794341350.0938778
+    },
+    "aion2_mastery_kill_141": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 141 Kills",
+      "avg_ttk": 59.33,
+      "exploration_rate": 0.113,
+      "states_known": 18,
+      "timestamp": 1794341355.4250724
+    },
+    "aion2_mastery_kill_144": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 144 Kills",
+      "avg_ttk": 65.73,
+      "exploration_rate": 0.1103,
+      "states_known": 18,
+      "timestamp": 1794341360.997857
+    },
+    "aion2_mastery_kill_147": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 147 Kills",
+      "avg_ttk": 71.51,
+      "exploration_rate": 0.1076,
+      "states_known": 18,
+      "timestamp": 1794341366.5360255
+    },
+    "aion2_mastery_kill_150": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 150 Kills",
+      "avg_ttk": 77.04,
+      "exploration_rate": 0.105,
+      "states_known": 18,
+      "timestamp": 1794341372.1175008
+    },
+    "aion2_mastery_kill_153": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 153 Kills",
+      "avg_ttk": 82.62,
+      "exploration_rate": 0.1026,
+      "states_known": 18,
+      "timestamp": 1794341377.8754086
+    },
+    "aion2_mastery_kill_156": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 156 Kills",
+      "avg_ttk": 62.59,
+      "exploration_rate": 0.1002,
+      "states_known": 18,
+      "timestamp": 1794341444.5103862
+    },
+    "aion2_mastery_kill_159": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 159 Kills",
+      "avg_ttk": 42.48,
+      "exploration_rate": 0.0978,
+      "states_known": 18,
+      "timestamp": 1794341449.8733082
+    },
+    "aion2_mastery_kill_162": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 162 Kills",
+      "avg_ttk": 22.28,
+      "exploration_rate": 0.0954,
+      "states_known": 18,
+      "timestamp": 1794341455.0410364
+    },
+    "aion2_mastery_kill_165": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 165 Kills",
+      "avg_ttk": 22.58,
+      "exploration_rate": 0.093,
+      "states_known": 18,
+      "timestamp": 1794341478.106151
+    },
+    "aion2_mastery_kill_168": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 168 Kills",
+      "avg_ttk": 33.25,
+      "exploration_rate": 0.0909,
+      "states_known": 18,
+      "timestamp": 1794341483.6563087
+    },
+    "aion2_mastery_kill_171": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 171 Kills",
+      "avg_ttk": 43.96,
+      "exploration_rate": 0.0888,
+      "states_known": 18,
+      "timestamp": 1794341489.1188402
+    },
+    "aion2_mastery_kill_174": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 174 Kills",
+      "avg_ttk": 57.73,
+      "exploration_rate": 0.0867,
+      "states_known": 22,
+      "timestamp": 1794341518.392917
+    },
+    "aion2_mastery_kill_177": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 177 Kills",
+      "avg_ttk": 70.37,
+      "exploration_rate": 0.0846,
+      "states_known": 22,
+      "timestamp": 1794341523.9775069
+    },
+    "aion2_mastery_kill_180": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 180 Kills",
+      "avg_ttk": 83.02,
+      "exploration_rate": 0.0825,
+      "states_known": 22,
+      "timestamp": 1794341529.4762037
+    },
+    "aion2_mastery_kill_183": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 183 Kills",
+      "avg_ttk": 93.3,
+      "exploration_rate": 0.0805,
+      "states_known": 22,
+      "timestamp": 1794341535.024935
+    },
+    "aion2_mastery_kill_186": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 186 Kills",
+      "avg_ttk": 98.83,
+      "exploration_rate": 0.0787,
+      "states_known": 22,
+      "timestamp": 1794341540.5361457
+    },
+    "aion2_mastery_kill_189": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 189 Kills",
+      "avg_ttk": 105.04,
+      "exploration_rate": 0.0769,
+      "states_known": 22,
+      "timestamp": 1794341548.49264
+    },
+    "aion2_mastery_kill_192": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 192 Kills",
+      "avg_ttk": 87.78,
+      "exploration_rate": 0.0751,
+      "states_known": 22,
+      "timestamp": 1794343132.2186825
+    },
+    "aion2_mastery_kill_195": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 Autonomous Combat Experience: 195 Kills",
+      "avg_ttk": 59.83,
+      "exploration_rate": 0.0733,
+      "states_known": 22,
+      "timestamp": 1794343143.7800276
+    },
+    "gen_5532": {
+      "type": "CONCEPT",
+      "label": "Gen_5532",
+      "first_seen_gen": 5532,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -75146,6 +75664,399 @@
       "weight": 0.58,
       "episodes": [
         5531
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_6",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_9",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_12",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_15",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_18",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_21",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_24",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_27",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_30",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_33",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_36",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_39",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_42",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_45",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_48",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_51",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_54",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_57",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_60",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_63",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_66",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_69",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_72",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_75",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_78",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_81",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_84",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_87",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_90",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_93",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_96",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_99",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_102",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_105",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_108",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_111",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_114",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_117",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_120",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_123",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_126",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_129",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_132",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_135",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_138",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_141",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_144",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_147",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_150",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_153",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_156",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_159",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_162",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_165",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_168",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_171",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_174",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_177",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_180",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_183",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_186",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_189",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_192",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_195",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 1.0
+    },
+    {
+      "source": "gen_5532",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        5532
       ]
     }
   ]
