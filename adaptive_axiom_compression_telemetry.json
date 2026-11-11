@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-11 14:56:29",
+  "timestamp": "2026-11-11 14:57:28",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 464,
+  "total_axioms_in_manifold": 465,
   "active_focal_axioms": 19,
   "compression_ratio": 0.9591,
   "compression_pct": 95.9,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6032,
+  "cognitive_load_factor": 0.6014,
   "max_clause_chars": 151,
-  "compression_hash": "0xc1aa1e350fa7",
-  "latency_us": 27353.2,
+  "compression_hash": "0xd93bcbe75c61",
+  "latency_us": 31248.07,
   "load_breakdown": {
-    "cognitive_load": 0.6032,
+    "cognitive_load": 0.6014,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.4792
+    "cpu_strain": 0.47
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 463,
-      "weight": 1.0,
+      "weight": 0.9992,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Ground claims of cognitive autonomy in concrete, measurable variables and testable mechanisms—quantify how entropy gradients, topological dynamics...",
       "immutable_anchor": false
     },
     {
-      "index": 461,
-      "weight": 0.9985,
+      "index": 395,
+      "weight": 0.9495,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamics and...",
+      "compressed_axiom": "Adapt system structures by iteratively moving toward configurations that maximize a rigorously defined, bounded entropy measure, while enforcing exp...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 464,
+      "weight": 0.945,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "A self‑modifying system may alter its internal topology only after it has computed, from a concrete and measurable representation of its current ent...",
       "immutable_anchor": false
     },
     {
       "index": 451,
-      "weight": 0.991,
+      "weight": 0.9352,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "Design self‑evolving cognitive substrates by first establishing a provable mapping between real‑time entropy gradients and topological geometry, the...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 446,
-      "weight": 0.9872,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty metrics t...",
       "immutable_anchor": false
     }
   ]
