@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 16:58:48",
+  "timestamp": "2026-11-13 17:00:10",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 516,
-  "active_focal_axioms": 19,
-  "compression_ratio": 0.9632,
-  "compression_pct": 96.3,
+  "total_axioms_in_manifold": 517,
+  "active_focal_axioms": 20,
+  "compression_ratio": 0.9613,
+  "compression_pct": 96.1,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.5917,
+  "cognitive_load_factor": 0.5879,
   "max_clause_chars": 152,
-  "compression_hash": "0x2aae4d93f79e",
-  "latency_us": 52294.68,
+  "compression_hash": "0x34ac31ca76c9",
+  "latency_us": 46219.6,
   "load_breakdown": {
-    "cognitive_load": 0.5917,
+    "cognitive_load": 0.5879,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.4217
+    "cpu_strain": 0.4025
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 463,
-      "weight": 0.6904,
+      "weight": 0.6898,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then res...",
       "immutable_anchor": false
     },
     {
       "index": 234,
-      "weight": 0.6679,
+      "weight": 0.6676,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entropy...",
       "immutable_anchor": false
     },
     {
       "index": 472,
-      "weight": 0.6413,
+      "weight": 0.6407,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Size the SHA-3 verification worker pool to match the 500 GB/s ingestion rate, as cryptographic throughput is the hard ceiling; implement explicit bac...",
       "immutable_anchor": false
     },
     {
       "index": 440,
-      "weight": 0.5126,
+      "weight": 0.512,
       "cluster": "SYSTEM_GOVERNANCE",
       "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-li...",
       "immutable_anchor": false
