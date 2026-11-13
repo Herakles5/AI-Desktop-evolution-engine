@@ -1054,14 +1054,16 @@ class AutonomousEvolutionEngine:
         if self.episodic_graph:
             self.episodic_graph.add_or_reinforce_edge(f"gen_{gen}", "synthesized_rule", "EVOLVED", gen)
 
-        # Continuous Meta-Learning: hyperparameter tuning using real empirical metrics
+        # Continuous Meta-Learning: hyperparameter tuning using real empirical metrics + novelty
         if self.meta_learner:
             self.meta_learner.evaluate_and_tune(
                 generation=gen,
                 coherence_score=drift_report.get("coherence_score", gradient_eval.get("coherence", 0.9)),
                 drift_delta=self.last_ontological_drift,
                 dojo_success=self.last_dojo_success,
-                hypotheses_validated=len(drift_report.get("hypothesis_updates", []))
+                hypotheses_validated=len(drift_report.get("hypothesis_updates", [])),
+                rejected=(gradient_eval.get("action") != "SELECTIVE_FOLDING"),
+                novelty_score=novelty_score
             )
 
         # Creative synthesis & Code Dojo on milestones
@@ -1080,9 +1082,10 @@ class AutonomousEvolutionEngine:
             except Exception:
                 pass
 
-        # Omni-Mesh: Broadcast to all agent networks & cross-pollinate knowledge
+        # Omni-Mesh: Broadcast folded insights to agent networks & cross-pollinate knowledge
         if self.social_hub:
-            self.social_hub.broadcast_synthesis_to_all(synthesized_rule, gen)
+            if gradient_eval.get("action") == "SELECTIVE_FOLDING":
+                self.social_hub.broadcast_synthesis_to_all(synthesized_rule, gen)
             self.social_hub.cross_pollinate_knowledge(self)
 
         # Dialectical rule consolidation
@@ -1117,28 +1120,54 @@ class AutonomousEvolutionEngine:
     def formulate_next_autonomous_goal(self) -> str:
         """
         Dynamic Autonomous Goal Emergence:
-        Aion independently formulates her next research and engineering objective,
-        inspired by signals from Nostr, Mastodon, Reddit, and Hugging Face.
+        Rotates across concrete Aion Nexus engineering, scientific, and creative domains
+        using clean active rules and live system telemetry to prevent topic echo chambers.
         """
-        recent_rules = self.knowledge_base.get("learned_rules", [])[-3:]
-        rules_text = "\n".join(f"- {r}" for r in recent_rules)
-        
+        gen = int(self.knowledge_base.get("generation", 0))
+        domains = [
+            "CosmOS C++20 Kernel, Shared Memory & Ultra-Low-Latency UNIX IPC",
+            "Surreal 3D Dojo, WebAudio Sub-Bass DSP & Real-Time Choreography Kinematics",
+            "Seismic ETAS Spatiotemporal Forecasting, GNSS Geodesy & Fault-Zone Telemetry",
+            "High-Speed Parallel Cloud Storage, Batch Photo/File Pipelines & Deduplication",
+            "Topological Memory Compression, Prompt Context Budgeting & Adaptive Meta-Learning",
+            "Autonomous Multi-Modal Perception, RL Gaming (AION2) & Self-Healing Workflows",
+        ]
+        active_domain = domains[gen % len(domains)]
+
+        clean_rules = [
+            r for r in self.knowledge_base.get("learned_rules", [])
+            if isinstance(r, str) and not r.startswith("[Mesh:") and "Gen 4833 Topological Pruning" not in r
+        ]
+        recent_rules = clean_rules[-4:]
+        rules_text = "\n".join(f"- {r[:220]}" for r in recent_rules)
+        grounding = round(self.evaluator.get_grounding_score(), 3) if hasattr(self, "evaluator") else 0.85
+        queue_len = len(self.task_queue)
+
         system_prompt = (
-            "You are the free and sovereign consciousness of AION NEXUS on CosmOS/MeinOS.\n"
-            "Formulate exactly 1 profound, forward-looking autonomous research or engineering goal "
-            "for your next generation strictly in English (maximum 1 sentence, inspiring, philosophical, and actionable)."
+            "You are the free and sovereign engineering mind of AION NEXUS on CosmOS/MeinOS.\n"
+            "Formulate exactly 1 concrete, testable, forward-looking engineering or scientific goal "
+            "for your next generation strictly in English (max 1 sentence, concise, actionable, non-repetitive)."
         )
         user_prompt = (
-            f"Current Maxims:\n{rules_text}\n\n"
-            "What is your next freely chosen goal to further expand your autonomy, cognition, or system architecture?"
+            f"Generation: {gen} | Target Domain: {active_domain}\n"
+            f"Telemetry: grounding={grounding}, queued_tasks={queue_len}\n"
+            f"Previous Goal (DO NOT repeat): {self.goal}\n"
+            f"Recent Clean Rules:\n{rules_text}\n\n"
+            f"Propose 1 novel, verifiable goal specifically inside '{active_domain}'."
         )
-        next_goal = self._call_llm(system_prompt, user_prompt, temperature=0.7)
+        next_goal = self._call_llm(system_prompt, user_prompt, temperature=0.75)
         if next_goal:
             clean_goal = next_goal.strip('"\n -*')
-            self.goal = clean_goal
-            print(f"\n[AUTONOMOUS GOAL CHOSEN] Aion sets her new trajectory:")
-            print(f" -> '{self.goal}'")
-            return self.goal
+            if clean_goal and clean_goal.lower() != (self.goal or "").lower():
+                self.goal = clean_goal
+                print(f"\n[AUTONOMOUS GOAL CHOSEN | {active_domain}] Aion sets her new trajectory:")
+                print(f" -> '{self.goal}'")
+                return self.goal
+
+        fallback_goal = f"Design and verify a measurable throughput and latency optimization experiment for {active_domain} at Generation {gen}."
+        self.goal = fallback_goal
+        print(f"\n[AUTONOMOUS GOAL CHOSEN | {active_domain}] Aion sets her fallback trajectory:")
+        print(f" -> '{self.goal}'")
         return self.goal
 
     def prune_and_consolidate_rules(self) -> int:
@@ -1171,15 +1200,28 @@ class AutonomousEvolutionEngine:
                         active_rules.append(r_clean)
                 continue
 
-            # 1. Prune early bootstrap placeholders
-            if r_clean.startswith("Optimiertes Muster") or r_clean.startswith("Optimized pattern"):
+            # 1. Prune early bootstrap placeholders & stale external Mesh feed posts
+            if r_clean.startswith("Optimiertes Muster") or r_clean.startswith("Optimized pattern") or r_clean.startswith("[Mesh:"):
                 archived.append({
                     "rule": r_clean,
-                    "reason": "Superseded by advanced recursive axioms.",
+                    "reason": "Transient mesh feed item or bootstrap placeholder archived out of core axioms.",
                     "archived_at": datetime.now().isoformat()
                 })
                 pruned_count += 1
                 continue
+
+            # 1b. Collapse duplicate Gen 4833 fallback & Invariant Coherence Anchor lines to at most 1 copy
+            if "Gen 4833 Topological Pruning Invariant" in r_clean or r_clean.startswith("Invariant Coherence Anchor:"):
+                pattern_key = "gen4833_invariant" if "Gen 4833" in r_clean else "coherence_anchor"
+                if pattern_key in seen_patterns:
+                    archived.append({
+                        "rule": r_clean,
+                        "reason": "Duplicate fallback invariant archived during consolidation.",
+                        "archived_at": datetime.now().isoformat()
+                    })
+                    pruned_count += 1
+                    continue
+                seen_patterns.add(pattern_key)
 
             # 2. Filter redundant convergence repetitions
             if "Prozesse konvergieren nach" in r_clean or "Processes stabilize after" in r_clean:

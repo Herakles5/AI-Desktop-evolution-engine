@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:21:05",
+  "timestamp": "2026-11-13 15:22:01",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 477,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9644,
-  "compression_pct": 96.4,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6726,
-  "max_clause_chars": 146,
-  "compression_hash": "0xa6c4c24051d2",
-  "latency_us": 41559.28,
+  "total_axioms_in_manifold": 478,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9665,
+  "compression_pct": 96.7,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.7017,
+  "max_clause_chars": 144,
+  "compression_hash": "0xc01cd576a36d",
+  "latency_us": 43716.39,
   "load_breakdown": {
-    "cognitive_load": 0.6726,
+    "cognitive_load": 0.7017,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8258
+    "cpu_strain": 0.9717
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 476,
-      "weight": 1.0,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never claim a safety guarantee for a self‑modifying system without first defining a concrete, observable entropy metric that is rigorously boun...",
+      "index": 474,
+      "weight": 0.9978,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑modifying cognitive architectures, steer their internal state toward locally maximal entropy increase while maintaining a...",
       "immutable_anchor": false
     },
     {
-      "index": 441,
-      "weight": 0.9746,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Never rely on an unchanging safety verifier for a system that continuously rewrites its own reasoning architecture; instead, embed a co‑evolvin...",
+      "index": 446,
+      "weight": 0.9776,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty me...",
       "immutable_anchor": false
     },
     {
-      "index": 445,
-      "weight": 0.9225,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous learning systems so that every safety invariant and adaptation metric is explicitly computable and provably verifiable within...",
+      "index": 477,
+      "weight": 0.945,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑improving systems, anchor the drive for entropy reduction to computable, observable proxies rather than uncomputable meas...",
       "immutable_anchor": false
     },
     {
-      "index": 357,
-      "weight": 0.9171,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Cognitive stability is achieved by treating local entropy reduction as a controlled phase transition that crystallizes new axioms, but only whe...",
+      "index": 475,
+      "weight": 0.9435,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When building self‑optimizing agents, first define a concrete, computable and bounded metric for system complexity or entropy, and then base...",
       "immutable_anchor": false
     }
   ]
