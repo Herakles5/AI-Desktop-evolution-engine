@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:50:51",
+  "timestamp": "2026-11-13 15:52:10",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 478,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9623,
-  "compression_pct": 96.2,
+  "total_axioms_in_manifold": 479,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9603,
+  "compression_pct": 96.0,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6406,
-  "max_clause_chars": 148,
-  "compression_hash": "0x2e8ae66cd047",
-  "latency_us": 46599.71,
+  "cognitive_load_factor": 0.6047,
+  "max_clause_chars": 151,
+  "compression_hash": "0x8b68a7497e09",
+  "latency_us": 43853.84,
   "load_breakdown": {
-    "cognitive_load": 0.6406,
+    "cognitive_load": 0.6047,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6658
+    "cpu_strain": 0.4867
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 463,
-      "weight": 0.7148,
+      "weight": 0.7141,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then...",
+      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then re...",
       "immutable_anchor": false
     },
     {
       "index": 234,
-      "weight": 0.6772,
+      "weight": 0.677,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic ent...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entrop...",
       "immutable_anchor": false
     },
     {
       "index": 473,
-      "weight": 0.6671,
+      "weight": 0.6663,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Size the SHA-3 verification worker pool to match the 500 GB/s ingestion rate, as cryptographic throughput is the hard ceiling; implement explicit...",
+      "compressed_axiom": "Size the SHA-3 verification worker pool to match the 500 GB/s ingestion rate, as cryptographic throughput is the hard ceiling; implement explicit ba...",
       "immutable_anchor": false
     },
     {
       "index": 440,
-      "weight": 0.5353,
+      "weight": 0.5346,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that no...",
+      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-l...",
       "immutable_anchor": false
     }
   ]
