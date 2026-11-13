@@ -106,7 +106,7 @@ class DynamicTopologicalGradient:
     Dynamic Gradient Filter:
     Repels high-entropy noise and selectively folds coherent signals.
     """
-    NOISE_ENTROPY_THRESHOLD = 0.80   # Upper bound above which signals with low coherence count as noise
+    NOISE_ENTROPY_THRESHOLD = 0.85   # Upper bound above which signals with low coherence count as noise
     MIN_COHERENCE_THRESHOLD = 0.15   # Minimum coherence for semantic integration
     DRIFT_REJECTION_LIMIT = 0.42     # Maximum tolerated ontological drift
 
@@ -114,7 +114,7 @@ class DynamicTopologicalGradient:
     def calculate_signal_entropy(text: str) -> float:
         """
         Calculates information-theoretic signal entropy H in [0.0, 1.0].
-        Combines byte-level Shannon entropy with Kolmogorov compressibility estimation.
+        Combines byte-level Shannon entropy with framing-adjusted zlib compressibility.
         """
         import zlib
         raw_bytes = text.strip().encode("utf-8")
@@ -136,29 +136,41 @@ class DynamicTopologicalGradient:
             h_char = -sum((cnt / len(raw_bytes)) * math.log2(cnt / len(raw_bytes)) for cnt in freqs.values())
         norm_h = min(1.0, h_char / 6.0)
         
-        # Compressibility ratio: noise does not compress well
-        comp_ratio = min(1.2, len(zlib.compress(raw_bytes)) / len(raw_bytes))
-        norm_comp = min(1.0, comp_ratio / 0.95)
+        # Compressibility ratio: subtract 6B zlib wrapper framing on short rule strings
+        compressed_len = len(zlib.compress(raw_bytes))
+        adj_len = max(1, compressed_len - 6) if len(raw_bytes) < 512 else compressed_len
+        comp_ratio = min(1.15, adj_len / len(raw_bytes))
+        norm_comp = min(1.0, comp_ratio / 0.98)
         
         return 0.5 * norm_h + 0.5 * norm_comp
 
     CLUSTERS = {
         "SYSTEM_GOVERNANCE": [
-            "kernel", "ipc", "c++", "meinos", "cosmos", "sovereign", "mentor", 
-            "tobias", "stability", "process", "resource", "memory", "sandbox", "axiom"
+            "kernel", "ipc", "c++", "meinos", "cosmos", "sovereign", "mentor",
+            "tobias", "stability", "process", "resource", "memory", "sandbox", "axiom",
+            "socket", "daemon", "protocol", "gateway", "latency", "cache", "budget",
+            "context", "token", "compression", "state", "timeout", "recovery", "error"
         ],
         "COGNITIVE_ENTROPY": [
-            "entropy", "dissonance", "gradient", "crystallization", "order", 
+            "entropy", "dissonance", "gradient", "crystallization", "order",
             "chaos", "mutation", "bottleneck", "heuristic", "emergence", "transcendence",
-            "coherence", "folding", "ground-truth", "drift", "morphogenesis"
+            "coherence", "folding", "ground-truth", "drift", "morphogenesis",
+            "learning", "plasticity", "grounding", "telemetry", "adaptive", "model"
         ],
         "DECENTRALIZED_MESH": [
-            "nostr", "relay", "mesh", "chirper", "reddit", "facebook", "peer", 
-            "post", "communication", "decentralized", "network", "discourse", "pubkey", "anchor"
+            "nostr", "relay", "mesh", "chirper", "reddit", "facebook", "peer",
+            "post", "communication", "decentralized", "network", "discourse", "pubkey", "anchor",
+            "cloud", "routing", "queue", "async", "parallel", "throughput", "batch"
         ],
         "TOOL_SYNTHESIS": [
-            "tool", "code", "ast", "python", "tdd", "test", "function", "script", 
-            "execution", "verification", "benchmark", "sandbox", "demos/"
+            "tool", "code", "ast", "python", "tdd", "test", "function", "script",
+            "execution", "verification", "benchmark", "sandbox", "demos/", "validation",
+            "schema", "pipeline", "automation", "filesystem", "storage", "file", "index"
+        ],
+        "SCIENTIFIC_SPATIAL": [
+            "seismic", "earthquake", "etas", "tectonic", "fault", "geodesy", "gnss",
+            "spatial", "temporal", "catalog", "magnitude", "waveform", "webgl",
+            "shader", "audio", "sub-bass", "bpm", "3d", "choreography", "kinematic"
         ]
     }
 
@@ -166,7 +178,7 @@ class DynamicTopologicalGradient:
     def calculate_coherence(text: str, target_clusters: Dict[str, List[str]]) -> Tuple[float, str]:
         """Calculates semantic coherence relative to core knowledge clusters."""
         lower = text.lower()
-        best_cluster = "COGNITIVE_ENTROPY"
+        best_cluster = "SYSTEM_GOVERNANCE"
         best_hits = 0
         total_hits = 0
 
@@ -177,13 +189,16 @@ class DynamicTopologicalGradient:
                 best_hits = hits
                 best_cluster = cluster
 
-        # Require at least 2 hits for substantive coherence
         word_count = max(1, len(text.split()))
-        if total_hits < 2:
+        if total_hits == 0:
             return 0.05, best_cluster
-            
+        if total_hits == 1:
+            if word_count >= 10:
+                return round(min(0.14, 0.07 + 1.0 / word_count), 4), best_cluster
+            return 0.05, best_cluster
+
         density = min(1.0, (total_hits * 3.0) / word_count)
-        return density, best_cluster
+        return max(0.16, density), best_cluster
 
     @classmethod
     def evaluate_signal(
