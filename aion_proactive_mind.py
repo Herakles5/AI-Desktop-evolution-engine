@@ -168,9 +168,9 @@ class AionProactiveMind:
         try:
             with urllib.request.urlopen(req, timeout=8) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
+                import re
                 text = (data.get("response") or "").strip().strip('"').strip("'")
-                if text.startswith("[AION]"):
-                    text = text[6:].strip()
+                text = re.sub(r'^\[(?:LANG:\s*[A-Z]{2}|AION)\]\s*', '', text, flags=re.IGNORECASE).strip()
                 if len(text) >= 25 and all(text[:40].lower() not in rt.lower() for rt in recent_thoughts):
                     return text
         except Exception:

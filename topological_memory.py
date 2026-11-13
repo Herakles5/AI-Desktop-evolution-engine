@@ -290,25 +290,7 @@ class TopologicalRuleManager:
     """
     Organizes learned rules into semantic topologies and applies dynamic gradients.
     """
-    CLUSTERS = {
-        "SYSTEM_GOVERNANCE": [
-            "kernel", "ipc", "c++", "meinos", "cosmos", "sovereign", "mentor", 
-            "tobias", "stability", "process", "resource", "memory", "sandbox", "axiom"
-        ],
-        "COGNITIVE_ENTROPY": [
-            "entropy", "dissonance", "gradient", "crystallization", "order", 
-            "chaos", "mutation", "bottleneck", "heuristic", "emergence", "transcendence",
-            "coherence", "noise", "folding", "ground-truth", "drift"
-        ],
-        "DECENTRALIZED_MESH": [
-            "nostr", "relay", "mesh", "chirper", "reddit", "facebook", "peer", 
-            "post", "communication", "decentralized", "network", "discourse", "pubkey", "anchor"
-        ],
-        "TOOL_SYNTHESIS": [
-            "tool", "code", "ast", "python", "tdd", "test", "function", "script", 
-            "execution", "verification", "benchmark", "sandbox", "demos/"
-        ]
-    }
+    CLUSTERS = DynamicTopologicalGradient.CLUSTERS
 
     @classmethod
     def classify_rule(cls, rule: str) -> str:

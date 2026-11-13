@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:22:01",
+  "timestamp": "2026-11-13 15:26:46",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 478,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9665,
-  "compression_pct": 96.7,
+  "total_axioms_in_manifold": 479,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9645,
+  "compression_pct": 96.5,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7017,
-  "max_clause_chars": 144,
-  "compression_hash": "0xc01cd576a36d",
-  "latency_us": 43716.39,
+  "cognitive_load_factor": 0.6909,
+  "max_clause_chars": 145,
+  "compression_hash": "0xc64eae127e6f",
+  "latency_us": 43058.46,
   "load_breakdown": {
-    "cognitive_load": 0.7017,
+    "cognitive_load": 0.6909,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9717
+    "cpu_strain": 0.9175
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 474,
-      "weight": 0.9978,
+      "index": 470,
+      "weight": 0.7742,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑modifying cognitive architectures, steer their internal state toward locally maximal entropy increase while maintaining a...",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarc...",
       "immutable_anchor": false
     },
     {
-      "index": 446,
-      "weight": 0.9776,
+      "index": 453,
+      "weight": 0.7619,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty me...",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the bound...",
       "immutable_anchor": false
     },
     {
-      "index": 477,
-      "weight": 0.945,
+      "index": 422,
+      "weight": 0.74,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑improving systems, anchor the drive for entropy reduction to computable, observable proxies rather than uncomputable meas...",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metric...",
       "immutable_anchor": false
     },
     {
-      "index": 475,
-      "weight": 0.9435,
+      "index": 413,
+      "weight": 0.7337,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When building self‑optimizing agents, first define a concrete, computable and bounded metric for system complexity or entropy, and then base...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to av...",
       "immutable_anchor": false
     }
   ]
