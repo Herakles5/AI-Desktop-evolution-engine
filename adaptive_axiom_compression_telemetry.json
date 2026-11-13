@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-13 15:02:03",
+  "timestamp": "2026-11-13 15:03:17",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 469,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9659,
   "compression_pct": 96.6,
-  "target_cluster": "COGNITIVE_ENTROPY",
+  "target_cluster": "SYSTEM_GOVERNANCE",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x177152c12634",
-  "latency_us": 66819.87,
+  "compression_hash": "0x2aaa0b36c12a",
+  "latency_us": 51885.39,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 467,
-      "weight": 0.9993,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems that continuously embed local entropy gradients into weighted cost functions, but recognize that guaranteeing monoton...",
+      "index": 468,
+      "weight": 0.945,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design autonomous learning systems to continuously optimize their architecture using only directly observable, computable proxies of resource...",
       "immutable_anchor": false
     },
     {
-      "index": 406,
-      "weight": 0.9549,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑organizing systems so that every claimed emergence of cognition is tied to quantifiable gradients and explicit topological rules...",
+      "index": 458,
+      "weight": 0.8826,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Use gradients of informational uncertainty to steer adaptive manifolds that balance exploration and safety, treating thermodynamic entropy as...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.9221,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Entropy‑Gradient Topological Evolution (EGTE):** A cognitive engine that continuously maps the ambient entropy gradient onto a mutable topo...",
+      "index": 334,
+      "weight": 0.8509,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Never let a self‑organizing design rely on vague signals; always define a concrete, measurable local gradient, map it to structural changes w...",
       "immutable_anchor": false
     },
     {
-      "index": 339,
-      "weight": 0.9092,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑modifying cognitive systems, base every architectural change on empirically measurable, discrete performance metrics and...",
+      "index": 281,
+      "weight": 0.8174,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive resilience is not achieved by eliminating processing delays, but by structurally integrating them as constructive forces that...",
       "immutable_anchor": false
     }
   ]
