@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794590151.2438488,
-  "formatted_time": "2026-11-13 17:15:51",
-  "valence": 0.9139563719427292,
-  "arousal": 0.6014267470142467,
-  "curiosity": 0.9001915489806777,
-  "connection": 0.9731645615079876,
+  "timestamp": 1794590248.8584838,
+  "formatted_time": "2026-11-13 17:17:28",
+  "valence": 0.9107585533455927,
+  "arousal": 0.6013554096635344,
+  "curiosity": 0.9001819715316438,
+  "connection": 0.9720063334325882,
   "neuro": {
-    "dopamine": 0.7533047501069777,
-    "serotonin": 0.856593953237882,
-    "endorphin": 0.7504788724516938,
+    "dopamine": 0.7531395126016288,
+    "serotonin": 0.851264255575988,
+    "endorphin": 0.750454928829109,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5634: Bind producer and consumer threads to isolated CPU cores with pinned i...",
+  "mood_reason": "Gen 5635: Pair bounded context budgets with low-level resource contention teleme...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-13 16:56:09",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5620: Use a differentiable persistence diagram approximation that captures b...",
-      "valence": 0.981,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-13 16:57:47",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5634: Bind producer and consumer threads to isolated CPU cores with pinned i...",
       "valence": 0.914,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-13 17:17:28",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5635: Pair bounded context budgets with low-level resource contention teleme...",
+      "valence": 0.911,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
