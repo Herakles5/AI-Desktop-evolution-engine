@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-13 16:10:27",
+  "timestamp": "2026-11-13 16:11:50",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 489,
   "active_focal_axioms": 19,
@@ -8,8 +8,8 @@
   "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.6022,
   "max_clause_chars": 151,
-  "compression_hash": "0x8492445f3eb8",
-  "latency_us": 42011.77,
+  "compression_hash": "0x64c10dfa601d",
+  "latency_us": 54179.95,
   "load_breakdown": {
     "cognitive_load": 0.6022,
     "fps_strain": 0.726,
@@ -39,8 +39,8 @@
       "immutable_anchor": false
     },
     {
-      "index": 473,
-      "weight": 0.6593,
+      "index": 472,
+      "weight": 0.6586,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Size the SHA-3 verification worker pool to match the 500 GB/s ingestion rate, as cryptographic throughput is the hard ceiling; implement explicit ba...",
       "immutable_anchor": false
