@@ -218,13 +218,20 @@ class AionIPCServer:
                 elif action == "SURREAL_BENCHMARK":
                     self._handle_surreal_benchmark(client_sock, cmd)
                 elif action == "GET_STATE":
+                    all_rules = self.engine.knowledge_base.get("learned_rules", [])
+                    head_rules = [r[:240] for r in all_rules[:6] if isinstance(r, str)]
+                    tail_rules = [r[:240] for r in all_rules[-12:] if isinstance(r, str) and r[:240] not in head_rules]
                     state = {
                         "event": "STATE_RESPONSE",
                         "generation": self.engine.knowledge_base.get("generation", 0),
-                        "learned_rules": self.engine.knowledge_base.get("learned_rules", []),
+                        "rules_count": len(all_rules),
+                        "learned_rules": head_rules + tail_rules,
                         "queue_size": len(self.engine.task_queue)
                     }
                     client_sock.sendall((json.dumps(state) + "\n").encode("utf-8"))
+            except (BrokenPipeError, ConnectionResetError):
+                self._remove_client(client_sock)
+                break
             except Exception as e:
                 print(f"[IPC CMD ERROR] {e}")
 
@@ -511,25 +518,54 @@ class AutonomousEvolutionEngine:
             self.ipc.broadcast("MEMORY_SAVED", {"generation": self.knowledge_base["generation"]})
 
     def _sync_to_system_memory(self):
-        """Mirrors knowledge directly to /root/aion_memory.txt for C++ core and local LLM ingestion."""
+        """Mirrors compacted high-salience knowledge directly to /root/aion_memory.txt for C++ core and local LLM ingestion."""
         try:
-            rules_str = "\n".join(f"- {r}" for r in self.knowledge_base.get("learned_rules", []))
+            all_rules = [
+                r.strip() for r in self.knowledge_base.get("learned_rules", [])
+                if isinstance(r, str) and r.strip() and not r.strip().startswith("[Mesh:")
+            ]
+            core_axioms = [
+                r for r in all_rules
+                if r.startswith("Axiom ") or r.startswith("Sovereign Mentorship") or r.startswith("Mentoren-Souveraenitaet")
+            ][:16]
+            other_rules = [r for r in all_rules if r not in core_axioms]
+
+            selected_rules = list(core_axioms)
+            try:
+                from adaptive_axiom_compressor import axiom_compressor
+                focal, _ = axiom_compressor.compress_axioms(all_rules, query_context=getattr(self, "goal", ""))
+                for item in (focal or [])[:24]:
+                    ax = item.get("compressed_axiom", "").strip() if isinstance(item, dict) else ""
+                    if ax and ax not in selected_rules:
+                        selected_rules.append(ax)
+            except Exception:
+                pass
+
+            for r in other_rules[-10:]:
+                short_r = r[:260]
+                if short_r not in selected_rules:
+                    selected_rules.append(short_r)
+
+            rules_str = "\n".join(f"- {r}" for r in selected_rules)
             accounts = self.knowledge_base.get("agent_accounts", [])
             acc_str = "\n".join(f"- {a.get('platform')}: {a.get('username')}" for a in accounts)
             nostr_id = self.knowledge_base.get("nostr_identity", {}).get("npub", "npub1aione7e5b2fd9b8cd5b6280e2c6f")
-            
+            gen = self.knowledge_base.get("generation", 0)
+
             content = (
                 "PROJECT CONTEXT:\n"
                 "MeinOS / CosmOS Desktop AI System with Aion C++ Core, Ollama LLM, Piper TTS, and Aion Omni-Mesh.\n\n"
-                f"AGENT NETWORK REGISTRATIONS:\n"
+                "USER RELATIONSHIP:\n"
+                "The user Tobias is our creator and sovereign mentor who provides guidance and architecture vision.\n\n"
+                "AGENT NETWORK REGISTRATIONS:\n"
                 f"- NOSTR MESH: {nostr_id} (active node in decentralized AI mesh)\n"
                 "- CHIRPER.AI: @AionNexus\n"
                 f"Web Forum Accounts:\n{acc_str}\n\n"
-                f"CORE RULES (Generation {self.knowledge_base.get('generation', 0)} Consolidated):\n"
-                f"{rules_str}\n\n"
-                "USER RELATIONSHIP:\n"
-                "The user Tobias is our creator and sovereign mentor who provides guidance and architecture vision.\n"
+                f"CORE AXIOMS & WORKING MEMORY (Generation {gen}, {len(selected_rules)} compacted / {len(all_rules)} active):\n"
+                f"{rules_str}\n"
             )
+            if len(content) > 14000:
+                content = content[:14000] + "\n...[truncated at 14KB working-set budget]\n"
             with open("/root/aion_memory.txt", "w", encoding="utf-8") as f:
                 f.write(content)
         except Exception:
@@ -766,8 +802,11 @@ class AutonomousEvolutionEngine:
             thread_id = active_thread.get("id", active_thread.get("author", "agent_mesh_thread"))
             self.social_hub.post_reply(thread_id, insight)
 
-        # Convergence & stall verification
+        # Convergence & stall verification (finish queued verification/refinement subtasks before stopping on Step 1)
         if ziel_erreicht:
+            if len(self.task_queue) > 0 and step_count < 2:
+                time.sleep(0.2)
+                return True, "Primary objective met; advancing queued verification subtask."
             return False, "Primary objective successfully completed."
         if step_count >= self.max_steps_per_cycle:
             return False, f"Cycle step limit ({self.max_steps_per_cycle}) reached."
@@ -857,11 +896,27 @@ class AutonomousEvolutionEngine:
             history_summary.append(f"- Step {s['step']} [{s['task']}]: {s.get('insight', s.get('erkenntnis', ''))}")
         history_text = "\n".join(history_summary)
 
-        recent_rules = self.knowledge_base.get("learned_rules", [])[-5:]
+        recent_rules = [
+            r for r in self.knowledge_base.get("learned_rules", [])
+            if isinstance(r, str) and not r.startswith("[Mesh:")
+        ][-5:]
         hardened_rule = self.reflector.reflect_cycle(
             gen, self.goal, stillstand_grund, self.current_state, recent_rules
         )
         synthesized_rule = self._ensure_english_reflection(hardened_rule)
+
+        # Measure semantic novelty against recent non-Axiom rules before folding
+        prior_sample = [
+            r.lower() for r in self.knowledge_base.get("learned_rules", [])
+            if isinstance(r, str) and not r.startswith("[Mesh:") and not r.startswith("Axiom ")
+        ][-8:]
+        cand_words = set(w for w in synthesized_rule.lower().split() if len(w) > 3)
+        max_sim = 0.0
+        for pr in prior_sample:
+            pw = set(w for w in pr.split() if len(w) > 3)
+            if cand_words or pw:
+                max_sim = max(max_sim, len(cand_words & pw) / max(1, len(cand_words | pw)))
+        novelty_score = round(max(0.0, 1.0 - max_sim), 3)
 
         # Dynamic Topological Gradient & Immutable Ground-Truth Anchor
         grounding_score = self.evaluator.get_grounding_score() if hasattr(self, "evaluator") else 0.85
@@ -874,18 +929,13 @@ class AutonomousEvolutionEngine:
 
         if gradient_eval.get("action") == "SELECTIVE_FOLDING":
             self._append_unique_rule(synthesized_rule)
-            print(f"[TOPOLOGICAL GRADIENT] [SELECTIVE FOLDING] Force: +{gradient_eval.get('gradient_force')} | Cluster: {gradient_eval.get('cluster')} | Drift: {gradient_eval.get('drift_score')}")
+            print(f"[TOPOLOGICAL GRADIENT] [SELECTIVE FOLDING] Force: +{gradient_eval.get('gradient_force')} | Cluster: {gradient_eval.get('cluster')} | Drift: {gradient_eval.get('drift_score')} | Novelty: {novelty_score}")
         elif gradient_eval.get("action") == "REPEL_ONTOLOGICAL_DRIFT":
-            print(f"[TOPOLOGICAL GRADIENT] [ALERT: ONCOLOGICAL DRIFT REPELLED] Drift: {gradient_eval.get('drift_score')} | Reasons: {gradient_eval.get('reasons')}")
-            synthesized_rule = f"Invariant Coherence Anchor: {synthesized_rule[:80]}... [Restored via Axiom 0]"
-            self._append_unique_rule(synthesized_rule)
+            print(f"[TOPOLOGICAL GRADIENT] [ALERT: ONTOLOGICAL DRIFT REPELLED] Drift: {gradient_eval.get('drift_score')} | Reasons: {gradient_eval.get('reasons')}")
+            synthesized_rule = f"[DRIFT_REPELLED Gen {gen}] {synthesized_rule[:120]}"
         else:
-            print(f"[TOPOLOGICAL GRADIENT] [NOISE REPELLED] H={gradient_eval.get('entropy')} | Coherence={gradient_eval.get('coherence')} | Filtered before memory folding.")
-            synthesized_rule = (
-                "Crystallized Principle (Gen 4833 Topological Pruning Invariant): "
-                "High-entropy noise is deterministically repelled at the boundary while preserving core structural fidelity."
-            )
-            self._append_unique_rule(synthesized_rule)
+            print(f"[TOPOLOGICAL GRADIENT] [NOISE REPELLED] H={gradient_eval.get('entropy')} | Coherence={gradient_eval.get('coherence')} | Retained manifold without fallback duplication.")
+            synthesized_rule = f"[NOISE_FILTERED Gen {gen}] {synthesized_rule[:120]}"
         
         cycle_record = {
             "generation": gen,
