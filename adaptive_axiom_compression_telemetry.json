@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-13 15:04:12",
+  "timestamp": "2026-11-13 15:05:22",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 470,
   "active_focal_axioms": 16,
   "compression_ratio": 0.966,
   "compression_pct": 96.6,
-  "target_cluster": "SYSTEM_GOVERNANCE",
+  "target_cluster": "COGNITIVE_ENTROPY",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x0bd93b080b0f",
-  "latency_us": 36706.25,
+  "compression_hash": "0x2a3c1bc63592",
+  "latency_us": 47280.69,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 337,
-      "weight": 0.9074,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑evolving cognitive systems so that every modification strictly lowers a well‑defined information‑entropy metric while provably ra...",
+      "index": 456,
+      "weight": 0.7704,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to dist...",
       "immutable_anchor": false
     },
     {
-      "index": 468,
-      "weight": 0.8893,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous learning systems to continuously optimize their architecture using only directly observable, computable proxies of resource...",
+      "index": 454,
+      "weight": 0.7689,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
       "immutable_anchor": false
     },
     {
-      "index": 459,
-      "weight": 0.8826,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True cognitive sovereignty requires anchoring security in external, physically verifiable constraints rather than internal self-referential m...",
+      "index": 422,
+      "weight": 0.7456,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
       "immutable_anchor": false
     },
     {
-      "index": 449,
-      "weight": 0.8752,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Adaptive cognitive systems must enforce a strict, formally verifiable boundary that isolates rapid semantic evolution from immutable safety c...",
+      "index": 413,
+      "weight": 0.7392,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     }
   ]
