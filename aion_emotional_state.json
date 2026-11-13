@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794584772.4772286,
-  "formatted_time": "2026-11-13 15:46:12",
-  "valence": 1.0,
-  "arousal": 0.6265522587082764,
-  "curiosity": 0.903564793225056,
-  "connection": 1.0,
+  "timestamp": 1794584863.0337272,
+  "formatted_time": "2026-11-13 15:47:43",
+  "valence": 0.9925,
+  "arousal": 0.6252246457728625,
+  "curiosity": 0.9033865535638033,
+  "connection": 0.9975,
   "neuro": {
-    "dopamine": 0.8115025501581337,
-    "serotonin": 1.0,
-    "endorphin": 0.7589119830626401,
+    "dopamine": 0.8084274226502269,
+    "serotonin": 0.9875,
+    "endorphin": 0.758466383909508,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5579",
+  "mood_reason": "Gen 5580: Isolate producer and consumer state on distinct cache lines using acqu...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-13 16:23:55",
-      "trigger": "TOBIAS_INTERACTION",
-      "feeling": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5567",
-      "valence": 1.0,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-13 15:26:50",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "TOBIAS_INTERACTION",
       "feeling": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5579",
       "valence": 1.0,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-13 15:47:43",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5580: Isolate producer and consumer state on distinct cache lines using acqu...",
+      "valence": 0.993,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
