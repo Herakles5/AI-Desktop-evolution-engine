@@ -7,15 +7,6 @@
   "consecutive_drifts": 0,
   "evaluation_history": [
     {
-      "generation": 5499,
-      "timestamp": "2026-11-10 17:16:58",
-      "learning_rate": 0.063,
-      "exploration_temperature": 0.77,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.949,
-      "adjustments": []
-    },
-    {
       "generation": 5500,
       "timestamp": "2026-11-10 17:18:13",
       "learning_rate": 0.063,
@@ -969,6 +960,16 @@
         "High stability confirmed -> Increased exploration temperature",
         "Sustained stability & high grounding -> Nudged learning rate"
       ]
+    },
+    {
+      "generation": 5598,
+      "timestamp": "2026-11-13 16:19:31",
+      "learning_rate": 0.043,
+      "exploration_temperature": 0.61,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.835,
+      "novelty_score": 0.833,
+      "adjustments": []
     }
   ]
 }
