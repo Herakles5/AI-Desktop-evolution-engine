@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:08:39",
+  "timestamp": "2026-11-13 15:09:50",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 472,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9661,
-  "compression_pct": 96.6,
+  "total_axioms_in_manifold": 473,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9641,
+  "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0xc0c984a603a6",
-  "latency_us": 36458.56,
+  "cognitive_load_factor": 0.6617,
+  "max_clause_chars": 147,
+  "compression_hash": "0xf8689a92e5bf",
+  "latency_us": 26569.07,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6617,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.7717
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 432,
-      "weight": 0.9165,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "A system may autonomously reconfigure its computational topology when local entropy gradients are validated by redundant, cross‑modal metrics...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 429,
-      "weight": 0.9144,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When designing self‑evolving systems, explicitly quantify entropy gradients and map them to topological constraints through a mathematically...",
-      "immutable_anchor": false
-    },
-    {
       "index": 436,
-      "weight": 0.8644,
+      "weight": 0.9737,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engin...",
+      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine c...",
       "immutable_anchor": false
     },
     {
-      "index": 423,
-      "weight": 0.8551,
+      "index": 421,
+      "weight": 0.908,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When reconfiguring a system, quantify semantic change with a rigorously defined computational or informational cost metric and permit mutatio...",
+      "compressed_axiom": "Cognitive systems should be engineered as dynamic manifolds that let local entropy gradients autonomously drive topological reconfiguration, yet...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 399,
+      "weight": 0.8926,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Cognitive autonomy is achieved not by mathematically proving global coherence, but by architecturally isolating high-entropy exploration within...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 456,
+      "weight": 0.8782,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to disting...",
       "immutable_anchor": false
     }
   ]
