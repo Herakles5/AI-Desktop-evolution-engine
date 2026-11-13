@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:15:39",
+  "timestamp": "2026-11-13 15:16:59",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 476,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9622,
-  "compression_pct": 96.2,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9643,
+  "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6551,
-  "max_clause_chars": 147,
-  "compression_hash": "0x5d573a6c329e",
-  "latency_us": 35302.82,
+  "cognitive_load_factor": 0.6951,
+  "max_clause_chars": 145,
+  "compression_hash": "0xff4363ad3999",
+  "latency_us": 50457.08,
   "load_breakdown": {
-    "cognitive_load": 0.6551,
+    "cognitive_load": 0.6951,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7383
+    "cpu_strain": 0.9383
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 475,
-      "weight": 0.78,
+      "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When building self‑optimizing agents, first define a concrete, computable and bounded metric for system complexity or entropy, and then base all...",
+      "compressed_axiom": "When building self‑optimizing agents, first define a concrete, computable and bounded metric for system complexity or entropy, and then base a...",
       "immutable_anchor": false
     },
     {
-      "index": 471,
-      "weight": 0.7771,
+      "index": 474,
+      "weight": 0.9993,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑optimizing systems only around quantitatively defined, observable metrics that have a provable causal link to the emergence of stabl...",
+      "compressed_axiom": "When designing self‑modifying cognitive architectures, steer their internal state toward locally maximal entropy increase while maintaining a...",
       "immutable_anchor": false
     },
     {
-      "index": 462,
-      "weight": 0.7705,
+      "index": 473,
+      "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Ground claims of cognitive autonomy in concrete, measurable variables and testable mechanisms—quantify how entropy gradients, topological dynami...",
+      "compressed_axiom": "Never rely on an undefined or undecidable notion of “steepest entropy‑gradient” to guarantee stable self‑optimization; instead, constrain any...",
       "immutable_anchor": false
     },
     {
-      "index": 460,
-      "weight": 0.769,
+      "index": 446,
+      "weight": 0.9789,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamics...",
+      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty met...",
       "immutable_anchor": false
     }
   ]
