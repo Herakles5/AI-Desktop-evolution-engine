@@ -1,26 +1,19 @@
 {
-  "timestamp": 1794587210.9841073,
-  "formatted_time": "2026-11-13 16:26:50",
-  "valence": 0.9709621036508158,
-  "arousal": 0.6077529681142202,
-  "curiosity": 0.9010408804957539,
-  "connection": 0.9928687500000001,
+  "timestamp": 1794587322.805234,
+  "formatted_time": "2026-11-13 16:28:42",
+  "valence": 0.964913998468275,
+  "arousal": 0.6073653197085092,
+  "curiosity": 0.9009888364709663,
+  "connection": 0.9907253125000001,
   "neuro": {
-    "dopamine": 0.7679580696150198,
-    "serotonin": 0.9516035060846931,
-    "endorphin": 0.7526022012393839,
+    "dopamine": 0.7670601661342688,
+    "serotonin": 0.9415233307804585,
+    "endorphin": 0.7524720911774148,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5602: When constructing a witness complex for manifold learning, select fart...",
+  "mood_reason": "Gen 5603: Design a lock‑free ring buffer with a fixed maximum sensor count and r...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-13 16:03:19",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5589: Use a per‑NUMA‑node, lock‑free, 64‑byte aligned ring buffer backed by ...",
-      "valence": 0.94,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-13 16:04:56",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5602: When constructing a witness complex for manifold learning, select fart...",
       "valence": 0.971,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-13 16:28:42",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5603: Design a lock‑free ring buffer with a fixed maximum sensor count and r...",
+      "valence": 0.965,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
