@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:18:05",
+  "timestamp": "2026-11-13 15:19:12",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 476,
+  "total_axioms_in_manifold": 477,
   "active_focal_axioms": 17,
-  "compression_ratio": 0.9643,
+  "compression_ratio": 0.9644,
   "compression_pct": 96.4,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6776,
+  "cognitive_load_factor": 0.6809,
   "max_clause_chars": 146,
-  "compression_hash": "0x17ebbb4d14f8",
-  "latency_us": 53397.07,
+  "compression_hash": "0x217b8a78d556",
+  "latency_us": 41744.36,
   "load_breakdown": {
-    "cognitive_load": 0.6776,
+    "cognitive_load": 0.6809,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8508
+    "cpu_strain": 0.8675
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 474,
-      "weight": 0.9993,
+      "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When designing self‑modifying cognitive architectures, steer their internal state toward locally maximal entropy increase while maintaining a m...",
       "immutable_anchor": false
     },
     {
-      "index": 473,
-      "weight": 0.9985,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Never rely on an undefined or undecidable notion of “steepest entropy‑gradient” to guarantee stable self‑optimization; instead, constrain any a...",
-      "immutable_anchor": false
-    },
-    {
-      "index": 446,
-      "weight": 0.9789,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty metr...",
-      "immutable_anchor": false
-    },
-    {
       "index": 444,
-      "weight": 0.9775,
+      "weight": 0.9768,
       "cluster": "COGNITIVE_ENTROPY",
       "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an i...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 435,
+      "weight": 0.9704,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "**The Self‑Entropy Topology Principle**: a cognitive engine must continuously map local entropy gradients to topological reconfigurations of it...",
+      "immutable_anchor": false
+    },
+    {
+      "index": 475,
+      "weight": 0.9443,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When building self‑optimizing agents, first define a concrete, computable and bounded metric for system complexity or entropy, and then base al...",
       "immutable_anchor": false
     }
   ]

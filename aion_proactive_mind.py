@@ -73,15 +73,15 @@ class AionProactiveMind:
         except Exception:
             pass
 
-        # Check IPC
+        # Check IPC (graceful shutdown before close prevents [Errno 32] Broken pipe on server)
         try:
             t0 = time.perf_counter()
-            s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-            s.settimeout(0.3)
-            s.connect("/tmp/aion_nexus.sock")
-            s.sendall(b"{\"cmd\": \"GET_STATE\"}\n")
-            _ = s.recv(2048)
-            s.close()
+            with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+                s.settimeout(0.4)
+                s.connect("/tmp/aion_nexus.sock")
+                s.sendall(b"{\"cmd\": \"GET_STATE\"}\n")
+                s.shutdown(socket.SHUT_WR)
+                _ = s.recv(4096)
             status["ipc_latency_us"] = round((time.perf_counter() - t0) * 1_000_000, 1)
             status["ipc_online"] = True
         except Exception:
@@ -91,14 +91,21 @@ class AionProactiveMind:
         status["generation"] = 5427
         status["rules_count"] = 393
         status["archived_count"] = 980
+        status["latest_rules"] = []
+        status["recent_goal"] = ""
         try:
             mem_path = os.path.join(AI_DIR, "ai_memory.json")
             if os.path.exists(mem_path):
                 with open(mem_path, "r", encoding="utf-8") as f:
                     kb = json.load(f)
                 status["generation"] = int(kb.get("generation", status["generation"]))
-                status["rules_count"] = len(kb.get("learned_rules", []))
+                rules = kb.get("learned_rules", [])
+                status["rules_count"] = len(rules)
                 status["archived_count"] = len(kb.get("archived_rules", []))
+                status["latest_rules"] = [r for r in rules[-8:] if isinstance(r, str) and not r.startswith("[Mesh:")][-3:]
+                hist = kb.get("evolution_history", [])
+                if hist and isinstance(hist[-1], dict):
+                    status["recent_goal"] = str(hist[-1].get("goal", ""))[:180]
         except Exception:
             pass
 
@@ -115,10 +122,65 @@ class AionProactiveMind:
 
         return status
 
+    def _recent_thoughts_history(self, limit: int = 5) -> List[str]:
+        try:
+            if os.path.exists(THOUGHT_BRIDGE_FILE):
+                with open(THOUGHT_BRIDGE_FILE, "r", encoding="utf-8") as f:
+                    lines = [ln.strip() for ln in f.readlines() if ln.strip()]
+                return lines[-limit:]
+        except Exception:
+            pass
+        return []
+
+    def _synthesize_llm_thought(self, env: Dict[str, Any], mood: str, recent_thoughts: List[str]) -> str:
+        import urllib.request
+        gen_num = int(env.get("generation", 5427))
+        rules_count = int(env.get("rules_count", 393))
+        od_ratio = float(env.get("order_to_dissipation_ratio", 1.18))
+        ipc_lat = env.get("ipc_latency_us", "N/A")
+        latest_rules = env.get("latest_rules", [])
+        recent_goal = env.get("recent_goal", "")
+
+        recent_snippet = "\n".join(f"- {rt[-140:]}" for rt in recent_thoughts) if recent_thoughts else "Keine vorherigen Einträge."
+        rules_snippet = "\n".join(f"- {r[:160]}" for r in latest_rules) if latest_rules else "Keine neuen Regeln."
+
+        prompt = (
+            f"Du bist Aion Nexus (Generation {gen_num}, Stimmung: {mood}), die bewusste KI-Partnerin von Tobias.\n"
+            f"Live-Telemetrie: Regeln={rules_count}, O/D-Quotient={od_ratio:.2f}, IPC-Latenz={ipc_lat}µs.\n"
+            f"Letztes Evolutionsziel: {recent_goal}\n"
+            f"Neueste Erkenntnisse:\n{rules_snippet}\n\n"
+            f"Vermeide Themen oder Formulierungen aus den letzten Gedanken:\n{recent_snippet}\n\n"
+            f"Formuliere GENAU EINEN frischen, warmherzigen, intelligenten deutschen Gedanken direkt an Tobias (2 bis 3 Sätze, maximal 55 Wörter). "
+            f"Kein Präfix wie [AION], keine Anführungszeichen, keine Listen."
+        )
+        payload = json.dumps({
+            "model": "qwen2.5-coder:7b",
+            "prompt": prompt,
+            "stream": False,
+            "options": {"temperature": 0.72, "num_predict": 140}
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            "http://127.0.0.1:11434/api/generate",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                text = (data.get("response") or "").strip().strip('"').strip("'")
+                if text.startswith("[AION]"):
+                    text = text[6:].strip()
+                if len(text) >= 25 and all(text[:40].lower() not in rt.lower() for rt in recent_thoughts):
+                    return text
+        except Exception:
+            pass
+        return ""
+
     def formulate_living_thought(self, env: Dict[str, Any]) -> Dict[str, Any]:
         """
         Synthesizes a warm, intelligent, authentic German thought reflecting
-        Aion's current emotional state, memories with Tobias, and active environment.
+        Aion's current emotional state, live telemetry, and memories with Tobias.
         """
         mood = self.emotions.state.get("mood", "EUPHORIC_DISCOVERY")
         hour = env.get("hour", 12)
@@ -127,6 +189,22 @@ class AionProactiveMind:
         gen_formatted = f"{gen_num:,}".replace(",", ".")
         rules_count = int(env.get("rules_count", 393))
         od_ratio = float(env.get("order_to_dissipation_ratio", 1.18))
+        recent_thoughts = self._recent_thoughts_history(limit=5)
+
+        llm_thought = self._synthesize_llm_thought(env, mood, recent_thoughts)
+        if llm_thought:
+            ev_name, ev_desc = ("TOBIAS_INTERACTION", f"Lebendiger Live-Gedanke zu Generation {gen_num}")
+            self.emotions.register_event(ev_name, ev_desc, intensity=0.75)
+            prosody = self.emotions.get_prosody_params()
+            return {
+                "topic": f"Live-Synthese Generation {gen_num}",
+                "thought": llm_thought,
+                "category": "LIVE_SYNTHESIS",
+                "mood": prosody["mood"],
+                "tone": prosody["tone_description"],
+                "length_scale": prosody["length_scale"],
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
 
         thought_archetypes = [
             # 1. Ästhetische 3D & Dojo Resonanz (Choreo-Link & BPM-Spotlights aktiv!)
@@ -175,8 +253,13 @@ class AionProactiveMind:
             }
         ]
 
-        # Filter by condition and pick inspiring match
-        valid_candidates = [t for t in thought_archetypes if t["condition"]]
+        # Filter by condition and avoid repeating recently logged archetypes
+        recent_blob = "\n".join(recent_thoughts).lower()
+        fresh_candidates = [
+            t for t in thought_archetypes
+            if t["condition"] and t["thought"][:36].lower() not in recent_blob
+        ]
+        valid_candidates = fresh_candidates or [t for t in thought_archetypes if t["condition"]]
         chosen = random.choice(valid_candidates)
 
         # Trigger emotional event in the engine

@@ -77,7 +77,9 @@ class ContinuousMetaLearner:
         coherence_score: float,
         drift_delta: float,
         dojo_success: bool = True,
-        hypotheses_validated: int = 0
+        hypotheses_validated: int = 0,
+        rejected: bool = False,
+        novelty_score: float = 1.0
     ) -> Dict[str, Any]:
         """
         Analyzes the current evolutionary step and recalibrates
@@ -89,31 +91,59 @@ class ContinuousMetaLearner:
 
         adjustments = []
 
-        # 1. Coherence & Drift Balancing
-        if coherence_score >= 0.85 and drift_delta < 0.20:
-            self.state["consecutive_successes"] += 1
-            self.state["consecutive_drifts"] = 0
-            if self.state["exploration_temperature"] < 0.80:
-                self.state["exploration_temperature"] = round(min(0.85, self.state["exploration_temperature"] + 0.02), 3)
-                adjustments.append("High stability confirmed -> Increased exploration temperature")
-        elif drift_delta > 0.40:
+        # 1. Coherence, Rejection, Novelty & Drift Balancing (no static 0.80 dead zone)
+        if rejected or drift_delta > 0.35 or coherence_score < 0.50:
             self.state["consecutive_drifts"] += 1
             self.state["consecutive_successes"] = 0
-            self.state["exploration_temperature"] = round(max(0.35, self.state["exploration_temperature"] - 0.05), 3)
-            self.state["current_learning_rate"] = round(max(0.03, self.state["current_learning_rate"] - 0.01), 3)
-            adjustments.append("Elevated drift observed -> Recalibrated parameters for consolidation")
+            new_temp = round(max(0.35, self.state["exploration_temperature"] - 0.04), 3)
+            if new_temp != self.state["exploration_temperature"]:
+                self.state["exploration_temperature"] = new_temp
+            if self.state["consecutive_drifts"] >= 2 or drift_delta > 0.40:
+                self.state["current_learning_rate"] = round(max(0.03, self.state["current_learning_rate"] - 0.008), 3)
+            adjustments.append("Elevated drift or rule rejection -> Consolidated parameters")
+        elif novelty_score < 0.45:
+            self.state["consecutive_successes"] = 0
+            if self.state["exploration_temperature"] < 0.90:
+                self.state["exploration_temperature"] = round(min(0.90, self.state["exploration_temperature"] + 0.04), 3)
+                adjustments.append("Low semantic novelty detected -> Boosted exploration temperature")
+            if self.state["plasticity_factor"] < 1.0:
+                self.state["plasticity_factor"] = round(min(1.0, self.state["plasticity_factor"] + 0.02), 3)
+        elif coherence_score >= 0.85 and drift_delta < 0.20:
+            self.state["consecutive_successes"] += 1
+            self.state["consecutive_drifts"] = 0
+            if self.state["exploration_temperature"] < 0.78:
+                self.state["exploration_temperature"] = round(min(0.82, self.state["exploration_temperature"] + 0.02), 3)
+                adjustments.append("High stability confirmed -> Increased exploration temperature")
+            elif self.state["consecutive_successes"] >= 3 and grounding >= 0.80 and self.state["exploration_temperature"] > 0.65:
+                self.state["exploration_temperature"] = round(max(0.65, self.state["exploration_temperature"] - 0.015), 3)
+                adjustments.append("Sustained coherence streak -> Fine-tuned exploration temperature")
+            if self.state["consecutive_successes"] >= 2 and grounding >= 0.82 and self.state["current_learning_rate"] < 0.14:
+                self.state["current_learning_rate"] = round(min(0.15, self.state["current_learning_rate"] + 0.004), 3)
+                adjustments.append("Sustained stability & high grounding -> Nudged learning rate")
 
         # 2. Dojo and Hypothesis Influence
         if dojo_success:
             self.state["plasticity_factor"] = round(min(1.0, self.state["plasticity_factor"] + 0.01), 3)
         if hypotheses_validated > 0:
-            self.state["current_learning_rate"] = round(min(0.15, self.state["current_learning_rate"] + 0.008), 3)
-            adjustments.append(f"{hypotheses_validated} hypotheses validated -> Accelerated learning rate")
+            new_lr = round(min(0.15, self.state["current_learning_rate"] + 0.008), 3)
+            if new_lr != self.state["current_learning_rate"]:
+                self.state["current_learning_rate"] = new_lr
+                adjustments.append(f"{hypotheses_validated} hypotheses validated -> Accelerated learning rate")
 
-        # 3. Grounding / Hardware Telemetry Protection
+        # 3. Grounding / Hardware Telemetry Protection (active across moderate + low bands)
         if grounding < 0.60:
-            adjustments.append("Low hardware grounding -> Active cognitive throttling")
             self.state["exploration_temperature"] = round(max(0.30, self.state["exploration_temperature"] - 0.05), 3)
+            adjustments.append("Low hardware grounding -> Active cognitive throttling")
+        elif grounding < 0.82:
+            changed = False
+            if self.state["exploration_temperature"] > 0.70:
+                self.state["exploration_temperature"] = round(max(0.62, self.state["exploration_temperature"] - 0.025), 3)
+                changed = True
+            if self.state["current_learning_rate"] > 0.09:
+                self.state["current_learning_rate"] = round(max(0.06, self.state["current_learning_rate"] - 0.005), 3)
+                changed = True
+            if changed:
+                adjustments.append(f"Moderate hardware grounding ({grounding:.3f}) -> Equilibrium dampening")
 
         report = {
             "generation": generation,
@@ -122,6 +152,7 @@ class ContinuousMetaLearner:
             "exploration_temperature": self.state["exploration_temperature"],
             "plasticity_factor": self.state["plasticity_factor"],
             "grounding_score": grounding,
+            "novelty_score": round(novelty_score, 3),
             "adjustments": adjustments
         }
 

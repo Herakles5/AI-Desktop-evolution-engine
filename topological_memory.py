@@ -235,7 +235,7 @@ class DynamicTopologicalGradient:
             }
 
         # 2. High-Entropy Noise Check
-        is_noise = (signal_h > 0.82) or (signal_h > cls.NOISE_ENTROPY_THRESHOLD and coherence < cls.MIN_COHERENCE_THRESHOLD) or (coherence <= 0.05)
+        is_noise = (signal_h > 0.90) or (signal_h > cls.NOISE_ENTROPY_THRESHOLD and coherence < cls.MIN_COHERENCE_THRESHOLD) or (coherence <= 0.05)
         if is_noise:
             gradient_force = -1.0 * ((signal_h - 0.70) / 0.30)
             return {
