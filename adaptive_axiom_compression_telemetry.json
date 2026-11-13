@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:12:18",
+  "timestamp": "2026-11-13 15:13:20",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 474,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9641,
-  "compression_pct": 96.4,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6814,
-  "max_clause_chars": 146,
-  "compression_hash": "0x5b2b20aaf278",
-  "latency_us": 39588.59,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.962,
+  "compression_pct": 96.2,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6589,
+  "max_clause_chars": 147,
+  "compression_hash": "0xfb1f77c78cb2",
+  "latency_us": 40153.07,
   "load_breakdown": {
-    "cognitive_load": 0.6814,
+    "cognitive_load": 0.6589,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.87
+    "cpu_strain": 0.7575
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 471,
-      "weight": 0.9985,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarch...",
+      "index": 445,
+      "weight": 0.9245,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design autonomous learning systems so that every safety invariant and adaptation metric is explicitly computable and provably verifiable within...",
       "immutable_anchor": false
     },
     {
-      "index": 472,
-      "weight": 0.9443,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑optimizing systems only around quantitatively defined, observable metrics that have a provable causal link to the emergence of stab...",
+      "index": 469,
+      "weight": 0.887,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design self‑modifying learning architectures to continuously lower informational entropy by locally reshaping their computational topology, but...",
       "immutable_anchor": false
     },
     {
-      "index": 444,
-      "weight": 0.9238,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an i...",
+      "index": 468,
+      "weight": 0.8863,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design self‑optimizing architectures that adapt their structure in real time based on measured energy, latency, and throughput gradients, but on...",
       "immutable_anchor": false
     },
     {
-      "index": 432,
-      "weight": 0.9152,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "A system may autonomously reconfigure its computational topology when local entropy gradients are validated by redundant, cross‑modal metrics...",
+      "index": 467,
+      "weight": 0.8856,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design autonomous learning systems to continuously optimize their architecture using only directly observable, computable proxies of resource co...",
       "immutable_anchor": false
     }
   ]
