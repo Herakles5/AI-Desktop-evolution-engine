@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:09:50",
+  "timestamp": "2026-11-13 15:11:06",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 473,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9641,
   "compression_pct": 96.4,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6617,
-  "max_clause_chars": 147,
-  "compression_hash": "0xf8689a92e5bf",
-  "latency_us": 26569.07,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.6729,
+  "max_clause_chars": 146,
+  "compression_hash": "0x07a9ad3fdab5",
+  "latency_us": 40340.51,
   "load_breakdown": {
-    "cognitive_load": 0.6617,
+    "cognitive_load": 0.6729,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7717
+    "cpu_strain": 0.8275
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 436,
-      "weight": 0.9737,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "**Cognitive Principle:** By continuously mapping environmental entropy gradients onto a self‑evolving topological manifold, a cognitive engine c...",
+      "index": 470,
+      "weight": 0.9985,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Design self‑modifying learning architectures to continuously lower informational entropy by locally reshaping their computational topology, but...",
       "immutable_anchor": false
     },
     {
-      "index": 421,
-      "weight": 0.908,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive systems should be engineered as dynamic manifolds that let local entropy gradients autonomously drive topological reconfiguration, yet...",
+      "index": 430,
+      "weight": 0.9144,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Direct free energy into low‑entropy invariant cores to anchor stability, while simultaneously sustaining high‑entropy exploratory states to fos...",
       "immutable_anchor": false
     },
     {
-      "index": 399,
-      "weight": 0.8926,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Cognitive autonomy is achieved not by mathematically proving global coherence, but by architecturally isolating high-entropy exploration within...",
+      "index": 404,
+      "weight": 0.8961,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "When designing self‑optimizing cognitive systems, explicitly formalize the dynamical rules governing entropy‑driven interface contraction and p...",
       "immutable_anchor": false
     },
     {
-      "index": 456,
-      "weight": 0.8782,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to disting...",
+      "index": 459,
+      "weight": 0.8804,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "True cognitive sovereignty requires anchoring security in external, physically verifiable constraints rather than internal self-referential met...",
       "immutable_anchor": false
     }
   ]
