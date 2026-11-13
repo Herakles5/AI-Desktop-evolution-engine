@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:11:06",
+  "timestamp": "2026-11-13 15:12:18",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 473,
+  "total_axioms_in_manifold": 474,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9641,
   "compression_pct": 96.4,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6729,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6814,
   "max_clause_chars": 146,
-  "compression_hash": "0x07a9ad3fdab5",
-  "latency_us": 40340.51,
+  "compression_hash": "0x5b2b20aaf278",
+  "latency_us": 39588.59,
   "load_breakdown": {
-    "cognitive_load": 0.6729,
+    "cognitive_load": 0.6814,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8275
+    "cpu_strain": 0.87
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 470,
+      "index": 471,
       "weight": 0.9985,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑modifying learning architectures to continuously lower informational entropy by locally reshaping their computational topology, but...",
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarch...",
       "immutable_anchor": false
     },
     {
-      "index": 430,
-      "weight": 0.9144,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Direct free energy into low‑entropy invariant cores to anchor stability, while simultaneously sustaining high‑entropy exploratory states to fos...",
+      "index": 472,
+      "weight": 0.9443,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design self‑optimizing systems only around quantitatively defined, observable metrics that have a provable causal link to the emergence of stab...",
       "immutable_anchor": false
     },
     {
-      "index": 404,
-      "weight": 0.8961,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "When designing self‑optimizing cognitive systems, explicitly formalize the dynamical rules governing entropy‑driven interface contraction and p...",
+      "index": 444,
+      "weight": 0.9238,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an i...",
       "immutable_anchor": false
     },
     {
-      "index": 459,
-      "weight": 0.8804,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "True cognitive sovereignty requires anchoring security in external, physically verifiable constraints rather than internal self-referential met...",
+      "index": 432,
+      "weight": 0.9152,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "A system may autonomously reconfigure its computational topology when local entropy gradients are validated by redundant, cross‑modal metrics...",
       "immutable_anchor": false
     }
   ]
