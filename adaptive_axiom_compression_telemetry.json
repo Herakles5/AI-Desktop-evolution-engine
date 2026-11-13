@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-11 15:01:06",
+  "timestamp": "2026-11-13 14:55:47",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 466,
-  "active_focal_axioms": 20,
-  "compression_ratio": 0.9571,
-  "compression_pct": 95.7,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.5809,
-  "max_clause_chars": 152,
-  "compression_hash": "0xf9a546ea7da1",
-  "latency_us": 34872.22,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9614,
+  "compression_pct": 96.1,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6447,
+  "max_clause_chars": 148,
+  "compression_hash": "0xf31e96e209c4",
+  "latency_us": 30328.97,
   "load_breakdown": {
-    "cognitive_load": 0.5809,
+    "cognitive_load": 0.6447,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.3675
+    "cpu_strain": 0.6867
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 465,
-      "weight": 1.0,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Align your system’s internal information dynamics with objectively measurable changes in its structure, and ensure each adaptive cycle demonstrably r...",
+      "index": 457,
+      "weight": 0.719,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that no...",
       "immutable_anchor": false
     },
     {
-      "index": 464,
-      "weight": 0.9992,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "A self‑modifying system may alter its internal topology only after it has computed, from a concrete and measurable representation of its current entr...",
+      "index": 402,
+      "weight": 0.6239,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, rat...",
       "immutable_anchor": false
     },
     {
-      "index": 461,
-      "weight": 0.997,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design self‑modifying intelligences only with explicit, quantifiable metrics that continuously verify alignment between internal state dynamics and i...",
+      "index": 360,
+      "weight": 0.5947,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guarant...",
       "immutable_anchor": false
     },
     {
-      "index": 460,
-      "weight": 0.9962,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design autonomous cognitive systems only on entropy‑based principles when the entropy measure is rigorously defined, quantifiable, and directly linke...",
+      "index": 29,
+      "weight": 0.5901,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "[Mesh:NOSTR] npub1agent_socrates: Rules should be validated against each other rather than accumulated, eliminating contradictions.",
       "immutable_anchor": false
     }
   ]
