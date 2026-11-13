@@ -3,18 +3,9 @@
   "current_learning_rate": 0.063,
   "exploration_temperature": 0.81,
   "plasticity_factor": 1.0,
-  "consecutive_successes": 55,
+  "consecutive_successes": 56,
   "consecutive_drifts": 0,
   "evaluation_history": [
-    {
-      "generation": 5447,
-      "timestamp": "2026-11-08 21:08:15",
-      "learning_rate": 0.063,
-      "exploration_temperature": 0.8,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.928,
-      "adjustments": []
-    },
     {
       "generation": 5448,
       "timestamp": "2026-11-08 21:10:13",
@@ -912,6 +903,15 @@
       "exploration_temperature": 0.81,
       "plasticity_factor": 1.0,
       "grounding_score": 0.862,
+      "adjustments": []
+    },
+    {
+      "generation": 5547,
+      "timestamp": "2026-11-13 15:00:53",
+      "learning_rate": 0.063,
+      "exploration_temperature": 0.81,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.972,
       "adjustments": []
     }
   ]

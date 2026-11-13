@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 14:59:35",
+  "timestamp": "2026-11-13 15:00:49",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 468,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9658,
   "compression_pct": 96.6,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7054,
+  "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xfe28cefad7ba",
-  "latency_us": 32218.87,
+  "compression_hash": "0x10c116e3abd5",
+  "latency_us": 39385.39,
   "load_breakdown": {
-    "cognitive_load": 0.7054,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.99
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 456,
-      "weight": 0.7718,
+      "index": 467,
+      "weight": 1.0,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to dist...",
+      "compressed_axiom": "Design adaptive systems that continuously embed local entropy gradients into weighted cost functions, but recognize that guaranteeing monoton...",
       "immutable_anchor": false
     },
     {
-      "index": 454,
-      "weight": 0.7703,
+      "index": 465,
+      "weight": 0.9985,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
+      "compressed_axiom": "Align your system’s internal information dynamics with objectively measurable changes in its structure, and ensure each adaptive cycle demons...",
       "immutable_anchor": false
     },
     {
-      "index": 422,
-      "weight": 0.7469,
+      "index": 464,
+      "weight": 0.9978,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
+      "compressed_axiom": "A self‑modifying system may alter its internal topology only after it has computed, from a concrete and measurable representation of its curr...",
       "immutable_anchor": false
     },
     {
-      "index": 413,
-      "weight": 0.7405,
+      "index": 463,
+      "weight": 0.997,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
+      "compressed_axiom": "Ground claims of cognitive autonomy in concrete, measurable variables and testable mechanisms—quantify how entropy gradients, topological dyn...",
       "immutable_anchor": false
     }
   ]
