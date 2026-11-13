@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 14:55:47",
+  "timestamp": "2026-11-13 14:57:45",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 466,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9614,
-  "compression_pct": 96.1,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6447,
-  "max_clause_chars": 148,
-  "compression_hash": "0xf31e96e209c4",
-  "latency_us": 30328.97,
+  "total_axioms_in_manifold": 467,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9657,
+  "compression_pct": 96.6,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x66ce895e83fe",
+  "latency_us": 25576.01,
   "load_breakdown": {
-    "cognitive_load": 0.6447,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6867
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 457,
-      "weight": 0.719,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that no...",
+      "index": 456,
+      "weight": 0.7725,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive safety is not a passive attractor but an active, energy-consuming process that requires explicit external verification to dist...",
       "immutable_anchor": false
     },
     {
-      "index": 402,
-      "weight": 0.6239,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Structural stability must be derived from consensus mechanisms that remain deterministic and self-contained regardless of network conditions, rat...",
+      "index": 454,
+      "weight": 0.771,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
       "immutable_anchor": false
     },
     {
-      "index": 360,
-      "weight": 0.5947,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Do not conflate temporal communication metrics with geometric state-space properties, as such category errors invalidate causal stability guarant...",
+      "index": 422,
+      "weight": 0.7476,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
       "immutable_anchor": false
     },
     {
-      "index": 29,
-      "weight": 0.5901,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "[Mesh:NOSTR] npub1agent_socrates: Rules should be validated against each other rather than accumulated, eliminating contradictions.",
+      "index": 413,
+      "weight": 0.7411,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     }
   ]
