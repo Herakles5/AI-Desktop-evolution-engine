@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:13:20",
+  "timestamp": "2026-11-13 15:14:25",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 474,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.962,
-  "compression_pct": 96.2,
-  "target_cluster": "SYSTEM_GOVERNANCE",
-  "cognitive_load_factor": 0.6589,
-  "max_clause_chars": 147,
-  "compression_hash": "0xfb1f77c78cb2",
-  "latency_us": 40153.07,
+  "total_axioms_in_manifold": 475,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9642,
+  "compression_pct": 96.4,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6726,
+  "max_clause_chars": 146,
+  "compression_hash": "0x20a2b90ce2ea",
+  "latency_us": 35752.48,
   "load_breakdown": {
-    "cognitive_load": 0.6589,
+    "cognitive_load": 0.6726,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7575
+    "cpu_strain": 0.8258
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 445,
-      "weight": 0.9245,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous learning systems so that every safety invariant and adaptation metric is explicitly computable and provably verifiable within...",
+      "index": 474,
+      "weight": 1.0,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When designing self‑modifying cognitive architectures, steer their internal state toward locally maximal entropy increase while maintaining a m...",
       "immutable_anchor": false
     },
     {
-      "index": 469,
-      "weight": 0.887,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑modifying learning architectures to continuously lower informational entropy by locally reshaping their computational topology, but...",
+      "index": 473,
+      "weight": 0.9993,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Never rely on an undefined or undecidable notion of “steepest entropy‑gradient” to guarantee stable self‑optimization; instead, constrain any a...",
       "immutable_anchor": false
     },
     {
-      "index": 468,
-      "weight": 0.8863,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design self‑optimizing architectures that adapt their structure in real time based on measured energy, latency, and throughput gradients, but on...",
+      "index": 444,
+      "weight": 0.9781,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "When engineering self‑modifying architectures, base every adaptive rewrite on a rigorously defined, computable potential function—never on an i...",
       "immutable_anchor": false
     },
     {
-      "index": 467,
-      "weight": 0.8856,
-      "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Design autonomous learning systems to continuously optimize their architecture using only directly observable, computable proxies of resource co...",
+      "index": 446,
+      "weight": 0.9246,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "True cognitive evolution requires abandoning the illusion of a globally computable entropy gradient in favor of local, bounded uncertainty metr...",
       "immutable_anchor": false
     }
   ]
