@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-13 15:31:00",
+  "timestamp": "2026-11-13 15:32:31",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 466,
-  "active_focal_axioms": 20,
-  "compression_ratio": 0.9571,
-  "compression_pct": 95.7,
+  "total_axioms_in_manifold": 467,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9593,
+  "compression_pct": 95.9,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.5879,
-  "max_clause_chars": 152,
-  "compression_hash": "0x60974e29dbd2",
-  "latency_us": 48497.41,
+  "cognitive_load_factor": 0.6172,
+  "max_clause_chars": 150,
+  "compression_hash": "0xd854905de4fa",
+  "latency_us": 54535.72,
   "load_breakdown": {
-    "cognitive_load": 0.5879,
+    "cognitive_load": 0.6172,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.4025
+    "cpu_strain": 0.5492
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 463,
-      "weight": 0.7235,
+      "weight": 0.7227,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then res...",
+      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then r...",
       "immutable_anchor": false
     },
     {
       "index": 234,
-      "weight": 0.6806,
+      "weight": 0.6803,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entropy...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entro...",
       "immutable_anchor": false
     },
     {
       "index": 440,
-      "weight": 0.5434,
+      "weight": 0.5427,
       "cluster": "SYSTEM_GOVERNANCE",
-      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-li...",
+      "compressed_axiom": "Treat communication latency as a stochastic constraint on information flow rather than a deterministic geometric parameter, acknowledging that non-...",
       "immutable_anchor": false
     },
     {
       "index": 379,
-      "weight": 0.4998,
+      "weight": 0.4992,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Adapt system structures by iteratively moving toward configurations that maximize a rigorously defined, bounded entropy measure, while enforcing expl...",
+      "compressed_axiom": "Adapt system structures by iteratively moving toward configurations that maximize a rigorously defined, bounded entropy measure, while enforcing ex...",
       "immutable_anchor": false
     }
   ]
