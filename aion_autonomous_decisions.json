@@ -493,5 +493,13 @@
     "gradient_force": 0.1426,
     "cluster": "SYSTEM_GOVERNANCE",
     "timestamp": "2026-11-18 15:19:32"
+  },
+  {
+    "generation": 5711,
+    "title": "Self-Healing Cognitive Topology via Predictive Back-Pressure",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.1617,
+    "cluster": "SYSTEM_GOVERNANCE",
+    "timestamp": "2026-11-18 15:49:46"
   }
 ]
