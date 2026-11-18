@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 17:11:26",
+  "timestamp": "2026-11-18 17:12:36",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 612,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9739,
   "compression_pct": 97.4,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
+  "cognitive_load_factor": 0.6984,
+  "max_clause_chars": 145,
   "compression_hash": "0x7320bf0c8443",
-  "latency_us": 80683.24,
+  "latency_us": 65827.69,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6984,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.955
   },
   "top_weighted_axioms": [
     {
@@ -35,21 +35,21 @@
       "index": 575,
       "weight": 0.7046,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local...",
       "immutable_anchor": false
     },
     {
       "index": 563,
       "weight": 0.6979,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
       "immutable_anchor": false
     },
     {
       "index": 557,
       "weight": 0.6946,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while i...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while is...",
       "immutable_anchor": false
     }
   ]
