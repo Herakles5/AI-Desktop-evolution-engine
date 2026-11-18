@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 17:35:21",
+  "timestamp": "2026-11-18 17:36:29",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 619,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9742,
-  "compression_pct": 97.4,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9725,
+  "compression_pct": 97.2,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6997,
-  "max_clause_chars": 145,
-  "compression_hash": "0x5ce798270668",
-  "latency_us": 46608.73,
+  "cognitive_load_factor": 0.6752,
+  "max_clause_chars": 146,
+  "compression_hash": "0xd1b3c80b5321",
+  "latency_us": 159538.45,
   "load_breakdown": {
-    "cognitive_load": 0.6997,
+    "cognitive_load": 0.6752,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9617
+    "cpu_strain": 0.8392
   },
   "top_weighted_axioms": [
     {
@@ -28,7 +28,7 @@
       "index": 596,
       "weight": 0.7126,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums t...",
       "immutable_anchor": false
     },
     {
@@ -49,7 +49,7 @@
       "index": 557,
       "weight": 0.6911,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while is...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while iso...",
       "immutable_anchor": false
     }
   ]
