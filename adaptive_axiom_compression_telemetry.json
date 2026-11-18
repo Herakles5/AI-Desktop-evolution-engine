@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 15:20:30",
+  "timestamp": "2026-11-18 15:21:49",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 570,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9702,
-  "compression_pct": 97.0,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9719,
+  "compression_pct": 97.2,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6931,
-  "max_clause_chars": 145,
-  "compression_hash": "0xbdced48325ca",
-  "latency_us": 153942.89,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x9d4abce482e3",
+  "latency_us": 114441.62,
   "load_breakdown": {
-    "cognitive_load": 0.6931,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9283
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 564,
-      "weight": 0.7219,
+      "index": 563,
+      "weight": 0.7213,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
       "immutable_anchor": false
     },
     {
-      "index": 558,
-      "weight": 0.7183,
+      "index": 557,
+      "weight": 0.7176,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while is...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while i...",
       "immutable_anchor": false
     },
     {
       "index": 539,
       "weight": 0.7067,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch...",
+      "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetc...",
       "immutable_anchor": false
     },
     {
       "index": 463,
       "weight": 0.6623,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, t...",
+      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets...",
       "immutable_anchor": false
     }
   ]
