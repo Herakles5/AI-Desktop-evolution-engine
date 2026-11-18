@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 21:13:21",
+  "timestamp": "2026-11-18 21:14:33",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 676,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9749,
   "compression_pct": 97.5,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6824,
-  "max_clause_chars": 146,
+  "cognitive_load_factor": 0.6934,
+  "max_clause_chars": 145,
   "compression_hash": "0xee13ae59709d",
-  "latency_us": 68518.45,
+  "latency_us": 72060.72,
   "load_breakdown": {
-    "cognitive_load": 0.6824,
+    "cognitive_load": 0.6934,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.875
+    "cpu_strain": 0.93
   },
   "top_weighted_axioms": [
     {
@@ -28,14 +28,14 @@
       "index": 636,
       "weight": 0.76,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to preven...",
+      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to preve...",
       "immutable_anchor": false
     },
     {
       "index": 596,
       "weight": 0.685,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums t...",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
