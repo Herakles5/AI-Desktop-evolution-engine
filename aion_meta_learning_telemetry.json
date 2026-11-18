@@ -1,20 +1,11 @@
 {
   "meta_learning_active": true,
-  "current_learning_rate": 0.03,
-  "exploration_temperature": 0.37,
+  "current_learning_rate": 0.034,
+  "exploration_temperature": 0.39,
   "plasticity_factor": 1.0,
-  "consecutive_successes": 1,
+  "consecutive_successes": 2,
   "consecutive_drifts": 0,
   "evaluation_history": [
-    {
-      "generation": 5562,
-      "timestamp": "2026-11-13 15:18:12",
-      "learning_rate": 0.063,
-      "exploration_temperature": 0.81,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.819,
-      "adjustments": []
-    },
     {
       "generation": 5563,
       "timestamp": "2026-11-13 15:19:19",
@@ -1065,6 +1056,19 @@
       "novelty_score": 0.843,
       "adjustments": [
         "High stability confirmed -> Increased exploration temperature"
+      ]
+    },
+    {
+      "generation": 5661,
+      "timestamp": "2026-11-18 14:46:40",
+      "learning_rate": 0.034,
+      "exploration_temperature": 0.39,
+      "plasticity_factor": 1.0,
+      "grounding_score": 1.0,
+      "novelty_score": 0.932,
+      "adjustments": [
+        "High stability confirmed -> Increased exploration temperature",
+        "Sustained stability & high grounding -> Nudged learning rate"
       ]
     }
   ]
