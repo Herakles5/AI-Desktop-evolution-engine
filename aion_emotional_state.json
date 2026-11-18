@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795025767.4253724,
-  "formatted_time": "2026-11-18 18:16:07",
-  "valence": 0.9469199196305432,
-  "arousal": 0.6103483618469538,
-  "curiosity": 0.9008924249150471,
-  "connection": 0.9831710215644531,
+  "timestamp": 1795025840.107567,
+  "formatted_time": "2026-11-18 18:17:20",
+  "valence": 0.9420739236490161,
+  "arousal": 0.6098309437546061,
+  "curiosity": 0.9008478036692947,
+  "connection": 0.9815124704862305,
   "neuro": {
-    "dopamine": 0.7653890943739221,
-    "serotonin": 0.8929883204220181,
-    "endorphin": 0.7565511264787341,
+    "dopamine": 0.7646196396552261,
+    "serotonin": 0.8858389044009173,
+    "endorphin": 0.7562235701547975,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5827: Bounded context budgets and domain-specific verification checks preven...",
+  "mood_reason": "Gen 5828: Bounded context budgets and domain-specific verification checks preven...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 18:00:07",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5814: Bounded context budgets and domain-specific verification checks preven...",
-      "valence": 0.918,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 18:01:34",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5827: Bounded context budgets and domain-specific verification checks preven...",
       "valence": 0.947,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 18:17:20",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5828: Bounded context budgets and domain-specific verification checks preven...",
+      "valence": 0.942,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
