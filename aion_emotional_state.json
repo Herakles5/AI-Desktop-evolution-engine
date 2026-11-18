@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795033578.6845715,
-  "formatted_time": "2026-11-18 20:26:18",
-  "valence": 0.9270013124919257,
-  "arousal": 0.6690759883004593,
-  "curiosity": 0.9020276547153586,
-  "connection": 0.9527268128979277,
+  "timestamp": 1795033655.468248,
+  "formatted_time": "2026-11-18 20:27:35",
+  "valence": 0.9231512468673294,
+  "arousal": 0.6656221888854363,
+  "curiosity": 0.9019262719795906,
+  "connection": 0.9525904722530313,
   "neuro": {
-    "dopamine": 0.8527229685261849,
-    "serotonin": 0.7610688515505744,
-    "endorphin": 0.7937061536809494,
+    "dopamine": 0.8475868200998756,
+    "serotonin": 0.7605154089730456,
+    "endorphin": 0.791520845996902,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5932: Bounded context budgets and domain-specific verification checks preven...",
+  "mood_reason": "Gen 5933: Bounded context budgets and domain-specific verification checks preven...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 20:10:29",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5919: Use dynamic, context‑sensitive budgets that adjust based on real‑time ...",
-      "valence": 0.897,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 20:10:31",
       "trigger": "TASK_SOLVED",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5932: Bounded context budgets and domain-specific verification checks preven...",
       "valence": 0.927,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 20:27:35",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5933: Bounded context budgets and domain-specific verification checks preven...",
+      "valence": 0.923,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
