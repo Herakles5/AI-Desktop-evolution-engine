@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 17:29:05",
+  "timestamp": "2026-11-18 17:30:24",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 615,
+  "total_axioms_in_manifold": 616,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9724,
   "compression_pct": 97.2,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6799,
-  "max_clause_chars": 146,
-  "compression_hash": "0x70ffe01d444f",
-  "latency_us": 99518.67,
+  "cognitive_load_factor": 0.6942,
+  "max_clause_chars": 145,
+  "compression_hash": "0xad80b1359973",
+  "latency_us": 82251.15,
   "load_breakdown": {
-    "cognitive_load": 0.6799,
+    "cognitive_load": 0.6942,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8625
+    "cpu_strain": 0.9342
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 596,
-      "weight": 0.7148,
+      "weight": 0.7143,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums t...",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.7031,
+      "weight": 0.7025,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.6964,
+      "weight": 0.6959,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
       "immutable_anchor": false
     },
     {
       "index": 557,
-      "weight": 0.6931,
+      "weight": 0.6926,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while iso...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while is...",
       "immutable_anchor": false
     }
   ]
