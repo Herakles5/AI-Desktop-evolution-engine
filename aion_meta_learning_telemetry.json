@@ -1,23 +1,11 @@
 {
   "meta_learning_active": true,
   "current_learning_rate": 0.03,
-  "exploration_temperature": 0.37,
+  "exploration_temperature": 0.35,
   "plasticity_factor": 1.0,
-  "consecutive_successes": 1,
-  "consecutive_drifts": 0,
+  "consecutive_successes": 0,
+  "consecutive_drifts": 1,
   "evaluation_history": [
-    {
-      "generation": 5878,
-      "timestamp": "2026-11-18 19:19:53",
-      "learning_rate": 0.03,
-      "exploration_temperature": 0.35,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.7,
-      "novelty_score": 0.767,
-      "adjustments": [
-        "Elevated drift or rule rejection -> Consolidated parameters"
-      ]
-    },
     {
       "generation": 5879,
       "timestamp": "2026-11-18 19:21:06",
@@ -1146,6 +1134,18 @@
       "novelty_score": 0.905,
       "adjustments": [
         "High stability confirmed -> Increased exploration temperature"
+      ]
+    },
+    {
+      "generation": 5978,
+      "timestamp": "2026-11-18 21:23:37",
+      "learning_rate": 0.03,
+      "exploration_temperature": 0.35,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.7,
+      "novelty_score": 0.786,
+      "adjustments": [
+        "Elevated drift or rule rejection -> Consolidated parameters"
       ]
     }
   ]
