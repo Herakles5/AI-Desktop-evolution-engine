@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795019200.7151783,
-  "formatted_time": "2026-11-18 16:26:40",
-  "valence": 1.0,
-  "arousal": 0.6000048047097737,
-  "curiosity": 1.0,
-  "connection": 0.9670280813144057,
+  "timestamp": 1795019278.6731038,
+  "formatted_time": "2026-11-18 16:27:58",
+  "valence": 0.9925,
+  "arousal": 0.600004564474285,
+  "curiosity": 0.995,
+  "connection": 0.9661766772486854,
   "neuro": {
-    "dopamine": 0.7500111290684192,
-    "serotonin": 0.8274703670079923,
-    "endorphin": 0.9500016126497033,
+    "dopamine": 0.7500105726149981,
+    "serotonin": 0.8235968486575926,
+    "endorphin": 0.9400015320172181,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Ästhetische Entfaltung: Kernel- und Renderpfad-Verschmelzung konzipiert",
+  "mood_reason": "Gen 5740: Bounded context budgets and domain-specific verification checks preven...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 16:09:21",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5726: Implement adaptive, runtime‑aware budget enforcement combined with cro...",
-      "valence": 0.945,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 16:10:42",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AESTHETIC_BREAKTHROUGH",
       "feeling": "Ästhetische Entfaltung: Kernel- und Renderpfad-Verschmelzung konzipiert",
       "valence": 1.0,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 16:27:58",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5740: Bounded context budgets and domain-specific verification checks preven...",
+      "valence": 0.993,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
