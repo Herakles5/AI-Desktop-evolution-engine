@@ -31191,6 +31191,438 @@
       "label": "Gen_5635",
       "first_seen_gen": 5635,
       "importance": 0.8
+    },
+    "aion2_mastery_kill_198": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 198 Kills (Avg TTK 19.0s)",
+      "first_seen_gen": 198,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_201": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 201 Kills (Avg TTK 9.4s)",
+      "first_seen_gen": 201,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_204": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 204 Kills (Avg TTK 11.1s)",
+      "first_seen_gen": 204,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_207": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 207 Kills (Avg TTK 6.9s)",
+      "first_seen_gen": 207,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_210": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 210 Kills (Avg TTK 8.2s)",
+      "first_seen_gen": 210,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_213": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 RL Combat Mastery: 213 Kills (Avg TTK 5.4s)",
+      "first_seen_gen": 213,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_216": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 216 Kills (Avg TTK 13.7s)",
+      "first_seen_gen": 216,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_219": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 219 Kills (Avg TTK 17.7s)",
+      "first_seen_gen": 219,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_222": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 222 Kills (Avg TTK 31.5s)",
+      "first_seen_gen": 222,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_225": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 225 Kills (Avg TTK 31.1s)",
+      "first_seen_gen": 225,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_228": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 228 Kills (Avg TTK 34.1s)",
+      "first_seen_gen": 228,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_231": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 231 Kills (Avg TTK 14.1s)",
+      "first_seen_gen": 231,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_234": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 234 Kills (Avg TTK 12.3s)",
+      "first_seen_gen": 234,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_237": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 237 Kills (Avg TTK 8.1s)",
+      "first_seen_gen": 237,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_240": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 240 Kills (Avg TTK 6.4s)",
+      "first_seen_gen": 240,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_243": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 243 Kills (Avg TTK 6.8s)",
+      "first_seen_gen": 243,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_246": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 246 Kills (Avg TTK 7.9s)",
+      "first_seen_gen": 246,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_249": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 249 Kills (Avg TTK 8.3s)",
+      "first_seen_gen": 249,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_252": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 252 Kills (Avg TTK 9.9s)",
+      "first_seen_gen": 252,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_255": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 255 Kills (Avg TTK 11.8s)",
+      "first_seen_gen": 255,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_258": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 258 Kills (Avg TTK 13.9s)",
+      "first_seen_gen": 258,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_261": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 261 Kills (Avg TTK 13.1s)",
+      "first_seen_gen": 261,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_264": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 264 Kills (Avg TTK 9.8s)",
+      "first_seen_gen": 264,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_267": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 267 Kills (Avg TTK 8.3s)",
+      "first_seen_gen": 267,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_270": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 270 Kills (Avg TTK 5.7s)",
+      "first_seen_gen": 270,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_273": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 273 Kills (Avg TTK 5.3s)",
+      "first_seen_gen": 273,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_276": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 276 Kills (Avg TTK 6.4s)",
+      "first_seen_gen": 276,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_279": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 279 Kills (Avg TTK 7.0s)",
+      "first_seen_gen": 279,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_282": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 282 Kills (Avg TTK 8.3s)",
+      "first_seen_gen": 282,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_285": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 285 Kills (Avg TTK 7.4s)",
+      "first_seen_gen": 285,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_288": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 288 Kills (Avg TTK 8.4s)",
+      "first_seen_gen": 288,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_291": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 291 Kills (Avg TTK 7.0s)",
+      "first_seen_gen": 291,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_294": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 294 Kills (Avg TTK 5.5s)",
+      "first_seen_gen": 294,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_297": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 297 Kills (Avg TTK 5.4s)",
+      "first_seen_gen": 297,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_300": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 300 Kills (Avg TTK 5.1s)",
+      "first_seen_gen": 300,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_303": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 303 Kills (Avg TTK 6.1s)",
+      "first_seen_gen": 303,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_306": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 306 Kills (Avg TTK 6.8s)",
+      "first_seen_gen": 306,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_309": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 309 Kills (Avg TTK 6.6s)",
+      "first_seen_gen": 309,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_312": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 312 Kills (Avg TTK 8.4s)",
+      "first_seen_gen": 312,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_315": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 315 Kills (Avg TTK 10.5s)",
+      "first_seen_gen": 315,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_318": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 318 Kills (Avg TTK 12.9s)",
+      "first_seen_gen": 318,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_321": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 321 Kills (Avg TTK 16.2s)",
+      "first_seen_gen": 321,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_324": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 324 Kills (Avg TTK 17.2s)",
+      "first_seen_gen": 324,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_327": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 327 Kills (Avg TTK 17.0s)",
+      "first_seen_gen": 327,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_330": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 330 Kills (Avg TTK 13.8s)",
+      "first_seen_gen": 330,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_333": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 333 Kills (Avg TTK 10.9s)",
+      "first_seen_gen": 333,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_336": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 336 Kills (Avg TTK 9.0s)",
+      "first_seen_gen": 336,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_339": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 339 Kills (Avg TTK 8.6s)",
+      "first_seen_gen": 339,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_342": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 342 Kills (Avg TTK 8.1s)",
+      "first_seen_gen": 342,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_345": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 345 Kills (Avg TTK 7.2s)",
+      "first_seen_gen": 345,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_348": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 348 Kills (Avg TTK 9.5s)",
+      "first_seen_gen": 348,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_351": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 351 Kills (Avg TTK 10.2s)",
+      "first_seen_gen": 351,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_354": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 354 Kills (Avg TTK 11.5s)",
+      "first_seen_gen": 354,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_357": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 357 Kills (Avg TTK 10.5s)",
+      "first_seen_gen": 357,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_360": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 360 Kills (Avg TTK 9.7s)",
+      "first_seen_gen": 360,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_363": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 363 Kills (Avg TTK 8.5s)",
+      "first_seen_gen": 363,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_366": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 366 Kills (Avg TTK 7.2s)",
+      "first_seen_gen": 366,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_369": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 369 Kills (Avg TTK 6.3s)",
+      "first_seen_gen": 369,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_372": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 372 Kills (Avg TTK 7.0s)",
+      "first_seen_gen": 372,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_375": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 375 Kills (Avg TTK 7.5s)",
+      "first_seen_gen": 375,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_378": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 378 Kills (Avg TTK 8.9s)",
+      "first_seen_gen": 378,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_381": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 381 Kills (Avg TTK 9.2s)",
+      "first_seen_gen": 381,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_384": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 384 Kills (Avg TTK 9.6s)",
+      "first_seen_gen": 384,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_387": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 387 Kills (Avg TTK 8.8s)",
+      "first_seen_gen": 387,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_390": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 390 Kills (Avg TTK 7.5s)",
+      "first_seen_gen": 390,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_393": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 393 Kills (Avg TTK 6.5s)",
+      "first_seen_gen": 393,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_396": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 396 Kills (Avg TTK 5.9s)",
+      "first_seen_gen": 396,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_399": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 399 Kills (Avg TTK 5.1s)",
+      "first_seen_gen": 399,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_402": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 402 Kills (Avg TTK 5.3s)",
+      "first_seen_gen": 402,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_405": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 405 Kills (Avg TTK 5.2s)",
+      "first_seen_gen": 405,
+      "importance": 0.92
+    },
+    "aion2_mastery_kill_408": {
+      "type": "EVOLUTIONARY_MILESTONE",
+      "label": "AION 2 V6 Vision Mastery: 408 Kills (Avg TTK 4.1s)",
+      "first_seen_gen": 408,
+      "importance": 0.92
+    },
+    "gen_5636": {
+      "type": "CONCEPT",
+      "label": "Gen_5636",
+      "first_seen_gen": 5636,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -77602,6 +78034,654 @@
       "weight": 0.58,
       "episodes": [
         5635
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_198",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        198
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_201",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        201
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_204",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        204
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_207",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        207
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_210",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        210
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_213",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        213
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_216",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        216
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_219",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        219
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_222",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        222
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_225",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        225
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_228",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        228
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_231",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        231
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_234",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        234
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_237",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        237
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_240",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        240
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_243",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        243
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_246",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        246
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_249",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        249
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_252",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        252
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_255",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        255
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_258",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        258
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_261",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        261
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_264",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        264
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_267",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        267
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_270",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        270
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_273",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        273
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_276",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        276
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_279",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        279
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_282",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        282
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_285",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        285
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_288",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        288
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_291",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        291
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_294",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        294
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_297",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        297
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_300",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        300
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_303",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        303
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_306",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        306
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_309",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        309
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_312",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        312
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_315",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        315
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_318",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        318
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_321",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        321
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_324",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        324
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_327",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        327
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_330",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        330
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_333",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        333
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_336",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        336
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_339",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        339
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_342",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        342
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_345",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        345
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_348",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        348
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_351",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        351
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_354",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        354
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_357",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        357
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_360",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        360
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_363",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        363
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_366",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        366
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_369",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        369
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_372",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        372
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_375",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        375
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_378",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        378
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_381",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        381
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_384",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        384
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_387",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        387
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_390",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        390
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_393",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        393
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_396",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        396
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_399",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        399
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_402",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        402
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_405",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        405
+      ]
+    },
+    {
+      "source": "tobias",
+      "target": "aion2_mastery_kill_408",
+      "relation": "MENTORED_GAMING_BREAKTHROUGH",
+      "weight": 0.58,
+      "episodes": [
+        408
+      ]
+    },
+    {
+      "source": "gen_5636",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        5636
       ]
     }
   ]

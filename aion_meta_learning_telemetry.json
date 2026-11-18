@@ -7,15 +7,6 @@
   "consecutive_drifts": 1,
   "evaluation_history": [
     {
-      "generation": 5537,
-      "timestamp": "2026-11-11 14:55:25",
-      "learning_rate": 0.063,
-      "exploration_temperature": 0.81,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.799,
-      "adjustments": []
-    },
-    {
       "generation": 5538,
       "timestamp": "2026-11-11 14:56:37",
       "learning_rate": 0.063,
@@ -1024,6 +1015,16 @@
       "plasticity_factor": 1.0,
       "grounding_score": 1.0,
       "novelty_score": 0.918,
+      "adjustments": []
+    },
+    {
+      "generation": 5636,
+      "timestamp": "2026-11-18 11:21:41",
+      "learning_rate": 0.03,
+      "exploration_temperature": 0.35,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.891,
+      "novelty_score": 0.921,
       "adjustments": []
     }
   ]
