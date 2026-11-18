@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 20:17:46",
+  "timestamp": "2026-11-18 20:18:55",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 663,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9729,
-  "compression_pct": 97.3,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9744,
+  "compression_pct": 97.4,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6517,
-  "max_clause_chars": 148,
-  "compression_hash": "0xad8e789da93f",
-  "latency_us": 75165.48,
+  "cognitive_load_factor": 0.6654,
+  "max_clause_chars": 147,
+  "compression_hash": "0x29ef27937e32",
+  "latency_us": 78935.61,
   "load_breakdown": {
-    "cognitive_load": 0.6517,
+    "cognitive_load": 0.6654,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7217
+    "cpu_strain": 0.79
   },
   "top_weighted_axioms": [
     {
@@ -42,14 +42,14 @@
       "index": 575,
       "weight": 0.6802,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local bu...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
       "immutable_anchor": false
     },
     {
       "index": 563,
       "weight": 0.6743,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound SH...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound S...",
       "immutable_anchor": false
     }
   ]
