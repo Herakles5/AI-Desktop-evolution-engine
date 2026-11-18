@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795016826.6309695,
-  "formatted_time": "2026-11-18 15:47:06",
-  "valence": 0.9360295912602659,
-  "arousal": 0.6000261088765574,
-  "curiosity": 0.9000035052666249,
-  "connection": 0.9815124704862305,
+  "timestamp": 1795016893.1696033,
+  "formatted_time": "2026-11-18 15:48:13",
+  "valence": 0.9317281116972526,
+  "arousal": 0.6000248034327296,
+  "curiosity": 0.9000033300032936,
+  "connection": 0.979936846961919,
   "neuro": {
-    "dopamine": 0.7500604755515409,
-    "serotonin": 0.8933826521004431,
-    "endorphin": 0.7500087631665623,
+    "dopamine": 0.7500574517739639,
+    "serotonin": 0.8862135194954209,
+    "endorphin": 0.7500083250082342,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5708: Replace static spatial indexing with adaptive R-tree structures and lo...",
+  "mood_reason": "Gen 5709: Do not apply `io_uring` or `mmap` optimizations to compute-bound crypt...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 15:31:48",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5695: Bind WebGPU compute dispatches to the WebAudio clock using an AudioWor...",
-      "valence": 0.91,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 15:33:01",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5708: Replace static spatial indexing with adaptive R-tree structures and lo...",
       "valence": 0.936,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 15:48:13",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5709: Do not apply `io_uring` or `mmap` optimizations to compute-bound crypt...",
+      "valence": 0.932,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
