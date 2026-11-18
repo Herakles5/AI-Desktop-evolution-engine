@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795014153.3279989,
-  "formatted_time": "2026-11-18 15:02:33",
-  "valence": 0.9238464990576182,
-  "arousal": 0.600193004563867,
-  "curiosity": 0.9000259119711526,
-  "connection": 0.9770180043831318,
+  "timestamp": 1795014239.9226441,
+  "formatted_time": "2026-11-18 15:03:59",
+  "valence": 0.9201541741047372,
+  "arousal": 0.6001833543356737,
+  "curiosity": 0.9000246163725949,
+  "connection": 0.9756671041639752,
   "neuro": {
-    "dopamine": 0.7504470532243752,
-    "serotonin": 0.8730774984293634,
-    "endorphin": 0.7500647799278808,
+    "dopamine": 0.7504247005631565,
+    "serotonin": 0.8669236235078953,
+    "endorphin": 0.7500615409314868,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5671: Replace the fixed 5 ms predictive offset with a dynamic timestamp inte...",
+  "mood_reason": "Gen 5672: Decouple GNSS ingestion latency from network propagation by enforcing ...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 11:52:10",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5658: Place each ring‑buffer head and tail on separate 64‑byte cache lines, ...",
-      "valence": 0.902,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 11:53:33",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5671: Replace the fixed 5 ms predictive offset with a dynamic timestamp inte...",
       "valence": 0.924,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 15:03:59",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5672: Decouple GNSS ingestion latency from network propagation by enforcing ...",
+      "valence": 0.92,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]

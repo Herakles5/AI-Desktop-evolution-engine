@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 15:02:09",
+  "timestamp": "2026-11-18 15:03:42",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 557,
-  "active_focal_axioms": 19,
-  "compression_ratio": 0.9659,
-  "compression_pct": 96.6,
+  "total_axioms_in_manifold": 558,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9677,
+  "compression_pct": 96.8,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6201,
-  "max_clause_chars": 150,
-  "compression_hash": "0xf8d928c5aa88",
-  "latency_us": 51821.02,
+  "cognitive_load_factor": 0.6356,
+  "max_clause_chars": 149,
+  "compression_hash": "0x64eca9423d37",
+  "latency_us": 49472.22,
   "load_breakdown": {
-    "cognitive_load": 0.6201,
+    "cognitive_load": 0.6356,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.5633
+    "cpu_strain": 0.6408
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 539,
-      "weight": 0.7144,
+      "weight": 0.7138,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch_add...",
       "immutable_anchor": false
     },
     {
       "index": 463,
-      "weight": 0.6685,
+      "weight": 0.668,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then r...",
+      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then...",
       "immutable_anchor": false
     },
     {
       "index": 234,
-      "weight": 0.6594,
+      "weight": 0.6592,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entro...",
+      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entr...",
       "immutable_anchor": false
     },
     {
       "index": 529,
-      "weight": 0.6532,
+      "weight": 0.6526,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Place each mutable index (head, tail) on its own 64‑byte cache line and pad to a full line, while partitioning queue slots per core and reclaiming...",
       "immutable_anchor": false
