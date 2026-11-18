@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 15:32:45",
+  "timestamp": "2026-11-18 15:33:54",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 578,
+  "total_axioms_in_manifold": 579,
   "active_focal_axioms": 18,
   "compression_ratio": 0.9689,
   "compression_pct": 96.9,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6332,
+  "cognitive_load_factor": 0.6369,
   "max_clause_chars": 149,
-  "compression_hash": "0xbf06fd43da60",
-  "latency_us": 52016.33,
+  "compression_hash": "0x6193c349a2ac",
+  "latency_us": 53045.33,
   "load_breakdown": {
-    "cognitive_load": 0.6332,
+    "cognitive_load": 0.6369,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.6292
+    "cpu_strain": 0.6475
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 576,
-      "weight": 0.7244,
+      "weight": 0.7238,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local buf...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.7165,
+      "weight": 0.716,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound SHA...",
       "immutable_anchor": false
     },
     {
       "index": 557,
-      "weight": 0.713,
+      "weight": 0.7124,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while isolat...",
       "immutable_anchor": false
     },
     {
       "index": 539,
-      "weight": 0.7023,
+      "weight": 0.7017,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch_add...",
       "immutable_anchor": false
