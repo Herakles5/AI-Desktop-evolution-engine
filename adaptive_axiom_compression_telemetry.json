@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 15:04:49",
+  "timestamp": "2026-11-18 15:05:59",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 559,
-  "active_focal_axioms": 19,
-  "compression_ratio": 0.966,
-  "compression_pct": 96.6,
+  "total_axioms_in_manifold": 560,
+  "active_focal_axioms": 18,
+  "compression_ratio": 0.9679,
+  "compression_pct": 96.8,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6249,
+  "cognitive_load_factor": 0.6334,
   "max_clause_chars": 149,
-  "compression_hash": "0xda40361e2be9",
-  "latency_us": 77298.55,
+  "compression_hash": "0xcde6708597f9",
+  "latency_us": 54773.6,
   "load_breakdown": {
-    "cognitive_load": 0.6249,
+    "cognitive_load": 0.6334,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.5875
+    "cpu_strain": 0.63
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 558,
-      "weight": 0.725,
+      "weight": 0.7244,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while isolat...",
       "immutable_anchor": false
     },
     {
       "index": 539,
-      "weight": 0.7132,
+      "weight": 0.7126,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch_add...",
       "immutable_anchor": false
     },
     {
       "index": 463,
-      "weight": 0.6675,
+      "weight": 0.667,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, then...",
       "immutable_anchor": false
     },
     {
       "index": 234,
-      "weight": 0.6591,
+      "weight": 0.6589,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic entr...",
       "immutable_anchor": false
