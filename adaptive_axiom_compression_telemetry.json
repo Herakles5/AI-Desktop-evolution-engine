@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 18:23:22",
+  "timestamp": "2026-11-18 18:24:38",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 631,
+  "total_axioms_in_manifold": 632,
   "active_focal_axioms": 17,
   "compression_ratio": 0.9731,
   "compression_pct": 97.3,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6722,
+  "cognitive_load_factor": 0.6816,
   "max_clause_chars": 146,
-  "compression_hash": "0xdeb79e030e5b",
-  "latency_us": 119547.58,
+  "compression_hash": "0x4f2efe0e7e1b",
+  "latency_us": 126445.32,
   "load_breakdown": {
-    "cognitive_load": 0.6722,
+    "cognitive_load": 0.6816,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8242
+    "cpu_strain": 0.8708
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 596,
-      "weight": 0.7063,
+      "weight": 0.7058,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums t...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.695,
+      "weight": 0.6945,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.6886,
+      "weight": 0.6881,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
       "immutable_anchor": false
     },
     {
       "index": 557,
-      "weight": 0.6854,
+      "weight": 0.6849,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while iso...",
       "immutable_anchor": false
