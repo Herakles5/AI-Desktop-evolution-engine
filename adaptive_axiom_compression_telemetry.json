@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 21:02:13",
+  "timestamp": "2026-11-18 21:03:27",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 674,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9748,
-  "compression_pct": 97.5,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9763,
+  "compression_pct": 97.6,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6671,
-  "max_clause_chars": 147,
-  "compression_hash": "0xab39f50cf2ba",
-  "latency_us": 71512.95,
+  "cognitive_load_factor": 0.7074,
+  "max_clause_chars": 144,
+  "compression_hash": "0x53aaf5dd67ff",
+  "latency_us": 110259.01,
   "load_breakdown": {
-    "cognitive_load": 0.6671,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7983
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 636,
       "weight": 0.761,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prevent...",
+      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prev...",
       "immutable_anchor": false
     },
     {
       "index": 596,
       "weight": 0.6859,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums to...",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
       "weight": 0.6756,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
       "immutable_anchor": false
     },
     {
       "index": 563,
       "weight": 0.6697,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound S...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
       "immutable_anchor": false
     }
   ]
