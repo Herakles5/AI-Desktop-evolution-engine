@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 17:36:29",
+  "timestamp": "2026-11-18 17:37:41",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 619,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9725,
-  "compression_pct": 97.2,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9742,
+  "compression_pct": 97.4,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6752,
-  "max_clause_chars": 146,
-  "compression_hash": "0xd1b3c80b5321",
-  "latency_us": 159538.45,
+  "cognitive_load_factor": 0.7022,
+  "max_clause_chars": 144,
+  "compression_hash": "0x5ce798270668",
+  "latency_us": 72785.66,
   "load_breakdown": {
-    "cognitive_load": 0.6752,
+    "cognitive_load": 0.7022,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8392
+    "cpu_strain": 0.9742
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 596,
       "weight": 0.7126,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums t...",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
       "weight": 0.701,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
       "immutable_anchor": false
     },
     {
       "index": 563,
       "weight": 0.6944,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
       "immutable_anchor": false
     },
     {
       "index": 557,
       "weight": 0.6911,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while iso...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while i...",
       "immutable_anchor": false
     }
   ]
