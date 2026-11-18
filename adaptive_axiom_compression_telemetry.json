@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 11:36:43",
+  "timestamp": "2026-11-18 11:38:21",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 538,
-  "active_focal_axioms": 18,
-  "compression_ratio": 0.9665,
-  "compression_pct": 96.7,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6601,
-  "max_clause_chars": 147,
-  "compression_hash": "0xb7e6179984fe",
-  "latency_us": 58062.39,
+  "total_axioms_in_manifold": 539,
+  "active_focal_axioms": 16,
+  "compression_ratio": 0.9703,
+  "compression_pct": 97.0,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.6981,
+  "max_clause_chars": 145,
+  "compression_hash": "0x51acfecd06af",
+  "latency_us": 76474.12,
   "load_breakdown": {
-    "cognitive_load": 0.6601,
+    "cognitive_load": 0.6981,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7633
+    "cpu_strain": 0.9533
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 463,
-      "weight": 0.6781,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement an asynchronous quorum‑based delta propagation layer that batches cryptographically signed rule updates into NOSTR gossip packets, the...",
+      "index": 454,
+      "weight": 0.7271,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarc...",
       "immutable_anchor": false
     },
     {
-      "index": 532,
-      "weight": 0.6667,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Place each mutable index (head, tail) on its own 64‑byte cache line and pad to a full line, while partitioning queue slots per core and reclaimi...",
+      "index": 437,
+      "weight": 0.7169,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the bound...",
       "immutable_anchor": false
     },
     {
-      "index": 234,
-      "weight": 0.6631,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "By redefining communication latency not as a temporal deficit but as a tunable topological curvature, the system can actively fold stochastic en...",
+      "index": 406,
+      "weight": 0.6986,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metric...",
       "immutable_anchor": false
     },
     {
-      "index": 472,
-      "weight": 0.6287,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Size the SHA-3 verification worker pool to match the 500 GB/s ingestion rate, as cryptographic throughput is the hard ceiling; implement explici...",
+      "index": 397,
+      "weight": 0.6934,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to av...",
       "immutable_anchor": false
     }
   ]
