@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 19:26:55",
+  "timestamp": "2026-11-18 19:28:15",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 650,
+  "total_axioms_in_manifold": 651,
   "active_focal_axioms": 18,
-  "compression_ratio": 0.9723,
+  "compression_ratio": 0.9724,
   "compression_pct": 97.2,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6594,
+  "cognitive_load_factor": 0.6591,
   "max_clause_chars": 147,
-  "compression_hash": "0x6efdf16af237",
-  "latency_us": 95507.59,
+  "compression_hash": "0x634f9b5b73ef",
+  "latency_us": 56462.22,
   "load_breakdown": {
-    "cognitive_load": 0.6594,
+    "cognitive_load": 0.6591,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.76
+    "cpu_strain": 0.7583
   },
   "top_weighted_axioms": [
     {
@@ -26,28 +26,28 @@
     },
     {
       "index": 636,
-      "weight": 0.773,
+      "weight": 0.7725,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prevent...",
       "immutable_anchor": false
     },
     {
       "index": 596,
-      "weight": 0.6969,
+      "weight": 0.6964,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums to...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.686,
+      "weight": 0.6856,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.6799,
+      "weight": 0.6794,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound S...",
       "immutable_anchor": false
