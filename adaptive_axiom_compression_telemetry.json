@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-18 18:46:56",
+  "timestamp": "2026-11-18 18:48:09",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 639,
+  "total_axioms_in_manifold": 640,
   "active_focal_axioms": 16,
   "compression_ratio": 0.975,
   "compression_pct": 97.5,
   "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x281fec4b4fb7",
-  "latency_us": 72585.93,
+  "compression_hash": "0xd34f09f26f49",
+  "latency_us": 62169.88,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 636,
-      "weight": 0.7789,
+      "weight": 0.7784,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prev...",
       "immutable_anchor": false
     },
     {
       "index": 596,
-      "weight": 0.7023,
+      "weight": 0.7018,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.6911,
+      "weight": 0.6907,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.6848,
+      "weight": 0.6844,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
       "immutable_anchor": false
