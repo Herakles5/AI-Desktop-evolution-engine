@@ -7,16 +7,6 @@
   "consecutive_drifts": 14,
   "evaluation_history": [
     {
-      "generation": 5642,
-      "timestamp": "2026-11-18 11:30:31",
-      "learning_rate": 0.03,
-      "exploration_temperature": 0.35,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.919,
-      "novelty_score": 0.895,
-      "adjustments": []
-    },
-    {
       "generation": 5643,
       "timestamp": "2026-11-18 11:31:58",
       "learning_rate": 0.03,
@@ -1082,6 +1072,16 @@
       "adjustments": [
         "Elevated drift or rule rejection -> Consolidated parameters"
       ]
+    },
+    {
+      "generation": 5742,
+      "timestamp": "2026-11-18 16:30:25",
+      "learning_rate": 0.03,
+      "exploration_temperature": 0.35,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.7,
+      "novelty_score": 0.953,
+      "adjustments": []
     }
   ]
 }
