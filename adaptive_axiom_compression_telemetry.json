@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-18 18:33:14",
+  "timestamp": "2026-11-18 18:34:31",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 635,
+  "total_axioms_in_manifold": 636,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9748,
   "compression_pct": 97.5,
   "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x82629d1cdb27",
-  "latency_us": 80284.36,
+  "compression_hash": "0x1de489c73965",
+  "latency_us": 147442.5,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 596,
-      "weight": 0.7043,
+      "weight": 0.7038,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.693,
+      "weight": 0.6926,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.6867,
+      "weight": 0.6862,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
       "immutable_anchor": false
     },
     {
       "index": 557,
-      "weight": 0.6836,
+      "weight": 0.6831,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while i...",
       "immutable_anchor": false
