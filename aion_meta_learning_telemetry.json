@@ -4,18 +4,8 @@
   "exploration_temperature": 0.35,
   "plasticity_factor": 1.0,
   "consecutive_successes": 0,
-  "consecutive_drifts": 14,
+  "consecutive_drifts": 15,
   "evaluation_history": [
-    {
-      "generation": 5713,
-      "timestamp": "2026-11-18 15:52:59",
-      "learning_rate": 0.03,
-      "exploration_temperature": 0.35,
-      "plasticity_factor": 1.0,
-      "grounding_score": 0.928,
-      "novelty_score": 0.905,
-      "adjustments": []
-    },
     {
       "generation": 5714,
       "timestamp": "2026-11-18 15:54:12",
@@ -1147,6 +1137,18 @@
     {
       "generation": 5812,
       "timestamp": "2026-11-18 17:57:36",
+      "learning_rate": 0.03,
+      "exploration_temperature": 0.35,
+      "plasticity_factor": 1.0,
+      "grounding_score": 0.7,
+      "novelty_score": 0.692,
+      "adjustments": [
+        "Elevated drift or rule rejection -> Consolidated parameters"
+      ]
+    },
+    {
+      "generation": 5813,
+      "timestamp": "2026-11-18 17:58:55",
       "learning_rate": 0.03,
       "exploration_temperature": 0.35,
       "plasticity_factor": 1.0,
