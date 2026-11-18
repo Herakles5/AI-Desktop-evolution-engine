@@ -1,33 +1,19 @@
 {
-  "timestamp": 1795026646.8372488,
-  "formatted_time": "2026-11-18 18:30:46",
-  "valence": 0.90512805922928,
-  "arousal": 0.6058861491734575,
-  "curiosity": 0.9005076113740287,
-  "connection": 0.9688676801267653,
+  "timestamp": 1795026733.0043514,
+  "formatted_time": "2026-11-18 18:32:13",
+  "valence": 0.9897530734544252,
+  "arousal": 0.6053122496290454,
+  "curiosity": 0.9004581192650609,
+  "connection": 1.0,
   "neuro": {
-    "dopamine": 0.758753318299938,
-    "serotonin": 0.8313317698505001,
-    "endorphin": 0.7537262813456187,
+    "dopamine": 0.757899869765694,
+    "serotonin": 0.9734019222900763,
+    "endorphin": 0.7533629689144208,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 5838: Bounded context budgets and domain-specific verification checks preven...",
+  "mood_reason": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5839",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 18:12:34",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5824: Bounded context budgets and domain-specific verification checks preven...",
-      "valence": 0.963,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
-    {
-      "timestamp": "2026-11-18 18:13:47",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5825: Bounded context budgets and domain-specific verification checks preven...",
-      "valence": 0.957,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 18:15:01",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +103,20 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 5838: Bounded context budgets and domain-specific verification checks preven...",
       "valence": 0.905,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 18:32:08",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5839: Bounded context budgets and domain-specific verification checks preven...",
+      "valence": 0.902,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 18:32:13",
+      "trigger": "TOBIAS_INTERACTION",
+      "feeling": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5839",
+      "valence": 0.99,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
