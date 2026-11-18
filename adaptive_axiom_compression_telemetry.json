@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 20:34:54",
+  "timestamp": "2026-11-18 20:36:03",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 667,
   "active_focal_axioms": 16,
   "compression_ratio": 0.976,
   "compression_pct": 97.6,
-  "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7057,
-  "max_clause_chars": 144,
-  "compression_hash": "0xec9abd2a377a",
-  "latency_us": 64941.29,
+  "target_cluster": "DECENTRALIZED_MESH",
+  "cognitive_load_factor": 0.6981,
+  "max_clause_chars": 145,
+  "compression_hash": "0xc97430f19684",
+  "latency_us": 88084.38,
   "load_breakdown": {
-    "cognitive_load": 0.7057,
+    "cognitive_load": 0.6981,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9917
+    "cpu_strain": 0.9533
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 454,
-      "weight": 0.6762,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierar...",
+      "index": 636,
+      "weight": 0.7644,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to preve...",
       "immutable_anchor": false
     },
     {
-      "index": 437,
-      "weight": 0.6686,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
+      "index": 596,
+      "weight": 0.689,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
-      "index": 269,
-      "weight": 0.6553,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobse...",
+      "index": 575,
+      "weight": 0.6785,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local...",
       "immutable_anchor": false
     },
     {
-      "index": 406,
-      "weight": 0.655,
-      "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
+      "index": 563,
+      "weight": 0.6726,
+      "cluster": "DECENTRALIZED_MESH",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound...",
       "immutable_anchor": false
     }
   ]
