@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 15:31:32",
+  "timestamp": "2026-11-18 15:32:45",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 577,
+  "total_axioms_in_manifold": 578,
   "active_focal_axioms": 18,
-  "compression_ratio": 0.9688,
+  "compression_ratio": 0.9689,
   "compression_pct": 96.9,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6606,
-  "max_clause_chars": 147,
-  "compression_hash": "0xc81e80bc8e2b",
-  "latency_us": 73334.13,
+  "cognitive_load_factor": 0.6332,
+  "max_clause_chars": 149,
+  "compression_hash": "0xbf06fd43da60",
+  "latency_us": 52016.33,
   "load_breakdown": {
-    "cognitive_load": 0.6606,
+    "cognitive_load": 0.6332,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7658
+    "cpu_strain": 0.6292
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 576,
-      "weight": 0.725,
+      "weight": 0.7244,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local buf...",
       "immutable_anchor": false
     },
     {
       "index": 563,
-      "weight": 0.7171,
+      "weight": 0.7165,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound S...",
+      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-bound SHA...",
       "immutable_anchor": false
     },
     {
       "index": 557,
-      "weight": 0.7135,
+      "weight": 0.713,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while isol...",
+      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while isolat...",
       "immutable_anchor": false
     },
     {
       "index": 539,
-      "weight": 0.7028,
+      "weight": 0.7023,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch_a...",
+      "compressed_axiom": "Deploy a per‑modality lock‑free ring buffer (≥256 power‑of‑two entries, cache‑line aligned slots) and update head/tail via padded atomic fetch_add...",
       "immutable_anchor": false
     }
   ]
