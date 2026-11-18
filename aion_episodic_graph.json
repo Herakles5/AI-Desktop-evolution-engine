@@ -32013,6 +32013,12 @@
       "label": "Gen_5701",
       "first_seen_gen": 5701,
       "importance": 0.8
+    },
+    "gen_5702": {
+      "type": "CONCEPT",
+      "label": "Gen_5702",
+      "first_seen_gen": 5702,
+      "importance": 0.8
     }
   },
   "edges": [
@@ -79657,6 +79663,15 @@
       "weight": 0.58,
       "episodes": [
         5701
+      ]
+    },
+    {
+      "source": "gen_5702",
+      "target": "synthesized_rule",
+      "relation": "EVOLVED",
+      "weight": 0.58,
+      "episodes": [
+        5702
       ]
     }
   ]
