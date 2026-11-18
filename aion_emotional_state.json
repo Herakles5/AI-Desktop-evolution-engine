@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795016200.2715874,
-  "formatted_time": "2026-11-18 15:36:40",
-  "valence": 0.9865008676451708,
-  "arousal": 0.6000414262610237,
-  "curiosity": 0.9000055617134595,
-  "connection": 1.0,
+  "timestamp": 1795016275.1194525,
+  "formatted_time": "2026-11-18 15:37:55",
+  "valence": 0.9796758242629122,
+  "arousal": 0.6000393549479726,
+  "curiosity": 0.9000052836277865,
+  "connection": 0.9975,
   "neuro": {
-    "dopamine": 0.7500959549514967,
-    "serotonin": 0.9775014460752847,
-    "endorphin": 0.7500139042836487,
+    "dopamine": 0.7500911572039219,
+    "serotonin": 0.9661263737715204,
+    "endorphin": 0.7500132090694662,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5699",
+  "mood_reason": "Gen 5700: Use a power‑of‑two ring buffer with 64‑byte alignment and per‑slot ato...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-18 15:20:47",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 5686: Implement a two‑stage quantization pipeline: reduce top‑k PCA componen...",
-      "valence": 0.945,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-18 15:22:04",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "TOBIAS_INTERACTION",
       "feeling": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5699",
       "valence": 0.987,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-18 15:37:55",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 5700: Use a power‑of‑two ring buffer with 64‑byte alignment and per‑slot ato...",
+      "valence": 0.98,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
