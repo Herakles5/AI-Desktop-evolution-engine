@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 18:14:45",
+  "timestamp": "2026-11-18 18:15:57",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 630,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9746,
   "compression_pct": 97.5,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.7021,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0x55a9bbc34f90",
-  "latency_us": 72169.59,
+  "compression_hash": "0x088bb7e25f8f",
+  "latency_us": 72691.56,
   "load_breakdown": {
-    "cognitive_load": 0.7021,
+    "cognitive_load": 0.7074,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.9733
+    "cpu_strain": 1.0
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 596,
-      "weight": 0.7068,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
+      "index": 454,
+      "weight": 0.6884,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierar...",
       "immutable_anchor": false
     },
     {
-      "index": 575,
-      "weight": 0.6955,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
+      "index": 437,
+      "weight": 0.6801,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
       "immutable_anchor": false
     },
     {
-      "index": 563,
-      "weight": 0.6891,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple zero-copy `mmap` data planes from `io_uring` control planes to minimize I/O overhead, but calibrate latency targets against CPU-boun...",
+      "index": 406,
+      "weight": 0.6654,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
       "immutable_anchor": false
     },
     {
-      "index": 557,
-      "weight": 0.6859,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Decouple GNSS ingestion latency from network propagation by enforcing strict cache-line alignment on per-core lock-free ring buffers, while i...",
+      "index": 397,
+      "weight": 0.6613,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
       "immutable_anchor": false
     }
   ]
