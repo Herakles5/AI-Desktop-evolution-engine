@@ -477,5 +477,13 @@
     "gradient_force": 0.1306,
     "cluster": "SYSTEM_GOVERNANCE",
     "timestamp": "2026-11-18 11:21:39"
+  },
+  {
+    "generation": 5661,
+    "title": "Adaptive Heterogeneous Scheduling for Zero-Copy Pipelines",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.147,
+    "cluster": "SYSTEM_GOVERNANCE",
+    "timestamp": "2026-11-18 14:45:15"
   }
 ]
