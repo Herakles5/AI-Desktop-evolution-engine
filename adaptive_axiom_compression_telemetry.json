@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 11:40:47",
+  "timestamp": "2026-11-18 11:42:11",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 540,
-  "active_focal_axioms": 16,
-  "compression_ratio": 0.9704,
-  "compression_pct": 97.0,
+  "total_axioms_in_manifold": 541,
+  "active_focal_axioms": 17,
+  "compression_ratio": 0.9686,
+  "compression_pct": 96.9,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.7074,
-  "max_clause_chars": 144,
-  "compression_hash": "0xeae3f0343e62",
-  "latency_us": 75666.69,
+  "cognitive_load_factor": 0.6691,
+  "max_clause_chars": 147,
+  "compression_hash": "0x75bf7259be3e",
+  "latency_us": 76175.28,
   "load_breakdown": {
-    "cognitive_load": 0.7074,
+    "cognitive_load": 0.6691,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 1.0
+    "cpu_strain": 0.8083
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 454,
-      "weight": 0.7266,
+      "weight": 0.7261,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierar...",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarchi...",
       "immutable_anchor": false
     },
     {
       "index": 437,
-      "weight": 0.7164,
+      "weight": 0.7159,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boun...",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boundar...",
       "immutable_anchor": false
     },
     {
       "index": 406,
-      "weight": 0.6981,
+      "weight": 0.6977,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metri...",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics...",
       "immutable_anchor": false
     },
     {
       "index": 397,
-      "weight": 0.6929,
+      "weight": 0.6925,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to a...",
+      "compressed_axiom": "Mutation rates should be proportional to local free‑energy differentials, guiding structural change toward thermodynamic coherence. Yet, to avoi...",
       "immutable_anchor": false
     }
   ]
