@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-20 16:48:39",
+  "timestamp": "2026-11-20 16:50:29",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 682,
+  "total_axioms_in_manifold": 683,
   "active_focal_axioms": 18,
   "compression_ratio": 0.9736,
   "compression_pct": 97.4,
   "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6489,
-  "max_clause_chars": 148,
-  "compression_hash": "0x816f9345c876",
-  "latency_us": 72685.44,
+  "cognitive_load_factor": 0.6539,
+  "max_clause_chars": 147,
+  "compression_hash": "0xcdcb3654e505",
+  "latency_us": 112746.32,
   "load_breakdown": {
-    "cognitive_load": 0.6489,
+    "cognitive_load": 0.6539,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.7075
+    "cpu_strain": 0.7325
   },
   "top_weighted_axioms": [
     {
@@ -26,30 +26,30 @@
     },
     {
       "index": 676,
-      "weight": 0.7774,
+      "weight": 0.7769,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "**Principle:** Use a lock‑free ring buffer that stages pre‑hashed file chunks and feeds a Bloom filter for duplicate detection; this allows each...",
       "immutable_anchor": false
     },
     {
       "index": 636,
-      "weight": 0.7572,
+      "weight": 0.7567,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prevent...",
       "immutable_anchor": false
     },
     {
       "index": 596,
-      "weight": 0.6824,
+      "weight": 0.682,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums to...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.6723,
+      "weight": 0.6719,
       "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local bu...",
+      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
       "immutable_anchor": false
     }
   ]
