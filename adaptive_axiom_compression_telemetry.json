@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-18 21:31:01",
+  "timestamp": "2026-11-20 10:29:47",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 678,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9749,
-  "compression_pct": 97.5,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.6691,
-  "max_clause_chars": 147,
-  "compression_hash": "0x68381cdab1c6",
-  "latency_us": 64439.3,
+  "total_axioms_in_manifold": 679,
+  "active_focal_axioms": 20,
+  "compression_ratio": 0.9705,
+  "compression_pct": 97.0,
+  "target_cluster": "SYSTEM_GOVERNANCE",
+  "cognitive_load_factor": 0.5694,
+  "max_clause_chars": 153,
+  "compression_hash": "0x24a697b57955",
+  "latency_us": 52586.09,
   "load_breakdown": {
-    "cognitive_load": 0.6691,
+    "cognitive_load": 0.5694,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8083
+    "cpu_strain": 0.31
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 676,
-      "weight": 0.7795,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "**Principle:** Use a lock‑free ring buffer that stages pre‑hashed file chunks and feeds a Bloom filter for duplicate detection; this allows each...",
+      "index": 674,
+      "weight": 0.9979,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "Implement a dual-threshold eviction policy for the topological memory graph that triggers compression only when the prompt context budget exceeds 80%...",
       "immutable_anchor": false
     },
     {
-      "index": 636,
-      "weight": 0.7591,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prevent...",
+      "index": 669,
+      "weight": 0.9954,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "**Principle:** Implement a hybrid delta‑plus‑quantization compression for the topological memory graph that reduces memory usage by at least 50 % whil...",
       "immutable_anchor": false
     },
     {
-      "index": 596,
-      "weight": 0.6842,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums to...",
+      "index": 663,
+      "weight": 0.9923,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "**Principle:** Compress the topological memory graph with a block‑wise LZ4 scheme (64 KB blocks) and enforce a prompt‑context budget of 2,048 tokens...",
       "immutable_anchor": false
     },
     {
-      "index": 575,
-      "weight": 0.6739,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local b...",
+      "index": 650,
+      "weight": 0.9857,
+      "cluster": "SYSTEM_GOVERNANCE",
+      "compressed_axiom": "**Principle:** Use a lock‑free ring buffer to decouple a dedicated compression core (compressing topological graph deltas) from a DMA‑backed memory‑wr...",
       "immutable_anchor": false
     }
   ]
