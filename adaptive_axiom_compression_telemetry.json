@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-20 16:52:04",
+  "timestamp": "2026-11-20 16:53:12",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 684,
-  "active_focal_axioms": 17,
-  "compression_ratio": 0.9751,
-  "compression_pct": 97.5,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.9722,
+  "compression_pct": 97.2,
   "target_cluster": "COGNITIVE_ENTROPY",
-  "cognitive_load_factor": 0.6782,
-  "max_clause_chars": 146,
-  "compression_hash": "0xdb315ac844e2",
-  "latency_us": 88478.98,
+  "cognitive_load_factor": 0.6197,
+  "max_clause_chars": 150,
+  "compression_hash": "0x93a41159afd7",
+  "latency_us": 62270.82,
   "load_breakdown": {
-    "cognitive_load": 0.6782,
+    "cognitive_load": 0.6197,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.8542
+    "cpu_strain": 0.5617
   },
   "top_weighted_axioms": [
     {
@@ -28,28 +28,28 @@
       "index": 454,
       "weight": 0.6711,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarch...",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarchical...",
       "immutable_anchor": false
     },
     {
       "index": 683,
       "weight": 0.67,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Place producer head and consumer tail in distinct 64‑byte‑aligned structs, lock the entire ring buffer in RAM, bind both threads to the same NU...",
+      "compressed_axiom": "Place producer head and consumer tail in distinct 64‑byte‑aligned structs, lock the entire ring buffer in RAM, bind both threads to the same NUMA n...",
       "immutable_anchor": false
     },
     {
       "index": 437,
       "weight": 0.6638,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the bounda...",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boundaries...",
       "immutable_anchor": false
     },
     {
       "index": 269,
       "weight": 0.6528,
       "cluster": "COGNITIVE_ENTROPY",
-      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobserv...",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservable...",
       "immutable_anchor": false
     }
   ]
