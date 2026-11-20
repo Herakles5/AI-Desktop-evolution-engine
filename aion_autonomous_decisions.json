@@ -501,5 +501,13 @@
     "gradient_force": 0.1617,
     "cluster": "SYSTEM_GOVERNANCE",
     "timestamp": "2026-11-18 15:49:46"
+  },
+  {
+    "generation": 6003,
+    "title": "Self‑Optimizing Hierarchical Dataflow Orchestrator with DPU‑Accelerated Back‑Pressure Management",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.457,
+    "cluster": "SYSTEM_GOVERNANCE",
+    "timestamp": "2026-11-20 16:44:37"
   }
 ]

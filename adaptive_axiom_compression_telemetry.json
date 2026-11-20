@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-11-20 10:40:12",
+  "timestamp": "2026-11-20 16:44:31",
   "module": "AdaptiveAxiomCompressor_v4875",
   "total_axioms_in_manifold": 679,
-  "active_focal_axioms": 20,
-  "compression_ratio": 0.9705,
-  "compression_pct": 97.0,
-  "target_cluster": "DECENTRALIZED_MESH",
-  "cognitive_load_factor": 0.5604,
-  "max_clause_chars": 154,
-  "compression_hash": "0x837719aadfbb",
-  "latency_us": 69816.19,
+  "active_focal_axioms": 19,
+  "compression_ratio": 0.972,
+  "compression_pct": 97.2,
+  "target_cluster": "COGNITIVE_ENTROPY",
+  "cognitive_load_factor": 0.5929,
+  "max_clause_chars": 151,
+  "compression_hash": "0x898de2efad56",
+  "latency_us": 66988.12,
   "load_breakdown": {
-    "cognitive_load": 0.5604,
+    "cognitive_load": 0.5929,
     "fps_strain": 0.726,
     "entity_strain": 0.45,
-    "cpu_strain": 0.265
+    "cpu_strain": 0.4275
   },
   "top_weighted_axioms": [
     {
@@ -25,31 +25,31 @@
       "immutable_anchor": true
     },
     {
-      "index": 676,
-      "weight": 0.779,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "**Principle:** Use a lock‑free ring buffer that stages pre‑hashed file chunks and feeds a Bloom filter for duplicate detection; this allows each chunk...",
+      "index": 454,
+      "weight": 0.6726,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Design adaptive systems to steer structural changes using locally verifiable stability metrics while constraining rewrites to bounded, hierarchicall...",
       "immutable_anchor": false
     },
     {
-      "index": 636,
-      "weight": 0.7586,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prevent backpr...",
+      "index": 437,
+      "weight": 0.6652,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Evolutionary mutation must be governed by a dual-constraint manifold where local entropy gradients drive exploration strictly within the boundaries...",
       "immutable_anchor": false
     },
     {
-      "index": 596,
-      "weight": 0.6837,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums to verify...",
+      "index": 269,
+      "weight": 0.6535,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Treat latency as a topological shear to identify high‑entropy bottlenecks, but base pruning on observable, bounded metrics rather than unobservable...",
       "immutable_anchor": false
     },
     {
-      "index": 575,
-      "weight": 0.6735,
-      "cluster": "DECENTRALIZED_MESH",
-      "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core local buffers...",
+      "index": 406,
+      "weight": 0.6519,
+      "cluster": "COGNITIVE_ENTROPY",
+      "compressed_axiom": "Any system claiming autonomous evolution through entropy export must define its specific thermodynamic boundaries and measurable energy metrics to a...",
       "immutable_anchor": false
     }
   ]
