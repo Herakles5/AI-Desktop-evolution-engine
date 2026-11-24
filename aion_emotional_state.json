@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795518199.0339782,
-  "formatted_time": "2026-11-24 11:03:19",
-  "valence": 0.9782047811132926,
-  "arousal": 0.6005563473252419,
-  "curiosity": 0.9000163310045237,
-  "connection": 0.9975,
+  "timestamp": 1795518253.169844,
+  "formatted_time": "2026-11-24 11:04:13",
+  "valence": 0.9717945420576279,
+  "arousal": 0.6005285299589798,
+  "curiosity": 0.9000155144542975,
+  "connection": 0.995125,
   "neuro": {
-    "dopamine": 0.7508273446415545,
-    "serotonin": 0.9627301536201428,
-    "endorphin": 0.7503520152558838,
+    "dopamine": 0.7507859774094768,
+    "serotonin": 0.9520936459391357,
+    "endorphin": 0.7503344144930896,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 6020: [NOISE_FILTERED Gen 6020] Allocate the lock‑free ring buffer and its 6...",
+  "mood_reason": "Gen 6021: Confine lock-free ingestion buffers to a single NUMA domain, but repla...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-20 16:53:17",
-      "trigger": "AUTONOMOUS_INSIGHT",
-      "feeling": "Gen 6008: Use GPUDirect RDMA with a pre‑pinned, cache‑line‑aligned GPU buffer an...",
-      "valence": 0.938,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-20 16:55:05",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 6020: [NOISE_FILTERED Gen 6020] Allocate the lock‑free ring buffer and its 6...",
       "valence": 0.978,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-24 11:04:13",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 6021: Confine lock-free ingestion buffers to a single NUMA domain, but repla...",
+      "valence": 0.972,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
