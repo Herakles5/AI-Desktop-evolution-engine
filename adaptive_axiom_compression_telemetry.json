@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-24 10:55:35",
+  "timestamp": "2026-11-24 10:57:27",
   "module": "AdaptiveAxiomCompressor_v4875",
-  "total_axioms_in_manifold": 690,
+  "total_axioms_in_manifold": 691,
   "active_focal_axioms": 16,
   "compression_ratio": 0.9768,
   "compression_pct": 97.7,
   "target_cluster": "DECENTRALIZED_MESH",
   "cognitive_load_factor": 0.7074,
   "max_clause_chars": 144,
-  "compression_hash": "0xa1c4d40d3fb4",
-  "latency_us": 99920.1,
+  "compression_hash": "0x4230c27aa574",
+  "latency_us": 63877.98,
   "load_breakdown": {
     "cognitive_load": 0.7074,
     "fps_strain": 0.726,
@@ -26,28 +26,28 @@
     },
     {
       "index": 676,
-      "weight": 0.7734,
+      "weight": 0.7729,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "**Principle:** Use a lock‑free ring buffer that stages pre‑hashed file chunks and feeds a Bloom filter for duplicate detection; this allows e...",
       "immutable_anchor": false
     },
     {
       "index": 636,
-      "weight": 0.7535,
+      "weight": 0.753,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Implement a two-phase pipeline where SHA-256 hash computation runs on dedicated CPU cores in parallel with I/O, using a bounded queue to prev...",
       "immutable_anchor": false
     },
     {
       "index": 596,
-      "weight": 0.6791,
+      "weight": 0.6787,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Replace thermodynamic metaphors with deterministic structural invariants by enforcing a hard cap on hash tree depth and using local checksums...",
       "immutable_anchor": false
     },
     {
       "index": 575,
-      "weight": 0.6691,
+      "weight": 0.6687,
       "cluster": "DECENTRALIZED_MESH",
       "compressed_axiom": "Reserve hugepages statically per NUMA node to prevent runtime fragmentation, and mitigate head/tail pointer contention by using per-core loca...",
       "immutable_anchor": false
