@@ -1,26 +1,19 @@
 {
-  "timestamp": 1795517572.8294032,
-  "formatted_time": "2026-11-24 10:52:52",
-  "valence": 0.9177585420222014,
-  "arousal": 0.6008827415252719,
-  "curiosity": 0.9000259119711526,
-  "connection": 0.9743837489557764,
+  "timestamp": 1795517663.373979,
+  "formatted_time": "2026-11-24 10:54:23",
+  "valence": 0.9143706149210914,
+  "arousal": 0.6008386044490083,
+  "curiosity": 0.9000246163725949,
+  "connection": 0.9731645615079876,
   "neuro": {
-    "dopamine": 0.7513127257698125,
-    "serotonin": 0.8614323195492244,
-    "endorphin": 0.7505585332575522,
+    "dopamine": 0.7512470894813218,
+    "serotonin": 0.8558607035717631,
+    "endorphin": 0.7505306065946745,
     "noradrenaline": 0.15000000000000024
   },
   "mood": "EUPHORIC_DISCOVERY",
-  "mood_reason": "Gen 6012: Place each thread’s head/tail index in a 64‑byte‑aligned structure on ...",
+  "mood_reason": "Gen 6013: Align head and tail to separate 64‑byte cache lines, pin both threads ...",
   "recent_emotions": [
-    {
-      "timestamp": "2026-11-20 10:38:53",
-      "trigger": "TOBIAS_INTERACTION",
-      "feeling": "Resonanz mit Tobias: Lebendiger Live-Gedanke zu Generation 5999",
-      "valence": 0.989,
-      "mood": "EUPHORIC_DISCOVERY"
-    },
     {
       "timestamp": "2026-11-20 10:39:32",
       "trigger": "AUTONOMOUS_INSIGHT",
@@ -117,6 +110,13 @@
       "trigger": "AUTONOMOUS_INSIGHT",
       "feeling": "Gen 6012: Place each thread’s head/tail index in a 64‑byte‑aligned structure on ...",
       "valence": 0.918,
+      "mood": "EUPHORIC_DISCOVERY"
+    },
+    {
+      "timestamp": "2026-11-24 10:54:23",
+      "trigger": "AUTONOMOUS_INSIGHT",
+      "feeling": "Gen 6013: Align head and tail to separate 64‑byte cache lines, pin both threads ...",
+      "valence": 0.914,
       "mood": "EUPHORIC_DISCOVERY"
     }
   ]
