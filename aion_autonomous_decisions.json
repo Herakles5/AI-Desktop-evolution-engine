@@ -509,5 +509,13 @@
     "gradient_force": 0.457,
     "cluster": "SYSTEM_GOVERNANCE",
     "timestamp": "2026-11-20 16:44:37"
+  },
+  {
+    "generation": 6012,
+    "title": "Hierarchical Multi‑Node Lock‑Free Ring with SmartNIC Offload and Adaptive Buffer Scaling",
+    "decision": "CONSENSUS_REACHED_AND_APPLIED",
+    "gradient_force": 0.1342,
+    "cluster": "SYSTEM_GOVERNANCE",
+    "timestamp": "2026-11-24 10:51:22"
   }
 ]
